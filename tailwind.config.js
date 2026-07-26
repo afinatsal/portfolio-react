@@ -1,0 +1,28 @@
+/** @type {import('tailwindcss').Config} */
+export default {
+  content: [
+    "./index.html",
+    "./src/**/*.{js,jsx}",
+  ],
+  theme: {
+    extend: {
+      colors: {
+        bg: '#111315',
+        section: '#191C1F',
+        panel: '#252A2E',
+        dot: '#F1F4F2',
+        accent: '#BFFAF5',
+        mint: '#74E6D5',
+        lime: '#B7F36B',
+        ink: '#F1F4F2',
+        dim: '#9CA6AA',
+        line: '#353C42',
+      },
+      fontFamily: {
+        display: ['"Angie Sans"', 'Georgia', 'sans-serif'],
+        mono: ['"JetBrains Mono"', 'monospace'],
+      },
+    },
+  },
+  plugins: [],
+}

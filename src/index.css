@@ -1,0 +1,102 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+  html{scroll-behavior:smooth; scroll-snap-type: y mandatory;}
+  body{background:#111315;}
+
+  /* magnet scroll: every top-level section snaps fully into view.
+     scroll-snap-stop:always forces the browser to rest at each section
+     even during a fast/long scroll gesture, instead of skipping past it —
+     this is what was causing sections to be jumped over before. */
+  #home, #about, #experience, #work, #publications, #skills, #contact{
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+  }
+  @media (prefers-reduced-motion: reduce){
+    html{ scroll-snap-type: none; }
+  }
+  ::selection{background:#BFFAF5; color:#111315;}
+
+  #ditherCanvas{position:absolute; inset:0; width:100%; height:100%; z-index:0; display:block;}
+  .vignette{
+    position:absolute; inset:0; z-index:1; pointer-events:none;
+    background:
+      radial-gradient(ellipse at 68% 45%, transparent 25%, #111315 88%),
+      linear-gradient(180deg, rgba(17,19,21,0.55) 0%, transparent 18%, transparent 60%, #191C1F 100%);
+  }
+
+  /* Transition landing → About: warna hero dilebur ke warna section berikutnya,
+     lalu garis dan konten About masuk secara bertahap saat discroll. */
+  #home::after{
+    content:""; position:absolute; inset:auto 0 0; z-index:2; height:28%; pointer-events:none;
+    background:linear-gradient(180deg, transparent 0%, #191C1F 100%);
+  }
+  .scroll-cue{
+    position:absolute; z-index:11; left:50%; bottom:22px; transform:translateX(-50%);
+    display:flex; flex-direction:column; align-items:center; gap:8px;
+    color:#9CA6AA; font:400 10px/1 "JetBrains Mono", monospace; letter-spacing:.16em;
+    text-decoration:none; transition:color .25s ease, transform .25s ease;
+  }
+  .scroll-cue:hover{color:#BFFAF5; transform:translateX(-50%) translateY(3px);}
+  .scroll-cue i{display:block; width:1px; height:38px; background:linear-gradient(#BFFAF5, transparent); animation:scroll-line 1.8s ease-in-out infinite;}
+  @keyframes scroll-line{0%,100%{transform:scaleY(.45); transform-origin:top; opacity:.35}50%{transform:scaleY(1); transform-origin:top; opacity:1}}
+
+  .section-transition{isolation:isolate; overflow:hidden;}
+  .section-transition::before{
+    content:""; position:absolute; z-index:-1; inset:0 0 auto; height:150px; pointer-events:none;
+    background:linear-gradient(180deg, #191C1F 0%, rgba(25,28,31,0) 100%);
+  }
+  .section-transition::after{
+    content:""; position:absolute; top:54px; left:5%; z-index:0; height:1px; width:0;
+    background:linear-gradient(90deg, transparent, rgba(191,250,245,.75), transparent);
+    transition:width 1.25s cubic-bezier(.16,1,.3,1);
+  }
+  .section-transition.is-visible::after{width:90%;}
+
+  /* film-grain texture, subtle, across whole page */
+  .grain{
+    position:fixed; inset:0; z-index:50; pointer-events:none;
+    opacity:0.05; mix-blend-mode:overlay;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+
+  .letter{display:inline-block; transition:color .08s ease;}
+
+  .project-trigger{ background:none; border:none; font:inherit; color:inherit; cursor:pointer; padding-left:0; padding-right:0; }
+  #modalPanel{ max-height:100vh; overflow-y:auto; }
+  body.modal-open{ overflow:hidden; }
+
+  /* Nama perusahaan adalah detail penting: cyan memberi penekanan tanpa
+     memakai warna lime yang sudah dipakai khusus untuk status/availability. */
+  .company-highlight{
+    color:#BFFAF5;
+    display:inline;
+    padding-bottom:2px;
+    border-bottom:1px solid rgba(191,250,245,.5);
+    text-shadow:0 0 18px rgba(191,250,245,.13);
+  }
+
+  @keyframes pulse{0%,100%{opacity:1} 50%{opacity:.25}}
+  .pulse-dot{animation:pulse 2s ease-in-out infinite;}
+
+  .marquee-track{ animation: marquee 38s linear infinite; }
+  .marquee-track:hover{ animation-play-state: paused; }
+  @keyframes marquee{ from{ transform:translateX(0); } to{ transform:translateX(-50%); } }
+  @media (prefers-reduced-motion: reduce){
+    .marquee-track{ animation: none; }
+  }
+
+  /* scroll reveal */
+  .reveal{opacity:0; transform:translateY(28px); transition:opacity .9s cubic-bezier(.16,1,.3,1), transform .9s cubic-bezier(.16,1,.3,1);}
+  .reveal.in-view{opacity:1; transform:translateY(0);}
+  .reveal-delay-1{transition-delay:.08s;}
+  .reveal-delay-2{transition-delay:.16s;}
+
+  @media (prefers-reduced-motion: reduce){
+    .pulse-dot{animation:none;}
+    .scroll-cue i{animation:none;}
+    .reveal{opacity:1; transform:none; transition:none;}
+    .section-transition::after{width:90%; transition:none;}
+  }
