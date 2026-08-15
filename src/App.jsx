@@ -1,15 +1,44 @@
 import { useEffect, useRef } from 'react'
+import TRANSLATIONS from './translations'
 
 // The markup below is the original hand-built portfolio markup (Tailwind
 // classes + inline SVGs), kept as one HTML string and mounted via
 // dangerouslySetInnerHTML. All the interactive behavior (dither canvas
 // background, scroll-reveal, floating dock nav, project modal, email copy,
 // skills marquee) is the original vanilla JS, executed once after mount
-// inside the effect below — nothing behavior-wise has changed, this file
+// inside the effect below · nothing behavior-wise has changed, this file
 // just gives it a proper React + Tailwind (Vite) build pipeline to run
 // locally instead of the Tailwind CDN <script> tag.
 
 const MARKUP = `<div class="grain"></div>
+
+<!-- loading screen · CLI boot sequence with split-door reveal -->
+<div id="loader" class="loader" aria-hidden="true">
+  <div class="loader-inner">
+    <div class="loader-meta font-mono">
+      <span class="text-dim tracking-[0.25em] text-[11px]">AFIN<span class="text-accent">.</span>PORTFOLIO · <span class="text-dim">2026</span></span>
+      <span id="loaderPct" class="loader-pct">000</span>
+    </div>
+
+    <h1 class="loader-name font-display">
+      <span class="ln"><span style="--nd:.12s">MUHAMMAD</span></span>
+      <span class="ln"><span class="text-dot" style="--nd:.26s">AFIN ATSAL</span></span>
+    </h1>
+
+    <div class="loader-term font-mono">
+      <p id="loaderLog" class="loader-log"></p>
+      <div class="loader-row">
+        <span id="loaderStatus">BOOTING</span>
+        <span class="loader-cursor" aria-hidden="true">&#9612;</span>
+      </div>
+    </div>
+
+    <div class="loader-bar"><span id="loaderBar"></span></div>
+  </div>
+</div>
+
+<!-- scroll progress indicator -->
+<div id="scrollProgress" aria-hidden="true"></div>
 
 <!-- LANDING SECTION: background dither lives only here, scrolls away with this section -->
 <section id="home" class="relative overflow-hidden min-h-[100svh] flex flex-col" style="background:#111315;">
@@ -18,56 +47,69 @@ const MARKUP = `<div class="grain"></div>
   <div class="vignette"></div>
 
   <!-- top brand row -->
-  <header class="relative z-10 flex items-center justify-between px-5 sm:px-10 pt-7 font-mono text-xs tracking-wide">
+  <header class="hero-in relative z-10 flex items-center justify-between px-5 sm:px-10 pt-7 font-mono text-xs tracking-wide" style="--d:.05s">
     <div class="text-dim">AFIN<span class="text-accent">.</span> PORTFOLIO/2026</div>
-    <div class="flex items-center gap-2 text-dim">
-      <span class="w-1.5 h-1.5 rounded-full bg-lime shadow-[0_0_8px_#B7F36B] pulse-dot"></span>
-      tersedia untuk kolaborasi
+    <div class="flex items-center gap-3 text-dim">
+      <span class="hidden sm:flex items-center gap-2">
+        <span class="w-1.5 h-1.5 rounded-full bg-lime shadow-[0_0_8px_#B7F36B] pulse-dot"></span>
+        <span data-i18n="header.status">Open untuk kolaborasi</span>
+      </span>
+      <span class="hidden sm:block w-px h-3 bg-line"></span>
+      <nav class="lang-pill" aria-label="Pilih bahasa">
+        <button type="button" data-lang="id" class="lang-active" aria-label="Bahasa Indonesia">ID</button>
+        <button type="button" data-lang="en" aria-label="English">EN</button>
+        <button type="button" data-lang="zh" aria-label="中文">中文</button>
+        <button type="button" data-lang="ja" aria-label="日本語">日本語</button>
+      </nav>
     </div>
   </header>
 
   <!-- hero -->
   <main class="relative z-10 flex-1 flex flex-col items-center justify-center text-center px-5 pb-32">
-    <p class="font-mono text-[11px] sm:text-xs tracking-[0.25em] text-accent mb-4">AI/ML ENGINEER — COMPUTER VISION</p>
+    <p class="hero-in font-mono text-[11px] sm:text-xs tracking-[0.25em] text-accent mb-4" style="--d:.15s" data-i18n="hero.eyebrow">AI/ML ENGINEER · COMPUTER VISION</p>
 
-    <h1 id="nameHeading" class="font-display font-semibold leading-[0.94] tracking-tight text-[clamp(2.6rem,9vw,6.4rem)]">
+    <h1 id="nameHeading" class="hero-in font-display font-semibold leading-[0.94] tracking-tight text-[clamp(2.6rem,9vw,6.4rem)]" style="--d:.3s">
       <span data-line class="block">MUHAMMAD</span>
       <span data-line class="block text-dot">AFIN ATSAL</span>
     </h1>
+
+    <p class="hero-in font-display text-[15px] sm:text-base text-dim leading-relaxed max-w-md mx-auto mt-6" style="--d:.42s" data-i18n="hero.tagline">
+      Membangun sistem AI dari riset ke produksi, dari notebook hingga deployment.
+    </p>
   </main>
-  <a class="scroll-cue" href="#about" aria-label="Scroll ke bagian Tentang"><span>SCROLL TO EXPLORE</span><i></i></a>
+  <a class="hero-in-fade scroll-cue" style="--d:.55s" href="#about" aria-label="Scroll ke bagian Tentang"><span>SCROLL TO EXPLORE</span><i></i></a>
 </section>
 
 <!-- ============ PENGALAMAN ============ -->
 <!-- ============ ABOUT / TENTANG ============ -->
 <section id="about" class="section-transition relative bg-section px-5 sm:px-10 py-28 sm:py-36">
   <div class="max-w-3xl mx-auto">
-    <p class="font-mono text-[11px] tracking-[0.25em] text-accent mb-14 reveal">02 — TENTANG</p>
+    <p class="font-mono text-[11px] tracking-[0.25em] text-accent mb-14 reveal" data-i18n="about.label">02 · TENTANG</p>
 
     <h2 class="font-display font-semibold text-2xl sm:text-4xl text-ink leading-tight mb-8 max-w-2xl reveal reveal-delay-1">
-      Mengubah riset computer vision jadi sistem yang benar-benar berjalan di produksi — bukan cuma notebook.
+      <span data-i18n="about.heading">Mengubah riset computer vision menjadi sistem produksi nyata, bukan sekadar notebook eksperimen.</span>
     </h2>
 
-    <p class="font-display text-[15px] text-dim leading-relaxed max-w-xl mb-12 reveal reveal-delay-1">
-      Lulusan Teknologi Informasi Universitas Brawijaya (IPK 3.55/4.00) dengan fokus di computer vision dan applied deep learning. Membawa model dari eksperimen ke sistem production-integrated lewat dua magang industri, dan memimpin riset skripsi pipeline deteksi sampah hierarkis dari nol — mulai kurasi dataset, benchmarking arsitektur, hingga aplikasi inferensi untuk demo sidang.
+    <p class="font-display text-[15px] text-dim leading-relaxed max-w-xl mb-12 reveal reveal-delay-1" data-i18n="about.body">
+      Lulusan Teknologi Informasi Universitas Brawijaya (IPK 3.55/4.00) dengan fokus di computer vision dan applied deep learning. Saya membawa model dari eksperimen ke sistem yang terintegrasi produksi lewat dua program magang industri, serta memimpin riset skripsi pipeline deteksi sampah hierarkis dari nol, mulai dari kurasi dataset, benchmarking arsitektur, hingga aplikasi inferensi siap demo.
     </p>
 
     <div class="grid grid-cols-2 sm:grid-cols-4 gap-6 sm:gap-8 border-t border-line pt-8 reveal reveal-delay-2">
       <div>
-        <p class="font-mono text-[10px] tracking-[0.15em] text-dim mb-1.5">PENDIDIKAN</p>
-        <p class="font-display font-semibold text-ink text-sm leading-snug">Universitas<br>Brawijaya</p>
+        <p class="font-mono text-[10px] tracking-[0.15em] text-dim mb-1.5" data-i18n="about.educationLabel">PENDIDIKAN</p>
+        <p class="font-display font-semibold text-ink text-sm leading-snug" data-i18n="about.educationVal">Universitas<br>Brawijaya</p>
       </div>
       <div>
-        <p class="font-mono text-[10px] tracking-[0.15em] text-dim mb-1.5">IPK</p>
-        <p class="font-display font-semibold text-ink text-sm leading-snug">3.55 / 4.00</p>
+        <p class="font-mono text-[10px] tracking-[0.15em] text-dim mb-1.5" data-i18n="about.gpaLabel">IPK</p>
+        <p class="font-display font-semibold text-ink text-sm leading-snug"><span data-count="3.55" data-decimals="2">3.55</span> / 4.00</p>
       </div>
       <div>
-        <p class="font-mono text-[10px] tracking-[0.15em] text-dim mb-1.5">LOKASI</p>
-        <p class="font-display font-semibold text-ink text-sm leading-snug">Malang,<br>Indonesia</p>
+        <p class="font-mono text-[10px] tracking-[0.15em] text-dim mb-1.5" data-i18n="about.locationLabel">LOKASI</p>
+        <p class="font-display font-semibold text-ink text-sm leading-snug" data-i18n="about.locationVal">Malang,<br>Indonesia</p>
       </div>
       <div>
-        <p class="font-mono text-[10px] tracking-[0.15em] text-dim mb-1.5">STATUS</p>
-        <p class="font-display font-semibold text-ink text-sm leading-snug">Terbuka untuk<br>internship</p>
+        <p class="font-mono text-[10px] tracking-[0.15em] text-dim mb-1.5" data-i18n="about.statusLabel">STATUS</p>
+        <p class="font-display font-semibold text-ink text-sm leading-snug" data-i18n="about.statusVal">Terbuka untuk magang atau full-time</p>
       </div>
     </div>
   </div>
@@ -77,7 +119,7 @@ const MARKUP = `<div class="grain"></div>
 
 <section id="experience" class="relative bg-section px-5 sm:px-10 py-28 sm:py-36 border-t border-line">
   <div class="max-w-4xl mx-auto">
-    <p class="font-mono text-[11px] tracking-[0.25em] text-accent text-center mb-16 reveal">03 — PENGALAMAN</p>
+    <p class="font-mono text-[11px] tracking-[0.25em] text-accent text-center mb-16 reveal" data-i18n="exp.label">03 · PENGALAMAN</p>
 
     <div class="relative reveal reveal-delay-1">
       <div class="absolute left-1/2 top-0 bottom-0 w-px bg-line -translate-x-1/2 hidden sm:block"></div>
@@ -95,10 +137,10 @@ const MARKUP = `<div class="grain"></div>
           <div class="sm:hidden w-10 h-10 rounded-full border border-line overflow-hidden shrink-0 mb-2.5">
             <img src="./Instruktur-Praktikum-Python.jpeg" alt="Foto Instruktur Praktikum Python" class="w-full h-full object-cover" loading="lazy" />
           </div>
-          <p class="font-mono text-[11px] text-accent mb-1.5">FEB 2026 — SEKARANG</p>
-          <p class="font-display font-semibold text-lg sm:text-xl text-ink mb-1">Instruktur Praktikum Python</p>
-          <p class="font-mono text-[12px] text-lime mb-2">FILKOM &amp; FMIPA, Universitas Brawijaya</p>
-          <p class="font-display text-[14.5px] text-dim leading-relaxed">Mengajar pemrograman Python lintas fakultas selama satu semester, menyusun kurikulum praktikum, dan membimbing evaluasi tugas mahasiswa.</p>
+          <p class="font-mono text-[11px] text-accent mb-1.5" data-i18n="exp.e1.period">FEB 2026 · SEKARANG</p>
+          <p class="font-display font-semibold text-lg sm:text-xl text-ink mb-1" data-i18n="exp.e1.title">Instruktur Praktikum Python</p>
+          <p class="font-mono text-[12px] text-lime mb-2" data-i18n="exp.e1.org">FILKOM &amp; FMIPA, Universitas Brawijaya</p>
+          <p class="font-display text-[14.5px] text-dim leading-relaxed" data-i18n="exp.e1.desc">Mengampu praktikum pemrograman Python lintas fakultas selama satu semester, mencakup penyusunan kurikulum materi dan evaluasi hasil belajar mahasiswa.</p>
         </div>
       </div>
 
@@ -109,10 +151,10 @@ const MARKUP = `<div class="grain"></div>
           <div class="sm:hidden w-10 h-10 rounded-full border border-line overflow-hidden shrink-0 mb-2.5">
             <img src="./MBKM-XL-Smart.jpeg" alt="Foto MBKM X-Camp XLSmart" class="w-full h-full object-cover" loading="lazy" />
           </div>
-          <p class="font-mono text-[11px] text-accent mb-1.5">AGU — DES 2025</p>
-          <p class="font-display font-semibold text-lg sm:text-xl text-ink mb-1">AI/ML Engineer (MBKM)</p>
-          <p class="font-mono text-[12px] text-dim mb-2">X-Camp / MBKM — <span class="company-highlight">PT XLSmart Telecom Sejahtera</span></p>
-          <p class="font-display text-[14.5px] text-dim leading-relaxed">Membangun sistem visual inspection CNN (99.6% akurasi), object removal detection dengan OpenCV, dan chatbot RAG internal — metodologi Agile-Scrum.</p>
+          <p class="font-mono text-[11px] text-accent mb-1.5" data-i18n="exp.e2.period">AGU · DES 2025</p>
+          <p class="font-display font-semibold text-lg sm:text-xl text-ink mb-1" data-i18n="exp.e2.title">AI/ML Engineer (MBKM)</p>
+          <p class="font-mono text-[12px] text-dim mb-2" data-i18n="exp.e2.org">X-Camp / MBKM · <span class="company-highlight">PT XLSmart Telecom Sejahtera</span></p>
+          <p class="font-display text-[14.5px] text-dim leading-relaxed" data-i18n="exp.e2.desc">Membangun sistem visual inspection berbasis CNN (akurasi 99.6%), deteksi objek hilang dengan OpenCV, dan chatbot RAG internal dalam metodologi Agile-Scrum.</p>
         </div>
         <div class="hidden sm:flex justify-start pl-4 order-2">
           <div class="w-24 h-24 rounded-full border border-line overflow-hidden shrink-0">
@@ -133,10 +175,10 @@ const MARKUP = `<div class="grain"></div>
           <div class="sm:hidden w-10 h-10 rounded-full border border-line overflow-hidden shrink-0 mb-2.5">
             <img src="./Intern-Amman.jpeg" alt="Foto Internship PT Amman Mineral" class="w-full h-full object-cover" loading="lazy" />
           </div>
-          <p class="font-mono text-[11px] text-accent mb-1.5">JUL — AGU 2025</p>
-          <p class="font-display font-semibold text-lg sm:text-xl text-ink mb-1">Back-End &amp; AI System Developer</p>
-          <p class="font-mono text-[12px] text-dim mb-2"><span class="company-highlight">PT Amman Mineral Internasional</span></p>
-          <p class="font-display text-[14.5px] text-dim leading-relaxed">Merancang microservices FastAPI + PostgreSQL/PGVector untuk chatbot RAG pemesanan tiket kapal, latensi API rata-rata &lt;2 detik.</p>
+          <p class="font-mono text-[11px] text-accent mb-1.5" data-i18n="exp.e3.period">JUL · AGU 2025</p>
+          <p class="font-display font-semibold text-lg sm:text-xl text-ink mb-1" data-i18n="exp.e3.title">Back-End &amp; AI System Developer</p>
+          <p class="font-mono text-[12px] text-dim mb-2" data-i18n="exp.e3.org"><span class="company-highlight">PT Amman Mineral Internasional</span></p>
+          <p class="font-display text-[14.5px] text-dim leading-relaxed" data-i18n="exp.e3.desc">Merancang microservices FastAPI dengan PostgreSQL/PGVector untuk chatbot RAG pemesanan tiket kapal; latensi API rata-rata di bawah 2 detik.</p>
         </div>
       </div>
 
@@ -147,10 +189,10 @@ const MARKUP = `<div class="grain"></div>
           <div class="sm:hidden w-10 h-10 rounded-full border border-line overflow-hidden shrink-0 mb-2.5">
             <img src="./Private-Tutor.jpeg" alt="Foto Private Tutor" class="w-full h-full object-cover" loading="lazy" />
           </div>
-          <p class="font-mono text-[11px] text-accent mb-1.5">FREELANCE · BERJALAN</p>
-          <p class="font-display font-semibold text-lg sm:text-xl text-ink mb-1">Private Tutor — IoT &amp; Applied AI</p>
-          <p class="font-mono text-[12px] text-dim mb-2">Malang, Indonesia</p>
-          <p class="font-display text-[14.5px] text-dim leading-relaxed">Membimbing siswa SMA membangun sistem E-Nose untuk deteksi infeksi bakteri dini — sensor hingga klasifikasi berbasis AI.</p>
+          <p class="font-mono text-[11px] text-accent mb-1.5" data-i18n="exp.e4.period">FREELANCE · BERJALAN</p>
+          <p class="font-display font-semibold text-lg sm:text-xl text-ink mb-1" data-i18n="exp.e4.title">Private Tutor · IoT &amp; Applied AI</p>
+          <p class="font-mono text-[12px] text-dim mb-2" data-i18n="exp.e4.org">Malang, Indonesia</p>
+          <p class="font-display text-[14.5px] text-dim leading-relaxed" data-i18n="exp.e4.desc">Membimbing siswa SMA membangun sistem E-Nose untuk deteksi dini infeksi bakteri, dari sensor hingga klasifikasi berbasis AI.</p>
         </div>
         <div class="hidden sm:flex justify-start pl-4 order-2">
           <div class="w-24 h-24 rounded-full border border-line overflow-hidden shrink-0">
@@ -166,8 +208,8 @@ const MARKUP = `<div class="grain"></div>
 <!-- TODO: perbarui tahun dan ganti href dengan link verifikasi kredensial asli (coursera.org/verify/...) -->
 <section id="certifications" class="relative bg-section px-5 sm:px-10 py-28 sm:py-36 border-t border-line">
   <div class="max-w-3xl mx-auto">
-    <p class="font-mono text-[11px] tracking-[0.25em] text-accent mb-3 reveal">04 — SERTIFIKASI</p>
-    <p class="font-mono text-[11px] text-dim mb-14 reveal">Klik sertifikasi untuk verifikasi kredensial.</p>
+    <p class="font-mono text-[11px] tracking-[0.25em] text-accent mb-3 reveal" data-i18n="cert.label">04 · SERTIFIKASI</p>
+    <p class="font-mono text-[11px] text-dim mb-14 reveal" data-i18n="cert.intro">Klik untuk memverifikasi kredensial.</p>
 
     <div class="border-t border-line reveal reveal-delay-1">
 
@@ -185,7 +227,7 @@ const MARKUP = `<div class="grain"></div>
         <span class="font-mono text-[11px] text-dim group-hover:text-ink transition-colors">02</span>
         <span>
           <h4 class="font-display font-semibold text-ink text-lg leading-snug group-hover:text-mint transition-colors">Google AI Professional Certificate</h4>
-          <p class="font-mono text-[11px] text-dim mt-0.5">Google · 8 kursus</p>
+          <p class="font-mono text-[11px] text-dim mt-0.5" data-i18n="cert.c2Detail">Google · 8 kursus</p>
         </span>
         <span class="font-mono text-[12px] text-ink whitespace-nowrap hidden sm:block">2026</span>
         <svg class="w-4 h-4 text-dim transition-transform group-hover:translate-x-1 group-hover:text-ink hidden sm:block" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg>
@@ -217,23 +259,23 @@ const MARKUP = `<div class="grain"></div>
 <!-- ============ PROYEK ============ -->
 <section id="work" class="relative bg-section px-5 sm:px-10 py-28 sm:py-36 border-t border-line">
   <div class="max-w-3xl mx-auto">
-    <p class="font-mono text-[11px] tracking-[0.25em] text-accent mb-3 reveal">05 — PROYEK</p>
-    <p class="font-mono text-[11px] text-dim mb-14 reveal">Klik proyek untuk lihat detail lengkap.</p>
+    <p class="font-mono text-[11px] tracking-[0.25em] text-accent mb-3 reveal" data-i18n="work.label">05 · PROYEK</p>
+    <p class="font-mono text-[11px] text-dim mb-14 reveal" data-i18n="work.intro">Klik untuk melihat detail proyek.</p>
 
     <!-- Featured: Thesis -->
     <button type="button" data-project="thesis" class="project-trigger group block w-full text-left mb-20 reveal reveal-delay-1">
       <div class="flex items-baseline justify-between gap-4 mb-3">
-        <p class="font-mono text-[11px] text-dim">SKRIPSI · FEB — JUL 2026</p>
+        <p class="font-mono text-[11px] text-dim" data-i18n="work.thesis.eyebrow">SKRIPSI · FEB 2026</p>
         <span class="font-mono text-[11px] text-dim group-hover:text-ink transition-colors flex items-center gap-1.5 shrink-0">
-          Lihat detail
+          <span data-i18n="ui.viewDetail">Lihat detail</span>
           <svg class="w-3 h-3 transition-transform group-hover:translate-x-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
         </span>
       </div>
-      <h3 class="font-display font-semibold text-2xl sm:text-4xl text-ink leading-tight mb-5 max-w-2xl transition-opacity group-hover:opacity-80">
-        Deteksi &amp; klasifikasi sampah hierarkis dengan <span class="text-accent">YOLOv12 + HSCN</span>, mencapai F1 <span class="text-accent">0.844</span> dan mAP <span class="text-accent">0.967</span>.
+      <h3 class="font-display font-semibold text-2xl sm:text-4xl text-ink leading-tight mb-5 max-w-2xl transition-opacity group-hover:opacity-80" data-i18n="work.thesis.heading">
+        Deteksi dan klasifikasi sampah hierarkis dengan <span class="text-accent">YOLOv12 + HSCN</span>, mencapai F1 <span class="text-accent" data-count="0.844" data-decimals="3">0.844</span> dan mAP <span class="text-accent" data-count="0.967" data-decimals="3">0.967</span>.
       </h3>
-      <p class="font-display text-[15px] text-dim leading-relaxed max-w-xl">
-        Pipeline dua tahap: YOLOv12 mendeteksi objek, lalu Hierarchical Sequential Classification Network mengklasifikasikan tiga level hierarki.
+      <p class="font-display text-[15px] text-dim leading-relaxed max-w-xl" data-i18n="work.thesis.desc">
+        Pipeline dua tahap, YOLOv12 mendeteksi objek lalu Hierarchical Sequential Classification Network mengklasifikasikan tiga level hierarki sampah.
       </p>
       <p class="font-mono text-[11px] text-dim mt-5 border-b border-transparent group-hover:border-line pb-1 inline-block">PyTorch · YOLOv12 · Flask · OpenCV</p>
     </button>
@@ -244,50 +286,50 @@ const MARKUP = `<div class="grain"></div>
       <button type="button" data-project="visual-inspection" class="project-trigger group grid grid-cols-[auto_1fr_auto] sm:grid-cols-[auto_1fr_auto_auto] items-center gap-x-4 sm:gap-x-6 w-full text-left py-6 border-b border-line">
         <span class="font-mono text-[11px] text-dim group-hover:text-ink transition-colors">01</span>
         <span>
-          <h4 class="font-display font-semibold text-ink text-lg leading-snug group-hover:text-mint transition-colors">CNN Visual Inspection System</h4>
-          <p class="font-mono text-[11px] text-dim mt-0.5 hidden sm:block">X-Camp, PT XLSmart Telecom Sejahtera</p>
+          <h4 class="font-display font-semibold text-ink text-lg leading-snug group-hover:text-mint transition-colors" data-i18n="work.r1.title">CNN Visual Inspection System</h4>
+          <p class="font-mono text-[11px] text-dim mt-0.5 hidden sm:block" data-i18n="work.r1.sub">X-Camp, PT XLSmart Telecom Sejahtera</p>
         </span>
-        <span class="font-mono text-[12px] text-ink whitespace-nowrap">99.6%</span>
+        <span class="font-mono text-[12px] text-ink whitespace-nowrap" data-count="99.6" data-decimals="1" data-suffix="%">99.6%</span>
         <svg class="w-4 h-4 text-dim transition-transform group-hover:translate-x-1 group-hover:text-ink hidden sm:block" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
       </button>
 
       <button type="button" data-project="rag-chatbot" class="project-trigger group grid grid-cols-[auto_1fr_auto] sm:grid-cols-[auto_1fr_auto_auto] items-center gap-x-4 sm:gap-x-6 w-full text-left py-6 border-b border-line">
         <span class="font-mono text-[11px] text-dim group-hover:text-ink transition-colors">02</span>
         <span>
-          <h4 class="font-display font-semibold text-ink text-lg leading-snug group-hover:text-mint transition-colors">RAG Chatbot — Boat Ticket Booking</h4>
-          <p class="font-mono text-[11px] text-dim mt-0.5 hidden sm:block">PT Amman Mineral Internasional</p>
+          <h4 class="font-display font-semibold text-ink text-lg leading-snug group-hover:text-mint transition-colors" data-i18n="work.r2.title">RAG Chatbot untuk Booking Tiket Kapal</h4>
+          <p class="font-mono text-[11px] text-dim mt-0.5 hidden sm:block" data-i18n="work.r2.sub">PT Amman Mineral Internasional</p>
         </span>
-        <span class="font-mono text-[12px] text-ink whitespace-nowrap">&lt;2s</span>
+        <span class="font-mono text-[12px] text-ink whitespace-nowrap" data-count="2" data-prefix="&lt;" data-suffix="s">&lt;2s</span>
         <svg class="w-4 h-4 text-dim transition-transform group-hover:translate-x-1 group-hover:text-ink hidden sm:block" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
       </button>
 
       <button type="button" data-project="pneumonia" class="project-trigger group grid grid-cols-[auto_1fr_auto] sm:grid-cols-[auto_1fr_auto_auto] items-center gap-x-4 sm:gap-x-6 w-full text-left py-6 border-b border-line">
         <span class="font-mono text-[11px] text-dim group-hover:text-ink transition-colors">03</span>
         <span>
-          <h4 class="font-display font-semibold text-ink text-lg leading-snug group-hover:text-mint transition-colors">Pneumonia Detection dari Chest X-Ray</h4>
-          <p class="font-mono text-[11px] text-dim mt-0.5 hidden sm:block">Proyek pribadi</p>
+          <h4 class="font-display font-semibold text-ink text-lg leading-snug group-hover:text-mint transition-colors" data-i18n="work.r3.title">Pneumonia Detection dari Chest X-Ray</h4>
+          <p class="font-mono text-[11px] text-dim mt-0.5 hidden sm:block" data-i18n="work.r3.sub">Proyek pribadi</p>
         </span>
-        <span class="font-mono text-[12px] text-ink whitespace-nowrap">92%+</span>
+        <span class="font-mono text-[12px] text-ink whitespace-nowrap" data-count="92" data-suffix="%+">92%+</span>
         <svg class="w-4 h-4 text-dim transition-transform group-hover:translate-x-1 group-hover:text-ink hidden sm:block" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
       </button>
 
       <button type="button" data-project="cognitive" class="project-trigger group grid grid-cols-[auto_1fr_auto] sm:grid-cols-[auto_1fr_auto_auto] items-center gap-x-4 sm:gap-x-6 w-full text-left py-6 border-b border-line">
         <span class="font-mono text-[11px] text-dim group-hover:text-ink transition-colors">04</span>
         <span>
-          <h4 class="font-display font-semibold text-ink text-lg leading-snug group-hover:text-mint transition-colors">Cognitive Performance Prediction</h4>
-          <p class="font-mono text-[11px] text-dim mt-0.5 hidden sm:block">Wearable biosignal · Empatica E4</p>
+          <h4 class="font-display font-semibold text-ink text-lg leading-snug group-hover:text-mint transition-colors" data-i18n="work.r4.title">Cognitive Performance Prediction</h4>
+          <p class="font-mono text-[11px] text-dim mt-0.5 hidden sm:block" data-i18n="work.r4.sub">Wearable biosignal · Empatica E4</p>
         </span>
-        <span class="font-mono text-[12px] text-ink whitespace-nowrap">R² 0.68</span>
+        <span class="font-mono text-[12px] text-ink whitespace-nowrap" data-count="0.68" data-decimals="2" data-prefix="R² ">R² 0.68</span>
         <svg class="w-4 h-4 text-dim transition-transform group-hover:translate-x-1 group-hover:text-ink hidden sm:block" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
       </button>
 
       <button type="button" data-project="fluenti" class="project-trigger group grid grid-cols-[auto_1fr_auto] sm:grid-cols-[auto_1fr_auto_auto] items-center gap-x-4 sm:gap-x-6 w-full text-left py-6 border-b border-line">
         <span class="font-mono text-[11px] text-dim group-hover:text-ink transition-colors">05</span>
         <span>
-          <h4 class="font-display font-semibold text-ink text-lg leading-snug group-hover:text-mint transition-colors">FLUENTI — AI Grammar Checker</h4>
-          <p class="font-mono text-[11px] text-dim mt-0.5 hidden sm:block">Fine-tuning LLaMA 3</p>
+          <h4 class="font-display font-semibold text-ink text-lg leading-snug group-hover:text-mint transition-colors" data-i18n="work.r5.title">FLUENTI · AI Grammar Checker</h4>
+          <p class="font-mono text-[11px] text-dim mt-0.5 hidden sm:block" data-i18n="work.r5.sub">Fine-tuning LLaMA 3</p>
         </span>
-        <span class="font-mono text-[12px] text-dim whitespace-nowrap">2024–25</span>
+        <span class="font-mono text-[12px] text-dim whitespace-nowrap">2024-2025</span>
         <svg class="w-4 h-4 text-dim transition-transform group-hover:translate-x-1 group-hover:text-ink hidden sm:block" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
       </button>
     </div>
@@ -309,17 +351,17 @@ const MARKUP = `<div class="grain"></div>
         <div id="modalMetrics" class="flex flex-wrap gap-x-8 gap-y-3 mb-8 pb-8 border-b border-line"></div>
 
         <div class="mb-7">
-          <p class="font-mono text-[10px] tracking-[0.2em] text-dim mb-2">OVERVIEW</p>
+          <p class="font-mono text-[10px] tracking-[0.2em] text-dim mb-2" data-i18n="ui.overview">OVERVIEW</p>
           <p id="modalOverview" class="font-display text-[15px] text-dim leading-relaxed"></p>
         </div>
 
         <div class="mb-7">
-          <p class="font-mono text-[10px] tracking-[0.2em] text-dim mb-3">PENDEKATAN</p>
+          <p class="font-mono text-[10px] tracking-[0.2em] text-dim mb-3" data-i18n="ui.approach">PENDEKATAN</p>
           <ul id="modalApproach" class="space-y-2.5"></ul>
         </div>
 
         <div>
-          <p class="font-mono text-[10px] tracking-[0.2em] text-dim mb-3">TECH STACK</p>
+          <p class="font-mono text-[10px] tracking-[0.2em] text-dim mb-3" data-i18n="ui.stack">TECH STACK</p>
           <div id="modalStack" class="flex flex-wrap gap-2"></div>
         </div>
       </div>
@@ -330,26 +372,32 @@ const MARKUP = `<div class="grain"></div>
 <!-- ============ PUBLIKASI ============ -->
 <section id="publications" class="relative bg-section px-5 sm:px-10 py-28 sm:py-36 border-t border-line">
   <div class="max-w-3xl mx-auto">
-    <p class="font-mono text-[11px] tracking-[0.25em] text-accent mb-14 reveal">06 — PUBLIKASI</p>
+    <p class="font-mono text-[11px] tracking-[0.25em] text-accent mb-14 reveal" data-i18n="pub.label">06 · PUBLIKASI</p>
 
     <div class="reveal reveal-delay-1">
       <h3 class="font-display font-semibold text-xl sm:text-2xl text-ink leading-snug mb-3 max-w-2xl border-b border-transparent hover:border-line transition-colors inline">
         Deteksi dan Klasifikasi Sampah Bertingkat Menggunakan YOLOv12 dan Hierarchical Sibling Classification Network
       </h3>
-      <p class="font-mono text-[12px] text-dim">SENTRIN 2026 — Seminar Nasional Teknologi dan Rekayasa Informasi · <span class="text-accent">Dalam persiapan</span></p>
+      <p class="font-mono text-[12px] text-dim" data-i18n="pub.venue">SENTRIN 2026 · Seminar Nasional Teknologi dan Rekayasa Informasi · <span class="text-accent">Dalam persiapan</span></p>
     </div>
   </div>
 </section>
 
 <!-- ============ SKILLS & TOOLS (marquee) ============ -->
 <section id="skills" class="relative bg-section py-24 sm:py-28 border-t border-b border-line overflow-hidden">
-  <p class="font-mono text-[11px] tracking-[0.25em] text-accent px-5 sm:px-10 max-w-3xl mx-auto mb-12 reveal">07 — SKILLS &amp; TOOLS</p>
+  <p class="font-mono text-[11px] tracking-[0.25em] text-accent px-5 sm:px-10 max-w-3xl mx-auto mb-4 reveal" data-i18n="skills.label">07 · SKILLS &amp; TOOLS</p>
+  <p class="font-mono text-[11px] text-dim px-5 sm:px-10 max-w-3xl mx-auto mb-12 reveal" data-i18n="skills.intro">Toolkit yang saya gunakan di riset, produksi, dan eksperimen.</p>
 
   <div class="relative">
-    <div class="pointer-events-none absolute inset-y-0 left-0 w-16 sm:w-32 z-10 bg-gradient-to-r from-bg to-transparent"></div>
-    <div class="pointer-events-none absolute inset-y-0 right-0 w-16 sm:w-32 z-10 bg-gradient-to-l from-bg to-transparent"></div>
-    <div class="overflow-hidden">
-      <div id="marqueeTrack" class="flex gap-12 w-max marquee-track"></div>
+    <div class="pointer-events-none absolute inset-y-0 left-0 w-12 sm:w-28 z-10 bg-gradient-to-r from-bg to-transparent"></div>
+    <div class="pointer-events-none absolute inset-y-0 right-0 w-12 sm:w-28 z-10 bg-gradient-to-l from-bg to-transparent"></div>
+    <div class="space-y-8">
+      <div class="overflow-hidden">
+        <div id="marqueeTrack" class="flex gap-3 w-max marquee-track"></div>
+      </div>
+      <div class="overflow-hidden">
+        <div id="marqueeTrackReverse" class="flex gap-3 w-max marquee-track marquee-track-reverse"></div>
+      </div>
     </div>
   </div>
 </section>
@@ -357,8 +405,8 @@ const MARKUP = `<div class="grain"></div>
 <!-- ============ KONTAK ============ -->
 <section id="contact" class="relative bg-section px-5 sm:px-10 pt-28 sm:pt-36 pb-44 border-t border-line">
   <div class="max-w-2xl mx-auto text-center">
-    <p class="font-mono text-[11px] tracking-[0.25em] text-accent mb-6 reveal">08 — KONTAK</p>
-    <h2 class="font-display font-semibold text-3xl sm:text-5xl text-ink leading-tight mb-8 reveal reveal-delay-1">Mari membangun sesuatu bersama.</h2>
+    <p class="font-mono text-[11px] tracking-[0.25em] text-accent mb-6 reveal" data-i18n="contact.label">08 · KONTAK</p>
+    <h2 class="font-display font-semibold text-3xl sm:text-5xl text-ink leading-tight mb-8 reveal reveal-delay-1"><span data-i18n="contact.heading">Mari membangun sesuatu yang berdampak bersama.</span></h2>
 
     <button id="copyEmailBtn" type="button" class="group relative inline-block font-mono text-lg sm:text-2xl text-ink reveal reveal-delay-1">
       <span id="copyEmailText">afinatsal41@gmail.com</span>
@@ -366,21 +414,21 @@ const MARKUP = `<div class="grain"></div>
     </button>
 
     <div class="flex items-center justify-center gap-7 mt-9 font-mono text-[12px] text-dim reveal reveal-delay-2">
-      <a href="https://linkedin.com/in/afinatsal" target="_blank" rel="noopener" class="flex items-center gap-1.5 hover:text-ink transition-colors">
+      <a href="https://linkedin.com/in/afinatsal" target="_blank" rel="noopener" class="contact-link flex items-center gap-1.5 hover:text-ink transition-colors">
         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
         LinkedIn
       </a>
-      <a href="https://github.com/afinatsal" target="_blank" rel="noopener" class="flex items-center gap-1.5 hover:text-ink transition-colors">
+      <a href="https://github.com/afinatsal" target="_blank" rel="noopener" class="contact-link flex items-center gap-1.5 hover:text-ink transition-colors">
         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg>
         GitHub
       </a>
-      <a href="mailto:afinatsal41@gmail.com" class="flex items-center gap-1.5 hover:text-ink transition-colors">
+      <a href="mailto:afinatsal41@gmail.com" class="contact-link flex items-center gap-1.5 hover:text-ink transition-colors">
         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m4 7 8 6 8-6"/></svg>
-        Email
+        <span data-i18n="contact.email">Email</span>
       </a>
-      <a href="./CV_Afin_Atsal.pdf" download class="flex items-center gap-1.5 hover:text-ink transition-colors">
+      <a href="./CV_Afin_Atsal.pdf" download class="contact-link flex items-center gap-1.5 hover:text-ink transition-colors">
         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0-4-4m4 4 4-4"/><path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>
-        CV
+        <span data-i18n="contact.cv">CV</span>
       </a>
     </div>
 
@@ -388,26 +436,26 @@ const MARKUP = `<div class="grain"></div>
   </div>
 </section>
 
-<!-- floating dock navbar — icon symbols, macOS-dock style magnification -->
+<!-- floating dock navbar · icon symbols, macOS-dock style magnification -->
 <nav id="dock" class="fixed bottom-9 left-1/2 -translate-x-1/2 z-20 flex items-end gap-2 px-4 py-3 rounded-full border border-line bg-panel/60 backdrop-blur-xl shadow-[0_8px_40px_rgba(0,0,0,0.5)]">
   <a href="#home" data-label="Home" class="dock-link active-dock relative flex items-center justify-center w-11 h-11 rounded-full text-ink transition-colors" style="transform-origin:bottom center;">
-    <span class="dock-tooltip">Home</span>
+    <span class="dock-tooltip" data-i18n="dock.home">Home</span>
     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11.5 12 4l9 7.5"/><path d="M5.5 10v9a1 1 0 0 0 1 1H10v-6h4v6h3.5a1 1 0 0 0 1-1v-9"/></svg>
   </a>
   <a href="#about" data-label="Tentang" class="dock-link relative flex items-center justify-center w-11 h-11 rounded-full text-dim transition-colors" style="transform-origin:bottom center;">
-    <span class="dock-tooltip">Tentang</span>
+    <span class="dock-tooltip" data-i18n="dock.about">Tentang</span>
     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="3.5"/><path d="M5 20c0-3.9 3.1-7 7-7s7 3.1 7 7"/></svg>
   </a>
   <a href="#work" data-label="Proyek" class="dock-link relative flex items-center justify-center w-11 h-11 rounded-full text-dim transition-colors" style="transform-origin:bottom center;">
-    <span class="dock-tooltip">Proyek</span>
+    <span class="dock-tooltip" data-i18n="dock.work">Proyek</span>
     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1.3"/><rect x="14" y="3" width="7" height="7" rx="1.3"/><rect x="3" y="14" width="7" height="7" rx="1.3"/><rect x="14" y="14" width="7" height="7" rx="1.3"/></svg>
   </a>
   <a href="#certifications" data-label="Sertifikasi" class="dock-link relative flex items-center justify-center w-11 h-11 rounded-full text-dim transition-colors" style="transform-origin:bottom center;">
-    <span class="dock-tooltip">Sertifikasi</span>
+    <span class="dock-tooltip" data-i18n="dock.certs">Sertifikasi</span>
     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M15.5 13 17 22l-5-3-5 3 1.5-9"/></svg>
   </a>
   <a href="#contact" data-label="Kontak" class="dock-link relative flex items-center justify-center w-11 h-11 rounded-full text-dim transition-colors" style="transform-origin:bottom center;">
-    <span class="dock-tooltip">Kontak</span>
+    <span class="dock-tooltip" data-i18n="dock.contact">Kontak</span>
     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m4 7 8 6 8-6"/></svg>
   </a>
 </nav>
@@ -426,9 +474,172 @@ const MARKUP = `<div class="grain"></div>
   .dock-link:hover:not(.active-dock){ background:rgba(191,250,245,0.1); color:#74E6D5; }
   .dock-link{ transition: transform 150ms ease-out; }
   .dock-link:hover{ transform: translateY(-4px) scale(1.12); }
+  .dock-link:active{ transform: translateY(-2px) scale(0.96); }
 </style>`;
 
 const LEGACY_SCRIPT = `
+/* ================= INTERNATIONALIZATION (language switcher) ================= */
+(function(){
+  const T = window.__I18N;
+  if(!T) return;
+  if(window.__afinI18nActive) return; // React StrictMode double-run guard
+  window.__afinI18nActive = true;
+
+  function resolve(code){
+    if(T[code]) return code;
+    const n = String(code || '').toLowerCase().split('-')[0];
+    return T[n] ? n : 'id';
+  }
+  function detect(){
+    const nav = (navigator.language || 'id').toLowerCase();
+    if(nav.startsWith('zh')) return 'zh';
+    if(nav.startsWith('ja')) return 'ja';
+    if(nav.startsWith('en')) return 'en';
+    return 'id';
+  }
+
+  let lang;
+  try{ lang = resolve(localStorage.getItem('afin_lang') || detect()); }
+  catch(err){ lang = 'id'; }
+  window.__LANG = lang;
+
+  function getVal(o, path){ return path.split('.').reduce((a, k) => (a == null ? a : a[k]), o); }
+
+  function apply(){
+    lang = window.__LANG;
+    const D = T[lang] || T.id;
+    document.documentElement.setAttribute('lang', D.doc || 'id');
+    if(D.meta && D.meta.title) document.title = D.meta.title;
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const v = getVal(D, el.getAttribute('data-i18n'));
+      if(typeof v === 'string') el.innerHTML = v;
+    });
+    document.querySelectorAll('[data-lang]').forEach(btn => {
+      btn.classList.toggle('lang-active', btn.getAttribute('data-lang') === lang);
+    });
+    document.dispatchEvent(new CustomEvent('afin:lang', { detail: lang }));
+  }
+
+  document.addEventListener('click', e => {
+    const btn = e.target.closest('.lang-pill [data-lang]');
+    if(!btn) return;
+    const next = btn.getAttribute('data-lang');
+    if(!T[next] || next === window.__LANG) return;
+    window.__LANG = next;
+    try{ localStorage.setItem('afin_lang', next); }catch(err){}
+    apply();
+  });
+
+  apply();
+})();
+
+/* ================= LOADING SCREEN (CLI boot + split-door reveal) ================= */
+(function(){
+  const loader = document.getElementById('loader');
+  if(!loader) return;
+  const log = document.getElementById('loaderLog');
+  const bar = document.getElementById('loaderBar');
+  const pct = document.getElementById('loaderPct');
+  const statusEl = document.getElementById('loaderStatus');
+  if(!log || !bar || !pct || !statusEl){ loader.remove(); return; }
+
+  // React StrictMode double-runs this effect in dev (mount -> cleanup -> mount).
+  // Let the first instance own the loader; ignore every later one.
+  if(window.__afinLoaderActive) return;
+  window.__afinLoaderActive = true;
+
+  // play the intro once per browser session
+  if(sessionStorage.getItem('afin_loader')){
+    document.body.classList.add('ready');
+    loader.remove();
+    return;
+  }
+  sessionStorage.setItem('afin_loader', '1');
+
+  if(window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+    document.body.classList.add('ready');
+    loader.remove();
+    return;
+  }
+
+  document.body.classList.add('loading');
+
+  const LINES = [
+    '$ init afin.dev',
+    'ok  dither canvas',
+    'ok  weights loaded',
+    'ok  cv_pipeline up',
+    'ok  uplink github',
+    '->  ready.',
+  ];
+  const CHAR_MS = 9;
+  const PAUSE_MS = 90;
+  const CURSOR = '\u258C';
+
+  // --- typewriter: reveal log lines one by one ---
+  let lineIdx = 0, charsOut = 0;
+  function typeLine(){
+    if(lineIdx >= LINES.length){ return; }
+    const line = LINES[lineIdx];
+    if(charsOut >= line.length){
+      log.textContent += '\\n';
+      charsOut = 0; lineIdx++;
+      setTimeout(typeLine, PAUSE_MS);
+      return;
+    }
+    const span = document.createElement('span');
+    span.textContent = line.slice(charsOut, charsOut + 1);
+    log.appendChild(span);
+    charsOut++;
+    setTimeout(typeLine, CHAR_MS);
+  }
+  setTimeout(typeLine, 700);
+
+  // --- progress: counter, bar and status sync ---
+  const STEPS = [
+    [0,   'BOOTING'],
+    [32,  'STREAMING'],
+    [64,  'MAPPING'],
+    [92,  'LINKING'],
+  ];
+  const DURATION = 2100;
+  const start = performance.now();
+
+  function stepLabel(p){
+    let label = 'READY';
+    for(let i = STEPS.length - 1; i >= 0; i--){
+      if(p >= STEPS[i][0]){ label = STEPS[i][1]; break; }
+    }
+    return label;
+  }
+
+  function reveal(){
+    if(!loader.isConnected) return;
+    document.body.classList.remove('loading');
+    document.body.classList.add('ready');
+    bar.style.width = '100%';
+    pct.textContent = '100';
+    statusEl.textContent = 'READY';
+    loader.classList.add('loader-open');
+    loader.style.pointerEvents = 'none';
+    setTimeout(() => { if(loader.isConnected) loader.remove(); }, 1150);
+  }
+
+  // fail-safe: never leave the visitor trapped on the loader
+  setTimeout(reveal, 3200);
+
+  function tick(now){
+    if(!loader.isConnected) return;
+    const p = Math.min((now - start) / DURATION, 1);
+    bar.style.width = (p * 100).toFixed(1) + '%';
+    pct.textContent = String(Math.round(p * 100)).padStart(3, '0');
+    statusEl.textContent = stepLabel(p * 100);
+    if(p < 1) requestAnimationFrame(tick);
+    else reveal();
+  }
+  requestAnimationFrame(tick);
+})();
+
 /* ================= DITHER BACKGROUND (Bayer ordered dithering + ambient drift) ================= */
 (function(){
   const BAYER_4X4 = [
@@ -587,7 +798,7 @@ const LEGACY_SCRIPT = `
   const links = document.querySelectorAll('nav a.dock-link');
   const sections = Array.from(links).map(a => document.querySelector(a.getAttribute('href'))).filter(Boolean);
   const hudSection = document.getElementById('hudSection');
-  const labels = { home:'01 — HOME', about:'02 — ABOUT', experience:'03 — EXPERIENCE', certifications:'04 — SERTIFIKASI', work:'05 — PROYEK', publications:'06 — PUBLIKASI', skills:'07 — SKILLS', contact:'08 — KONTAK' };
+  const labels = { home:'01 · HOME', about:'02 · ABOUT', experience:'03 · EXPERIENCE', certifications:'04 · SERTIFIKASI', work:'05 · PROYEK', publications:'06 · PUBLIKASI', skills:'07 · SKILLS', contact:'08 · KONTAK' };
   window.addEventListener('scroll', () => {
     let current = sections[0];
     sections.forEach(sec => { if(sec && window.scrollY >= sec.offsetTop - window.innerHeight/2) current = sec; });
@@ -601,7 +812,7 @@ const LEGACY_SCRIPT = `
 })();
 
 /* Dock hover magnification is now handled purely by CSS (see .dock-link:hover
-   rule below) instead of a per-frame JS loop — removes the lag/stiffness that
+   rule below) instead of a per-frame JS loop · removes the lag/stiffness that
    came from recalculating transforms on every mousemove. */
 
 /* ================= SCROLL REVEAL ================= */
@@ -632,83 +843,12 @@ const LEGACY_SCRIPT = `
 
 /* ================= PROJECT DETAIL MODAL ================= */
 (function(){
-  const PROJECTS = {
-    thesis: {
-      eyebrow: 'SKRIPSI · AI ENGINEERING & COMPUTER VISION',
-      title: 'Multi-Stage Waste Detection — YOLOv12 + HSCN',
-      metrics: [['F1-Score','0.844'], ['mAP','0.967'], ['Dataset','2.116 gambar']],
-      overview: 'Pipeline dua tahap untuk deteksi dan klasifikasi sampah: YOLOv12 mendeteksi objek dalam frame, lalu Hierarchical Sequential Classification Network (HSCN) mengklasifikasikan tiga level hierarki — status pengelolaan, jenis material, dan objek spesifik. Dataset custom dikurasi dari TrashNet, Kaggle, TACO, dan RealWaste (2.116 gambar, 2.582 anotasi bounding box).',
-      approach: [
-        'Membandingkan 3 varian YOLOv12 (S/M/L) untuk tahap deteksi objek',
-        'Membenchmark 6 backbone HSCN: ResNet18/50/101, EfficientNet-B3, ConvNeXt-Small, MobileNetV3-Large',
-        'Merancang skema klasifikasi hierarkis 3 level dengan mekanisme STOP-class untuk anotasi parsial',
-        'Membangun aplikasi inferensi Flask dengan mode perbandingan backbone untuk demo sidang'
-      ],
-      stack: ['PyTorch','YOLOv12','Flask','OpenCV','ConvNeXt']
-    },
-    'visual-inspection': {
-      eyebrow: 'X-CAMP · PT XLSMART TELECOM SEJAHTERA · 2025',
-      title: 'CNN Visual Inspection System',
-      metrics: [['Akurasi','99.6%'], ['Presisi','95.8%'], ['Recall','100%'], ['mAP@50','99.6%']],
-      overview: 'Sistem computer vision untuk otomasi deteksi defect di lini produksi, dibangun dalam program MBKM X-Camp dengan metodologi Agile-Scrum sprint mingguan. Terintegrasi dengan dashboard ThingsBoard untuk monitoring produksi real-time.',
-      approach: [
-        'Melatih model CNN untuk klasifikasi defect pada citra produk lini produksi',
-        'Mengintegrasikan output model ke dashboard ThingsBoard secara real-time',
-        'Turut membangun Object Removal Detection dengan OpenCV template matching (multi-scale, normalized cross-correlation) untuk monitoring alat keselamatan',
-        'Mengembangkan status logic Detected / Partially Blocked / Missing dengan real-time alerting'
-      ],
-      stack: ['CNN','OpenCV','ThingsBoard','Python']
-    },
-    'rag-chatbot': {
-      eyebrow: 'PT AMMAN MINERAL INTERNASIONAL · 2025',
-      title: 'RAG Chatbot — Boat Ticket Booking',
-      metrics: [['Latensi API','<2s'], ['Bahasa','ID / EN']],
-      overview: 'Back-end dan sistem AI untuk chatbot interaktif berbasis RAG yang mengotomasi pemesanan tiket kapal dalam ekosistem SuperApps internal perusahaan, dengan percakapan multi-turn bilingual dan memori kontekstual.',
-      approach: [
-        'Merancang arsitektur microservices modular dengan FastAPI',
-        'Mengintegrasikan data jadwal real-time dengan PostgreSQL + PGVector untuk semantic search',
-        'Mengimplementasikan pipeline RAG dengan Google Gemini API untuk percakapan multi-turn bilingual',
-        'Validasi sistem lewat Postman API testing dan integrasi front-end Flutter'
-      ],
-      stack: ['FastAPI','PostgreSQL','PGVector','Gemini API','Flutter']
-    },
-    pneumonia: {
-      eyebrow: 'PROYEK PRIBADI · MARET 2024',
-      title: 'Pneumonia Detection dari Chest X-Ray Images',
-      metrics: [['Akurasi Validasi','92%+']],
-      overview: 'Convolutional Neural Network untuk mengklasifikasikan citra chest X-ray guna mendeteksi pneumonia dengan sensitivitas dan spesifisitas tinggi, dengan penanganan khusus untuk dataset yang imbalanced.',
-      approach: [
-        'Preprocessing data: normalisasi, augmentasi, dan class balancing',
-        'Merancang arsitektur CNN custom dengan dropout dan batch normalization untuk mencegah overfitting',
-        'Memvisualisasikan learning curve dan confusion matrix untuk interpretasi performa model'
-      ],
-      stack: ['TensorFlow','Keras','OpenCV']
-    },
-    cognitive: {
-      eyebrow: 'AI ENGINEERING & DATA ANALYTICS · 2025',
-      title: 'Cognitive Performance Prediction based on Wearable Exam Stress Data',
-      metrics: [['R² Score','0.68']],
-      overview: 'Pipeline machine learning untuk memprediksi nilai ujian mahasiswa berdasarkan data biosignal (HR, EDA, TEMP, ACC) yang dikumpulkan dari wearable sensor Empatica E4.',
-      approach: [
-        'Preprocessing sinyal: denoising, sliding window segmentation, feature extraction, normalisasi',
-        'Membangun dan tuning Random Forest Regressor untuk memetakan fitur fisiologis ke performa akademik',
-        'Evaluasi model dengan R² pada test set'
-      ],
-      stack: ['Python','Scikit-learn','Pandas','NumPy']
-    },
-    fluenti: {
-      eyebrow: 'AI ENGINEERING · FEB 2024 — MEI 2025',
-      title: 'FLUENTI — AI Grammar Checking Model',
-      metrics: [['Base Model','LLaMA 3'], ['Evaluasi','BLEU & Edit Distance']],
-      overview: 'Model AI grammar checking dengan pendekatan fine-tuning LLaMA 3, diselaraskan dengan target output menggunakan dataset domain-specific Grammarly CoEdit.',
-      approach: [
-        'Preprocessing dan tokenisasi dataset Grammarly CoEdit',
-        'Fine-tuning LLaMA 3 dengan pendekatan alignment ke target output',
-        'Evaluasi performa model menggunakan metrik BLEU dan edit distance'
-      ],
-      stack: ['LLaMA 3','Hugging Face','Python']
-    }
-  };
+  let openId = null;
+
+  function projectById(id){
+    const I = window.__I18N && (window.__I18N[window.__LANG] || window.__I18N.id);
+    return I ? I.projects[id] : null;
+  }
 
   const modal = document.getElementById('projectModal');
   const backdrop = document.getElementById('modalBackdrop');
@@ -724,19 +864,20 @@ const LEGACY_SCRIPT = `
   const elStack = document.getElementById('modalStack');
 
   function openModal(id){
-    const p = PROJECTS[id];
+    const p = projectById(id);
     if(!p) return;
+    openId = id;
 
-    elEyebrow.textContent = p.eyebrow;
-    elTitle.textContent = p.title;
-    elOverview.textContent = p.overview;
+    elEyebrow.innerHTML = p.eyebrow;
+    elTitle.innerHTML = p.title;
+    elOverview.innerHTML = p.overview;
 
     elMetrics.innerHTML = p.metrics.map(([label,val]) =>
       \`<div><p class="font-display font-semibold text-xl text-ink">\${val}</p><p class="font-mono text-[10px] text-dim tracking-wide mt-0.5">\${label}</p></div>\`
     ).join('');
 
     elApproach.innerHTML = p.approach.map(item =>
-      \`<li class="flex gap-3 font-display text-[15px] text-dim leading-relaxed"><span class="text-ink shrink-0">—</span><span>\${item}</span></li>\`
+      \`<li class="flex gap-3 font-display text-[15px] text-dim leading-relaxed"><span class="text-ink shrink-0">→</span><span>\${item}</span></li>\`
     ).join('');
 
     elStack.innerHTML = p.stack.map(s =>
@@ -753,6 +894,7 @@ const LEGACY_SCRIPT = `
   }
 
   function closeModal(){
+    openId = null;
     backdrop.style.opacity = '0';
     panel.style.opacity = '0';
     panel.style.transform = 'translateY(24px)';
@@ -766,6 +908,7 @@ const LEGACY_SCRIPT = `
   closeBtn.addEventListener('click', closeModal);
   backdrop.addEventListener('click', closeModal);
   document.addEventListener('keydown', e => { if(e.key === 'Escape' && !modal.classList.contains('hidden')) closeModal(); });
+  document.addEventListener('afin:lang', () => { if(openId) openModal(openId); });
 })();
 
 /* ================= COPY EMAIL TO CLIPBOARD ================= */
@@ -777,20 +920,60 @@ const LEGACY_SCRIPT = `
 
   btn.addEventListener('click', () => {
     navigator.clipboard?.writeText(email).catch(() => {});
-    textEl.textContent = 'Tersalin ke clipboard!';
+    const I = window.__I18N && (window.__I18N[window.__LANG] || window.__I18N.id);
+    textEl.textContent = (I && I.contact && I.contact.copied) || 'Tersalin ke clipboard!';
     setTimeout(() => { textEl.textContent = email; }, 1600);
   });
 })();
 
+/* ================= ANIMATED COUNTERS ================= */
+(function(){
+  const els = document.querySelectorAll('[data-count]');
+  if(!els.length) return;
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  function run(el){
+    const target = parseFloat(el.dataset.count);
+    const decimals = parseInt(el.dataset.decimals || 0, 10);
+    const prefix = el.dataset.prefix || '';
+    const suffix = el.dataset.suffix || '';
+    if(reduce){
+      el.textContent = prefix + target.toFixed(decimals) + suffix;
+      return;
+    }
+    const duration = 1400;
+    const start = performance.now();
+    function tick(now){
+      const p = Math.min((now - start) / duration, 1);
+      const eased = 1 - Math.pow(1 - p, 4);
+      const val = decimals ? (target * eased).toFixed(decimals) : Math.round(target * eased);
+      el.textContent = prefix + val + suffix;
+      if(p < 1) requestAnimationFrame(tick);
+    }
+    requestAnimationFrame(tick);
+  }
+
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting){
+        io.unobserve(entry.target);
+        run(entry.target);
+      }
+    });
+  }, { threshold: 0.6 });
+  els.forEach(el => io.observe(el));
+})();
+
 /* ================= SKILLS & TOOLS MARQUEE (with logos) ================= */
 (function(){
-  const track = document.getElementById('marqueeTrack');
-  if(!track) return;
+  const trackMain = document.getElementById('marqueeTrack');
+  const trackReverse = document.getElementById('marqueeTrackReverse');
+  if(!trackMain && !trackReverse) return;
 
   // slug = Simple Icons slug (cdn.simpleicons.org). If a logo doesn't exist
-  // there, the onerror handler below just hides the broken image and the
-  // tool name still shows on its own.
-  const TOOLS = [
+  // there, the onerror handler below hides the broken image and a neutral
+  // ring marker takes its place.
+  const AI_ML = [
     { name: 'Python', slug: 'python' },
     { name: 'PyTorch', slug: 'pytorch' },
     { name: 'TensorFlow', slug: 'tensorflow' },
@@ -802,6 +985,9 @@ const LEGACY_SCRIPT = `
     { name: 'Hugging Face', slug: 'huggingface' },
     { name: 'YOLO', slug: '' },
     { name: 'LangChain', slug: 'langchain' },
+  ];
+
+  const DATA_WEB = [
     { name: 'FastAPI', slug: 'fastapi' },
     { name: 'Gradio', slug: 'gradio' },
     { name: 'PostgreSQL', slug: 'postgresql' },
@@ -820,14 +1006,15 @@ const LEGACY_SCRIPT = `
 
   function renderItem(tool, hidden){
     const iconHtml = tool.slug
-      ? \`<img src="https://cdn.simpleicons.org/\${tool.slug}/9CA6AA" alt="" class="w-5 h-5 shrink-0" loading="lazy" onerror="this.style.display='none'" />\`
-      : '';
-    return \`<span class="flex items-center gap-2.5 font-mono text-lg text-dim whitespace-nowrap px-2"\${hidden ? ' aria-hidden="true"' : ''}>\${iconHtml}\${tool.name}</span>\`;
+      ? \`<img src="https://cdn.simpleicons.org/\${tool.slug}/74E6D5" alt="" class="w-4 h-4 shrink-0" loading="lazy" onerror="this.style.display='none'" />\`
+      : \`<span class="w-4 h-4 shrink-0 rounded-full border border-line" aria-hidden="true"></span>\`;
+    return \`<span class="flex items-center gap-3 font-mono text-[13px] sm:text-sm text-ink border border-line bg-panel rounded-full pl-4 pr-5 py-2.5 whitespace-nowrap transition-colors hover:border-accent/60"\${hidden ? ' aria-hidden="true"' : ''}>\${iconHtml}\${tool.name}</span>\`;
   }
 
   // render twice back-to-back for a seamless infinite-loop marquee
-  const html = TOOLS.map(t => renderItem(t, false)).join('') + TOOLS.map(t => renderItem(t, true)).join('');
-  track.innerHTML = html;
+  const build = items => items.map(t => renderItem(t, false)).join('') + items.map(t => renderItem(t, true)).join('');
+  if(trackMain) trackMain.innerHTML = build(AI_ML);
+  if(trackReverse) trackReverse.innerHTML = build(DATA_WEB);
 })();
 `;
 
@@ -835,6 +1022,9 @@ export default function App() {
   const containerRef = useRef(null);
 
   useEffect(() => {
+    // Make the translation dictionary available to the vanilla LEGACY_SCRIPT.
+    window.__I18N = TRANSLATIONS;
+
     // Run the original script once the markup is in the DOM.
     const scriptEl = document.createElement('script');
     scriptEl.type = 'text/javascript';
