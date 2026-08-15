@@ -87,13 +87,13 @@ const MARKUP = `<div class="grain"></div>
       <div class="relative flex flex-col sm:grid sm:grid-cols-2 sm:gap-10 items-start sm:items-center mb-14 sm:mb-20 pl-8 sm:pl-0">
         <span class="absolute left-0 sm:left-1/2 top-1.5 sm:top-1/2 sm:-translate-y-1/2 -translate-x-1/2 w-2.5 h-2.5 rounded-full bg-ink z-10"></span>
         <div class="hidden sm:flex justify-end pr-4">
-          <div class="w-24 h-24 rounded-full border border-line bg-panel overflow-hidden flex items-center justify-center shrink-0">
-            <svg class="w-7 h-7 text-dim opacity-40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="8.5" cy="10.5" r="1.5"/><path d="m21 15-5-5L5 19"/></svg>
+          <div class="w-24 h-24 rounded-full border border-line overflow-hidden shrink-0">
+            <img src="./Instruktur-Praktikum-Python.jpeg" alt="Foto Instruktur Praktikum Python" class="w-full h-full object-cover" loading="lazy" />
           </div>
         </div>
         <div class="sm:pl-10 text-left">
-          <div class="sm:hidden w-10 h-10 rounded-full border border-line bg-panel overflow-hidden flex items-center justify-center shrink-0 mb-2.5">
-            <svg class="w-4 h-4 text-dim opacity-40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="8.5" cy="10.5" r="1.5"/><path d="m21 15-5-5L5 19"/></svg>
+          <div class="sm:hidden w-10 h-10 rounded-full border border-line overflow-hidden shrink-0 mb-2.5">
+            <img src="./Instruktur-Praktikum-Python.jpeg" alt="Foto Instruktur Praktikum Python" class="w-full h-full object-cover" loading="lazy" />
           </div>
           <p class="font-mono text-[11px] text-accent mb-1.5">FEB 2026 — SEKARANG</p>
           <p class="font-display font-semibold text-lg sm:text-xl text-ink mb-1">Instruktur Praktikum Python</p>
@@ -106,8 +106,8 @@ const MARKUP = `<div class="grain"></div>
       <div class="relative flex flex-col sm:grid sm:grid-cols-2 sm:gap-10 items-start sm:items-center mb-14 sm:mb-20 pl-8 sm:pl-0">
         <span class="absolute left-0 sm:left-1/2 top-1.5 sm:top-1/2 sm:-translate-y-1/2 -translate-x-1/2 w-2.5 h-2.5 rounded-full bg-ink z-10"></span>
         <div class="sm:pr-10 sm:text-right text-left order-2 sm:order-1">
-          <div class="sm:hidden w-10 h-10 rounded-full border border-line bg-panel overflow-hidden flex items-center justify-center shrink-0 mb-2.5">
-            <svg class="w-4 h-4 text-dim opacity-40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="8.5" cy="10.5" r="1.5"/><path d="m21 15-5-5L5 19"/></svg>
+          <div class="sm:hidden w-10 h-10 rounded-full border border-line overflow-hidden shrink-0 mb-2.5">
+            <img src="./MBKM-XL-Smart.jpeg" alt="Foto MBKM X-Camp XLSmart" class="w-full h-full object-cover" loading="lazy" />
           </div>
           <p class="font-mono text-[11px] text-accent mb-1.5">AGU — DES 2025</p>
           <p class="font-display font-semibold text-lg sm:text-xl text-ink mb-1">AI/ML Engineer (MBKM)</p>
@@ -115,8 +115,8 @@ const MARKUP = `<div class="grain"></div>
           <p class="font-display text-[14.5px] text-dim leading-relaxed">Membangun sistem visual inspection CNN (99.6% akurasi), object removal detection dengan OpenCV, dan chatbot RAG internal — metodologi Agile-Scrum.</p>
         </div>
         <div class="hidden sm:flex justify-start pl-4 order-2">
-          <div class="w-24 h-24 rounded-full border border-line bg-panel overflow-hidden flex items-center justify-center shrink-0">
-            <svg class="w-7 h-7 text-dim opacity-40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="8.5" cy="10.5" r="1.5"/><path d="m21 15-5-5L5 19"/></svg>
+          <div class="w-24 h-24 rounded-full border border-line overflow-hidden shrink-0">
+            <img src="./MBKM-XL-Smart.jpeg" alt="Foto MBKM X-Camp XLSmart" class="w-full h-full object-cover" loading="lazy" />
           </div>
         </div>
       </div>
@@ -125,13 +125,13 @@ const MARKUP = `<div class="grain"></div>
       <div class="relative flex flex-col sm:grid sm:grid-cols-2 sm:gap-10 items-start sm:items-center mb-14 sm:mb-20 pl-8 sm:pl-0">
         <span class="absolute left-0 sm:left-1/2 top-1.5 sm:top-1/2 sm:-translate-y-1/2 -translate-x-1/2 w-2.5 h-2.5 rounded-full bg-ink z-10"></span>
         <div class="hidden sm:flex justify-end pr-4">
-          <div class="w-24 h-24 rounded-full border border-line bg-panel overflow-hidden flex items-center justify-center shrink-0">
-            <svg class="w-7 h-7 text-dim opacity-40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="8.5" cy="10.5" r="1.5"/><path d="m21 15-5-5L5 19"/></svg>
+          <div class="w-24 h-24 rounded-full border border-line overflow-hidden shrink-0">
+            <img src="./Intern-Amman.jpeg" alt="Foto Internship PT Amman Mineral" class="w-full h-full object-cover" loading="lazy" />
           </div>
         </div>
         <div class="sm:pl-10 text-left">
-          <div class="sm:hidden w-10 h-10 rounded-full border border-line bg-panel overflow-hidden flex items-center justify-center shrink-0 mb-2.5">
-            <svg class="w-4 h-4 text-dim opacity-40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="8.5" cy="10.5" r="1.5"/><path d="m21 15-5-5L5 19"/></svg>
+          <div class="sm:hidden w-10 h-10 rounded-full border border-line overflow-hidden shrink-0 mb-2.5">
+            <img src="./Intern-Amman.jpeg" alt="Foto Internship PT Amman Mineral" class="w-full h-full object-cover" loading="lazy" />
           </div>
           <p class="font-mono text-[11px] text-accent mb-1.5">JUL — AGU 2025</p>
           <p class="font-display font-semibold text-lg sm:text-xl text-ink mb-1">Back-End &amp; AI System Developer</p>
@@ -144,8 +144,8 @@ const MARKUP = `<div class="grain"></div>
       <div class="relative flex flex-col sm:grid sm:grid-cols-2 sm:gap-10 items-start sm:items-center pl-8 sm:pl-0">
         <span class="absolute left-0 sm:left-1/2 top-1.5 sm:top-1/2 sm:-translate-y-1/2 -translate-x-1/2 w-2.5 h-2.5 rounded-full bg-ink z-10"></span>
         <div class="sm:pr-10 sm:text-right text-left order-2 sm:order-1">
-          <div class="sm:hidden w-10 h-10 rounded-full border border-line bg-panel overflow-hidden flex items-center justify-center shrink-0 mb-2.5">
-            <svg class="w-4 h-4 text-dim opacity-40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="8.5" cy="10.5" r="1.5"/><path d="m21 15-5-5L5 19"/></svg>
+          <div class="sm:hidden w-10 h-10 rounded-full border border-line overflow-hidden shrink-0 mb-2.5">
+            <img src="./Private-Tutor.jpeg" alt="Foto Private Tutor" class="w-full h-full object-cover" loading="lazy" />
           </div>
           <p class="font-mono text-[11px] text-accent mb-1.5">FREELANCE · BERJALAN</p>
           <p class="font-display font-semibold text-lg sm:text-xl text-ink mb-1">Private Tutor — IoT &amp; Applied AI</p>
@@ -153,8 +153,8 @@ const MARKUP = `<div class="grain"></div>
           <p class="font-display text-[14.5px] text-dim leading-relaxed">Membimbing siswa SMA membangun sistem E-Nose untuk deteksi infeksi bakteri dini — sensor hingga klasifikasi berbasis AI.</p>
         </div>
         <div class="hidden sm:flex justify-start pl-4 order-2">
-          <div class="w-24 h-24 rounded-full border border-line bg-panel overflow-hidden flex items-center justify-center shrink-0">
-            <svg class="w-7 h-7 text-dim opacity-40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="8.5" cy="10.5" r="1.5"/><path d="m21 15-5-5L5 19"/></svg>
+          <div class="w-24 h-24 rounded-full border border-line overflow-hidden shrink-0">
+            <img src="./Private-Tutor.jpeg" alt="Foto Private Tutor" class="w-full h-full object-cover" loading="lazy" />
           </div>
         </div>
       </div>
@@ -162,10 +162,62 @@ const MARKUP = `<div class="grain"></div>
   </div>
 </section>
 
+<!-- ============ SERTIFIKASI ============ -->
+<!-- TODO: perbarui tahun dan ganti href dengan link verifikasi kredensial asli (coursera.org/verify/...) -->
+<section id="certifications" class="relative bg-section px-5 sm:px-10 py-28 sm:py-36 border-t border-line">
+  <div class="max-w-3xl mx-auto">
+    <p class="font-mono text-[11px] tracking-[0.25em] text-accent mb-3 reveal">04 — SERTIFIKASI</p>
+    <p class="font-mono text-[11px] text-dim mb-14 reveal">Klik sertifikasi untuk verifikasi kredensial.</p>
+
+    <div class="border-t border-line reveal reveal-delay-1">
+
+      <a href="https://www.coursera.org/specializations/machine-learning-introduction" target="_blank" rel="noopener" class="group grid grid-cols-[auto_1fr_auto] sm:grid-cols-[auto_1fr_auto_auto] items-center gap-x-4 sm:gap-x-6 w-full py-6 border-b border-line">
+        <span class="font-mono text-[11px] text-dim group-hover:text-ink transition-colors">01</span>
+        <span>
+          <h4 class="font-display font-semibold text-ink text-lg leading-snug group-hover:text-mint transition-colors">Machine Learning Specialization</h4>
+          <p class="font-mono text-[11px] text-dim mt-0.5">DeepLearning.AI &amp; Stanford Online</p>
+        </span>
+        <span class="font-mono text-[12px] text-ink whitespace-nowrap hidden sm:block">2025</span>
+        <svg class="w-4 h-4 text-dim transition-transform group-hover:translate-x-1 group-hover:text-ink hidden sm:block" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg>
+      </a>
+
+      <a href="https://www.coursera.org/professional-certificates/google-ai" target="_blank" rel="noopener" class="group grid grid-cols-[auto_1fr_auto] sm:grid-cols-[auto_1fr_auto_auto] items-center gap-x-4 sm:gap-x-6 w-full py-6 border-b border-line">
+        <span class="font-mono text-[11px] text-dim group-hover:text-ink transition-colors">02</span>
+        <span>
+          <h4 class="font-display font-semibold text-ink text-lg leading-snug group-hover:text-mint transition-colors">Google AI Professional Certificate</h4>
+          <p class="font-mono text-[11px] text-dim mt-0.5">Google · 8 kursus</p>
+        </span>
+        <span class="font-mono text-[12px] text-ink whitespace-nowrap hidden sm:block">2026</span>
+        <svg class="w-4 h-4 text-dim transition-transform group-hover:translate-x-1 group-hover:text-ink hidden sm:block" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg>
+      </a>
+
+      <a href="https://www.coursera.org/learn/google-ai-essentials" target="_blank" rel="noopener" class="group grid grid-cols-[auto_1fr_auto] sm:grid-cols-[auto_1fr_auto_auto] items-center gap-x-4 sm:gap-x-6 w-full py-6 border-b border-line">
+        <span class="font-mono text-[11px] text-dim group-hover:text-ink transition-colors">03</span>
+        <span>
+          <h4 class="font-display font-semibold text-ink text-lg leading-snug group-hover:text-mint transition-colors">Google AI Essentials Specialization</h4>
+          <p class="font-mono text-[11px] text-dim mt-0.5">Google</p>
+        </span>
+        <span class="font-mono text-[12px] text-ink whitespace-nowrap hidden sm:block">2025</span>
+        <svg class="w-4 h-4 text-dim transition-transform group-hover:translate-x-1 group-hover:text-ink hidden sm:block" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg>
+      </a>
+
+      <a href="https://www.coursera.org/specializations/building-ai-agents-and-agentic-workflows" target="_blank" rel="noopener" class="group grid grid-cols-[auto_1fr_auto] sm:grid-cols-[auto_1fr_auto_auto] items-center gap-x-4 sm:gap-x-6 w-full py-6 border-b border-line">
+        <span class="font-mono text-[11px] text-dim group-hover:text-ink transition-colors">04</span>
+        <span>
+          <h4 class="font-display font-semibold text-ink text-lg leading-snug group-hover:text-mint transition-colors">Building AI Agents &amp; Agentic Workflows</h4>
+          <p class="font-mono text-[11px] text-dim mt-0.5">IBM · Specialization</p>
+        </span>
+        <span class="font-mono text-[12px] text-ink whitespace-nowrap hidden sm:block">2026</span>
+        <svg class="w-4 h-4 text-dim transition-transform group-hover:translate-x-1 group-hover:text-ink hidden sm:block" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
 <!-- ============ PROYEK ============ -->
 <section id="work" class="relative bg-section px-5 sm:px-10 py-28 sm:py-36 border-t border-line">
   <div class="max-w-3xl mx-auto">
-    <p class="font-mono text-[11px] tracking-[0.25em] text-accent mb-3 reveal">04 — PROYEK</p>
+    <p class="font-mono text-[11px] tracking-[0.25em] text-accent mb-3 reveal">05 — PROYEK</p>
     <p class="font-mono text-[11px] text-dim mb-14 reveal">Klik proyek untuk lihat detail lengkap.</p>
 
     <!-- Featured: Thesis -->
@@ -278,7 +330,7 @@ const MARKUP = `<div class="grain"></div>
 <!-- ============ PUBLIKASI ============ -->
 <section id="publications" class="relative bg-section px-5 sm:px-10 py-28 sm:py-36 border-t border-line">
   <div class="max-w-3xl mx-auto">
-    <p class="font-mono text-[11px] tracking-[0.25em] text-accent mb-14 reveal">05 — PUBLIKASI</p>
+    <p class="font-mono text-[11px] tracking-[0.25em] text-accent mb-14 reveal">06 — PUBLIKASI</p>
 
     <div class="reveal reveal-delay-1">
       <h3 class="font-display font-semibold text-xl sm:text-2xl text-ink leading-snug mb-3 max-w-2xl border-b border-transparent hover:border-line transition-colors inline">
@@ -291,7 +343,7 @@ const MARKUP = `<div class="grain"></div>
 
 <!-- ============ SKILLS & TOOLS (marquee) ============ -->
 <section id="skills" class="relative bg-section py-24 sm:py-28 border-t border-b border-line overflow-hidden">
-  <p class="font-mono text-[11px] tracking-[0.25em] text-accent px-5 sm:px-10 max-w-3xl mx-auto mb-12 reveal">06 — SKILLS &amp; TOOLS</p>
+  <p class="font-mono text-[11px] tracking-[0.25em] text-accent px-5 sm:px-10 max-w-3xl mx-auto mb-12 reveal">07 — SKILLS &amp; TOOLS</p>
 
   <div class="relative">
     <div class="pointer-events-none absolute inset-y-0 left-0 w-16 sm:w-32 z-10 bg-gradient-to-r from-bg to-transparent"></div>
@@ -305,7 +357,7 @@ const MARKUP = `<div class="grain"></div>
 <!-- ============ KONTAK ============ -->
 <section id="contact" class="relative bg-section px-5 sm:px-10 pt-28 sm:pt-36 pb-44 border-t border-line">
   <div class="max-w-2xl mx-auto text-center">
-    <p class="font-mono text-[11px] tracking-[0.25em] text-accent mb-6 reveal">07 — KONTAK</p>
+    <p class="font-mono text-[11px] tracking-[0.25em] text-accent mb-6 reveal">08 — KONTAK</p>
     <h2 class="font-display font-semibold text-3xl sm:text-5xl text-ink leading-tight mb-8 reveal reveal-delay-1">Mari membangun sesuatu bersama.</h2>
 
     <button id="copyEmailBtn" type="button" class="group relative inline-block font-mono text-lg sm:text-2xl text-ink reveal reveal-delay-1">
@@ -336,19 +388,6 @@ const MARKUP = `<div class="grain"></div>
   </div>
 </section>
 
-<!-- HUD strip -->
-<div class="fixed bottom-0 inset-x-0 z-10 flex items-center justify-between px-5 sm:px-10 py-2.5 font-mono text-[10px] tracking-wide text-dim border-t border-line bg-bg/70 backdrop-blur-sm">
-  <div class="flex items-center gap-4">
-    <span>SCRL <span id="hudScroll" class="text-ink">0.00</span></span>
-    <span class="hidden sm:inline">CRSR <span id="hudCursor" class="text-ink">0.0</span></span>
-  </div>
-  <div id="hudSection" class="hidden sm:block text-dim/70">01 — HOME</div>
-  <div class="flex items-center gap-4">
-    <span class="hidden sm:flex items-center gap-1.5">THEME <span class="w-2 h-2 rounded-full bg-dot"></span> #BFFAF5</span>
-    <span id="hudClock">00:00:00 +00</span>
-  </div>
-</div>
-
 <!-- floating dock navbar — icon symbols, macOS-dock style magnification -->
 <nav id="dock" class="fixed bottom-9 left-1/2 -translate-x-1/2 z-20 flex items-end gap-2 px-4 py-3 rounded-full border border-line bg-panel/60 backdrop-blur-xl shadow-[0_8px_40px_rgba(0,0,0,0.5)]">
   <a href="#home" data-label="Home" class="dock-link active-dock relative flex items-center justify-center w-11 h-11 rounded-full text-ink transition-colors" style="transform-origin:bottom center;">
@@ -362,6 +401,10 @@ const MARKUP = `<div class="grain"></div>
   <a href="#work" data-label="Proyek" class="dock-link relative flex items-center justify-center w-11 h-11 rounded-full text-dim transition-colors" style="transform-origin:bottom center;">
     <span class="dock-tooltip">Proyek</span>
     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1.3"/><rect x="14" y="3" width="7" height="7" rx="1.3"/><rect x="3" y="14" width="7" height="7" rx="1.3"/><rect x="14" y="14" width="7" height="7" rx="1.3"/></svg>
+  </a>
+  <a href="#certifications" data-label="Sertifikasi" class="dock-link relative flex items-center justify-center w-11 h-11 rounded-full text-dim transition-colors" style="transform-origin:bottom center;">
+    <span class="dock-tooltip">Sertifikasi</span>
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M15.5 13 17 22l-5-3-5 3 1.5-9"/></svg>
   </a>
   <a href="#contact" data-label="Kontak" class="dock-link relative flex items-center justify-center w-11 h-11 rounded-full text-dim transition-colors" style="transform-origin:bottom center;">
     <span class="dock-tooltip">Kontak</span>
@@ -539,43 +582,12 @@ const LEGACY_SCRIPT = `
   requestAnimationFrame(checkProximity);
 })();
 
-/* ================= HUD: scroll %, cursor x, clock ================= */
-(function(){
-  const scrollEl = document.getElementById('hudScroll');
-  const cursorEl = document.getElementById('hudCursor');
-  const clockEl = document.getElementById('hudClock');
-
-  function updateScroll(){
-    const doc = document.documentElement;
-    const max = doc.scrollHeight - doc.clientHeight;
-    const pct = max > 0 ? (window.scrollY/max)*100 : 0;
-    scrollEl.textContent = pct.toFixed(2);
-  }
-  window.addEventListener('scroll', updateScroll, { passive:true });
-  updateScroll();
-
-  window.addEventListener('mousemove', e => { cursorEl.textContent = e.clientX.toFixed(1); });
-
-  function updateClock(){
-    const now = new Date();
-    const offsetMin = -now.getTimezoneOffset();
-    const sign = offsetMin >= 0 ? '+' : '-';
-    const offsetH = Math.abs(Math.floor(offsetMin/60)).toString().padStart(2,'0');
-    const hh = now.getHours().toString().padStart(2,'0');
-    const mm = now.getMinutes().toString().padStart(2,'0');
-    const ss = now.getSeconds().toString().padStart(2,'0');
-    clockEl.textContent = \`\${hh}:\${mm}:\${ss} \${sign}\${offsetH}\`;
-  }
-  updateClock();
-  setInterval(updateClock, 1000);
-})();
-
 /* ================= DOCK ACTIVE STATE ON SCROLL ================= */
 (function(){
   const links = document.querySelectorAll('nav a.dock-link');
   const sections = Array.from(links).map(a => document.querySelector(a.getAttribute('href'))).filter(Boolean);
   const hudSection = document.getElementById('hudSection');
-  const labels = { home:'01 — HOME', about:'02 — ABOUT', experience:'03 — EXPERIENCE', work:'04 — WORK', publications:'05 — PUBLICATIONS', skills:'06 — SKILLS', contact:'07 — CONTACT' };
+  const labels = { home:'01 — HOME', about:'02 — ABOUT', experience:'03 — EXPERIENCE', certifications:'04 — SERTIFIKASI', work:'05 — PROYEK', publications:'06 — PUBLIKASI', skills:'07 — SKILLS', contact:'08 — KONTAK' };
   window.addEventListener('scroll', () => {
     let current = sections[0];
     sections.forEach(sec => { if(sec && window.scrollY >= sec.offsetTop - window.innerHeight/2) current = sec; });

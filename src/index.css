@@ -10,7 +10,7 @@
      scroll-snap-stop:always forces the browser to rest at each section
      even during a fast/long scroll gesture, instead of skipping past it —
      this is what was causing sections to be jumped over before. */
-  #home, #about, #experience, #work, #publications, #skills, #contact{
+  #home, #about, #experience, #certifications, #work, #publications, #skills, #contact{
     scroll-snap-align: start;
     scroll-snap-stop: always;
   }
