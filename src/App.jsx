@@ -117,7 +117,7 @@ const MARKUP = `<div class="grain"></div>
 
 <!-- ============ SKILLS ============ -->
 
-<section id="experience" class="relative bg-section px-5 sm:px-10 py-28 sm:py-36 border-t border-line">
+<section id="experience" class="relative bg-section px-5 sm:px-10 py-28 sm:py-36">
   <div class="max-w-4xl mx-auto">
     <p class="font-mono text-[11px] tracking-[0.25em] text-accent text-center mb-16 reveal" data-i18n="exp.label">03 · PENGALAMAN</p>
 
@@ -206,7 +206,7 @@ const MARKUP = `<div class="grain"></div>
 
 <!-- ============ SERTIFIKASI ============ -->
 <!-- TODO: perbarui tahun dan ganti href dengan link verifikasi kredensial asli (coursera.org/verify/...) -->
-<section id="certifications" class="relative bg-section px-5 sm:px-10 py-28 sm:py-36 border-t border-line">
+<section id="certifications" class="relative bg-section px-5 sm:px-10 py-28 sm:py-36">
   <div class="max-w-3xl mx-auto">
     <p class="font-mono text-[11px] tracking-[0.25em] text-accent mb-3 reveal" data-i18n="cert.label">04 · SERTIFIKASI</p>
     <p class="font-mono text-[11px] text-dim mb-14 reveal" data-i18n="cert.intro">Klik untuk memverifikasi kredensial.</p>
@@ -257,7 +257,7 @@ const MARKUP = `<div class="grain"></div>
 </section>
 
 <!-- ============ PROYEK ============ -->
-<section id="work" class="relative bg-section px-5 sm:px-10 py-28 sm:py-36 border-t border-line">
+<section id="work" class="relative bg-section px-5 sm:px-10 py-28 sm:py-36">
   <div class="max-w-3xl mx-auto">
     <p class="font-mono text-[11px] tracking-[0.25em] text-accent mb-3 reveal" data-i18n="work.label">05 · PROYEK</p>
     <p class="font-mono text-[11px] text-dim mb-14 reveal" data-i18n="work.intro">Klik untuk melihat detail proyek.</p>
@@ -370,7 +370,7 @@ const MARKUP = `<div class="grain"></div>
 </div>
 
 <!-- ============ PUBLIKASI ============ -->
-<section id="publications" class="relative bg-section px-5 sm:px-10 py-28 sm:py-36 border-t border-line">
+<section id="publications" class="relative bg-section px-5 sm:px-10 py-28 sm:py-36">
   <div class="max-w-3xl mx-auto">
     <p class="font-mono text-[11px] tracking-[0.25em] text-accent mb-14 reveal" data-i18n="pub.label">06 · PUBLIKASI</p>
 
@@ -384,7 +384,7 @@ const MARKUP = `<div class="grain"></div>
 </section>
 
 <!-- ============ SKILLS & TOOLS (marquee) ============ -->
-<section id="skills" class="relative bg-section py-24 sm:py-28 border-t border-b border-line overflow-hidden">
+<section id="skills" class="relative bg-section py-24 sm:py-28 overflow-hidden">
   <p class="font-mono text-[11px] tracking-[0.25em] text-accent px-5 sm:px-10 max-w-3xl mx-auto mb-4 reveal" data-i18n="skills.label">07 · SKILLS &amp; TOOLS</p>
   <p class="font-mono text-[11px] text-dim px-5 sm:px-10 max-w-3xl mx-auto mb-12 reveal" data-i18n="skills.intro">Toolkit yang saya gunakan di riset, produksi, dan eksperimen.</p>
 
@@ -403,7 +403,7 @@ const MARKUP = `<div class="grain"></div>
 </section>
 
 <!-- ============ KONTAK ============ -->
-<section id="contact" class="relative bg-section px-5 sm:px-10 pt-28 sm:pt-36 pb-44 border-t border-line">
+<section id="contact" class="relative bg-section px-5 sm:px-10 pt-28 sm:pt-36 pb-44">
   <div class="max-w-2xl mx-auto text-center">
     <p class="font-mono text-[11px] tracking-[0.25em] text-accent mb-6 reveal" data-i18n="contact.label">08 · KONTAK</p>
     <h2 class="font-display font-semibold text-3xl sm:text-5xl text-ink leading-tight mb-8 reveal reveal-delay-1"><span data-i18n="contact.heading">Mari membangun sesuatu yang berdampak bersama.</span></h2>
