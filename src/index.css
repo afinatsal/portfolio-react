@@ -212,9 +212,12 @@
     background:rgba(25,28,31,.55);
   }
   .lang-pill button{
-    padding:2px 9px; border-radius:999px;
+    padding:2px 6px; border-radius:999px;
     color:#9CA6AA; background:transparent; cursor:pointer;
     transition:color .2s ease, background .2s ease;
+  }
+  @media (min-width: 640px){
+    .lang-pill button{ padding:2px 9px; }
   }
   .lang-pill button:hover{ color:#F1F4F2; }
   .lang-pill button.lang-active{ color:#111315; background:#BFFAF5; }
@@ -225,4 +228,23 @@
   }
   html[lang="ja"] .font-display{
     font-family:"Angie Sans","Hiragino Kaku Gothic ProN","Yu Gothic","Meiryo","Noto Sans JP",sans-serif;
+  }
+
+  /* ============ MOBILE ============ */
+  @media (max-width: 767px){
+    /* magnet scroll fights thumb-scrolling on small screens where every
+       section is taller than the viewport — disable snap entirely. */
+    html{ scroll-snap-type: none; }
+    #home, #about, #experience, #certifications, #work, #publications, #skills, #contact{
+      scroll-snap-align: none;
+      scroll-snap-stop: normal;
+    }
+    /* keep the floating dock clear of the iPhone home indicator / Android nav bar */
+    #dock{ bottom: calc(env(safe-area-inset-bottom, 0px) + 28px); }
+    #contact{ padding-bottom: calc(11rem + env(safe-area-inset-bottom, 0px)); }
+    .scroll-cue{ bottom: calc(env(safe-area-inset-bottom, 0px) + 20px); }
+  }
+  @media (min-width: 768px){
+    #dock{ bottom: calc(env(safe-area-inset-bottom, 0px) + 36px); }
+    #contact{ padding-bottom: calc(11rem + env(safe-area-inset-bottom, 0px)); }
   }

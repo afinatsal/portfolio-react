@@ -48,7 +48,7 @@ const MARKUP = `<div class="grain"></div>
 
   <!-- top brand row -->
   <header class="hero-in relative z-10 flex items-center justify-between px-5 sm:px-10 pt-7 font-mono text-xs tracking-wide" style="--d:.05s">
-    <div class="text-dim">AFIN<span class="text-accent">.</span> PORTFOLIO/2026</div>
+    <div class="text-dim whitespace-nowrap">AFIN<span class="text-accent">.</span><span class="hidden min-[400px]:inline"> PORTFOLIO/2026</span></div>
     <div class="flex items-center gap-3 text-dim">
       <span class="hidden sm:flex items-center gap-2">
         <span class="w-1.5 h-1.5 rounded-full bg-lime shadow-[0_0_8px_#B7F36B] pulse-dot"></span>
@@ -68,7 +68,7 @@ const MARKUP = `<div class="grain"></div>
   <main class="relative z-10 flex-1 flex flex-col items-center justify-center text-center px-5 pb-32">
     <p class="hero-in font-mono text-[11px] sm:text-xs tracking-[0.25em] text-accent mb-4" style="--d:.15s" data-i18n="hero.eyebrow">AI/ML ENGINEER · COMPUTER VISION</p>
 
-    <h1 id="nameHeading" class="hero-in font-display font-semibold leading-[0.94] tracking-tight text-[clamp(2.6rem,9vw,6.4rem)]" style="--d:.3s">
+    <h1 id="nameHeading" class="hero-in font-display font-semibold leading-[0.94] tracking-tight text-[clamp(2.2rem,9vw,6.4rem)]" style="--d:.3s">
       <span data-line class="block">MUHAMMAD</span>
       <span data-line class="block text-dot">AFIN ATSAL</span>
     </h1>
@@ -413,7 +413,7 @@ const MARKUP = `<div class="grain"></div>
       <span class="absolute left-0 -bottom-1 h-px w-0 group-hover:w-full bg-ink transition-all duration-300"></span>
     </button>
 
-    <div class="flex items-center justify-center gap-7 mt-9 font-mono text-[12px] text-dim reveal reveal-delay-2">
+    <div class="flex flex-wrap items-center justify-center gap-x-6 gap-y-3 sm:gap-x-7 mt-9 font-mono text-[12px] text-dim reveal reveal-delay-2">
       <a href="https://linkedin.com/in/afinatsal" target="_blank" rel="noopener" class="contact-link flex items-center gap-1.5 hover:text-ink transition-colors">
         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
         LinkedIn
@@ -437,24 +437,24 @@ const MARKUP = `<div class="grain"></div>
 </section>
 
 <!-- floating dock navbar · icon symbols, macOS-dock style magnification -->
-<nav id="dock" class="fixed bottom-9 left-1/2 -translate-x-1/2 z-20 flex items-end gap-2 px-4 py-3 rounded-full border border-line bg-panel/60 backdrop-blur-xl shadow-[0_8px_40px_rgba(0,0,0,0.5)]">
-  <a href="#home" data-label="Home" class="dock-link active-dock relative flex items-center justify-center w-11 h-11 rounded-full text-ink transition-colors" style="transform-origin:bottom center;">
+<nav id="dock" class="fixed bottom-9 left-1/2 -translate-x-1/2 z-20 flex items-end gap-1.5 sm:gap-2 px-3 sm:px-4 py-2.5 sm:py-3 rounded-full border border-line bg-panel/60 backdrop-blur-xl shadow-[0_8px_40px_rgba(0,0,0,0.5)]">
+  <a href="#home" data-label="Home" class="dock-link active-dock relative flex items-center justify-center w-10 h-10 sm:w-11 sm:h-11 rounded-full text-ink transition-colors" style="transform-origin:bottom center;">
     <span class="dock-tooltip" data-i18n="dock.home">Home</span>
     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11.5 12 4l9 7.5"/><path d="M5.5 10v9a1 1 0 0 0 1 1H10v-6h4v6h3.5a1 1 0 0 0 1-1v-9"/></svg>
   </a>
-  <a href="#about" data-label="Tentang" class="dock-link relative flex items-center justify-center w-11 h-11 rounded-full text-dim transition-colors" style="transform-origin:bottom center;">
+  <a href="#about" data-label="Tentang" class="dock-link relative flex items-center justify-center w-10 h-10 sm:w-11 sm:h-11 rounded-full text-dim transition-colors" style="transform-origin:bottom center;">
     <span class="dock-tooltip" data-i18n="dock.about">Tentang</span>
     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="3.5"/><path d="M5 20c0-3.9 3.1-7 7-7s7 3.1 7 7"/></svg>
   </a>
-  <a href="#work" data-label="Proyek" class="dock-link relative flex items-center justify-center w-11 h-11 rounded-full text-dim transition-colors" style="transform-origin:bottom center;">
+  <a href="#work" data-label="Proyek" class="dock-link relative flex items-center justify-center w-10 h-10 sm:w-11 sm:h-11 rounded-full text-dim transition-colors" style="transform-origin:bottom center;">
     <span class="dock-tooltip" data-i18n="dock.work">Proyek</span>
     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1.3"/><rect x="14" y="3" width="7" height="7" rx="1.3"/><rect x="3" y="14" width="7" height="7" rx="1.3"/><rect x="14" y="14" width="7" height="7" rx="1.3"/></svg>
   </a>
-  <a href="#certifications" data-label="Sertifikasi" class="dock-link relative flex items-center justify-center w-11 h-11 rounded-full text-dim transition-colors" style="transform-origin:bottom center;">
+  <a href="#certifications" data-label="Sertifikasi" class="dock-link relative flex items-center justify-center w-10 h-10 sm:w-11 sm:h-11 rounded-full text-dim transition-colors" style="transform-origin:bottom center;">
     <span class="dock-tooltip" data-i18n="dock.certs">Sertifikasi</span>
     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M15.5 13 17 22l-5-3-5 3 1.5-9"/></svg>
   </a>
-  <a href="#contact" data-label="Kontak" class="dock-link relative flex items-center justify-center w-11 h-11 rounded-full text-dim transition-colors" style="transform-origin:bottom center;">
+  <a href="#contact" data-label="Kontak" class="dock-link relative flex items-center justify-center w-10 h-10 sm:w-11 sm:h-11 rounded-full text-dim transition-colors" style="transform-origin:bottom center;">
     <span class="dock-tooltip" data-i18n="dock.contact">Kontak</span>
     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m4 7 8 6 8-6"/></svg>
   </a>
@@ -1006,7 +1006,7 @@ const LEGACY_SCRIPT = `
 
   function renderItem(tool, hidden){
     const iconHtml = tool.slug
-      ? \`<img src="https://cdn.simpleicons.org/\${tool.slug}/74E6D5" alt="" class="w-4 h-4 shrink-0" loading="lazy" onerror="this.style.display='none'" />\`
+      ? \`<img src="https://cdn.simpleicons.org/\${tool.slug}" alt="" class="w-4 h-4 shrink-0" loading="lazy" onerror="this.style.display='none'" />\`
       : \`<span class="w-4 h-4 shrink-0 rounded-full border border-line" aria-hidden="true"></span>\`;
     return \`<span class="flex items-center gap-3 font-mono text-[13px] sm:text-sm text-ink border border-line bg-panel rounded-full pl-4 pr-5 py-2.5 whitespace-nowrap transition-colors hover:border-accent/60"\${hidden ? ' aria-hidden="true"' : ''}>\${iconHtml}\${tool.name}</span>\`;
   }
