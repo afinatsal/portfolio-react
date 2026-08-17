@@ -54,7 +54,7 @@ const TRANSLATIONS = {
     cert: {
       label: '04 · SERTIFIKASI',
       intro: 'Klik untuk memverifikasi kredensial.',
-      c2Detail: 'Google · 8 kursus',
+      c2Detail: '8 kursus',
     },
     work: {
       label: '05 · PROYEK',
@@ -249,7 +249,7 @@ const TRANSLATIONS = {
     cert: {
       label: '04 · CERTIFICATIONS',
       intro: 'Click to verify credentials.',
-      c2Detail: 'Google · 8 courses',
+      c2Detail: '8 courses',
     },
     work: {
       label: '05 · PROJECTS',
@@ -444,7 +444,7 @@ const TRANSLATIONS = {
     cert: {
       label: '04 · 证书',
       intro: '点击即可验证证书。',
-      c2Detail: 'Google · 8门课程',
+      c2Detail: '8门课程',
     },
     work: {
       label: '05 · 项目',
@@ -639,7 +639,7 @@ const TRANSLATIONS = {
     cert: {
       label: '04 · 認定資格',
       intro: 'クリックして証明書を検証できます。',
-      c2Detail: 'Google · 8コース',
+      c2Detail: '8コース',
     },
     work: {
       label: '05 · プロジェクト',

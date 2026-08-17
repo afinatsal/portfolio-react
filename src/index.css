@@ -78,6 +78,15 @@
     text-shadow:0 0 18px rgba(191,250,245,.13);
   }
 
+  /* certification issuer names: brand-colored text so the issuer (Google,
+     IBM, DeepLearning.AI, Stanford) stands out without needing logos */
+  .cert-org{ font-weight:500; }
+  .cert-org img{ display:none; }
+  .cert-org-google{ color:#8AB4F8; }
+  .cert-org-ibm{ color:#8BB0FF; }
+  .cert-org-dlai{ color:#B79BF8; }
+  .cert-org-stanford{ color:#F08A8A; }
+
   @keyframes pulse{0%,100%{opacity:1} 50%{opacity:.25}}
   .pulse-dot{animation:pulse 2s ease-in-out infinite;}
 

@@ -217,8 +217,7 @@ const MARKUP = `<div class="grain"></div>
         <span class="font-mono text-[11px] text-dim group-hover:text-ink transition-colors">01</span>
         <span>
           <h4 class="font-display font-semibold text-ink text-lg leading-snug group-hover:text-mint transition-colors">Machine Learning Specialization</h4>
-          <p class="font-mono text-[11px] text-dim mt-0.5">DeepLearning.AI &amp; Stanford Online</p>
-        </span>
+          <p class="font-mono text-[11px] text-dim mt-0.5"><span class="cert-org cert-org-dlai">DeepLearning.AI</span> &amp; <span class="cert-org cert-org-stanford">Stanford Online</span></p>        </span>
         <span class="font-mono text-[12px] text-ink whitespace-nowrap hidden sm:block">2025</span>
         <svg class="w-4 h-4 text-dim transition-transform group-hover:translate-x-1 group-hover:text-ink hidden sm:block" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg>
       </a>
@@ -227,7 +226,7 @@ const MARKUP = `<div class="grain"></div>
         <span class="font-mono text-[11px] text-dim group-hover:text-ink transition-colors">02</span>
         <span>
           <h4 class="font-display font-semibold text-ink text-lg leading-snug group-hover:text-mint transition-colors">Google AI Professional Certificate</h4>
-          <p class="font-mono text-[11px] text-dim mt-0.5" data-i18n="cert.c2Detail">Google · 8 kursus</p>
+          <p class="font-mono text-[11px] text-dim mt-0.5 flex flex-wrap items-center gap-x-2 gap-y-1"><span class="cert-org cert-org-google">Google</span><span>·</span><span data-i18n="cert.c2Detail">8 kursus</span></p>
         </span>
         <span class="font-mono text-[12px] text-ink whitespace-nowrap hidden sm:block">2026</span>
         <svg class="w-4 h-4 text-dim transition-transform group-hover:translate-x-1 group-hover:text-ink hidden sm:block" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg>
@@ -237,7 +236,7 @@ const MARKUP = `<div class="grain"></div>
         <span class="font-mono text-[11px] text-dim group-hover:text-ink transition-colors">03</span>
         <span>
           <h4 class="font-display font-semibold text-ink text-lg leading-snug group-hover:text-mint transition-colors">Google AI Essentials Specialization</h4>
-          <p class="font-mono text-[11px] text-dim mt-0.5">Google</p>
+          <p class="font-mono text-[11px] text-dim mt-0.5"><span class="cert-org cert-org-google">Google</span></p>
         </span>
         <span class="font-mono text-[12px] text-ink whitespace-nowrap hidden sm:block">2025</span>
         <svg class="w-4 h-4 text-dim transition-transform group-hover:translate-x-1 group-hover:text-ink hidden sm:block" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg>
@@ -247,7 +246,7 @@ const MARKUP = `<div class="grain"></div>
         <span class="font-mono text-[11px] text-dim group-hover:text-ink transition-colors">04</span>
         <span>
           <h4 class="font-display font-semibold text-ink text-lg leading-snug group-hover:text-mint transition-colors">Building AI Agents &amp; Agentic Workflows</h4>
-          <p class="font-mono text-[11px] text-dim mt-0.5">IBM · Specialization</p>
+          <p class="font-mono text-[11px] text-dim mt-0.5"><span class="cert-org cert-org-ibm">IBM</span> · Specialization</p>
         </span>
         <span class="font-mono text-[12px] text-ink whitespace-nowrap hidden sm:block">2026</span>
         <svg class="w-4 h-4 text-dim transition-transform group-hover:translate-x-1 group-hover:text-ink hidden sm:block" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg>
