@@ -50,11 +50,6 @@ const MARKUP = `<div class="grain"></div>
   <header class="hero-in relative z-10 flex items-center justify-between px-5 sm:px-10 pt-7 font-mono text-xs tracking-wide" style="--d:.05s">
     <div class="text-dim whitespace-nowrap">AFIN<span class="text-accent">.</span><span class="hidden min-[400px]:inline"> PORTFOLIO/2026</span></div>
     <div class="flex items-center gap-3 text-dim">
-      <span class="hidden sm:flex items-center gap-2">
-        <span class="w-1.5 h-1.5 rounded-full bg-lime shadow-[0_0_8px_#B7F36B] pulse-dot"></span>
-        <span data-i18n="header.status">Open untuk kolaborasi</span>
-      </span>
-      <span class="hidden sm:block w-px h-3 bg-line"></span>
       <nav class="lang-pill" aria-label="Pilih bahasa">
         <button type="button" data-lang="id" class="lang-active" aria-label="Bahasa Indonesia">ID</button>
         <button type="button" data-lang="en" aria-label="English">EN</button>
@@ -65,7 +60,7 @@ const MARKUP = `<div class="grain"></div>
   </header>
 
   <!-- hero -->
-  <main class="relative z-10 flex-1 flex flex-col items-center justify-center text-center px-5 pb-32">
+  <main class="relative z-10 flex-1 flex flex-col items-center justify-center text-center px-5 pb-12">
     <p class="hero-in font-mono text-[11px] sm:text-xs tracking-[0.25em] text-accent mb-4" style="--d:.15s" data-i18n="hero.eyebrow">AI/ML ENGINEER · COMPUTER VISION</p>
 
     <h1 id="nameHeading" class="hero-in font-display font-semibold leading-[0.94] tracking-tight text-[clamp(2.2rem,9vw,6.4rem)]" style="--d:.3s">
@@ -77,7 +72,6 @@ const MARKUP = `<div class="grain"></div>
       Membangun sistem AI dari riset ke produksi, dari notebook hingga deployment.
     </p>
   </main>
-  <a class="hero-in-fade scroll-cue" style="--d:.55s" href="#about" aria-label="Scroll ke bagian Tentang"><span>SCROLL TO EXPLORE</span><i></i></a>
 </section>
 
 <!-- ============ PENGALAMAN ============ -->
@@ -263,20 +257,46 @@ const MARKUP = `<div class="grain"></div>
 
     <!-- Featured: Thesis -->
     <button type="button" data-project="thesis" class="project-trigger group block w-full text-left mb-20 reveal reveal-delay-1">
-      <div class="flex items-baseline justify-between gap-4 mb-3">
-        <p class="font-mono text-[11px] text-dim" data-i18n="work.thesis.eyebrow">SKRIPSI · FEB 2026</p>
-        <span class="font-mono text-[11px] text-dim group-hover:text-ink transition-colors flex items-center gap-1.5 shrink-0">
-          <span data-i18n="ui.viewDetail">Lihat detail</span>
-          <svg class="w-3 h-3 transition-transform group-hover:translate-x-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-        </span>
+      <div class="grid sm:grid-cols-[1.1fr_1fr] sm:items-center gap-8 sm:gap-12">
+        <div class="order-2 sm:order-1">
+          <div class="flex items-baseline justify-between gap-4 mb-3">
+            <p class="font-mono text-[11px] text-dim" data-i18n="work.thesis.eyebrow">SKRIPSI · FEB 2026</p>
+            <span class="font-mono text-[11px] text-dim group-hover:text-ink transition-colors flex items-center gap-1.5 shrink-0">
+              <span data-i18n="ui.viewDetail">Lihat detail</span>
+              <svg class="w-3 h-3 transition-transform group-hover:translate-x-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </span>
+          </div>
+          <h3 class="font-display font-semibold text-2xl sm:text-4xl text-ink leading-tight mb-4 max-w-2xl transition-opacity group-hover:opacity-80" data-i18n="work.thesis.heading">
+            Deteksi dan klasifikasi sampah hierarkis dengan <span class="text-accent">YOLOv12 + HSCN</span>.
+          </h3>
+          <p class="font-display text-[15px] text-dim leading-relaxed max-w-xl" data-i18n="work.thesis.desc">
+            Pipeline dua tahap, YOLOv12 mendeteksi objek lalu Hierarchical Sequential Classification Network mengklasifikasikan tiga level hierarki sampah.
+          </p>
+          <div class="flex flex-wrap gap-3 mt-5">
+            <span class="inline-flex items-baseline gap-2 border border-line rounded-full px-4 py-2">
+              <span class="font-mono text-[10px] text-dim tracking-wide">F1</span>
+              <span class="font-mono text-[15px] text-accent font-medium tabular-nums" data-count="0.844" data-decimals="3">0.844</span>
+            </span>
+            <span class="inline-flex items-baseline gap-2 border border-line rounded-full px-4 py-2">
+              <span class="font-mono text-[10px] text-dim tracking-wide">mAP</span>
+              <span class="font-mono text-[15px] text-accent font-medium tabular-nums" data-count="0.967" data-decimals="3">0.967</span>
+            </span>
+            <span class="inline-flex items-center gap-2 border border-line rounded-full px-4 py-2">
+              <span class="font-mono text-[10px] text-dim tracking-wide">DATASET</span>
+              <span class="font-mono text-[13px] text-ink font-medium whitespace-nowrap">2.116 gambar</span>
+            </span>
+          </div>
+          <p class="flex flex-wrap gap-2 mt-5">
+            <span class="tag-pill">PyTorch</span><span class="tag-pill">YOLOv12</span><span class="tag-pill">Flask</span><span class="tag-pill">OpenCV</span>
+          </p>
+        </div>
+        <div class="order-1 sm:order-2 sm:self-stretch">
+          <div class="project-thumb h-full min-h-[260px] sm:min-h-0 rounded-2xl">
+            <span class="project-thumb-glyph" aria-hidden="true">THESIS / CV</span>
+            <img src="./project-thesis.jpg" alt="Preview proyek skripsi deteksi sampah" class="group-hover:scale-105 transition-transform duration-500" loading="lazy" onerror="this.parentElement.classList.add('thumb-missing')" />
+          </div>
+        </div>
       </div>
-      <h3 class="font-display font-semibold text-2xl sm:text-4xl text-ink leading-tight mb-5 max-w-2xl transition-opacity group-hover:opacity-80" data-i18n="work.thesis.heading">
-        Deteksi dan klasifikasi sampah hierarkis dengan <span class="text-accent">YOLOv12 + HSCN</span>, mencapai F1 <span class="text-accent" data-count="0.844" data-decimals="3">0.844</span> dan mAP <span class="text-accent" data-count="0.967" data-decimals="3">0.967</span>.
-      </h3>
-      <p class="font-display text-[15px] text-dim leading-relaxed max-w-xl" data-i18n="work.thesis.desc">
-        Pipeline dua tahap, YOLOv12 mendeteksi objek lalu Hierarchical Sequential Classification Network mengklasifikasikan tiga level hierarki sampah.
-      </p>
-      <p class="font-mono text-[11px] text-dim mt-5 border-b border-transparent group-hover:border-line pb-1 inline-block">PyTorch · YOLOv12 · Flask · OpenCV</p>
     </button>
 
     <!-- Other projects: clickable rows with index numbers -->
@@ -284,9 +304,20 @@ const MARKUP = `<div class="grain"></div>
 
       <button type="button" data-project="visual-inspection" class="project-trigger group grid grid-cols-[auto_1fr_auto] sm:grid-cols-[auto_1fr_auto_auto] items-center gap-x-4 sm:gap-x-6 w-full text-left py-6 border-b border-line">
         <span class="font-mono text-[11px] text-dim group-hover:text-ink transition-colors">01</span>
-        <span>
-          <h4 class="font-display font-semibold text-ink text-lg leading-snug group-hover:text-mint transition-colors" data-i18n="work.r1.title">CNN Visual Inspection System</h4>
-          <p class="font-mono text-[11px] text-dim mt-0.5 hidden sm:block" data-i18n="work.r1.sub">X-Camp, PT XLSmart Telecom Sejahtera</p>
+        <span class="min-w-0">
+          <div class="flex items-center gap-3 sm:gap-4">
+            <div class="project-thumb w-14 h-14 sm:w-16 sm:h-16 rounded-lg shrink-0">
+              <span class="project-thumb-glyph" aria-hidden="true">CV</span>
+              <img src="./project-visual-inspection.jpg" alt="" loading="lazy" onerror="this.parentElement.classList.add('thumb-missing')" />
+            </div>
+            <span class="min-w-0">
+              <h4 class="font-display font-semibold text-ink text-lg leading-snug group-hover:text-mint transition-colors" data-i18n="work.r1.title">CNN Visual Inspection System</h4>
+              <p class="font-mono text-[11px] text-dim mt-0.5 hidden sm:block" data-i18n="work.r1.sub">X-Camp, PT XLSmart Telecom Sejahtera</p>
+              <span class="flex flex-wrap gap-1.5 mt-2">
+                <span class="tag-pill">CNN</span><span class="tag-pill">OpenCV</span><span class="tag-pill">ThingsBoard</span>
+              </span>
+            </span>
+          </div>
         </span>
         <span class="font-mono text-[12px] text-ink whitespace-nowrap" data-count="99.6" data-decimals="1" data-suffix="%">99.6%</span>
         <svg class="w-4 h-4 text-dim transition-transform group-hover:translate-x-1 group-hover:text-ink hidden sm:block" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
@@ -294,9 +325,20 @@ const MARKUP = `<div class="grain"></div>
 
       <button type="button" data-project="rag-chatbot" class="project-trigger group grid grid-cols-[auto_1fr_auto] sm:grid-cols-[auto_1fr_auto_auto] items-center gap-x-4 sm:gap-x-6 w-full text-left py-6 border-b border-line">
         <span class="font-mono text-[11px] text-dim group-hover:text-ink transition-colors">02</span>
-        <span>
-          <h4 class="font-display font-semibold text-ink text-lg leading-snug group-hover:text-mint transition-colors" data-i18n="work.r2.title">RAG Chatbot untuk Booking Tiket Kapal</h4>
-          <p class="font-mono text-[11px] text-dim mt-0.5 hidden sm:block" data-i18n="work.r2.sub">PT Amman Mineral Internasional</p>
+        <span class="min-w-0">
+          <div class="flex items-center gap-3 sm:gap-4">
+            <div class="project-thumb w-14 h-14 sm:w-16 sm:h-16 rounded-lg shrink-0">
+              <span class="project-thumb-glyph" aria-hidden="true">RAG</span>
+              <img src="./project-rag-chatbot.jpg" alt="" loading="lazy" onerror="this.parentElement.classList.add('thumb-missing')" />
+            </div>
+            <span class="min-w-0">
+              <h4 class="font-display font-semibold text-ink text-lg leading-snug group-hover:text-mint transition-colors" data-i18n="work.r2.title">RAG Chatbot untuk Booking Tiket Kapal</h4>
+              <p class="font-mono text-[11px] text-dim mt-0.5 hidden sm:block" data-i18n="work.r2.sub">PT Amman Mineral Internasional</p>
+              <span class="flex flex-wrap gap-1.5 mt-2">
+                <span class="tag-pill">FastAPI</span><span class="tag-pill">PostgreSQL</span><span class="tag-pill">Gemini</span>
+              </span>
+            </span>
+          </div>
         </span>
         <span class="font-mono text-[12px] text-ink whitespace-nowrap" data-count="2" data-prefix="&lt;" data-suffix="s">&lt;2s</span>
         <svg class="w-4 h-4 text-dim transition-transform group-hover:translate-x-1 group-hover:text-ink hidden sm:block" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
@@ -304,9 +346,20 @@ const MARKUP = `<div class="grain"></div>
 
       <button type="button" data-project="pneumonia" class="project-trigger group grid grid-cols-[auto_1fr_auto] sm:grid-cols-[auto_1fr_auto_auto] items-center gap-x-4 sm:gap-x-6 w-full text-left py-6 border-b border-line">
         <span class="font-mono text-[11px] text-dim group-hover:text-ink transition-colors">03</span>
-        <span>
-          <h4 class="font-display font-semibold text-ink text-lg leading-snug group-hover:text-mint transition-colors" data-i18n="work.r3.title">Pneumonia Detection dari Chest X-Ray</h4>
-          <p class="font-mono text-[11px] text-dim mt-0.5 hidden sm:block" data-i18n="work.r3.sub">Proyek pribadi</p>
+        <span class="min-w-0">
+          <div class="flex items-center gap-3 sm:gap-4">
+            <div class="project-thumb w-14 h-14 sm:w-16 sm:h-16 rounded-lg shrink-0">
+              <span class="project-thumb-glyph" aria-hidden="true">X-RAY</span>
+              <img src="./project-pneumonia.jpg" alt="" loading="lazy" onerror="this.parentElement.classList.add('thumb-missing')" />
+            </div>
+            <span class="min-w-0">
+              <h4 class="font-display font-semibold text-ink text-lg leading-snug group-hover:text-mint transition-colors" data-i18n="work.r3.title">Pneumonia Detection dari Chest X-Ray</h4>
+              <p class="font-mono text-[11px] text-dim mt-0.5 hidden sm:block" data-i18n="work.r3.sub">Proyek pribadi</p>
+              <span class="flex flex-wrap gap-1.5 mt-2">
+                <span class="tag-pill">TensorFlow</span><span class="tag-pill">Keras</span><span class="tag-pill">OpenCV</span>
+              </span>
+            </span>
+          </div>
         </span>
         <span class="font-mono text-[12px] text-ink whitespace-nowrap" data-count="92" data-suffix="%+">92%+</span>
         <svg class="w-4 h-4 text-dim transition-transform group-hover:translate-x-1 group-hover:text-ink hidden sm:block" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
@@ -314,9 +367,20 @@ const MARKUP = `<div class="grain"></div>
 
       <button type="button" data-project="cognitive" class="project-trigger group grid grid-cols-[auto_1fr_auto] sm:grid-cols-[auto_1fr_auto_auto] items-center gap-x-4 sm:gap-x-6 w-full text-left py-6 border-b border-line">
         <span class="font-mono text-[11px] text-dim group-hover:text-ink transition-colors">04</span>
-        <span>
-          <h4 class="font-display font-semibold text-ink text-lg leading-snug group-hover:text-mint transition-colors" data-i18n="work.r4.title">Cognitive Performance Prediction</h4>
-          <p class="font-mono text-[11px] text-dim mt-0.5 hidden sm:block" data-i18n="work.r4.sub">Wearable biosignal · Empatica E4</p>
+        <span class="min-w-0">
+          <div class="flex items-center gap-3 sm:gap-4">
+            <div class="project-thumb w-14 h-14 sm:w-16 sm:h-16 rounded-lg shrink-0">
+              <span class="project-thumb-glyph" aria-hidden="true">E4</span>
+              <img src="./project-cognitive.jpg" alt="" loading="lazy" onerror="this.parentElement.classList.add('thumb-missing')" />
+            </div>
+            <span class="min-w-0">
+              <h4 class="font-display font-semibold text-ink text-lg leading-snug group-hover:text-mint transition-colors" data-i18n="work.r4.title">Cognitive Performance Prediction</h4>
+              <p class="font-mono text-[11px] text-dim mt-0.5 hidden sm:block" data-i18n="work.r4.sub">Wearable biosignal · Empatica E4</p>
+              <span class="flex flex-wrap gap-1.5 mt-2">
+                <span class="tag-pill">Scikit-learn</span><span class="tag-pill">Pandas</span><span class="tag-pill">NumPy</span>
+              </span>
+            </span>
+          </div>
         </span>
         <span class="font-mono text-[12px] text-ink whitespace-nowrap" data-count="0.68" data-decimals="2" data-prefix="R² ">R² 0.68</span>
         <svg class="w-4 h-4 text-dim transition-transform group-hover:translate-x-1 group-hover:text-ink hidden sm:block" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
@@ -324,9 +388,20 @@ const MARKUP = `<div class="grain"></div>
 
       <button type="button" data-project="fluenti" class="project-trigger group grid grid-cols-[auto_1fr_auto] sm:grid-cols-[auto_1fr_auto_auto] items-center gap-x-4 sm:gap-x-6 w-full text-left py-6 border-b border-line">
         <span class="font-mono text-[11px] text-dim group-hover:text-ink transition-colors">05</span>
-        <span>
-          <h4 class="font-display font-semibold text-ink text-lg leading-snug group-hover:text-mint transition-colors" data-i18n="work.r5.title">FLUENTI · AI Grammar Checker</h4>
-          <p class="font-mono text-[11px] text-dim mt-0.5 hidden sm:block" data-i18n="work.r5.sub">Fine-tuning LLaMA 3</p>
+        <span class="min-w-0">
+          <div class="flex items-center gap-3 sm:gap-4">
+            <div class="project-thumb w-14 h-14 sm:w-16 sm:h-16 rounded-lg shrink-0">
+              <span class="project-thumb-glyph" aria-hidden="true">LLM</span>
+              <img src="./project-fluenti.jpg" alt="" loading="lazy" onerror="this.parentElement.classList.add('thumb-missing')" />
+            </div>
+            <span class="min-w-0">
+              <h4 class="font-display font-semibold text-ink text-lg leading-snug group-hover:text-mint transition-colors" data-i18n="work.r5.title">FLUENTI · AI Grammar Checker</h4>
+              <p class="font-mono text-[11px] text-dim mt-0.5 hidden sm:block" data-i18n="work.r5.sub">Fine-tuning LLaMA 3</p>
+              <span class="flex flex-wrap gap-1.5 mt-2">
+                <span class="tag-pill">LLaMA 3</span><span class="tag-pill">Python</span>
+              </span>
+            </span>
+          </div>
         </span>
         <span class="font-mono text-[12px] text-dim whitespace-nowrap">2024-2025</span>
         <svg class="w-4 h-4 text-dim transition-transform group-hover:translate-x-1 group-hover:text-ink hidden sm:block" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>

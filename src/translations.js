@@ -5,9 +5,6 @@ const TRANSLATIONS = {
   id: {
     doc: 'id',
     meta: { title: 'Muhammad Afin Atsal · AI/ML Engineer' },
-    header: {
-      status: 'Open untuk kolaborasi',
-    },
     hero: {
       eyebrow: 'AI/ML ENGINEER · COMPUTER VISION',
       tagline: 'Membangun sistem AI dari riset ke produksi, dari notebook hingga deployment.',
@@ -61,7 +58,7 @@ const TRANSLATIONS = {
       intro: 'Klik untuk melihat detail proyek.',
       thesis: {
         eyebrow: 'SKRIPSI · FEB 2026',
-        heading: 'Deteksi dan klasifikasi sampah hierarkis dengan <span class="text-accent">YOLOv12 + HSCN</span>, mencapai F1 <span class="text-accent" data-count="0.844" data-decimals="3">0.844</span> dan mAP <span class="text-accent" data-count="0.967" data-decimals="3">0.967</span>.',
+        heading: 'Deteksi dan klasifikasi sampah hierarkis dengan <span class="text-accent">YOLOv12 + HSCN</span>.',
         desc: 'Pipeline dua tahap, YOLOv12 mendeteksi objek lalu Hierarchical Sequential Classification Network mengklasifikasikan tiga level hierarki sampah.',
       },
       r1: {
@@ -200,9 +197,6 @@ const TRANSLATIONS = {
   en: {
     doc: 'en',
     meta: { title: 'Muhammad Afin Atsal · AI/ML Engineer' },
-    header: {
-      status: 'Open to collaboration',
-    },
     hero: {
       eyebrow: 'AI/ML ENGINEER · COMPUTER VISION',
       tagline: 'Building AI systems that go from research to production, from notebook to deployment.',
@@ -256,7 +250,7 @@ const TRANSLATIONS = {
       intro: 'Click to view project details.',
       thesis: {
         eyebrow: 'THESIS · FEB 2026',
-        heading: 'Hierarchical waste detection &amp; classification with <span class="text-accent">YOLOv12 + HSCN</span>, reaching F1 <span class="text-accent" data-count="0.844" data-decimals="3">0.844</span> and mAP <span class="text-accent" data-count="0.967" data-decimals="3">0.967</span>.',
+        heading: 'Hierarchical waste detection &amp; classification with <span class="text-accent">YOLOv12 + HSCN</span>.',
         desc: 'A two-stage pipeline, YOLOv12 detects objects then a Hierarchical Sequential Classification Network classifies three levels of waste hierarchy.',
       },
       r1: {
@@ -395,9 +389,6 @@ const TRANSLATIONS = {
   zh: {
     doc: 'zh-CN',
     meta: { title: '穆罕默德·阿芬·阿特萨尔 · AI/ML 工程师' },
-    header: {
-      status: '欢迎合作',
-    },
     hero: {
       eyebrow: 'AI/ML 工程师 · 计算机视觉',
       tagline: '打造从研究走向生产、从笔记本到部署的 AI 系统。',
@@ -451,7 +442,7 @@ const TRANSLATIONS = {
       intro: '点击查看项目详情。',
       thesis: {
         eyebrow: '毕业论文 · 2026年2月',
-        heading: '基于 <span class="text-accent">YOLOv12 + HSCN</span> 的分层垃圾检测与分类，F1 达 <span class="text-accent" data-count="0.844" data-decimals="3">0.844</span>，mAP 达 <span class="text-accent" data-count="0.967" data-decimals="3">0.967</span>。',
+        heading: '基于 <span class="text-accent">YOLOv12 + HSCN</span> 的分层垃圾检测与分类。',
         desc: '两阶段流水线，YOLOv12 负责物体检测，再由层级序列分类网络对三层垃圾层级进行分类。',
       },
       r1: {
@@ -590,9 +581,6 @@ const TRANSLATIONS = {
   ja: {
     doc: 'ja',
     meta: { title: 'ムハンマド・アフィン・アサール · AI/MLエンジニア' },
-    header: {
-      status: 'コラボレーション募集中',
-    },
     hero: {
       eyebrow: 'AI/MLエンジニア · コンピュータビジョン',
       tagline: '研究から本番運用まで、ノートブックからデプロイメントまで、AIシステムを構築します。',
@@ -646,7 +634,7 @@ const TRANSLATIONS = {
       intro: 'クリックで詳細を見る。',
       thesis: {
         eyebrow: '卒業研究 · 2026年2月',
-        heading: '<span class="text-accent">YOLOv12 + HSCN</span>による階層型ゴミ検出・分類。F1 <span class="text-accent" data-count="0.844" data-decimals="3">0.844</span>、mAP <span class="text-accent" data-count="0.967" data-decimals="3">0.967</span> を達成。',
+        heading: '<span class="text-accent">YOLOv12 + HSCN</span>による階層型ゴミ検出・分類。',
         desc: '2段階パイプライン。YOLOv12が物体を検出し、階層型系列分類ネットワークが3段階のゴミ階層を分類します。',
       },
       r1: {
