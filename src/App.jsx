@@ -50,7 +50,7 @@ const MARKUP = `<div class="grain"></div>
   <header class="hero-in relative z-10 flex items-center justify-between px-5 sm:px-10 pt-7 font-mono text-xs tracking-wide" style="--d:.05s">
     <div class="text-dim whitespace-nowrap">AFIN<span class="text-accent">.</span><span class="hidden min-[400px]:inline"> PORTFOLIO/2026</span></div>
     <div class="flex items-center gap-3 text-dim">
-      <nav class="lang-pill" aria-label="Pilih bahasa">
+      <nav class="lang-pill" aria-label="Pilih bahasa" data-i18n-aria="ui.langLabel">
         <button type="button" data-lang="id" class="lang-active" aria-label="Bahasa Indonesia">ID</button>
         <button type="button" data-lang="en" aria-label="English">EN</button>
         <button type="button" data-lang="zh" aria-label="中文">中文</button>
@@ -76,7 +76,7 @@ const MARKUP = `<div class="grain"></div>
 
 <!-- ============ PENGALAMAN ============ -->
 <!-- ============ ABOUT / TENTANG ============ -->
-<section id="about" class="section-transition relative bg-section px-5 sm:px-10 py-28 sm:py-36">
+<section id="about" class="section-transition relative bg-section px-5 sm:px-10 py-24 sm:py-28">
   <div class="max-w-3xl mx-auto">
     <p class="font-mono text-[11px] tracking-[0.25em] text-accent mb-14 reveal" data-i18n="about.label">02 · TENTANG</p>
 
@@ -85,7 +85,7 @@ const MARKUP = `<div class="grain"></div>
     </h2>
 
     <p class="font-display text-[15px] text-dim leading-relaxed max-w-xl mb-12 reveal reveal-delay-1" data-i18n="about.body">
-      Lulusan Teknologi Informasi Universitas Brawijaya (IPK 3.55/4.00) dengan fokus di computer vision dan applied deep learning. Saya membawa model dari eksperimen ke sistem yang terintegrasi produksi lewat dua program magang industri, serta memimpin riset skripsi pipeline deteksi sampah hierarkis dari nol, mulai dari kurasi dataset, benchmarking arsitektur, hingga aplikasi inferensi siap demo.
+      Lulusan Teknologi Informasi Universitas Brawijaya (IPK 3.64/4.00) dengan fokus di computer vision dan applied deep learning. Saya membawa model dari eksperimen ke sistem yang terintegrasi produksi lewat dua program magang industri, serta memimpin riset skripsi pipeline deteksi sampah hierarkis dari nol, mulai dari kurasi dataset, benchmarking arsitektur, hingga aplikasi inferensi siap demo.
     </p>
 
     <div class="grid grid-cols-2 sm:grid-cols-4 gap-6 sm:gap-8 border-t border-line pt-8 reveal reveal-delay-2">
@@ -95,7 +95,7 @@ const MARKUP = `<div class="grain"></div>
       </div>
       <div>
         <p class="font-mono text-[10px] tracking-[0.15em] text-dim mb-1.5" data-i18n="about.gpaLabel">IPK</p>
-        <p class="font-display font-semibold text-ink text-sm leading-snug"><span data-count="3.55" data-decimals="2">3.55</span> / 4.00</p>
+        <p class="font-display font-semibold text-ink text-sm leading-snug"><span data-count="3.64" data-decimals="2">3.64</span> / 4.00</p>
       </div>
       <div>
         <p class="font-mono text-[10px] tracking-[0.15em] text-dim mb-1.5" data-i18n="about.locationLabel">LOKASI</p>
@@ -111,7 +111,7 @@ const MARKUP = `<div class="grain"></div>
 
 <!-- ============ SKILLS ============ -->
 
-<section id="experience" class="relative bg-section px-5 sm:px-10 py-28 sm:py-36">
+<section id="experience" class="relative bg-section px-5 sm:px-10 py-24 sm:py-28">
   <div class="max-w-4xl mx-auto">
     <p class="font-mono text-[11px] tracking-[0.25em] text-accent text-center mb-16 reveal" data-i18n="exp.label">03 · PENGALAMAN</p>
 
@@ -124,14 +124,14 @@ const MARKUP = `<div class="grain"></div>
         <span class="absolute left-0 sm:left-1/2 top-1.5 sm:top-1/2 sm:-translate-y-1/2 -translate-x-1/2 w-2.5 h-2.5 rounded-full bg-ink z-10"></span>
         <div class="hidden sm:flex justify-end pr-4">
           <div class="w-24 h-24 rounded-full border border-line overflow-hidden shrink-0">
-            <img src="./Instruktur-Praktikum-Python.jpeg" alt="Foto Instruktur Praktikum Python" class="w-full h-full object-cover" loading="lazy" />
+            <img src="./Instruktur-Praktikum-Python.jpeg" alt="Foto Instruktur Praktikum Python" data-i18n-alt="ui.altExp1" class="w-full h-full object-cover" loading="lazy" />
           </div>
         </div>
         <div class="sm:pl-10 text-left">
           <div class="sm:hidden w-10 h-10 rounded-full border border-line overflow-hidden shrink-0 mb-2.5">
-            <img src="./Instruktur-Praktikum-Python.jpeg" alt="Foto Instruktur Praktikum Python" class="w-full h-full object-cover" loading="lazy" />
+            <img src="./Instruktur-Praktikum-Python.jpeg" alt="Foto Instruktur Praktikum Python" data-i18n-alt="ui.altExp1" class="w-full h-full object-cover" loading="lazy" />
           </div>
-          <p class="font-mono text-[11px] text-accent mb-1.5" data-i18n="exp.e1.period">FEB 2026 · SEKARANG</p>
+          <p class="font-mono text-[11px] text-accent mb-1.5" data-i18n="exp.e1.period">FEB · JUL 2026</p>
           <p class="font-display font-semibold text-lg sm:text-xl text-ink mb-1" data-i18n="exp.e1.title">Instruktur Praktikum Python</p>
           <p class="font-mono text-[12px] text-lime mb-2" data-i18n="exp.e1.org">FILKOM &amp; FMIPA, Universitas Brawijaya</p>
           <p class="font-display text-[14.5px] text-dim leading-relaxed" data-i18n="exp.e1.desc">Mengampu praktikum pemrograman Python lintas fakultas selama satu semester, mencakup penyusunan kurikulum materi dan evaluasi hasil belajar mahasiswa.</p>
@@ -143,7 +143,7 @@ const MARKUP = `<div class="grain"></div>
         <span class="absolute left-0 sm:left-1/2 top-1.5 sm:top-1/2 sm:-translate-y-1/2 -translate-x-1/2 w-2.5 h-2.5 rounded-full bg-ink z-10"></span>
         <div class="sm:pr-10 sm:text-right text-left order-2 sm:order-1">
           <div class="sm:hidden w-10 h-10 rounded-full border border-line overflow-hidden shrink-0 mb-2.5">
-            <img src="./MBKM-XL-Smart.jpeg" alt="Foto MBKM X-Camp XLSmart" class="w-full h-full object-cover" loading="lazy" />
+            <img src="./MBKM-XL-Smart.jpeg" alt="Foto MBKM X-Camp XLSmart" data-i18n-alt="ui.altExp2" class="w-full h-full object-cover" loading="lazy" />
           </div>
           <p class="font-mono text-[11px] text-accent mb-1.5" data-i18n="exp.e2.period">AGU · DES 2025</p>
           <p class="font-display font-semibold text-lg sm:text-xl text-ink mb-1" data-i18n="exp.e2.title">AI/ML Engineer (MBKM)</p>
@@ -152,7 +152,7 @@ const MARKUP = `<div class="grain"></div>
         </div>
         <div class="hidden sm:flex justify-start pl-4 order-2">
           <div class="w-24 h-24 rounded-full border border-line overflow-hidden shrink-0">
-            <img src="./MBKM-XL-Smart.jpeg" alt="Foto MBKM X-Camp XLSmart" class="w-full h-full object-cover" loading="lazy" />
+            <img src="./MBKM-XL-Smart.jpeg" alt="Foto MBKM X-Camp XLSmart" data-i18n-alt="ui.altExp2" class="w-full h-full object-cover" loading="lazy" />
           </div>
         </div>
       </div>
@@ -162,12 +162,12 @@ const MARKUP = `<div class="grain"></div>
         <span class="absolute left-0 sm:left-1/2 top-1.5 sm:top-1/2 sm:-translate-y-1/2 -translate-x-1/2 w-2.5 h-2.5 rounded-full bg-ink z-10"></span>
         <div class="hidden sm:flex justify-end pr-4">
           <div class="w-24 h-24 rounded-full border border-line overflow-hidden shrink-0">
-            <img src="./Intern-Amman.jpeg" alt="Foto Internship PT Amman Mineral" class="w-full h-full object-cover" loading="lazy" />
+            <img src="./Intern-Amman.jpeg" alt="Foto Internship PT Amman Mineral" data-i18n-alt="ui.altExp3" class="w-full h-full object-cover" loading="lazy" />
           </div>
         </div>
         <div class="sm:pl-10 text-left">
           <div class="sm:hidden w-10 h-10 rounded-full border border-line overflow-hidden shrink-0 mb-2.5">
-            <img src="./Intern-Amman.jpeg" alt="Foto Internship PT Amman Mineral" class="w-full h-full object-cover" loading="lazy" />
+            <img src="./Intern-Amman.jpeg" alt="Foto Internship PT Amman Mineral" data-i18n-alt="ui.altExp3" class="w-full h-full object-cover" loading="lazy" />
           </div>
           <p class="font-mono text-[11px] text-accent mb-1.5" data-i18n="exp.e3.period">JUL · AGU 2025</p>
           <p class="font-display font-semibold text-lg sm:text-xl text-ink mb-1" data-i18n="exp.e3.title">Back-End &amp; AI System Developer</p>
@@ -181,7 +181,7 @@ const MARKUP = `<div class="grain"></div>
         <span class="absolute left-0 sm:left-1/2 top-1.5 sm:top-1/2 sm:-translate-y-1/2 -translate-x-1/2 w-2.5 h-2.5 rounded-full bg-ink z-10"></span>
         <div class="sm:pr-10 sm:text-right text-left order-2 sm:order-1">
           <div class="sm:hidden w-10 h-10 rounded-full border border-line overflow-hidden shrink-0 mb-2.5">
-            <img src="./Private-Tutor.jpeg" alt="Foto Private Tutor" class="w-full h-full object-cover" loading="lazy" />
+            <img src="./Private-Tutor.jpeg" alt="Foto Private Tutor" data-i18n-alt="ui.altExp4" class="w-full h-full object-cover" loading="lazy" />
           </div>
           <p class="font-mono text-[11px] text-accent mb-1.5" data-i18n="exp.e4.period">FREELANCE · BERJALAN</p>
           <p class="font-display font-semibold text-lg sm:text-xl text-ink mb-1" data-i18n="exp.e4.title">Private Tutor · IoT &amp; Applied AI</p>
@@ -190,8 +190,28 @@ const MARKUP = `<div class="grain"></div>
         </div>
         <div class="hidden sm:flex justify-start pl-4 order-2">
           <div class="w-24 h-24 rounded-full border border-line overflow-hidden shrink-0">
-            <img src="./Private-Tutor.jpeg" alt="Foto Private Tutor" class="w-full h-full object-cover" loading="lazy" />
+            <img src="./Private-Tutor.jpeg" alt="Foto Private Tutor" data-i18n-alt="ui.altExp4" class="w-full h-full object-cover" loading="lazy" />
           </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-16 sm:mt-24 pt-1">
+      <p class="font-mono text-[11px] tracking-[0.25em] text-accent mb-8 reveal" data-i18n="org.label">ORGANISASI &amp; KEPEMIMPINAN</p>
+
+      <div class="grid gap-8 sm:grid-cols-2 sm:gap-10">
+        <div class="reveal reveal-delay-1">
+          <p class="font-mono text-[11px] text-accent mb-1.5" data-i18n="org.o1.period">FEB · DES 2024</p>
+          <p class="font-display font-semibold text-lg text-ink mb-1" data-i18n="org.o1.title">Wakil Ketua Departemen Kewirausahaan</p>
+          <p class="font-mono text-[12px] text-dim mb-2" data-i18n="org.o1.org">KBMDSI FILKOM UB</p>
+          <p class="font-display text-[14.5px] text-dim leading-relaxed" data-i18n="org.o1.desc">Menjalankan 4 program utama, menginisiasi DSI Store (merchandise) untuk pendanaan organisasi, memimpin produksi PDH, serta mengelola konten media sosial kewirausahaan.</p>
+        </div>
+
+        <div class="reveal reveal-delay-2">
+          <p class="font-mono text-[11px] text-accent mb-1.5" data-i18n="org.o2.period">APR · DES 2023</p>
+          <p class="font-display font-semibold text-lg text-ink mb-1" data-i18n="org.o2.title">Ketua Sponsorship &amp; Fundraising</p>
+          <p class="font-mono text-[12px] text-dim mb-2" data-i18n="org.o2.org">FILAFEST 2023</p>
+          <p class="font-display text-[14.5px] text-dim leading-relaxed" data-i18n="org.o2.desc">Memimpin strategi akuisisi sponsor, mengelola proposal dan negosiasi end-to-end, serta mengumpulkan dana melebihi target anggaran festival.</p>
         </div>
       </div>
     </div>
@@ -200,7 +220,7 @@ const MARKUP = `<div class="grain"></div>
 
 <!-- ============ SERTIFIKASI ============ -->
 <!-- TODO: perbarui tahun dan ganti href dengan link verifikasi kredensial asli (coursera.org/verify/...) -->
-<section id="certifications" class="relative bg-section px-5 sm:px-10 py-28 sm:py-36">
+<section id="certifications" class="relative bg-section px-5 sm:px-10 py-24 sm:py-28">
   <div class="max-w-3xl mx-auto">
     <p class="font-mono text-[11px] tracking-[0.25em] text-accent mb-3 reveal" data-i18n="cert.label">04 · SERTIFIKASI</p>
     <p class="font-mono text-[11px] text-dim mb-14 reveal" data-i18n="cert.intro">Klik untuk memverifikasi kredensial.</p>
@@ -250,7 +270,7 @@ const MARKUP = `<div class="grain"></div>
 </section>
 
 <!-- ============ PROYEK ============ -->
-<section id="work" class="relative bg-section px-5 sm:px-10 py-28 sm:py-36">
+<section id="work" class="relative bg-section px-5 sm:px-10 py-24 sm:py-28">
   <div class="max-w-3xl mx-auto">
     <p class="font-mono text-[11px] tracking-[0.25em] text-accent mb-3 reveal" data-i18n="work.label">05 · PROYEK</p>
     <p class="font-mono text-[11px] text-dim mb-14 reveal" data-i18n="work.intro">Klik untuk melihat detail proyek.</p>
@@ -272,18 +292,18 @@ const MARKUP = `<div class="grain"></div>
           <p class="font-display text-[15px] text-dim leading-relaxed max-w-xl" data-i18n="work.thesis.desc">
             Pipeline dua tahap, YOLOv12 mendeteksi objek lalu Hierarchical Sequential Classification Network mengklasifikasikan tiga level hierarki sampah.
           </p>
-          <div class="flex flex-wrap gap-3 mt-5">
-            <span class="inline-flex items-baseline gap-2 border border-line rounded-full px-4 py-2">
-              <span class="font-mono text-[10px] text-dim tracking-wide">F1</span>
-              <span class="font-mono text-[15px] text-accent font-medium tabular-nums" data-count="0.844" data-decimals="3">0.844</span>
+          <div class="flex flex-wrap gap-2 mt-5">
+            <span class="inline-flex items-baseline gap-1.5 border border-line rounded-full px-3 py-1.5">
+              <span class="font-mono text-[9px] text-dim tracking-wide">F1</span>
+              <span class="font-mono text-[13px] text-accent font-medium tabular-nums" data-count="0.844" data-decimals="3">0.844</span>
             </span>
-            <span class="inline-flex items-baseline gap-2 border border-line rounded-full px-4 py-2">
-              <span class="font-mono text-[10px] text-dim tracking-wide">mAP</span>
-              <span class="font-mono text-[15px] text-accent font-medium tabular-nums" data-count="0.967" data-decimals="3">0.967</span>
+            <span class="inline-flex items-baseline gap-1.5 border border-line rounded-full px-3 py-1.5">
+              <span class="font-mono text-[9px] text-dim tracking-wide">mAP</span>
+              <span class="font-mono text-[13px] text-accent font-medium tabular-nums" data-count="0.967" data-decimals="3">0.967</span>
             </span>
-            <span class="inline-flex items-center gap-2 border border-line rounded-full px-4 py-2">
-              <span class="font-mono text-[10px] text-dim tracking-wide">DATASET</span>
-              <span class="font-mono text-[13px] text-ink font-medium whitespace-nowrap">2.116 gambar</span>
+            <span class="inline-flex items-center gap-1.5 border border-line rounded-full px-3 py-1.5">
+              <span class="font-mono text-[9px] text-dim tracking-wide">DATASET</span>
+              <span class="font-mono text-[11px] text-ink font-medium whitespace-nowrap">2.116 gambar</span>
             </span>
           </div>
           <p class="flex flex-wrap gap-2 mt-5">
@@ -293,7 +313,7 @@ const MARKUP = `<div class="grain"></div>
         <div class="order-1 sm:order-2 sm:self-stretch">
           <div class="project-thumb h-full min-h-[260px] sm:min-h-0 rounded-2xl">
             <span class="project-thumb-glyph" aria-hidden="true">THESIS / CV</span>
-            <img src="./project-thesis.jpg" alt="Preview proyek skripsi deteksi sampah" class="group-hover:scale-105 transition-transform duration-500" loading="lazy" onerror="this.parentElement.classList.add('thumb-missing')" />
+            <img src="./project-thesis.jpg" alt="Preview proyek skripsi deteksi sampah" data-i18n-alt="ui.altThesis" class="group-hover:scale-105 transition-transform duration-500" loading="lazy" onerror="this.parentElement.classList.add('thumb-missing')" />
           </div>
         </div>
       </div>
@@ -413,43 +433,55 @@ const MARKUP = `<div class="grain"></div>
 <!-- ============ PROJECT DETAIL MODAL ============ -->
 <div id="projectModal" class="fixed inset-0 z-40 hidden">
   <div id="modalBackdrop" class="absolute inset-0 bg-black/80 backdrop-blur-sm opacity-0 transition-opacity duration-300"></div>
-  <div class="absolute inset-0 flex items-start sm:items-center justify-center p-0 sm:p-6 overflow-y-auto">
-    <div id="modalPanel" class="relative w-full sm:max-w-2xl sm:rounded-2xl border-0 sm:border border-line bg-panel min-h-screen sm:min-h-0 translate-y-6 opacity-0 transition-all duration-300 my-0 sm:my-10">
-      <button id="modalClose" type="button" aria-label="Tutup" class="absolute top-5 right-5 sm:top-6 sm:right-6 w-9 h-9 flex items-center justify-center rounded-full border border-line text-dim hover:text-ink hover:border-ink/40 transition-colors z-10">
+  <div class="absolute inset-0 flex p-0 sm:p-6 overflow-y-auto">
+    <div id="modalPanel" class="relative w-full sm:max-w-3xl sm:rounded-2xl border-0 sm:border border-line bg-panel min-h-screen sm:min-h-0 m-auto translate-y-6 opacity-0 transition-all duration-300">
+      <button id="modalClose" type="button" aria-label="Tutup" data-i18n-aria="ui.close" class="absolute top-5 right-5 sm:top-6 sm:right-6 w-9 h-9 flex items-center justify-center rounded-full border border-line text-dim hover:text-ink hover:border-ink/40 transition-colors z-10">
         <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18M6 6l12 12"/></svg>
       </button>
-      <div class="p-7 sm:p-10">
-        <p id="modalEyebrow" class="font-mono text-[11px] tracking-[0.2em] text-accent mb-4"></p>
-        <h3 id="modalTitle" class="font-display font-semibold text-2xl sm:text-3xl text-ink leading-tight mb-6 pr-10"></h3>
 
-        <div id="modalMetrics" class="flex flex-wrap gap-x-8 gap-y-3 mb-8 pb-8 border-b border-line"></div>
+      <div id="modalHero" class="project-thumb relative aspect-[16/9] sm:aspect-auto sm:h-60 sm:rounded-t-2xl border-b border-line overflow-hidden" aria-hidden="true"></div>
 
-        <div class="mb-7">
-          <p class="font-mono text-[10px] tracking-[0.2em] text-dim mb-2" data-i18n="ui.overview">OVERVIEW</p>
+      <div class="p-7 sm:p-10 sm:pb-8">
+        <p id="modalEyebrow" class="font-mono text-[11px] tracking-[0.2em] text-accent mb-5"></p>
+        <h3 id="modalTitle" class="font-display font-semibold text-2xl sm:text-3xl text-ink leading-tight mb-8 pr-10"></h3>
+
+        <div id="modalMeta" class="grid grid-cols-2 sm:grid-cols-3 gap-x-4 gap-y-5 mb-8"></div>
+
+        <div id="modalMetrics" class="grid grid-cols-2 sm:grid-cols-3 gap-3 sm:gap-3.5 mb-9 pb-9 border-b border-line"></div>
+
+        <div class="mb-8">
+          <p class="font-mono text-[10px] tracking-[0.2em] text-dim mb-3" data-i18n="ui.overview">OVERVIEW</p>
           <p id="modalOverview" class="font-display text-[15px] text-dim leading-relaxed"></p>
         </div>
 
-        <div class="mb-7">
-          <p class="font-mono text-[10px] tracking-[0.2em] text-dim mb-3" data-i18n="ui.approach">PENDEKATAN</p>
-          <ul id="modalApproach" class="space-y-2.5"></ul>
+        <div class="mb-8">
+          <p class="font-mono text-[10px] tracking-[0.2em] text-dim mb-4" data-i18n="ui.approach">PENDEKATAN</p>
+          <ol id="modalApproach" class="space-y-3.5"></ol>
         </div>
 
-        <div>
-          <p class="font-mono text-[10px] tracking-[0.2em] text-dim mb-3" data-i18n="ui.stack">TECH STACK</p>
+        <div class="mb-8">
+          <p class="font-mono text-[10px] tracking-[0.2em] text-dim mb-4" data-i18n="ui.results">HASIL &amp; INSIGHT</p>
+          <ul id="modalResults" class="space-y-3"></ul>
+        </div>
+
+        <div class="mb-9">
+          <p class="font-mono text-[10px] tracking-[0.2em] text-dim mb-3.5" data-i18n="ui.stack">TECH STACK</p>
           <div id="modalStack" class="flex flex-wrap gap-2"></div>
         </div>
+
+        <div id="modalFooter" class="grid grid-cols-2 gap-3 sm:gap-3.5 pt-7 border-t border-line"></div>
       </div>
     </div>
   </div>
 </div>
 
 <!-- ============ PUBLIKASI ============ -->
-<section id="publications" class="relative bg-section px-5 sm:px-10 py-28 sm:py-36">
+<section id="publications" class="relative bg-section px-5 sm:px-10 py-24 sm:py-28">
   <div class="max-w-3xl mx-auto">
     <p class="font-mono text-[11px] tracking-[0.25em] text-accent mb-14 reveal" data-i18n="pub.label">06 · PUBLIKASI</p>
 
     <div class="reveal reveal-delay-1">
-      <h3 class="font-display font-semibold text-xl sm:text-2xl text-ink leading-snug mb-3 max-w-2xl border-b border-transparent hover:border-line transition-colors inline">
+      <h3 class="font-display font-semibold text-xl sm:text-2xl text-ink leading-snug mb-3 max-w-2xl border-b border-transparent hover:border-line transition-colors inline" data-i18n="pub.title">
         Deteksi dan Klasifikasi Sampah Bertingkat Menggunakan YOLOv12 dan Hierarchical Sibling Classification Network
       </h3>
       <p class="font-mono text-[12px] text-dim" data-i18n="pub.venue">SENTRIN 2026 · Seminar Nasional Teknologi dan Rekayasa Informasi · <span class="text-accent">Dalam persiapan</span></p>
@@ -477,7 +509,7 @@ const MARKUP = `<div class="grain"></div>
 </section>
 
 <!-- ============ KONTAK ============ -->
-<section id="contact" class="relative bg-section px-5 sm:px-10 pt-28 sm:pt-36 pb-44">
+<section id="contact" class="relative bg-section px-5 sm:px-10 pt-24 sm:pt-28 pb-40">
   <div class="max-w-2xl mx-auto text-center">
     <p class="font-mono text-[11px] tracking-[0.25em] text-accent mb-6 reveal" data-i18n="contact.label">08 · KONTAK</p>
     <h2 class="font-display font-semibold text-3xl sm:text-5xl text-ink leading-tight mb-8 reveal reveal-delay-1"><span data-i18n="contact.heading">Mari membangun sesuatu yang berdampak bersama.</span></h2>
@@ -506,7 +538,10 @@ const MARKUP = `<div class="grain"></div>
       </a>
     </div>
 
-    <p class="font-mono text-[11px] text-dim mt-14 reveal reveal-delay-2">Malang, Indonesia · +62 821-1514-0703</p>
+    <p class="font-mono text-[11px] text-dim mt-14 reveal reveal-delay-2">Malang, Indonesia · <a href="https://wa.me/6282115140703" target="_blank" rel="noopener" class="contact-link inline-flex items-center gap-1.5 hover:text-ink transition-colors">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.26-.46-2.4-1.47-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.6.13-.14.3-.35.44-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.62-.92-2.21-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.22 3.07c.15.2 2.1 3.2 5.08 4.48.71.31 1.26.49 1.7.63.71.22 1.36.19 1.87.11.57-.08 1.76-.72 2.01-1.41.25-.7.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35z"/><path d="M12.05 2a9.94 9.94 0 0 0-8.6 14.92L2 22l5.21-1.37A9.94 9.94 0 1 0 12.05 2zm0 18.12a8.2 8.2 0 0 1-4.18-1.15l-.3-.18-3.09.81.82-3.01-.2-.31a8.18 8.18 0 1 1 6.95 3.84z"/></svg>
+      <span>+62 821-1514-0703</span>
+    </a></p>
   </div>
 </section>
 
@@ -587,6 +622,14 @@ const LEGACY_SCRIPT = `
     document.querySelectorAll('[data-i18n]').forEach(el => {
       const v = getVal(D, el.getAttribute('data-i18n'));
       if(typeof v === 'string') el.innerHTML = v;
+    });
+    document.querySelectorAll('[data-i18n-aria]').forEach(el => {
+      const v = getVal(D, el.getAttribute('data-i18n-aria'));
+      if(typeof v === 'string') el.setAttribute('aria-label', v);
+    });
+    document.querySelectorAll('[data-i18n-alt]').forEach(el => {
+      const v = getVal(D, el.getAttribute('data-i18n-alt'));
+      if(typeof v === 'string') el.setAttribute('alt', v);
     });
     document.querySelectorAll('[data-lang]').forEach(btn => {
       btn.classList.toggle('lang-active', btn.getAttribute('data-lang') === lang);
@@ -670,17 +713,18 @@ const LEGACY_SCRIPT = `
   setTimeout(typeLine, 700);
 
   // --- progress: counter, bar and status sync ---
+  const UI = (window.__I18N && (window.__I18N[window.__LANG] || window.__I18N.id).ui) || {};
   const STEPS = [
-    [0,   'BOOTING'],
-    [32,  'STREAMING'],
-    [64,  'MAPPING'],
-    [92,  'LINKING'],
+    [0,   UI.boot || 'BOOTING'],
+    [32,  UI.stream || 'STREAMING'],
+    [64,  UI.map || 'MAPPING'],
+    [92,  UI.link || 'LINKING'],
   ];
   const DURATION = 2100;
   const start = performance.now();
 
   function stepLabel(p){
-    let label = 'READY';
+    let label = UI.ready || 'READY';
     for(let i = STEPS.length - 1; i >= 0; i--){
       if(p >= STEPS[i][0]){ label = STEPS[i][1]; break; }
     }
@@ -693,7 +737,7 @@ const LEGACY_SCRIPT = `
     document.body.classList.add('ready');
     bar.style.width = '100%';
     pct.textContent = '100';
-    statusEl.textContent = 'READY';
+    statusEl.textContent = UI.ready || 'READY';
     loader.classList.add('loader-open');
     loader.style.pointerEvents = 'none';
     setTimeout(() => { if(loader.isConnected) loader.remove(); }, 1150);
@@ -872,7 +916,12 @@ const LEGACY_SCRIPT = `
   const links = document.querySelectorAll('nav a.dock-link');
   const sections = Array.from(links).map(a => document.querySelector(a.getAttribute('href'))).filter(Boolean);
   const hudSection = document.getElementById('hudSection');
-  const labels = { home:'01 · HOME', about:'02 · ABOUT', experience:'03 · EXPERIENCE', certifications:'04 · SERTIFIKASI', work:'05 · PROYEK', publications:'06 · PUBLIKASI', skills:'07 · SKILLS', contact:'08 · KONTAK' };
+
+  function hudLabels(){
+    const I = window.__I18N && (window.__I18N[window.__LANG] || window.__I18N.id);
+    return (I && I.ui && I.ui.hud) || {};
+  }
+
   window.addEventListener('scroll', () => {
     let current = sections[0];
     sections.forEach(sec => { if(sec && window.scrollY >= sec.offsetTop - window.innerHeight/2) current = sec; });
@@ -881,7 +930,17 @@ const LEGACY_SCRIPT = `
       a.classList.toggle('active-dock', match);
       a.classList.toggle('text-dim', !match);
     });
-    if(current && hudSection) hudSection.textContent = labels[current.id] || '';
+    if(current && hudSection){
+      const labels = hudLabels();
+      hudSection.textContent = labels[current.id] || current.id.toUpperCase();
+    }
+  });
+  document.addEventListener('afin:lang', () => {
+    if(!hudSection) return;
+    const labels = hudLabels();
+    let current = sections[0];
+    sections.forEach(sec => { if(sec && window.scrollY >= sec.offsetTop - window.innerHeight/2) current = sec; });
+    if(current) hudSection.textContent = labels[current.id] || current.id.toUpperCase();
   });
 })();
 
@@ -919,6 +978,25 @@ const LEGACY_SCRIPT = `
 (function(){
   let openId = null;
 
+  const GLYPHS = {
+    thesis: 'THESIS / CV',
+    'visual-inspection': 'CV',
+    'rag-chatbot': 'RAG',
+    pneumonia: 'X-RAY',
+    cognitive: 'E4',
+    fluenti: 'LLM',
+  };
+  const ORDER = ['thesis', 'visual-inspection', 'rag-chatbot', 'pneumonia', 'cognitive', 'fluenti'];
+  // placeholder github links — replace with real repos before publish
+  const LINKS = {
+    thesis: 'https://github.com/afinatsal/waste-detection-yolov12-hscn',
+    'visual-inspection': 'https://github.com/afinatsal/cnn-visual-inspection',
+    'rag-chatbot': 'https://github.com/afinatsal/rag-boat-ticket-chatbot',
+    pneumonia: 'https://github.com/afinatsal/pneumonia-xray-detection',
+    cognitive: 'https://github.com/afinatsal/cognitive-performance-e4',
+    fluenti: 'https://github.com/afinatsal/fluenti-llama3',
+  };
+
   function projectById(id){
     const I = window.__I18N && (window.__I18N[window.__LANG] || window.__I18N.id);
     return I ? I.projects[id] : null;
@@ -930,40 +1008,105 @@ const LEGACY_SCRIPT = `
   const closeBtn = document.getElementById('modalClose');
   if(!modal) return;
 
+  const elHero = document.getElementById('modalHero');
   const elEyebrow = document.getElementById('modalEyebrow');
   const elTitle = document.getElementById('modalTitle');
+  const elMeta = document.getElementById('modalMeta');
   const elMetrics = document.getElementById('modalMetrics');
   const elOverview = document.getElementById('modalOverview');
   const elApproach = document.getElementById('modalApproach');
+  const elResults = document.getElementById('modalResults');
   const elStack = document.getElementById('modalStack');
+  const elFooter = document.getElementById('modalFooter');
+
+  function metricCard(label, val){
+    const v = String(val).replace('&lt;', '<').trim();
+    const m = /^([<>]?)(-?\d+(?:\.\d+)?)([%+]*)([a-zA-Z]*)$/.exec(v);
+    let valueHtml;
+    if(m){
+      const decimals = m[2].includes('.') ? m[2].split('.')[1].length : 0;
+      const prefix = m[1] === '<' ? '&lt;' : '';
+      const suffix = m[3] + m[4];
+      valueHtml = \`<span class="font-display font-semibold text-3xl sm:text-4xl text-ink tabular-nums" data-count="\${m[2]}" data-decimals="\${decimals}"\${prefix ? \` data-prefix="\${prefix}"\` : ''}\${suffix ? \` data-suffix="\${suffix}"\` : ''}>\${prefix}\${m[2]}\${suffix}</span>\`;
+    } else {
+      valueHtml = \`<span class="font-display font-semibold text-xl sm:text-2xl text-ink leading-tight">\${val}</span>\`;
+    }
+    return \`<div class="border border-line rounded-xl px-4 sm:px-5 py-4 sm:py-5"><p class="font-mono text-[9px] text-dim tracking-[0.18em] mb-2.5">\${label}</p>\${valueHtml}</div>\`;
+  }
 
   function openModal(id){
     const p = projectById(id);
     if(!p) return;
     openId = id;
 
+    elHero.innerHTML = \`<span class="project-thumb-glyph" aria-hidden="true">\${GLYPHS[id] || ''}</span><img src="./project-\${id}.jpg" alt="" loading="lazy" onerror="this.parentElement.classList.add('thumb-missing')" />\`;
+
     elEyebrow.innerHTML = p.eyebrow;
     elTitle.innerHTML = p.title;
+
+    const link = LINKS[id];
+    const UI = (window.__I18N && (window.__I18N[window.__LANG] || window.__I18N.id).ui) || {};
+    elMeta.innerHTML = [
+      \`<div><p class="font-mono text-[9px] tracking-[0.15em] text-dim mb-1">\${UI.role || 'PERAN'}</p><p class="font-display font-medium text-[14px] text-ink leading-snug">\${p.role}</p></div>\`,
+      \`<div><p class="font-mono text-[9px] tracking-[0.15em] text-dim mb-1">\${UI.year || 'TAHUN'}</p><p class="font-display font-medium text-[14px] text-ink leading-snug">\${p.year}</p></div>\`,
+      link ? \`<div class="col-span-2 sm:col-span-1"><p class="font-mono text-[9px] tracking-[0.15em] text-dim mb-1">\${UI.source || 'SUMBER'}</p><a href="\${link}" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 font-display font-medium text-[14px] text-mint hover:text-ink transition-colors"><svg class="w-3.5 h-3.5" viewBox="0 0 24 24" aria-label="GitHub"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" fill="currentColor"/></svg>GitHub</a></div>\` : '',
+    ].join('');
+
+    elMetrics.innerHTML = p.metrics.map(([label, val]) => metricCard(label, val)).join('');
+    elMetrics.querySelectorAll('[data-count]').forEach(el => { if(window.__runCount) window.__runCount(el); });
+
     elOverview.innerHTML = p.overview;
 
-    elMetrics.innerHTML = p.metrics.map(([label,val]) =>
-      \`<div><p class="font-display font-semibold text-xl text-ink">\${val}</p><p class="font-mono text-[10px] text-dim tracking-wide mt-0.5">\${label}</p></div>\`
+    elApproach.innerHTML = p.approach.map((item, i) =>
+      \`<li class="flex gap-4 font-display text-[15px] text-dim leading-relaxed"><span class="font-mono text-[11px] text-accent shrink-0 pt-[2px]">\${String(i + 1).padStart(2, '0')}</span><span>\${item}</span></li>\`
     ).join('');
 
-    elApproach.innerHTML = p.approach.map(item =>
-      \`<li class="flex gap-3 font-display text-[15px] text-dim leading-relaxed"><span class="text-ink shrink-0">→</span><span>\${item}</span></li>\`
+    elResults.innerHTML = (p.results || []).map(item =>
+      \`<li class="flex gap-3.5 font-display text-[15px] text-dim leading-relaxed"><span class="text-lime shrink-0 text-[11px] pt-[3px]" aria-hidden="true">▶</span><span>\${item}</span></li>\`
     ).join('');
 
     elStack.innerHTML = p.stack.map(s =>
       \`<span class="font-mono text-[11px] text-ink border border-line rounded-full px-3 py-1.5">\${s}</span>\`
     ).join('');
 
+    renderFooter(id);
+
     modal.classList.remove('hidden');
     document.body.classList.add('modal-open');
+    panel.scrollTop = 0;
     requestAnimationFrame(() => {
       backdrop.style.opacity = '1';
       panel.style.opacity = '1';
       panel.style.transform = 'translateY(0)';
+    });
+  }
+
+  function footerCard(dir, id){
+    const p = projectById(id);
+    if(!p) return '';
+    const label = dir === 'prev'
+      ? (window.__I18N[window.__LANG] || window.__I18N.id).ui.prev
+      : (window.__I18N[window.__LANG] || window.__I18N.id).ui.next;
+    const arrow = dir === 'prev'
+      ? '<svg class="w-4 h-4 group-hover:-translate-x-0.5 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5m6 6-6-6 6-6"/></svg>'
+      : '<svg class="w-4 h-4 group-hover:translate-x-0.5 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14m-6-6 6 6-6 6"/></svg>';
+    return \`<button type="button" data-nav="\${id}" class="project-trigger group flex items-center gap-3 text-left border border-line rounded-xl px-4 py-3.5 hover:border-accent/60 hover:translate-y-[-1px] transition-all">
+      \${dir === 'prev' ? arrow : ''}
+      <span class="min-w-0">
+        <span class="block font-mono text-[9px] tracking-[0.15em] text-dim mb-0.5">\${label}</span>
+        <span class="block font-display font-medium text-[13.5px] text-ink leading-snug line-clamp-2">\${p.title}</span>
+      </span>
+      \${dir === 'next' ? arrow : ''}
+    </button>\`;
+  }
+
+  function renderFooter(id){
+    const idx = ORDER.indexOf(id);
+    const prev = ORDER[idx - 1];
+    const next = ORDER[idx + 1];
+    elFooter.innerHTML = [footerCard('prev', prev), footerCard('next', next)].join('');
+    elFooter.querySelectorAll('[data-nav]').forEach(btn => {
+      btn.addEventListener('click', () => openModal(btn.getAttribute('data-nav')));
     });
   }
 
@@ -1026,6 +1169,8 @@ const LEGACY_SCRIPT = `
     }
     requestAnimationFrame(tick);
   }
+  // share with the project modal so freshly-injected metrics animate too
+  window.__runCount = run;
 
   const io = new IntersectionObserver((entries) => {
     entries.forEach(entry => {

@@ -3,20 +3,8 @@
 @tailwind utilities;
 
 
-  html{scroll-behavior:smooth; scroll-snap-type: y mandatory;}
+  html{scroll-behavior:smooth;}
   body{background:#111315;}
-
-  /* magnet scroll: every top-level section snaps fully into view.
-     scroll-snap-stop:always forces the browser to rest at each section
-     even during a fast/long scroll gesture, instead of skipping past it —
-     this is what was causing sections to be jumped over before. */
-  #home, #about, #experience, #certifications, #work, #publications, #skills, #contact{
-    scroll-snap-align: start;
-    scroll-snap-stop: always;
-  }
-  @media (prefers-reduced-motion: reduce){
-    html{ scroll-snap-type: none; }
-  }
   ::selection{background:#BFFAF5; color:#111315;}
 
   #ditherCanvas{position:absolute; inset:0; width:100%; height:100%; z-index:0; display:block;}
@@ -56,8 +44,24 @@
   .letter{display:inline-block; transition:color .08s ease;}
 
   .project-trigger{ background:none; border:none; font:inherit; color:inherit; cursor:pointer; padding-left:0; padding-right:0; }
-  #modalPanel{ max-height:100vh; overflow-y:auto; }
+  /* modal: the panel scrolls internally; cap its height to a fraction of the
+     viewport so margins + max-height never exceed the screen on any device. */
+  #modalPanel{ max-height:100vh; overflow-y:auto; overscroll-behavior:contain; scrollbar-width:thin; scrollbar-color:#353C42 transparent; }
+  @media (min-width:640px){
+    #modalPanel{ max-height:calc(100vh - 4rem); }
+  }
   body.modal-open{ overflow:hidden; }
+
+  /* project modal hero: keep the fallback glyph legible on a tall strip */
+  #modalHero .project-thumb-glyph{
+    font-size:13px; letter-spacing:.3em; color:#6B7477;
+  }
+  #modalHero img{
+    position:relative; z-index:1; width:100%; height:100%; object-fit:cover;
+  }
+
+  /* numbered approach rows — accent index, aligned text */
+  #modalApproach li{ counter-increment:none; }
 
   /* Nama perusahaan adalah detail penting: cyan memberi penekanan tanpa
      memakai warna lime yang sudah dipakai khusus untuk status/availability. */
@@ -250,13 +254,6 @@
 
   /* ============ MOBILE ============ */
   @media (max-width: 767px){
-    /* magnet scroll fights thumb-scrolling on small screens where every
-       section is taller than the viewport — disable snap entirely. */
-    html{ scroll-snap-type: none; }
-    #home, #about, #experience, #certifications, #work, #publications, #skills, #contact{
-      scroll-snap-align: none;
-      scroll-snap-stop: normal;
-    }
     /* keep the floating dock clear of the iPhone home indicator / Android nav bar */
     #dock{ bottom: calc(env(safe-area-inset-bottom, 0px) + 28px); }
     #contact{ padding-bottom: calc(11rem + env(safe-area-inset-bottom, 0px)); }

@@ -12,7 +12,7 @@ const TRANSLATIONS = {
     about: {
       label: '02 · TENTANG',
       heading: 'Mengubah riset computer vision menjadi sistem produksi nyata, bukan sekadar notebook eksperimen.',
-      body: 'Lulusan Teknologi Informasi Universitas Brawijaya (IPK 3.55/4.00) dengan fokus di computer vision dan applied deep learning. Saya membawa model dari eksperimen ke sistem yang terintegrasi produksi lewat dua program magang industri, serta memimpin riset skripsi pipeline deteksi sampah hierarkis dari nol, mulai dari kurasi dataset, benchmarking arsitektur, hingga aplikasi inferensi siap demo.',
+      body: 'Lulusan Teknologi Informasi Universitas Brawijaya (IPK 3.64/4.00) dengan fokus di computer vision dan applied deep learning. Saya membawa model dari eksperimen ke sistem yang terintegrasi produksi lewat dua program magang industri, serta memimpin riset skripsi pipeline deteksi sampah hierarkis dari nol, mulai dari kurasi dataset, benchmarking arsitektur, hingga aplikasi inferensi siap demo.',
       educationLabel: 'PENDIDIKAN',
       educationVal: 'Universitas<br>Brawijaya',
       gpaLabel: 'IPK',
@@ -24,7 +24,7 @@ const TRANSLATIONS = {
     exp: {
       label: '03 · PENGALAMAN',
       e1: {
-        period: 'FEB 2026 · SEKARANG',
+        period: 'FEB · JUL 2026',
         title: 'Instruktur Praktikum Python',
         org: 'FILKOM &amp; FMIPA, Universitas Brawijaya',
         desc: 'Mengampu praktikum pemrograman Python lintas fakultas selama satu semester, mencakup penyusunan kurikulum materi dan evaluasi hasil belajar mahasiswa.',
@@ -46,6 +46,21 @@ const TRANSLATIONS = {
         title: 'Private Tutor · IoT &amp; Applied AI',
         org: 'Malang, Indonesia',
         desc: 'Membimbing siswa SMA membangun sistem E-Nose untuk deteksi dini infeksi bakteri, dari sensor hingga klasifikasi berbasis AI.',
+      },
+    },
+    org: {
+      label: 'ORGANISASI &amp; KEPEMIMPINAN',
+      o1: {
+        period: 'FEB · DES 2024',
+        title: 'Wakil Ketua Departemen Kewirausahaan',
+        org: 'KBMDSI FILKOM UB',
+        desc: 'Menjalankan 4 program utama, menginisiasi DSI Store (merchandise) untuk pendanaan organisasi, memimpin produksi PDH, serta mengelola konten media sosial kewirausahaan.',
+      },
+      o2: {
+        period: 'APR · DES 2023',
+        title: 'Ketua Sponsorship &amp; Fundraising',
+        org: 'FILAFEST 2023',
+        desc: 'Memimpin strategi akuisisi sponsor, mengelola proposal dan negosiasi end-to-end, serta mengumpulkan dana melebihi target anggaran festival.',
       },
     },
     cert: {
@@ -84,6 +99,7 @@ const TRANSLATIONS = {
     },
     pub: {
       label: '06 · PUBLIKASI',
+      title: 'Deteksi dan Klasifikasi Sampah Bertingkat Menggunakan YOLOv12 dan Hierarchical Sibling Classification Network',
       venue: 'SENTRIN 2026 · Seminar Nasional Teknologi dan Rekayasa Informasi · <span class="text-accent">Dalam persiapan</span>',
     },
     skills: {
@@ -114,11 +130,42 @@ const TRANSLATIONS = {
       approach: 'PENDEKATAN',
       stack: 'TECH STACK',
       viewDetail: 'Lihat detail',
+      results: 'HASIL &amp; INSIGHT',
+      source: 'SUMBER',
+      role: 'PERAN',
+      year: 'TAHUN',
+      prev: 'Sebelumnya',
+      next: 'Berikutnya',
+      allProjects: 'Semua proyek',
+      close: 'Tutup',
+      langLabel: 'Pilih bahasa',
+      boot: 'BOOTING',
+      stream: 'STREAMING',
+      map: 'MAPPING',
+      link: 'LINKING',
+      ready: 'READY',
+      hud: {
+        home: '01 · HOME',
+        about: '02 · TENTANG',
+        experience: '03 · PENGALAMAN',
+        certifications: '04 · SERTIFIKASI',
+        work: '05 · PROYEK',
+        publications: '06 · PUBLIKASI',
+        skills: '07 · SKILLS',
+        contact: '08 · KONTAK',
+      },
+      altExp1: 'Foto Instruktur Praktikum Python',
+      altExp2: 'Foto MBKM X-Camp XLSmart',
+      altExp3: 'Foto Internship PT Amman Mineral',
+      altExp4: 'Foto Private Tutor',
+      altThesis: 'Preview proyek skripsi deteksi sampah',
     },
     projects: {
       thesis: {
         eyebrow: 'SKRIPSI · AI ENGINEERING &amp; COMPUTER VISION',
         title: 'Multi-Stage Waste Detection · YOLOv12 + HSCN',
+        role: 'Peneliti Utama · ML Engineer',
+        year: 'FEB 2026',
         metrics: [['F1-Score', '0.844'], ['mAP', '0.967'], ['Dataset', '2.116 gambar']],
         overview: 'Pipeline dua tahap untuk deteksi dan klasifikasi sampah, YOLOv12 mendeteksi objek dalam frame lalu Hierarchical Sequential Classification Network (HSCN) mengklasifikasikan tiga level hierarki, yaitu status pengelolaan, jenis material, dan objek spesifik. Dataset custom dikurasi dari TrashNet, Kaggle, TACO, dan RealWaste (2.116 gambar, 2.582 anotasi bounding box).',
         approach: [
@@ -128,10 +175,17 @@ const TRANSLATIONS = {
           'Membangun aplikasi inferensi Flask dengan mode perbandingan backbone untuk demo sidang',
         ],
         stack: ['PyTorch', 'YOLOv12', 'Flask', 'OpenCV', 'ConvNeXt'],
+        results: [
+          'F1-Score 0.844 dan mAP 0.967 melampaui baseline pada pipeline dua tahap',
+          'Skema klasifikasi hierarkis 3 level dengan mekanisme STOP-class untuk anotasi parsial',
+          'Aplikasi Flask dengan mode perbandingan backbone dipakai sebagai demo saat sidang',
+        ],
       },
       'visual-inspection': {
         eyebrow: 'X-CAMP · PT XLSMART TELECOM SEJAHTERA · 2025',
         title: 'CNN Visual Inspection System',
+        role: 'Machine Learning Engineer Intern',
+        year: '2025',
         metrics: [['Akurasi', '99.6%'], ['Presisi', '95.8%'], ['Recall', '100%'], ['mAP@50', '99.6%']],
         overview: 'Sistem computer vision untuk otomasi deteksi defect di lini produksi, dibangun dalam program MBKM X-Camp dengan metodologi Agile-Scrum sprint mingguan. Terintegrasi dengan dashboard ThingsBoard untuk monitoring produksi real-time.',
         approach: [
@@ -141,10 +195,17 @@ const TRANSLATIONS = {
           'Mengembangkan status logic Detected / Partially Blocked / Missing dengan real-time alerting',
         ],
         stack: ['CNN', 'OpenCV', 'ThingsBoard', 'Python'],
+        results: [
+          'Akurasi 99.6% dengan recall 100% pada deteksi defect di lini produksi',
+          'Monitoring produksi real-time terintegrasi dengan dashboard ThingsBoard',
+          'Object Removal Detection memperkuat monitoring keselamatan alat kerja',
+        ],
       },
       'rag-chatbot': {
         eyebrow: 'PT AMMAN MINERAL INTERNASIONAL · 2025',
         title: 'RAG Chatbot untuk Booking Tiket Kapal',
+        role: 'Back-end &amp; AI Engineer',
+        year: '2025',
         metrics: [['Latensi API', '&lt;2s'], ['Bahasa', 'ID / EN']],
         overview: 'Back-end dan sistem AI untuk chatbot interaktif berbasis RAG yang mengotomasi pemesanan tiket kapal dalam ekosistem SuperApps internal perusahaan, dengan percakapan multi-turn bilingual dan memori kontekstual.',
         approach: [
@@ -154,10 +215,17 @@ const TRANSLATIONS = {
           'Validasi sistem lewat Postman API testing dan integrasi front-end Flutter',
         ],
         stack: ['FastAPI', 'PostgreSQL', 'PGVector', 'Gemini API', 'Flutter'],
+        results: [
+          'Latensi API di bawah 2 detik untuk percakapan multi-turn bilingual',
+          'Semantic search jadwal real-time berjalan di atas PostgreSQL + PGVector',
+          'Sistem tervalidasi lewat Postman dan terintegrasi dengan front-end Flutter',
+        ],
       },
       pneumonia: {
         eyebrow: 'PROYEK PRIBADI · MARET 2024',
         title: 'Pneumonia Detection dari Chest X-Ray Images',
+        role: 'AI Engineer',
+        year: 'MAR 2024',
         metrics: [['Akurasi Validasi', '92%+']],
         overview: 'Convolutional Neural Network untuk mengklasifikasikan citra chest X-ray guna mendeteksi pneumonia dengan sensitivitas dan spesifisitas tinggi, dengan penanganan khusus untuk dataset yang imbalanced.',
         approach: [
@@ -166,10 +234,17 @@ const TRANSLATIONS = {
           'Memvisualisasikan learning curve dan confusion matrix untuk interpretasi performa model',
         ],
         stack: ['TensorFlow', 'Keras', 'OpenCV'],
+        results: [
+          'Akurasi validasi 92%+ pada data uji chest X-ray',
+          'Arsitektur CNN custom dengan dropout dan batch normalization stabil pada dataset imbalanced',
+          'Learning curve dan confusion matrix mendukung interpretasi klinis',
+        ],
       },
       cognitive: {
         eyebrow: 'AI ENGINEERING &amp; DATA ANALYTICS · 2025',
         title: 'Cognitive Performance Prediction based on Wearable Exam Stress Data',
+        role: 'Data Scientist',
+        year: '2025',
         metrics: [['R² Score', '0.68']],
         overview: 'Pipeline machine learning untuk memprediksi nilai ujian mahasiswa berdasarkan data biosignal (HR, EDA, TEMP, ACC) yang dikumpulkan dari wearable sensor Empatica E4.',
         approach: [
@@ -178,10 +253,17 @@ const TRANSLATIONS = {
           'Evaluasi model dengan R² pada test set',
         ],
         stack: ['Python', 'Scikit-learn', 'Pandas', 'NumPy'],
+        results: [
+          'R² 0.68 menunjukkan korelasi sinyal biosignal wearable dengan performa akademik',
+          'Pipeline preprocessing sinyal yang reusable untuk eksperimen selanjutnya',
+          'Random Forest sebagai baseline solid untuk prediksi berbasis data fisiologis',
+        ],
       },
       fluenti: {
         eyebrow: 'AI ENGINEERING · 2024-2025',
         title: 'FLUENTI, AI Grammar Checking Model',
+        role: 'AI Engineer',
+        year: '2024-2025',
         metrics: [['Base Model', 'LLaMA 3'], ['Evaluasi', 'BLEU &amp; Edit Distance']],
         overview: 'Model AI grammar checking dengan pendekatan fine-tuning LLaMA 3, diselaraskan dengan target output menggunakan dataset domain-specific Grammarly CoEdit.',
         approach: [
@@ -190,6 +272,11 @@ const TRANSLATIONS = {
           'Evaluasi performa model menggunakan metrik BLEU dan edit distance',
         ],
         stack: ['LLaMA 3', 'Hugging Face', 'Python'],
+        results: [
+          'Fine-tuning LLaMA 3 selaras dengan target output berbasis Grammarly CoEdit',
+          'Evaluasi metrik BLEU dan edit distance memberikan estimasi kualitas koreksi',
+          'Model domain-specific siap menjadi fondasi tool grammar checking lanjutan',
+        ],
       },
     },
   },
@@ -204,7 +291,7 @@ const TRANSLATIONS = {
     about: {
       label: '02 · ABOUT',
       heading: 'Turning computer vision research into real production systems, not just experiment notebooks.',
-      body: 'Information Technology graduate from Universitas Brawijaya (GPA 3.55/4.00), focused on computer vision and applied deep learning. I take models from experiment to production-integrated systems through two industry internships, and led my thesis research on a hierarchical waste detection pipeline from scratch, from dataset curation and architecture benchmarking to a demo-ready inference application.',
+      body: 'Information Technology graduate from Universitas Brawijaya (GPA 3.64/4.00), focused on computer vision and applied deep learning. I take models from experiment to production-integrated systems through two industry internships, and led my thesis research on a hierarchical waste detection pipeline from scratch, from dataset curation and architecture benchmarking to a demo-ready inference application.',
       educationLabel: 'EDUCATION',
       educationVal: 'Universitas<br>Brawijaya',
       gpaLabel: 'GPA',
@@ -216,7 +303,7 @@ const TRANSLATIONS = {
     exp: {
       label: '03 · EXPERIENCE',
       e1: {
-        period: 'FEB 2026 · NOW',
+        period: 'FEB · JUL 2026',
         title: 'Python Lab Instructor',
         org: 'FILKOM &amp; FMIPA, Universitas Brawijaya',
         desc: 'Taught Python programming across faculties for a semester, including curriculum design and student assessment.',
@@ -238,6 +325,21 @@ const TRANSLATIONS = {
         title: 'Private Tutor · IoT &amp; Applied AI',
         org: 'Malang, Indonesia',
         desc: 'Guided a high-school student in building an E-Nose system for early bacterial infection detection, from sensors to AI-based classification.',
+      },
+    },
+    org: {
+      label: 'ORGANIZATIONS &amp; LEADERSHIP',
+      o1: {
+        period: 'FEB · DEC 2024',
+        title: 'Deputy Head · Entrepreneurship Department',
+        org: 'KBMDSI FILKOM UB',
+        desc: 'Delivered 4 flagship programs, initiated DSI Store (merchandise) to fund the organization, led the PDH jacket production, and managed entrepreneurial social media content.',
+      },
+      o2: {
+        period: 'APR · DEC 2023',
+        title: 'Head of Sponsorship &amp; Fundraising',
+        org: 'FILAFEST 2023',
+        desc: 'Led the sponsorship acquisition strategy, handled proposals and negotiation end-to-end, and raised funds exceeding the festival\'s budget target.',
       },
     },
     cert: {
@@ -276,6 +378,7 @@ const TRANSLATIONS = {
     },
     pub: {
       label: '06 · PUBLICATIONS',
+      title: 'Hierarchical Waste Detection and Classification Using YOLOv12 and Hierarchical Sibling Classification Network',
       venue: 'SENTRIN 2026 · National Seminar on Information Technology and Engineering · <span class="text-accent">In preparation</span>',
     },
     skills: {
@@ -306,11 +409,42 @@ const TRANSLATIONS = {
       approach: 'APPROACH',
       stack: 'TECH STACK',
       viewDetail: 'View details',
+      results: 'RESULTS &amp; INSIGHT',
+      source: 'SOURCE',
+      role: 'ROLE',
+      year: 'YEAR',
+      prev: 'Previous',
+      next: 'Next',
+      allProjects: 'All projects',
+      close: 'Close',
+      langLabel: 'Choose language',
+      boot: 'BOOTING',
+      stream: 'STREAMING',
+      map: 'MAPPING',
+      link: 'LINKING',
+      ready: 'READY',
+      hud: {
+        home: '01 · HOME',
+        about: '02 · ABOUT',
+        experience: '03 · EXPERIENCE',
+        certifications: '04 · CERTIFICATIONS',
+        work: '05 · PROJECTS',
+        publications: '06 · PUBLICATIONS',
+        skills: '07 · SKILLS',
+        contact: '08 · CONTACT',
+      },
+      altExp1: 'Python Practicum Instructor photo',
+      altExp2: 'MBKM X-Camp XLSmart photo',
+      altExp3: 'PT Amman Mineral internship photo',
+      altExp4: 'Private Tutor photo',
+      altThesis: 'Waste detection thesis project preview',
     },
     projects: {
       thesis: {
         eyebrow: 'THESIS · AI ENGINEERING &amp; COMPUTER VISION',
         title: 'Multi-Stage Waste Detection · YOLOv12 + HSCN',
+        role: 'Lead Researcher · ML Engineer',
+        year: 'FEB 2026',
         metrics: [['F1-Score', '0.844'], ['mAP', '0.967'], ['Dataset', '2,116 images']],
         overview: 'A two-stage pipeline for waste detection and classification, YOLOv12 detects objects in a frame then a Hierarchical Sequential Classification Network (HSCN) classifies three hierarchy levels, namely management status, material type, and specific object. A custom dataset was curated from TrashNet, Kaggle, TACO, and RealWaste (2,116 images, 2,582 bounding box annotations).',
         approach: [
@@ -320,10 +454,17 @@ const TRANSLATIONS = {
           'Built a Flask inference app with backbone comparison mode for thesis defense demos',
         ],
         stack: ['PyTorch', 'YOLOv12', 'Flask', 'OpenCV', 'ConvNeXt'],
+        results: [
+          'F1-Score 0.844 and mAP 0.967 surpassed baselines across a two-stage pipeline',
+          '3-level hierarchical classification scheme with a STOP-class mechanism for partial annotations',
+          'Flask inference app with backbone comparison mode used as a defense demo',
+        ],
       },
       'visual-inspection': {
         eyebrow: 'X-CAMP · PT XLSMART TELECOM SEJAHTERA · 2025',
         title: 'CNN Visual Inspection System',
+        role: 'Machine Learning Engineer Intern',
+        year: '2025',
         metrics: [['Accuracy', '99.6%'], ['Precision', '95.8%'], ['Recall', '100%'], ['mAP@50', '99.6%']],
         overview: 'A computer vision system automating defect detection on a production line, built within the MBKM X-Camp program using weekly-sprint Agile-Scrum. Integrated with a ThingsBoard dashboard for real-time production monitoring.',
         approach: [
@@ -333,10 +474,17 @@ const TRANSLATIONS = {
           'Developed Detected / Partially Blocked / Missing status logic with real-time alerting',
         ],
         stack: ['CNN', 'OpenCV', 'ThingsBoard', 'Python'],
+        results: [
+          '99.6% accuracy with 100% recall on production-line defect detection',
+          'Real-time production monitoring integrated with the ThingsBoard dashboard',
+          'Object Removal Detection strengthened safety-equipment monitoring',
+        ],
       },
       'rag-chatbot': {
         eyebrow: 'PT AMMAN MINERAL INTERNASIONAL · 2025',
         title: 'RAG Chatbot for Boat Ticket Booking',
+        role: 'Back-end &amp; AI Engineer',
+        year: '2025',
         metrics: [['API Latency', '&lt;2s'], ['Languages', 'ID / EN']],
         overview: 'Back-end and AI system for an interactive RAG chatbot that automates boat ticket booking inside the company\'s internal SuperApps ecosystem, with bilingual multi-turn conversations and contextual memory.',
         approach: [
@@ -346,10 +494,17 @@ const TRANSLATIONS = {
           'Validated the system via Postman API testing and Flutter front-end integration',
         ],
         stack: ['FastAPI', 'PostgreSQL', 'PGVector', 'Gemini API', 'Flutter'],
+        results: [
+          'Under-2s API latency for bilingual multi-turn conversations',
+          'Real-time schedule semantic search powered by PostgreSQL + PGVector',
+          'System validated via Postman and integrated with a Flutter front-end',
+        ],
       },
       pneumonia: {
         eyebrow: 'PERSONAL PROJECT · MAR 2024',
         title: 'Pneumonia Detection from Chest X-Ray Images',
+        role: 'AI Engineer',
+        year: 'MAR 2024',
         metrics: [['Validation Accuracy', '92%+']],
         overview: 'A Convolutional Neural Network that classifies chest X-ray images to detect pneumonia with high sensitivity and specificity, with dedicated handling for an imbalanced dataset.',
         approach: [
@@ -358,10 +513,17 @@ const TRANSLATIONS = {
           'Visualized learning curves and confusion matrices to interpret model performance',
         ],
         stack: ['TensorFlow', 'Keras', 'OpenCV'],
+        results: [
+          '92%+ validation accuracy on chest X-ray test data',
+          'Custom CNN with dropout and batch normalization stable on an imbalanced dataset',
+          'Learning curves and confusion matrices support clinical interpretation',
+        ],
       },
       cognitive: {
         eyebrow: 'AI ENGINEERING &amp; DATA ANALYTICS · 2025',
         title: 'Cognitive Performance Prediction based on Wearable Exam Stress Data',
+        role: 'Data Scientist',
+        year: '2025',
         metrics: [['R² Score', '0.68']],
         overview: 'A machine learning pipeline that predicts students\' exam scores from biosignal data (HR, EDA, TEMP, ACC) collected with the Empatica E4 wearable sensor.',
         approach: [
@@ -370,10 +532,17 @@ const TRANSLATIONS = {
           'Evaluated the model with R² on the test set',
         ],
         stack: ['Python', 'Scikit-learn', 'Pandas', 'NumPy'],
+        results: [
+          'R² 0.68 links wearable biosignals to academic performance',
+          'Reusable signal-preprocessing pipeline for future experiments',
+          'Random Forest acts as a solid baseline for physiological-data prediction',
+        ],
       },
       fluenti: {
         eyebrow: 'AI ENGINEERING · 2024-2025',
         title: 'FLUENTI, AI Grammar Checking Model',
+        role: 'AI Engineer',
+        year: '2024-2025',
         metrics: [['Base Model', 'LLaMA 3'], ['Evaluation', 'BLEU &amp; Edit Distance']],
         overview: 'An AI grammar-checking model fine-tuned from LLaMA 3, aligned to target outputs using the domain-specific Grammarly CoEdit dataset.',
         approach: [
@@ -382,6 +551,11 @@ const TRANSLATIONS = {
           'Evaluated model performance using BLEU and edit-distance metrics',
         ],
         stack: ['LLaMA 3', 'Hugging Face', 'Python'],
+        results: [
+          'Fine-tuned LLaMA 3 aligned to target outputs from Grammarly CoEdit',
+          'BLEU and edit-distance metrics estimate correction quality',
+          'Domain-specific model ready as a foundation for advanced grammar tools',
+        ],
       },
     },
   },
@@ -396,7 +570,7 @@ const TRANSLATIONS = {
     about: {
       label: '02 · 关于我',
       heading: '将计算机视觉研究转化为真正的生产系统，而不只是实验用的笔记本。',
-      body: '毕业于布拉维加亚大学信息技术专业（绩点 3.55/4.00），专注于计算机视觉与应用深度学习。通过两次行业实习，我将模型从实验带入与生产集成的系统，并主导了毕业论文中从零构建的分层垃圾检测流水线，涵盖数据集整理、架构基准测试，以及可交付演示的推理应用。',
+      body: '毕业于布拉维加亚大学信息技术专业（绩点 3.64/4.00），专注于计算机视觉与应用深度学习。通过两次行业实习，我将模型从实验带入与生产集成的系统，并主导了毕业论文中从零构建的分层垃圾检测流水线，涵盖数据集整理、架构基准测试，以及可交付演示的推理应用。',
       educationLabel: '教育',
       educationVal: '布拉维加亚<br>大学',
       gpaLabel: '绩点',
@@ -408,7 +582,7 @@ const TRANSLATIONS = {
     exp: {
       label: '03 · 经历',
       e1: {
-        period: '2026年2月 · 至今',
+        period: '2026年2月 · 7月',
         title: 'Python 实验课讲师',
         org: 'FILKOM &amp; FMIPA, 布拉维加亚大学',
         desc: '跨院系教授一学期 Python 编程课程，涵盖实验课纲设计与学生成绩评估。',
@@ -430,6 +604,21 @@ const TRANSLATIONS = {
         title: '私人导师 · 物联网与应用 AI',
         org: '印度尼西亚 玛琅',
         desc: '辅导高中生搭建用于早期细菌感染检测的电子鼻（E-Nose）系统，涵盖从传感器到 AI 分类的完整流程。',
+      },
+    },
+    org: {
+      label: '组织与领导力',
+      o1: {
+        period: '2024年2月 · 12月',
+        title: '创业部副部长',
+        org: 'KBMDSI 布拉维贾亚大学',
+        desc: '交付 4 个旗舰项目，创办 DSI Store（周边商品）为组织筹款，主导组织夹克（PDH）的制作，并管理创业主题的社交媒体内容。',
+      },
+      o2: {
+        period: '2023年4月 · 12月',
+        title: '赞助与筹款负责人',
+        org: 'FILAFEST 2023',
+        desc: '主导赞助商开拓策略，端到端管理提案与谈判，募得资金超出音乐节预算目标。',
       },
     },
     cert: {
@@ -468,6 +657,7 @@ const TRANSLATIONS = {
     },
     pub: {
       label: '06 · 出版物',
+      title: '基于 YOLOv12 与层级兄弟分类网络的垃圾检测与分类',
       venue: 'SENTRIN 2026 · 全国信息技术与工程研讨会 · <span class="text-accent">筹备中</span>',
     },
     skills: {
@@ -498,11 +688,42 @@ const TRANSLATIONS = {
       approach: '实现方法',
       stack: '技术栈',
       viewDetail: '查看详情',
+      results: '结果与洞察',
+      source: '来源',
+      role: '角色',
+      year: '年份',
+      prev: '上一个',
+      next: '下一个',
+      allProjects: '所有项目',
+      close: '关闭',
+      langLabel: '选择语言',
+      boot: '启动中',
+      stream: '传输中',
+      map: '映射中',
+      link: '连接中',
+      ready: '就绪',
+      hud: {
+        home: '01 · 首页',
+        about: '02 · 关于我',
+        experience: '03 · 经验',
+        certifications: '04 · 证书',
+        work: '05 · 项目',
+        publications: '06 · 出版物',
+        skills: '07 · 技能',
+        contact: '08 · 联系方式',
+      },
+      altExp1: 'Python 实验讲师照片',
+      altExp2: 'MBKM X-Camp XLSmart 照片',
+      altExp3: 'PT Amman Mineral 实习照片',
+      altExp4: '私人导师照片',
+      altThesis: '垃圾检测论文项目预览',
     },
     projects: {
       thesis: {
         eyebrow: '毕业论文 · AI 工程与计算机视觉',
         title: '多阶段垃圾检测 · YOLOv12 + HSCN',
+        role: '首席研究员 · ML 工程师',
+        year: '2026年2月',
         metrics: [['F1 分数', '0.844'], ['mAP', '0.967'], ['数据集', '2,116 张图片']],
         overview: '用于垃圾检测与分类的两阶段流水线，YOLOv12 检测画面中的物体，再由层级序列分类网络（HSCN）对三个层级进行分类，即管理状态、材料类型与具体物体。自定义数据集整理自 TrashNet、Kaggle、TACO 与 RealWaste（2,116 张图片，2,582 个边界框标注）。',
         approach: [
@@ -512,10 +733,17 @@ const TRANSLATIONS = {
           '构建带骨干对比模式的 Flask 推理应用，用于毕业答辩演示',
         ],
         stack: ['PyTorch', 'YOLOv12', 'Flask', 'OpenCV', 'ConvNeXt'],
+        results: [
+          '两阶段流水线中 F1-Score 0.844、mAP 0.967 均超过基线',
+          '带 STOP-class 机制的三层层级分类方案，处理部分标注',
+          '带骨干对比模式的 Flask 推理应用用作答辩演示',
+        ],
       },
       'visual-inspection': {
         eyebrow: 'X-CAMP · PT XLSMART TELECOM SEJAHTERA · 2025',
         title: 'CNN 视觉检测系统',
+        role: '机器学习实习生',
+        year: '2025',
         metrics: [['准确率', '99.6%'], ['精确率', '95.8%'], ['召回率', '100%'], ['mAP@50', '99.6%']],
         overview: '在生产线上实现缺陷检测自动化的计算机视觉系统，在 MBKM X-Camp 项目中以每周冲刺的敏捷 Scrum 方式构建，并集成 ThingsBoard 仪表盘进行实时生产监控。',
         approach: [
@@ -525,10 +753,17 @@ const TRANSLATIONS = {
           '开发 Detected / Partially Blocked / Missing 状态逻辑并实时告警',
         ],
         stack: ['CNN', 'OpenCV', 'ThingsBoard', 'Python'],
+        results: [
+          '生产线缺陷检测准确率 99.6%、召回率 100%',
+          '实时生产监控集成 ThingsBoard 仪表盘',
+          '物体缺失检测加强了安全装备监控',
+        ],
       },
       'rag-chatbot': {
         eyebrow: 'PT AMMAN MINERAL INTERNASIONAL · 2025',
         title: '船票预订 RAG 聊天机器人',
+        role: '后端与 AI 工程师',
+        year: '2025',
         metrics: [['API 延迟', '&lt;2s'], ['语言', 'ID / EN']],
         overview: '用于公司内部 SuperApps 生态系统中自动预订船票的交互式 RAG 聊天机器人的后端与 AI 系统，支持双语多轮对话与上下文记忆。',
         approach: [
@@ -538,10 +773,17 @@ const TRANSLATIONS = {
           '通过 Postman API 测试与 Flutter 前端集成进行系统验证',
         ],
         stack: ['FastAPI', 'PostgreSQL', 'PGVector', 'Gemini API', 'Flutter'],
+        results: [
+          '双语多轮对话 API 延迟低于 2 秒',
+          '基于 PostgreSQL + PGVector 的实时时刻表语义检索',
+          '通过 Postman 验证，并与 Flutter 前端集成',
+        ],
       },
       pneumonia: {
         eyebrow: '个人项目 · 2024年3月',
         title: '基于胸部 X 光图像的肺炎检测',
+        role: 'AI 工程师',
+        year: '2024年3月',
         metrics: [['验证准确率', '92%+']],
         overview: '对胸部 X 光图像进行分类以检测肺炎的卷积神经网络，具有较高的灵敏度与特异度，并对不均衡数据集做了专门处理。',
         approach: [
@@ -550,10 +792,17 @@ const TRANSLATIONS = {
           '可视化学习曲线与混淆矩阵，以解读模型表现',
         ],
         stack: ['TensorFlow', 'Keras', 'OpenCV'],
+        results: [
+          '胸部 X 光测试数据验证准确率 92%+',
+          '带 dropout 与批归一化的自定义 CNN 在不均衡数据集上表现稳定',
+          '学习曲线与混淆矩阵支持临床解读',
+        ],
       },
       cognitive: {
         eyebrow: 'AI 工程与数据分析 · 2025',
         title: '基于可穿戴考试压力数据的认知表现预测',
+        role: '数据科学家',
+        year: '2025',
         metrics: [['R² 分数', '0.68']],
         overview: '根据 Empatica E4 可穿戴传感器采集的生物信号（HR、EDA、TEMP、ACC）预测学生考试成绩的机器学习流水线。',
         approach: [
@@ -562,10 +811,17 @@ const TRANSLATIONS = {
           '在测试集上以 R² 评估模型',
         ],
         stack: ['Python', 'Scikit-learn', 'Pandas', 'NumPy'],
+        results: [
+          'R² 0.68 将可穿戴生物信号与学业表现关联起来',
+          '可复用的信号预处理流水线，便于后续实验',
+          '随机森林为生理数据预测提供了扎实基线',
+        ],
       },
       fluenti: {
         eyebrow: 'AI 工程 · 2024-2025',
         title: 'FLUENTI，AI 语法检查模型',
+        role: 'AI 工程师',
+        year: '2024-2025',
         metrics: [['基础模型', 'LLaMA 3'], ['评估', 'BLEU 与编辑距离']],
         overview: '基于 LLaMA 3 微调的 AI 语法检查模型，使用领域特定的 Grammarly CoEdit 数据集与目标输出对齐。',
         approach: [
@@ -574,6 +830,11 @@ const TRANSLATIONS = {
           '使用 BLEU 与编辑距离指标评估模型表现',
         ],
         stack: ['LLaMA 3', 'Hugging Face', 'Python'],
+        results: [
+          '微调 LLaMA 3，与 Grammarly CoEdit 目标输出对齐',
+          'BLEU 与编辑距离指标评估纠错质量',
+          '领域特定模型可作为高级语法工具的基石',
+        ],
       },
     },
   },
@@ -588,7 +849,7 @@ const TRANSLATIONS = {
     about: {
       label: '02 · プロフィール',
       heading: 'コンピュータビジョンの研究を、単なる実験ノートではなく実際の本番システムへと変えます。',
-      body: 'ブラウィジャヤ大学情報工学卒業（GPA 3.55/4.00）。コンピュータビジョンと応用ディープラーニングを専門とし、2つの企業インターンシップを通じてモデルを本番統合システムに昇華。卒業研究では階層型ゴミ検出パイプラインをゼロから構築し、データセット整備・アーキテクチャベンチマーク・デモ可能な推論アプリケーションまでを牽引しました。',
+      body: 'ブラウィジャヤ大学情報工学卒業（GPA 3.64/4.00）。コンピュータビジョンと応用ディープラーニングを専門とし、2つの企業インターンシップを通じてモデルを本番統合システムに昇華。卒業研究では階層型ゴミ検出パイプラインをゼロから構築し、データセット整備・アーキテクチャベンチマーク・デモ可能な推論アプリケーションまでを牽引しました。',
       educationLabel: '学歴',
       educationVal: 'ブラウィジャヤ<br>大学',
       gpaLabel: 'GPA',
@@ -600,7 +861,7 @@ const TRANSLATIONS = {
     exp: {
       label: '03 · 経験',
       e1: {
-        period: '2026年2月 · 現在',
+        period: '2026年2月 · 7月',
         title: 'Python実習講師',
         org: 'FILKOM &amp; FMIPA, ブラウィジャヤ大学',
         desc: '学期を通じて学部横断でPythonプログラミングを指導し、シラバス設計と学生評価を担当。',
@@ -622,6 +883,21 @@ const TRANSLATIONS = {
         title: '家庭教師 · IoT・応用AI',
         org: 'インドネシア マラン',
         desc: '高校生が細菌感染を早期検出するE-Noseシステム（センサーからAI分類まで）を構築する支援を実施。',
+      },
+    },
+    org: {
+      label: '組織・リーダーシップ',
+      o1: {
+        period: '2024年2月 · 12月',
+        title: '起業部 副部長',
+        org: 'KBMDSI FILKOM UB',
+        desc: '主要プログラム4件を完遂。組織の資金源としてDSI Store（グッズ販売）を立ち上げ、PDHジャケットの制作を主導し、起業テーマのSNSコンテンツも担当。',
+      },
+      o2: {
+        period: '2023年4月 · 12月',
+        title: 'スポンサー＆資金調達 責任者',
+        org: 'FILAFEST 2023',
+        desc: 'スポンサー獲得戦略を主導し、提案書と交渉を一貫して管理。イベント予算目標を上回る資金調達を達成。',
       },
     },
     cert: {
@@ -660,6 +936,7 @@ const TRANSLATIONS = {
     },
     pub: {
       label: '06 · 発表',
+      title: 'YOLOv12と階層型兄弟分類ネットワークによるごみの検出と分類',
       venue: 'SENTRIN 2026 · 全国情報技術・エンジニアリングセミナー · <span class="text-accent">準備中</span>',
     },
     skills: {
@@ -690,11 +967,42 @@ const TRANSLATIONS = {
       approach: 'アプローチ',
       stack: '技術スタック',
       viewDetail: '詳細を見る',
+      results: '結果と洞察',
+      source: 'ソース',
+      role: '役割',
+      year: '年',
+      prev: '前へ',
+      next: '次へ',
+      allProjects: 'すべてのプロジェクト',
+      close: '閉じる',
+      langLabel: '言語を選択',
+      boot: '起動中',
+      stream: 'ストリーミング中',
+      map: 'マッピング中',
+      link: '接続中',
+      ready: '準備完了',
+      hud: {
+        home: '01 · ホーム',
+        about: '02 · プロフィール',
+        experience: '03 · 経験',
+        certifications: '04 · 認定資格',
+        work: '05 · プロジェクト',
+        publications: '06 · 発表',
+        skills: '07 · スキル',
+        contact: '08 · お問い合わせ',
+      },
+      altExp1: 'Python実習講師の写真',
+      altExp2: 'MBKM X-Camp XLSmartの写真',
+      altExp3: 'PT Amman Mineral インターン写真',
+      altExp4: '家庭教師の写真',
+      altThesis: 'ゴミ検出論文プロジェクトのプレビュー',
     },
     projects: {
       thesis: {
         eyebrow: '卒業研究 · AIエンジニアリング &amp; コンピュータビジョン',
         title: '多段階ゴミ検出 · YOLOv12 + HSCN',
+        role: '主任研究者 · MLエンジニア',
+        year: '2026年2月',
         metrics: [['F1スコア', '0.844'], ['mAP', '0.967'], ['データセット', '2,116枚の画像']],
         overview: 'ゴミの検出と分類を行う2段階パイプライン。YOLOv12がフレーム内の物体を検出し、階層型系列分類ネットワーク（HSCN）が管理状態・素材種別・具体物の3つの階層レベルを分類します。カスタムデータセットはTrashNet、Kaggle、TACO、RealWasteから収集（画像2,116枚、バウンディングボックス2,582件）。',
         approach: [
@@ -704,10 +1012,17 @@ const TRANSLATIONS = {
           '発表デモ用にバックボーン比較モード付きFlask推論アプリを構築',
         ],
         stack: ['PyTorch', 'YOLOv12', 'Flask', 'OpenCV', 'ConvNeXt'],
+        results: [
+          '2段階パイプラインでF1スコア0.844・mAP 0.967とベースラインを上回る',
+          '部分アノテーションに対応するSTOP-class機構を持つ3階層の階層型分類スキーム',
+          'バックボーン比較モード付きFlask推論アプリを発表デモとして使用',
+        ],
       },
       'visual-inspection': {
         eyebrow: 'X-CAMP · PT XLSMART TELECOM SEJAHTERA · 2025',
         title: 'CNNビジョン検査システム',
+        role: '機械学習エンジニア（インターン）',
+        year: '2025',
         metrics: [['精度', '99.6%'], ['適合率', '95.8%'], ['再現率', '100%'], ['mAP@50', '99.6%']],
         overview: '生産ラインでの欠陥検出を自動化するコンピュータビジョンシステム。MBKM X-Campプログラムで週次スプリントのアジャイル・スクラムにより開発し、ThingsBoardダッシュボードと統合してリアルタイムの生産監視を実現。',
         approach: [
@@ -717,10 +1032,17 @@ const TRANSLATIONS = {
           'Detected / Partially Blocked / Missing の状態ロジックとリアルタイムアラートを開発',
         ],
         stack: ['CNN', 'OpenCV', 'ThingsBoard', 'Python'],
+        results: [
+          '生産ラインの欠陥検出で精度99.6%、再現率100%',
+          'ThingsBoardダッシュボードと統合したリアルタイム生産監視',
+          '物体欠落検出により安全装備監視を強化',
+        ],
       },
       'rag-chatbot': {
         eyebrow: 'PT AMMAN MINERAL INTERNASIONAL · 2025',
         title: '船のチケット予約RAGチャットボット',
+        role: 'バックエンド＆AIエンジニア',
+        year: '2025',
         metrics: [['APIレイテンシ', '&lt;2s'], ['言語', 'ID / EN']],
         overview: '社内SuperAppsエコシステム内で船のチケット予約を自動化する対話型RAGチャットボットのバックエンド・AIシステム。バイリンガルの多ターン対話と文脈記憶に対応。',
         approach: [
@@ -730,10 +1052,17 @@ const TRANSLATIONS = {
           'Postman APIテストとFlutterフロントエンド統合でシステムを検証',
         ],
         stack: ['FastAPI', 'PostgreSQL', 'PGVector', 'Gemini API', 'Flutter'],
+        results: [
+          'バイリンガル多ターン対話のAPIレイテンシ2秒未満',
+          'PostgreSQL + PGVectorによるリアルタイム時刻表のセマンティック検索',
+          'Postmanで検証し、Flutterフロントエンドと統合',
+        ],
       },
       pneumonia: {
         eyebrow: '個人プロジェクト · 2024年3月',
         title: '胸部X線画像からの肺炎検出',
+        role: 'AIエンジニア',
+        year: '2024年3月',
         metrics: [['検証精度', '92%+']],
         overview: '胸部X線画像を分類して肺炎を検出する畳み込みニューラルネットワーク。高い感度と特異度を持ち、不均衡データセットにも特別に対応。',
         approach: [
@@ -742,10 +1071,17 @@ const TRANSLATIONS = {
           '学習曲線と混同行列を可視化しモデル性能を解釈',
         ],
         stack: ['TensorFlow', 'Keras', 'OpenCV'],
+        results: [
+          '胸部X線テストデータで検証精度92%以上',
+          'dropoutとバッチ正規化を備えた独自CNNが不均衡データに安定',
+          '学習曲線と混同行列が臨床解釈をサポート',
+        ],
       },
       cognitive: {
         eyebrow: 'AIエンジニアリング &amp; データ分析 · 2025',
         title: 'ウェアラブル受験ストレスデータに基づく認知パフォーマンス予測',
+        role: 'データサイエンティスト',
+        year: '2025',
         metrics: [['R²スコア', '0.68']],
         overview: 'Empatica E4ウェアラブルセンサーで収集した生体信号（HR、EDA、TEMP、ACC）から学生の試験スコアを予測する機械学習パイプライン。',
         approach: [
@@ -754,10 +1090,17 @@ const TRANSLATIONS = {
           'テストセットでR²によりモデルを評価',
         ],
         stack: ['Python', 'Scikit-learn', 'Pandas', 'NumPy'],
+        results: [
+          'R² 0.68でウェアラブル生体信号と学業成績を関連付け',
+          '再利用可能な信号前処理パイプラインを構築',
+          '生理データ予測の確固たるベースラインとしてランダムフォレスト',
+        ],
       },
       fluenti: {
         eyebrow: 'AIエンジニアリング · 2024-2025',
         title: 'FLUENTI、AI文法チェックモデル',
+        role: 'AIエンジニア',
+        year: '2024-2025',
         metrics: [['ベースモデル', 'LLaMA 3'], ['評価', 'BLEU と編集距離']],
         overview: 'LLaMA 3をファインチューニングしたAI文法チェックモデル。ドメイン特化のGrammarly CoEditデータセットを用いて目標出力に整列。',
         approach: [
@@ -766,6 +1109,11 @@ const TRANSLATIONS = {
           'BLEUと編集距離メトリクスでモデル性能を評価',
         ],
         stack: ['LLaMA 3', 'Hugging Face', 'Python'],
+        results: [
+          'Grammarly CoEditの目標出力に整列したLLaMA 3のファインチューニング',
+          'BLEUと編集距離で訂正品質を推定',
+          '高度な文法ツールの基盤となるドメイン特化モデル',
+        ],
       },
     },
   },
