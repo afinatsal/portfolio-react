@@ -12,31 +12,6 @@ import TRANSLATIONS from './translations'
 
 const MARKUP = `<div class="grain"></div>
 
-<!-- loading screen · CLI boot sequence with split-door reveal -->
-<div id="loader" class="loader" aria-hidden="true">
-  <div class="loader-inner">
-    <div class="loader-meta font-mono">
-      <span class="text-dim tracking-[0.25em] text-[11px]">AFIN<span class="text-accent">.</span>PORTFOLIO · <span class="text-dim">2026</span></span>
-      <span id="loaderPct" class="loader-pct">000</span>
-    </div>
-
-    <h1 class="loader-name font-display">
-      <span class="ln"><span style="--nd:.12s">MUHAMMAD</span></span>
-      <span class="ln"><span class="text-dot" style="--nd:.26s">AFIN ATSAL</span></span>
-    </h1>
-
-    <div class="loader-term font-mono">
-      <p id="loaderLog" class="loader-log"></p>
-      <div class="loader-row">
-        <span id="loaderStatus">BOOTING</span>
-        <span class="loader-cursor" aria-hidden="true">&#9612;</span>
-      </div>
-    </div>
-
-    <div class="loader-bar"><span id="loaderBar"></span></div>
-  </div>
-</div>
-
 <!-- scroll progress indicator -->
 <div id="scrollProgress" aria-hidden="true"></div>
 
@@ -61,7 +36,7 @@ const MARKUP = `<div class="grain"></div>
 
   <!-- hero -->
   <main class="relative z-10 flex-1 flex flex-col items-center justify-center text-center px-5 pb-12">
-    <p class="hero-in font-mono text-[11px] sm:text-xs tracking-[0.25em] text-accent mb-4" style="--d:.15s" data-i18n="hero.eyebrow">AI/ML ENGINEER · COMPUTER VISION</p>
+    <p class="hero-in font-mono text-[11px] sm:text-xs tracking-[0.18em] text-accent mb-4" style="--d:.15s" data-i18n="hero.eyebrow">AI/ML ENGINEER · COMPUTER VISION</p>
 
     <h1 id="nameHeading" class="hero-in font-display font-semibold leading-[0.94] tracking-tight text-[clamp(2.2rem,9vw,6.4rem)]" style="--d:.3s">
       <span data-line class="block">MUHAMMAD</span>
@@ -230,7 +205,7 @@ const MARKUP = `<div class="grain"></div>
       <a href="https://www.coursera.org/specializations/machine-learning-introduction" target="_blank" rel="noopener" class="group grid grid-cols-[auto_1fr_auto] sm:grid-cols-[auto_1fr_auto_auto] items-center gap-x-4 sm:gap-x-6 w-full py-6 border-b border-line">
         <span class="font-mono text-[11px] text-dim group-hover:text-ink transition-colors">01</span>
         <span>
-          <h4 class="font-display font-semibold text-ink text-lg leading-snug group-hover:text-mint transition-colors">Machine Learning Specialization</h4>
+          <h3 class="font-display font-semibold text-ink text-lg leading-snug group-hover:text-mint transition-colors">Machine Learning Specialization</h3>
           <p class="font-mono text-[11px] text-dim mt-0.5"><span class="cert-org cert-org-dlai">DeepLearning.AI</span> &amp; <span class="cert-org cert-org-stanford">Stanford Online</span></p>        </span>
         <span class="font-mono text-[12px] text-ink whitespace-nowrap hidden sm:block">2025</span>
         <svg class="w-4 h-4 text-dim transition-transform group-hover:translate-x-1 group-hover:text-ink hidden sm:block" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg>
@@ -239,7 +214,7 @@ const MARKUP = `<div class="grain"></div>
       <a href="https://www.coursera.org/professional-certificates/google-ai" target="_blank" rel="noopener" class="group grid grid-cols-[auto_1fr_auto] sm:grid-cols-[auto_1fr_auto_auto] items-center gap-x-4 sm:gap-x-6 w-full py-6 border-b border-line">
         <span class="font-mono text-[11px] text-dim group-hover:text-ink transition-colors">02</span>
         <span>
-          <h4 class="font-display font-semibold text-ink text-lg leading-snug group-hover:text-mint transition-colors">Google AI Professional Certificate</h4>
+          <h3 class="font-display font-semibold text-ink text-lg leading-snug group-hover:text-mint transition-colors">Google AI Professional Certificate</h3>
           <p class="font-mono text-[11px] text-dim mt-0.5 flex flex-wrap items-center gap-x-2 gap-y-1"><span class="cert-org cert-org-google">Google</span><span>·</span><span data-i18n="cert.c2Detail">8 kursus</span></p>
         </span>
         <span class="font-mono text-[12px] text-ink whitespace-nowrap hidden sm:block">2026</span>
@@ -249,7 +224,7 @@ const MARKUP = `<div class="grain"></div>
       <a href="https://www.coursera.org/learn/google-ai-essentials" target="_blank" rel="noopener" class="group grid grid-cols-[auto_1fr_auto] sm:grid-cols-[auto_1fr_auto_auto] items-center gap-x-4 sm:gap-x-6 w-full py-6 border-b border-line">
         <span class="font-mono text-[11px] text-dim group-hover:text-ink transition-colors">03</span>
         <span>
-          <h4 class="font-display font-semibold text-ink text-lg leading-snug group-hover:text-mint transition-colors">Google AI Essentials Specialization</h4>
+          <h3 class="font-display font-semibold text-ink text-lg leading-snug group-hover:text-mint transition-colors">Google AI Essentials Specialization</h3>
           <p class="font-mono text-[11px] text-dim mt-0.5"><span class="cert-org cert-org-google">Google</span></p>
         </span>
         <span class="font-mono text-[12px] text-ink whitespace-nowrap hidden sm:block">2025</span>
@@ -259,7 +234,7 @@ const MARKUP = `<div class="grain"></div>
       <a href="https://www.coursera.org/specializations/building-ai-agents-and-agentic-workflows" target="_blank" rel="noopener" class="group grid grid-cols-[auto_1fr_auto] sm:grid-cols-[auto_1fr_auto_auto] items-center gap-x-4 sm:gap-x-6 w-full py-6 border-b border-line">
         <span class="font-mono text-[11px] text-dim group-hover:text-ink transition-colors">04</span>
         <span>
-          <h4 class="font-display font-semibold text-ink text-lg leading-snug group-hover:text-mint transition-colors">Building AI Agents &amp; Agentic Workflows</h4>
+          <h3 class="font-display font-semibold text-ink text-lg leading-snug group-hover:text-mint transition-colors">Building AI Agents &amp; Agentic Workflows</h3>
           <p class="font-mono text-[11px] text-dim mt-0.5"><span class="cert-org cert-org-ibm">IBM</span> · Specialization</p>
         </span>
         <span class="font-mono text-[12px] text-ink whitespace-nowrap hidden sm:block">2026</span>
@@ -311,9 +286,9 @@ const MARKUP = `<div class="grain"></div>
           </p>
         </div>
         <div class="order-1 sm:order-2 sm:self-stretch">
-          <div class="project-thumb h-full min-h-[260px] sm:min-h-0 rounded-2xl">
+          <div class="project-thumb h-full min-h-[260px] sm:min-h-0 rounded-2xl group-hover:scale-[1.03] transition-transform duration-700 ease-out">
             <span class="project-thumb-glyph" aria-hidden="true">THESIS / CV</span>
-            <img src="./project-thesis.jpg" alt="Preview proyek skripsi deteksi sampah" data-i18n-alt="ui.altThesis" class="group-hover:scale-105 transition-transform duration-500" loading="lazy" onerror="this.parentElement.classList.add('thumb-missing')" />
+            <img src="./project-thesis.jpg" alt="Preview proyek skripsi deteksi sampah" data-i18n-alt="ui.altThesis" loading="lazy" onerror="this.parentElement.classList.add('thumb-missing')" />
           </div>
         </div>
       </div>
@@ -648,114 +623,6 @@ const LEGACY_SCRIPT = `
   });
 
   apply();
-})();
-
-/* ================= LOADING SCREEN (CLI boot + split-door reveal) ================= */
-(function(){
-  const loader = document.getElementById('loader');
-  if(!loader) return;
-  const log = document.getElementById('loaderLog');
-  const bar = document.getElementById('loaderBar');
-  const pct = document.getElementById('loaderPct');
-  const statusEl = document.getElementById('loaderStatus');
-  if(!log || !bar || !pct || !statusEl){ loader.remove(); return; }
-
-  // React StrictMode double-runs this effect in dev (mount -> cleanup -> mount).
-  // Let the first instance own the loader; ignore every later one.
-  if(window.__afinLoaderActive) return;
-  window.__afinLoaderActive = true;
-
-  // play the intro once per browser session
-  if(sessionStorage.getItem('afin_loader')){
-    document.body.classList.add('ready');
-    loader.remove();
-    return;
-  }
-  sessionStorage.setItem('afin_loader', '1');
-
-  if(window.matchMedia('(prefers-reduced-motion: reduce)').matches){
-    document.body.classList.add('ready');
-    loader.remove();
-    return;
-  }
-
-  document.body.classList.add('loading');
-
-  const LINES = [
-    '$ init afin.dev',
-    'ok  dither canvas',
-    'ok  weights loaded',
-    'ok  cv_pipeline up',
-    'ok  uplink github',
-    '->  ready.',
-  ];
-  const CHAR_MS = 9;
-  const PAUSE_MS = 90;
-  const CURSOR = '\u258C';
-
-  // --- typewriter: reveal log lines one by one ---
-  let lineIdx = 0, charsOut = 0;
-  function typeLine(){
-    if(lineIdx >= LINES.length){ return; }
-    const line = LINES[lineIdx];
-    if(charsOut >= line.length){
-      log.textContent += '\\n';
-      charsOut = 0; lineIdx++;
-      setTimeout(typeLine, PAUSE_MS);
-      return;
-    }
-    const span = document.createElement('span');
-    span.textContent = line.slice(charsOut, charsOut + 1);
-    log.appendChild(span);
-    charsOut++;
-    setTimeout(typeLine, CHAR_MS);
-  }
-  setTimeout(typeLine, 700);
-
-  // --- progress: counter, bar and status sync ---
-  const UI = (window.__I18N && (window.__I18N[window.__LANG] || window.__I18N.id).ui) || {};
-  const STEPS = [
-    [0,   UI.boot || 'BOOTING'],
-    [32,  UI.stream || 'STREAMING'],
-    [64,  UI.map || 'MAPPING'],
-    [92,  UI.link || 'LINKING'],
-  ];
-  const DURATION = 2100;
-  const start = performance.now();
-
-  function stepLabel(p){
-    let label = UI.ready || 'READY';
-    for(let i = STEPS.length - 1; i >= 0; i--){
-      if(p >= STEPS[i][0]){ label = STEPS[i][1]; break; }
-    }
-    return label;
-  }
-
-  function reveal(){
-    if(!loader.isConnected) return;
-    document.body.classList.remove('loading');
-    document.body.classList.add('ready');
-    bar.style.width = '100%';
-    pct.textContent = '100';
-    statusEl.textContent = UI.ready || 'READY';
-    loader.classList.add('loader-open');
-    loader.style.pointerEvents = 'none';
-    setTimeout(() => { if(loader.isConnected) loader.remove(); }, 1150);
-  }
-
-  // fail-safe: never leave the visitor trapped on the loader
-  setTimeout(reveal, 3200);
-
-  function tick(now){
-    if(!loader.isConnected) return;
-    const p = Math.min((now - start) / DURATION, 1);
-    bar.style.width = (p * 100).toFixed(1) + '%';
-    pct.textContent = String(Math.round(p * 100)).padStart(3, '0');
-    statusEl.textContent = stepLabel(p * 100);
-    if(p < 1) requestAnimationFrame(tick);
-    else reveal();
-  }
-  requestAnimationFrame(tick);
 })();
 
 /* ================= DITHER BACKGROUND (Bayer ordered dithering + ambient drift) ================= */
