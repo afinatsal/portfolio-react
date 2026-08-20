@@ -2,15 +2,7 @@
 export function initProjectModal() {
   let openId = null;
 
-  const GLYPHS = {
-    thesis: 'THESIS / CV',
-    'visual-inspection': 'CV',
-    'rag-chatbot': 'RAG',
-    pneumonia: 'X-RAY',
-    cognitive: 'E4',
-    fluenti: 'LLM',
-  };
-  const ORDER = ['thesis', 'visual-inspection', 'rag-chatbot', 'pneumonia', 'cognitive', 'fluenti'];
+const ORDER = ['thesis', 'visual-inspection', 'rag-chatbot', 'pneumonia', 'cognitive', 'fluenti'];
   // number of screenshots per project; files must be named project-<id>-1.jpg ... -N.jpg
   // set to 0 to fall back to a single project-<id>.jpg image
   const SHOTS = {
@@ -114,8 +106,10 @@ export function initProjectModal() {
     // Triple-copy window; each slide is addressed by its real index.
     pcTrack.innerHTML = Array.from({ length: SLIDES }, (_, k) => {
       const r = k % count;
+      const num = String(r + 1).padStart(2, '0');
+      const tot = String(count).padStart(2, '0');
       return `<div class="pc-slide" role="group" aria-label="Slide ${r + 1}" data-real="${r}">
-        <span class="pc-glyph" aria-hidden="true">${GLYPHS[id] || ''}</span>
+        <span class="pc-glyph" aria-hidden="true">${num} / ${tot}</span>
         <img class="pc-ph" alt="" aria-hidden="true" draggable="false" />
         <img class="pc-img" alt="" decoding="async" draggable="false" />
       </div>`;

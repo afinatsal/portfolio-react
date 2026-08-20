@@ -96,9 +96,10 @@
   }
   .pc-glyph{
     position:absolute; inset:0; z-index:0;
+    border:1px dashed #2B3135; border-radius:10px;
     display:flex; align-items:center; justify-content:center;
-    font:500 11px/1 "JetBrains Mono", monospace; letter-spacing:.18em;
-    color:#6B7477; text-align:center; padding:0 6px;
+    font:400 10px/1 "JetBrains Mono", monospace; letter-spacing:.18em;
+    color:#4C5458; text-align:center; padding:0 6px;
   }
   .pc-slide img{
     position:relative; z-index:1;
