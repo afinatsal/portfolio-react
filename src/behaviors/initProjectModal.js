@@ -60,7 +60,7 @@ const ORDER = ['thesis', 'visual-inspection', 'rag-chatbot', 'pneumonia', 'cogni
       const suffix = m[3] + m[4];
       valueHtml = `<span class="font-display font-semibold text-2xl text-ink tabular-nums tracking-tight" data-count="${m[2]}" data-decimals="${decimals}"${prefix ? ` data-prefix="${prefix}"` : ''}${suffix ? ` data-suffix="${suffix}"` : ''}>${prefix}${m[2]}${suffix}</span>`;
     } else {
-      valueHtml = `<span class="font-display font-semibold text-xl sm:text-2xl text-ink leading-tight">${val}</span>`;
+      valueHtml = `<span class="font-display font-semibold text-lg text-ink leading-tight">${val}</span>`;
     }
     return `<div class="border-t border-line pt-4"><p class="font-mono text-[9px] text-dim tracking-[0.18em] mb-2">${label}</p>${valueHtml}</div>`;
   }
@@ -371,11 +371,11 @@ const ORDER = ['thesis', 'visual-inspection', 'rag-chatbot', 'pneumonia', 'cogni
     elOverview.innerHTML = p.overview;
 
     elApproach.innerHTML = p.approach.map((item, i) =>
-      `<li class="flex gap-4 font-display text-[15px] text-dim leading-relaxed"><span class="font-mono text-[11px] text-dim/70 shrink-0 pt-[2px]">${String(i + 1).padStart(2, '0')}</span><span>${item}</span></li>`
+      `<li class="flex gap-4 font-display text-[15px] text-ink leading-relaxed"><span class="font-mono text-[11px] text-dim/70 shrink-0 pt-[2px]">${String(i + 1).padStart(2, '0')}</span><span>${item}</span></li>`
     ).join('');
 
     elResults.innerHTML = (p.results || []).map(item =>
-      `<li class="flex gap-3.5 font-display text-[15px] text-dim leading-relaxed"><span class="h-1.5 w-1.5 rounded-full bg-dim/60 shrink-0 mt-[10px]" aria-hidden="true"></span><span>${item}</span></li>`
+      `<li class="flex gap-3.5 font-display text-[15px] text-ink leading-relaxed"><span class="h-1.5 w-1.5 rounded-full bg-dim/60 shrink-0 mt-[10px]" aria-hidden="true"></span><span>${item}</span></li>`
     ).join('');
 
     elStack.innerHTML = p.stack.map(s =>
