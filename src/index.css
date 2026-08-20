@@ -105,6 +105,13 @@
     position:relative; z-index:1;
     width:100%; height:100%; object-fit:cover;
   }
+  /* portrait phone screenshots: keep the whole shot visible, centered on a
+     soft studio backdrop instead of cropping it to fill the wide stage */
+  .pc-slide--contain{ background:rgba(241,244,242,.05); }
+  .pc-slide--contain img{
+    position:absolute; inset:0; margin:auto;
+    width:74%; height:100%; object-fit:contain;
+  }
   .pc-slide.pc-missing img{ display:none; }
 
   /* real photo: hidden until its preload resolves, so we never flash an

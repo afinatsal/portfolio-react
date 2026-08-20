@@ -20,6 +20,9 @@ const ORDER = ['ailabs', 'lentera', 'thesis', 'visual-inspection', 'rag-chatbot'
     ailabs: ['./project-ailabs-1.jpg', './project-ailabs-2.jpg', './project-ailabs-3.jpg'],
     lentera: ['./project-lentera-1.jpeg', './project-lentera-2.jpeg', './project-lentera-3.jpeg', './project-lentera-4.jpeg'],
   };
+  // projects whose screenshots are phone-portrait shots: keep them fully
+  // visible (contain) on the wide stage instead of cropping to fill it.
+  const CONTAIN = new Set(['lentera']);
   // placeholder github links - replace with real repos before publish
   const LINKS = {
     ailabs: 'https://afinailabs.vercel.app/',
@@ -121,7 +124,8 @@ const ORDER = ['ailabs', 'lentera', 'thesis', 'visual-inspection', 'rag-chatbot'
       const r = k % count;
       const num = String(r + 1).padStart(2, '0');
       const tot = String(count).padStart(2, '0');
-      return `<div class="pc-slide" role="group" aria-label="Slide ${r + 1}" data-real="${r}">
+      const contain = CONTAIN.has(id) ? ' pc-slide--contain' : '';
+      return `<div class="pc-slide${contain}" role="group" aria-label="Slide ${r + 1}" data-real="${r}">
         <span class="pc-glyph" aria-hidden="true">${num} / ${tot}</span>
         <img class="pc-ph" alt="" aria-hidden="true" draggable="false" />
         <img class="pc-img" alt="" decoding="async" draggable="false" />
