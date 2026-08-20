@@ -84,99 +84,166 @@ export function initProjectModal() {
       srcs.push(`./project-${id}.jpg`);
     }
 
-    const real = srcs.length;
-    const order = [real - 1, ...srcs.map((_, i) => i), 0];
-    const slideHtml = (realIdx, slot) => `<div class="pc-slide" role="group" aria-label="Slide ${realIdx + 1}" data-real="${realIdx}">
-      <span class="pc-glyph" aria-hidden="true">${GLYPHS[id] || ''}</span>
-      <img class="pc-ph" alt="" aria-hidden="true" draggable="false" />
-      <img class="pc-img" alt="" decoding="async" draggable="false" onerror="this.parentElement.classList.add('pc-missing')" />
-    </div>`;
-    pcTrack.innerHTML = order.map((k, slot) => slideHtml(k, slot)).join('');
-    pcDots.innerHTML = srcs.map((_, i) => `<button type="button" class="pc-dot" data-i="${i}" aria-label="Slide ${i + 1}"></button>`).join('');
+    const count = srcs.length;
+    const SLIDES = count * 3; // ×3 window: rebase keeps the active photo in the middle copy
 
-    const trackEls = pcTrack.children;
-    const total = order.length;
     const reduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    const ease = 'transform .55s cubic-bezier(.22,1,.36,1)';
 
-    let pos = 1;
-    let pending = 0;
-    let animating = false;
-    let size = null;
-
-    const loads = {};        // real slide index -> true | 'err'
+    // Preload every screenshot the moment the modal opens so navigation never
+    // waits on a network round-trip or flashes the glyph placeholder.
+    const loads = {};        // real index -> true | 'err'
     let lastLoaded = null;   // url of the most recently loaded screenshot
     let seen = [];           // real indexes shown, most recent first
-
-    // Preload every screenshot the moment the modal opens, so navigation never
-    // waits on a network fetch or hits an ugly glyph flash mid-interaction.
     srcs.forEach((src, i) => {
       const im = new Image();
       im.onload = () => {
         loads[i] = true;
         lastLoaded = src;
-        const p = order.indexOf(i);
-        if(p >= 0){
-          const img = pcTrack.children[p].querySelector('.pc-img');
-          if(img && !img.getAttribute('src')) img.src = src;
-        }
+        [...pcTrack.children]
+          .filter(s => Number(s.dataset.real) === i)
+          .forEach(s => {
+            const img = s.querySelector('.pc-img');
+            if(img && !img.getAttribute('src')) img.src = src;
+          });
         applyImageStates();
       };
       im.onerror = () => { loads[i] = 'err'; };
       im.src = src;
     });
 
+    // Triple-copy window; each slide is addressed by its real index.
+    pcTrack.innerHTML = Array.from({ length: SLIDES }, (_, k) => {
+      const r = k % count;
+      return `<div class="pc-slide" role="group" aria-label="Slide ${r + 1}" data-real="${r}">
+        <span class="pc-glyph" aria-hidden="true">${GLYPHS[id] || ''}</span>
+        <img class="pc-ph" alt="" aria-hidden="true" draggable="false" />
+        <img class="pc-img" alt="" decoding="async" draggable="false" />
+      </div>`;
+    }).join('');
+    pcDots.innerHTML = srcs.map((_, i) => `<button type="button" class="pc-dot" data-i="${i}" aria-label="Slide ${i + 1}"></button>`).join('');
+
+    const trackEls = pcTrack.children;
+    const slide0 = pcTrack.firstElementChild;
+
+    let idx = count;   // active slide index inside the ×3 window
+    let x = 0;         // track offset — the ONLY thing being animated
+    let base = 0;      // offset that centers slide 0
+    let unit = 0;      // slide width
+
+    function targetX(){ return base - idx * unit; }
+    function realOf(i){ return ((i % count) + count) % count; }
+
     function measure(){
-      // Cache the geometry: slide width + peek offset are stable after layout,
-      // so re-measuring on every render just forced pointless reflows.
-      if(size) return size;
-      const vw = pcTrack.clientWidth || pcTrack.getBoundingClientRect().width;
-      const first = pcTrack.firstElementChild;
-      const slideW = first ? first.offsetWidth : vw;
-      size = { step: slideW, peek: (vw - slideW) / 2 };
-      return size;
-    }
-    function invalidate(){ size = null; }
-
-    function shownReal(){
-      return ((pos - 1) % real + real) % real;
+      const vw = pcTrack.parentElement.clientWidth || pcTrack.parentElement.getBoundingClientRect().width;
+      const slideW = slide0 ? slide0.offsetWidth : vw;
+      unit = slideW;
+      base = (vw - slideW) / 2;
+      x = targetX();
+      applyX();
     }
 
-    function markSeen(r){
-      seen = [r, ...seen.filter(x => x !== r)];
+    function applyX(){ pcTrack.style.transform = `translate3d(${x}px, 0, 0)`; }
+
+    // exact cubic-bezier(0.16, 1, 0.3, 1) — the same ease-out the afinlabs
+    // carousel uses: fast start, long soft settle, no dead tail at the end.
+    function easeOut(px){
+      if(px <= 0) return 0;
+      if(px >= 1) return 1;
+      const x1 = 0.16, y1 = 1, x2 = 0.3, y2 = 1;
+      const cx = 3*x1, bx = 3*(x2-x1) - cx, ax = 1 - cx - bx;
+      const cy = 3*y1, by = 3*(y2-y1) - cy, ay = 1 - cy - by;
+      let t = px;
+      for(let i = 0; i < 10; i++){
+        const tx = ((ax*t + bx)*t + cx)*t;
+        if(Math.abs(tx - px) < 1e-4) break;
+        t -= (tx - px) / ((3*ax*t + 2*bx)*t + cx || 1e-6);
+      }
+      return ((ay*t + by)*t + cy)*t;
     }
 
-    // The "previous photo" fallback: while the active slide's image is still
-    // loading, show the most recently loaded screenshot instead of an empty box.
+    const DUR = 450;
+    let rafId = 0;
+    let running = false;
+    let fromX = 0, toX = 0, startT = 0;
+
+    function tick(now){
+      const p = Math.min(1, (now - startT) / DUR);
+      x = fromX + (toX - fromX) * easeOut(p);
+      applyX();
+      if(p < 1) rafId = requestAnimationFrame(tick);
+      else { running = false; settle(); }
+    }
+    function cancelAnim(){
+      if(running){ cancelAnimationFrame(rafId); running = false; }
+    }
+
+    // Move to window index i. An in-flight animation is retargeted cleanly from
+    // wherever the track currently is, so rapid clicking glides without drops,
+    // stutter, or the old "one step at a time" queue.
+    function animateTo(i){
+      idx = i;
+      updateIndicators();
+      if(reduced){
+        x = targetX();
+        applyX();
+        settle();
+        return;
+      }
+      fromX = x;
+      toX = targetX();
+      startT = performance.now();
+      if(!running){
+        running = true;
+        rafId = requestAnimationFrame(tick);
+      }
+    }
+
+    // After motion, fold idx back into the middle copy. The jump rewrites the
+    // offset to a pixel-identical position on screen, so it is invisible and
+    // the track can keep scrolling in one direction forever.
+    function settle(){
+      if(idx >= 2 * count) idx = count + realOf(idx);
+      else if(idx < count) idx = count + realOf(idx);
+      x = targetX();
+      applyX();
+      updateState();
+    }
+
+    function markerSeen(r){ seen = [r, ...seen.filter(v => v !== r)]; }
+
     function placeholderFor(r){
-      const prev = seen.find(x => x !== r && loads[x] === true);
+      const prev = seen.find(v => v !== r && loads[v] === true);
       if(prev !== undefined) return srcs[prev];
       return lastLoaded;
     }
 
-    function render(animate){
-      const { step, peek } = measure();
-      pcTrack.style.transition = (!animate || reduced) ? 'none' : ease;
-      pcTrack.style.transform = `translate3d(${peek - pos * step}px, 0, 0)`;
-      [...trackEls].forEach((el, i) => el.classList.toggle('is-active', i === pos));
-      const shown = shownReal();
-      markSeen(shown);
-      if(pcCount) pcCount.textContent = `${String(shown + 1).padStart(2, '0')} / ${String(real).padStart(2, '0')}`;
-      [...pcDots.children].forEach((d, i) => d.classList.toggle('is-active', i === shown));
+    function updateIndicators(){
+      const r = realOf(idx);
+      if(pcCount) pcCount.textContent = `${String(r + 1).padStart(2, '0')} / ${String(count).padStart(2, '0')}`;
+      [...pcDots.children].forEach((d, j) => d.classList.toggle('is-active', j === r));
+    }
+
+    function updateState(){
+      [...trackEls].forEach((el, k) => el.classList.toggle('is-active', k === idx));
+      updateIndicators();
       applyImageStates();
     }
 
+    // While a slide's own image is still decoding, the center slide shows the
+    // most recently loaded screenshot instead of an empty glyph box. The
+    // .is-show toggling is instant; nothing animates here, so swipes stay smooth.
     function applyImageStates(){
-      const shown = shownReal();
-      [...trackEls].forEach((el, i) => {
+      const activeReal = realOf(idx);
+      markerSeen(activeReal);
+      [...trackEls].forEach((el, k) => {
         const r = Number(el.dataset.real);
         const img = el.querySelector('.pc-img');
         const ph = el.querySelector('.pc-ph');
-        const isActive = i === pos;
+        const isCenter = k === idx;
         const ready = loads[r] === true;
         if(img) img.classList.toggle('is-show', ready);
         if(ph){
-          const needPh = isActive && !ready;
+          const needPh = isCenter && !ready;
           ph.classList.toggle('is-show', needPh);
           if(needPh){
             const phSrc = placeholderFor(r);
@@ -188,68 +255,83 @@ export function initProjectModal() {
       });
     }
 
-    function wrap(p){
-      return ((p - 1 + real) % real) + 1;
+    function onResize(){
+      measure();
+      updateState();
     }
 
-    // One step per transition with a small queue, so rapid clicks stay
-    // responsive instead of being dropped by a busy-lock.
-    function kick(){
-      if(!pending || animating) return;
-      animating = true;
-      const dir = pending > 0 ? 1 : -1;
-      pending -= dir;
-      pos += dir;
-      render(true);
+    // pointer swipe: drag the track directly, then let momentum decide
+    let dragging = false;
+    let grabX = 0, px0 = 0, lastClientX = 0, lastT = 0;
+    function onDown(e){
+      if(reduced || e.pointerType === 'mouse' && e.button !== 0) return;
+      dragging = true;
+      cancelAnim();
+      grabX = x;
+      px0 = e.clientX;
+      lastClientX = e.clientX;
+      lastT = performance.now();
+      pcTrack.setPointerCapture(e.pointerId);
+      pcTrack.setAttribute('data-dragging', '');
     }
-    function go(dir){
-      if(reduced){
-        pos = wrap(pos + dir);
-        render(false);
-        return;
-      }
-      pending += dir;
-      kick();
+    function onMove(e){
+      if(!dragging) return;
+      const now = performance.now();
+      lastT = now;
+      lastClientX = e.clientX;
+      const raw = grabX + (e.clientX - px0);
+      const t = targetX();
+      x = Math.max(t - unit * 0.9, Math.min(t + unit * 0.9, raw));
+      applyX();
+    }
+    function onUp(e){
+      if(!dragging) return;
+      dragging = false;
+      pcTrack.removeAttribute('data-dragging');
+      const dt = performance.now() - lastT;
+      const vel = dt > 0 && lastClientX !== e.clientX
+        ? (e.clientX - lastClientX) / dt
+        : 0;
+      const flick = Math.abs(vel) > 0.4;
+      if(e.clientX - px0 < -unit * 0.4 || (flick && vel < 0)) animateTo(idx + 1);
+      else if(e.clientX - px0 > unit * 0.4 || (flick && vel > 0)) animateTo(idx - 1);
+      else animateTo(idx);
     }
 
-    pcTrack.addEventListener('transitionend', function onEnd(e){
-      if(e.target !== pcTrack) return;
-      animating = false;
-      if(pos >= total - 1) pos = 1;
-      else if(pos <= 0) pos = real;
-      render(false);
-      kick();
-    });
-
-    function onPrev(){ go(-1); }
-    function onNext(){ go(1); }
+    function onPrev(){ animateTo(idx - 1); }
+    function onNext(){ animateTo(idx + 1); }
     function onDot(e){
       const b = e.target.closest('[data-i]');
       if(!b) return;
-      const target = Number(b.dataset.i);
-      let diff = target - shownReal();
-      if(diff > real / 2) diff -= real;
-      if(diff < -real / 2) diff += real;
-      if(diff !== 0) go(diff);
-    }
-    function onResize(){
-      invalidate();
-      render(false);
+      const j = Number(b.dataset.i);
+      const a = realOf(idx);
+      let delta = ((j - a) % count + count) % count;
+      if(delta > count / 2) delta -= count;
+      animateTo(idx + delta);
     }
 
     pcPrev.addEventListener('click', onPrev);
     pcNext.addEventListener('click', onNext);
     pcDots.addEventListener('click', onDot);
+    pcTrack.addEventListener('pointerdown', onDown);
+    pcTrack.addEventListener('pointermove', onMove);
+    pcTrack.addEventListener('pointerup', onUp);
+    pcTrack.addEventListener('pointercancel', onUp);
     window.addEventListener('resize', onResize);
 
-    render(false);
+    measure();
+    updateState();
 
     return () => {
+      cancelAnim();
       pcPrev.removeEventListener('click', onPrev);
       pcNext.removeEventListener('click', onNext);
       pcDots.removeEventListener('click', onDot);
+      pcTrack.removeEventListener('pointerdown', onDown);
+      pcTrack.removeEventListener('pointermove', onMove);
+      pcTrack.removeEventListener('pointerup', onUp);
+      pcTrack.removeEventListener('pointercancel', onUp);
       window.removeEventListener('resize', onResize);
-      pcTrack.removeEventListener('transitionend', onEnd);
     };
   }
 
