@@ -14,9 +14,22 @@ export function initDockActive() {
     return (I && I.ui && I.ui.hud) || {};
   }
 
-  window.addEventListener('scroll', () => {
-    let current = sections[0];
-    sections.forEach(sec => { if(sec && window.scrollY >= sec.offsetTop - window.innerHeight/2) current = sec; });
+  // Order-independent: the active section is the one farthest down the page
+  // whose top edge has crossed the half-viewport line. (The dock item order
+  // on screen must NOT drive the scroll-spy, or the pill lands on the wrong
+  // link once a later-in-DOM section scrolls past an earlier one.)
+  function currentSection(){
+    let cur = null;
+    sections.forEach(sec => {
+      if(sec && window.scrollY >= sec.offsetTop - window.innerHeight/2){
+        if(!cur || sec.offsetTop > cur.offsetTop) cur = sec;
+      }
+    });
+    return cur || sections[0];
+  }
+
+  function apply(){
+    const current = currentSection();
     links.forEach(a => {
       const match = current && a.getAttribute('href') === '#'+current.id;
       a.classList.toggle('active-dock', match);
@@ -26,12 +39,8 @@ export function initDockActive() {
       const labels = hudLabels();
       hudSection.textContent = labels[current.id] || current.id.toUpperCase();
     }
-  });
-  document.addEventListener('afin:lang', () => {
-    if(!hudSection) return;
-    const labels = hudLabels();
-    let current = sections[0];
-    sections.forEach(sec => { if(sec && window.scrollY >= sec.offsetTop - window.innerHeight/2) current = sec; });
-    if(current) hudSection.textContent = labels[current.id] || current.id.toUpperCase();
-  });
+  }
+
+  window.addEventListener('scroll', apply);
+  document.addEventListener('afin:lang', apply);
 }
