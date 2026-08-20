@@ -84,31 +84,74 @@ export function initProjectModal() {
       srcs.push(`./project-${id}.jpg`);
     }
 
-    const slides = srcs.map((src, i) => `<div class="pc-slide" role="group" aria-label="Slide ${i + 1}">
-      <span class="pc-glyph" aria-hidden="true">${GLYPHS[id] || ''}</span>
-      <img src="${src}" alt="" loading="lazy" onerror="this.parentElement.classList.add('pc-missing')" draggable="false" />
-    </div>`);
-
     const real = srcs.length;
     const order = [real - 1, ...srcs.map((_, i) => i), 0];
-    pcTrack.innerHTML = order.map(k => slides[k]).join('');
+    const slideHtml = (realIdx, slot) => `<div class="pc-slide" role="group" aria-label="Slide ${realIdx + 1}" data-real="${realIdx}">
+      <span class="pc-glyph" aria-hidden="true">${GLYPHS[id] || ''}</span>
+      <img class="pc-ph" alt="" aria-hidden="true" draggable="false" />
+      <img class="pc-img" alt="" decoding="async" draggable="false" onerror="this.parentElement.classList.add('pc-missing')" />
+    </div>`;
+    pcTrack.innerHTML = order.map((k, slot) => slideHtml(k, slot)).join('');
     pcDots.innerHTML = srcs.map((_, i) => `<button type="button" class="pc-dot" data-i="${i}" aria-label="Slide ${i + 1}"></button>`).join('');
 
     const trackEls = pcTrack.children;
     const total = order.length;
-    let pos = 1;
-    let busy = false;
-
     const reduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    const ease = 'transform .6s cubic-bezier(.22,1,.36,1)';
+    const ease = 'transform .55s cubic-bezier(.22,1,.36,1)';
+
+    let pos = 1;
+    let pending = 0;
+    let animating = false;
+    let size = null;
+
+    const loads = {};        // real slide index -> true | 'err'
+    let lastLoaded = null;   // url of the most recently loaded screenshot
+    let seen = [];           // real indexes shown, most recent first
+
+    // Preload every screenshot the moment the modal opens, so navigation never
+    // waits on a network fetch or hits an ugly glyph flash mid-interaction.
+    srcs.forEach((src, i) => {
+      const im = new Image();
+      im.onload = () => {
+        loads[i] = true;
+        lastLoaded = src;
+        const p = order.indexOf(i);
+        if(p >= 0){
+          const img = pcTrack.children[p].querySelector('.pc-img');
+          if(img && !img.getAttribute('src')) img.src = src;
+        }
+        applyImageStates();
+      };
+      im.onerror = () => { loads[i] = 'err'; };
+      im.src = src;
+    });
 
     function measure(){
+      // Cache the geometry: slide width + peek offset are stable after layout,
+      // so re-measuring on every render just forced pointless reflows.
+      if(size) return size;
       const vw = pcTrack.clientWidth || pcTrack.getBoundingClientRect().width;
       const first = pcTrack.firstElementChild;
       const slideW = first ? first.offsetWidth : vw;
-      const step = slideW;
-      const peek = (vw - slideW) / 2;
-      return { step, peek };
+      size = { step: slideW, peek: (vw - slideW) / 2 };
+      return size;
+    }
+    function invalidate(){ size = null; }
+
+    function shownReal(){
+      return ((pos - 1) % real + real) % real;
+    }
+
+    function markSeen(r){
+      seen = [r, ...seen.filter(x => x !== r)];
+    }
+
+    // The "previous photo" fallback: while the active slide's image is still
+    // loading, show the most recently loaded screenshot instead of an empty box.
+    function placeholderFor(r){
+      const prev = seen.find(x => x !== r && loads[x] === true);
+      if(prev !== undefined) return srcs[prev];
+      return lastLoaded;
     }
 
     function render(animate){
@@ -116,33 +159,66 @@ export function initProjectModal() {
       pcTrack.style.transition = (!animate || reduced) ? 'none' : ease;
       pcTrack.style.transform = `translate3d(${peek - pos * step}px, 0, 0)`;
       [...trackEls].forEach((el, i) => el.classList.toggle('is-active', i === pos));
-      const shown = ((pos - 1) % real + real) % real;
+      const shown = shownReal();
+      markSeen(shown);
       if(pcCount) pcCount.textContent = `${String(shown + 1).padStart(2, '0')} / ${String(real).padStart(2, '0')}`;
       [...pcDots.children].forEach((d, i) => d.classList.toggle('is-active', i === shown));
+      applyImageStates();
+    }
+
+    function applyImageStates(){
+      const shown = shownReal();
+      [...trackEls].forEach((el, i) => {
+        const r = Number(el.dataset.real);
+        const img = el.querySelector('.pc-img');
+        const ph = el.querySelector('.pc-ph');
+        const isActive = i === pos;
+        const ready = loads[r] === true;
+        if(img) img.classList.toggle('is-show', ready);
+        if(ph){
+          const needPh = isActive && !ready;
+          ph.classList.toggle('is-show', needPh);
+          if(needPh){
+            const phSrc = placeholderFor(r);
+            if(phSrc && ph.getAttribute('src') !== phSrc) ph.src = phSrc;
+          } else if(ph.hasAttribute('src')){
+            ph.removeAttribute('src');
+          }
+        }
+      });
     }
 
     function wrap(p){
       return ((p - 1 + real) % real) + 1;
     }
 
+    // One step per transition with a small queue, so rapid clicks stay
+    // responsive instead of being dropped by a busy-lock.
+    function kick(){
+      if(!pending || animating) return;
+      animating = true;
+      const dir = pending > 0 ? 1 : -1;
+      pending -= dir;
+      pos += dir;
+      render(true);
+    }
     function go(dir){
-      if(busy) return;
       if(reduced){
         pos = wrap(pos + dir);
         render(false);
         return;
       }
-      busy = true;
-      pos = pos + dir;
-      render(true);
+      pending += dir;
+      kick();
     }
 
     pcTrack.addEventListener('transitionend', function onEnd(e){
       if(e.target !== pcTrack) return;
-      busy = false;
+      animating = false;
       if(pos >= total - 1) pos = 1;
       else if(pos <= 0) pos = real;
       render(false);
+      kick();
     });
 
     function onPrev(){ go(-1); }
@@ -151,12 +227,15 @@ export function initProjectModal() {
       const b = e.target.closest('[data-i]');
       if(!b) return;
       const target = Number(b.dataset.i);
-      let diff = target - ((pos - 1) % real + real) % real;
+      let diff = target - shownReal();
       if(diff > real / 2) diff -= real;
       if(diff < -real / 2) diff += real;
       if(diff !== 0) go(diff);
     }
-    function onResize(){ render(false); }
+    function onResize(){
+      invalidate();
+      render(false);
+    }
 
     pcPrev.addEventListener('click', onPrev);
     pcNext.addEventListener('click', onNext);

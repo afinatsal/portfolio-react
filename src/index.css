@@ -101,6 +101,15 @@
   }
   .pc-slide.pc-missing img{ display:none; }
 
+  /* real photo: hidden until its preload resolves, so we never flash an
+     empty box while the network round-trip is in flight */
+  .pc-img{ display:none; }
+  .pc-img.is-show{ display:block; }
+  /* placeholder: the previously loaded screenshot, shown only on the active
+     slide while that slide's own image is still decoding */
+  .pc-ph{ display:none; }
+  .pc-ph.is-show{ display:block; }
+
   .pc-arrow{
     position:absolute; top:50%; transform:translateY(-50%); z-index:5;
     width:44px; height:44px; border-radius:999px;
