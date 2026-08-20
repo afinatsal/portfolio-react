@@ -8,7 +8,7 @@ const ORDER = ['ailabs', 'lentera', 'thesis', 'visual-inspection', 'rag-chatbot'
   const SHOTS = {
     ailabs: 3,
     lentera: 4,
-    thesis: 3,
+    thesis: 6,
     'visual-inspection': 3,
     'rag-chatbot': 4,
     pneumonia: 3,
@@ -19,6 +19,7 @@ const ORDER = ['ailabs', 'lentera', 'thesis', 'visual-inspection', 'rag-chatbot'
   const REAL_IMAGES = {
     ailabs: ['./project-ailabs-1.jpg', './project-ailabs-2.jpg', './project-ailabs-3.jpg'],
     lentera: ['./project-lentera-1.jpeg', './project-lentera-2.jpeg', './project-lentera-3.jpeg', './project-lentera-4.jpeg'],
+    thesis: ['./project-thesis-1.png', './project-thesis-2.png', './project-thesis-3.png', './project-thesis-4.jpg', './project-thesis-5.jpg', './project-thesis-6.jpg'],
   };
   // projects whose screenshots are phone-portrait shots: keep them fully
   // visible (contain) on the wide stage instead of cropping to fill it.
