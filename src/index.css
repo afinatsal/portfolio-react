@@ -270,10 +270,18 @@
   }
 
   /* ============ MUSIC TOGGLE ============ */
-  .dock-divider{
-    width:1px; height:22px; background:#353C42; margin:0 2px; align-self:center; flex:none;
+  /* match the dock's vertical rhythm: same padding, icon hit-area, and
+     bottom offset (see #dock media queries below) */
+  #musicToggle{ bottom: calc(env(safe-area-inset-bottom, 0px) + 28px); }
+  @media (min-width: 768px){
+    #musicToggle{ bottom: calc(env(safe-area-inset-bottom, 0px) + 36px); }
   }
+  .pc-area{ flex:none; }
   .pc-speaker{ display:flex; }
+  .pc-eq{ display:none; }
+  button.music-playing{ background:rgba(191,250,245,0.14); color:#BFFAF5; }
+  button.music-playing:hover{ background:rgba(191,250,245,0.2); }
+  button.music-playing .pc-speaker{ display:none; }
   .pc-eq{ display:none; }
   button.music-playing{ background:rgba(191,250,245,0.14); color:#BFFAF5; }
   button.music-playing .pc-speaker{ display:none; }

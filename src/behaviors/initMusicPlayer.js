@@ -7,9 +7,6 @@ export function initMusicPlayer() {
   const doc = document;
   if (!doc || !doc.getElementById) return;
 
-  const dock = doc.getElementById('dock');
-  if (!dock) return;
-
   const AudioCtor = (typeof window !== 'undefined' && window.Audio) || (typeof Audio !== 'undefined' ? Audio : null);
   if (!AudioCtor) return;
   const audio = new AudioCtor('./amaze.mp3');
@@ -17,27 +14,27 @@ export function initMusicPlayer() {
   function memGet(k){ try { const s = window.localStorage; return s && s.getItem ? s.getItem(k) : null } catch(e){ return null } }
   function memSet(k, v){ try { const s = window.localStorage; if (s && s.setItem) s.setItem(k, v) } catch(e){} }
 
+  // Standalone pill that mirrors the dock's dimensions: same vertical
+  // padding, icon size, radius, border, blur, and bottom offset.
   const btn = doc.createElement('button');
   btn.type = 'button';
   btn.id = 'musicToggle';
-  btn.className = 'dock-link relative flex items-center justify-center w-10 h-10 sm:w-11 sm:h-11 rounded-full text-dim transition-colors';
+  btn.className = 'dock-link fixed right-4 sm:right-6 z-20 flex items-center px-3 sm:px-4 py-2.5 sm:py-3 rounded-full border border-line bg-panel/60 backdrop-blur-xl text-dim shadow-[0_8px_40px_rgba(0,0,0,0.5)]';
   btn.style.transformOrigin = 'bottom center';
   btn.setAttribute('aria-pressed', 'false');
   btn.innerHTML =
     '<span class="dock-tooltip">Musik</span>' +
+    '<span class="pc-area flex items-center justify-center w-10 h-10 sm:w-11 sm:h-11">' +
     '<span class="pc-speaker" aria-hidden="true">' +
     '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">' +
     '<path d="M3 10v4h4l5 4V6l-5 4H3z"/>' +
     '<path d="M16.5 8.5a5 5 0 0 1 0 7"/>' +
     '<path d="M19 6a8.5 8.5 0 0 1 0 12"/>' +
     '</svg></span>' +
-    '<span class="pc-eq" aria-hidden="true"><i></i><i></i><i></i><i></i></span>';
+    '<span class="pc-eq" aria-hidden="true"><i></i><i></i><i></i><i></i></span>' +
+    '</span>';
 
-  const divider = doc.createElement('span');
-  divider.className = 'dock-divider';
-  divider.setAttribute('aria-hidden', 'true');
-  dock.appendChild(divider);
-  dock.appendChild(btn);
+  doc.body.appendChild(btn);
 
   const KEY = 'portfolio-music';
   let playing = false;
