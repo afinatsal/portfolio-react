@@ -70,10 +70,13 @@ const ORDER = ['thesis', 'visual-inspection', 'rag-chatbot', 'pneumonia', 'cogni
   function buildCarousel(id){
     const n = SHOTS[id] || 0;
     const srcs = [];
+    // Dummy solid-pale placeholder JPEGs (no gradient) until the real
+    // screenshots are ready; drop the 'dummy/' prefix to use real shots.
+    const dummyBase = './dummy';
     if(n > 0){
-      for(let i = 1; i <= n; i++) srcs.push(`./project-${id}-${i}.jpg`);
+      for(let i = 1; i <= n; i++) srcs.push(`${dummyBase}/project-${id}-${i}.jpg`);
     } else {
-      srcs.push(`./project-${id}.jpg`);
+      srcs.push(`${dummyBase}/project-${id}.jpg`);
     }
 
     const count = srcs.length;
