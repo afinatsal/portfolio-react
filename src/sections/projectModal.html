@@ -2,20 +2,16 @@
 <div id="projectModal" class="fixed inset-0 z-40 hidden">
   <div id="modalBackdrop" class="absolute inset-0 bg-black/80 backdrop-blur-sm opacity-0 transition-opacity duration-300"></div>
   <div class="absolute inset-0 flex p-0 sm:p-6 overflow-y-auto">
-    <div id="modalPanel" class="relative w-full sm:max-w-2xl sm:rounded-2xl border-0 sm:border border-line bg-panel min-h-screen sm:min-h-0 m-auto translate-y-6 opacity-0 transition-all duration-300">
+    <div id="modalPanel" class="relative w-full sm:max-w-3xl lg:max-w-4xl sm:rounded-2xl border-0 sm:border border-line bg-panel min-h-screen sm:min-h-0 m-auto translate-y-6 opacity-0 transition-all duration-300">
       <button id="modalClose" type="button" aria-label="Tutup" data-i18n-aria="ui.close" class="absolute top-5 right-5 sm:top-6 sm:right-6 w-9 h-9 flex items-center justify-center rounded-full border border-line text-dim hover:text-ink hover:border-ink/40 transition-colors z-10">
         <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18M6 6l12 12"/></svg>
       </button>
 
       <div class="p-7 sm:p-10 sm:pb-8">
-        <p id="modalEyebrow" class="font-mono text-[10px] tracking-[0.22em] text-dim mb-4"></p>
-        <h3 id="modalTitle" class="font-display font-semibold text-2xl sm:text-[26px] text-ink leading-[1.15] mb-7 pr-10"></h3>
+        <p id="modalEyebrow" class="font-mono text-[10px] tracking-[0.22em] text-dim mb-5"></p>
+        <h3 id="modalTitle" class="font-display font-semibold text-[26px] sm:text-[30px] text-ink leading-[1.12] tracking-tight mb-12 pr-10"></h3>
 
-        <div id="modalMeta" class="grid grid-cols-2 sm:grid-cols-3 gap-y-4 mb-9"></div>
-
-        <div id="modalMetrics" class="mb-9 pb-9 border-b border-line"></div>
-
-        <div id="modalCarousel" class="project-carousel mb-9" aria-roledescription="carousel" aria-label="Project screenshots">
+        <div id="modalCarousel" class="project-carousel mb-12" aria-roledescription="carousel" aria-label="Project screenshots">
           <div class="pc-viewport">
             <div id="pcTrack" class="pc-track"></div>
           </div>
@@ -31,29 +27,27 @@
           </div>
         </div>
 
-        <div class="mb-8">
-          <p class="flex items-center gap-2 font-mono text-[9px] tracking-[0.2em] text-dim mb-3"><span class="text-dim/50">01</span><span class="h-px w-6 bg-line"></span><span data-i18n="ui.overview">OVERVIEW</span></p>
-          <p id="modalOverview" class="font-display text-[15px] text-dim leading-[1.8]"></p>
+        <div class="grid lg:grid-cols-[minmax(0,1fr)_minmax(0,1.8fr)] gap-x-14 gap-y-12">
+          <!-- story column: what it is, how it was built, what came out -->
+          <div class="order-1 lg:order-2 min-w-0">
+            <p id="modalOverview" class="font-display text-[15px] sm:text-base text-dim leading-[1.9]"></p>
+            <div class="mt-10 border-t border-line pt-7">
+              <ol id="modalApproach" class="space-y-4"></ol>
+            </div>
+            <div class="mt-10 border-t border-line pt-7">
+              <ul id="modalResults" class="space-y-3.5"></ul>
+            </div>
+          </div>
+          <!-- spec column: role, year, source, numbers, stack -->
+          <aside class="order-2 lg:order-1 min-w-0">
+            <div id="modalMeta"></div>
+            <div id="modalMetrics" class="grid grid-cols-2 gap-x-8 gap-y-8 mt-9"></div>
+            <div id="modalStack" class="flex flex-wrap gap-2 mt-10 border-t border-line pt-7"></div>
+          </aside>
         </div>
 
-        <div class="mb-8">
-          <p class="flex items-center gap-2 font-mono text-[9px] tracking-[0.2em] text-dim mb-4"><span class="text-dim/50">02</span><span class="h-px w-6 bg-line"></span><span data-i18n="ui.approach">PENDEKATAN</span></p>
-          <ol id="modalApproach" class="space-y-3.5"></ol>
-        </div>
-
-        <div class="mb-8">
-          <p class="flex items-center gap-2 font-mono text-[9px] tracking-[0.2em] text-dim mb-4"><span class="text-dim/50">03</span><span class="h-px w-6 bg-line"></span><span data-i18n="ui.results">HASIL &amp; INSIGHT</span></p>
-          <ul id="modalResults" class="space-y-3"></ul>
-        </div>
-
-        <div class="mb-9">
-          <p class="flex items-center gap-2 font-mono text-[9px] tracking-[0.2em] text-dim mb-3.5"><span class="text-dim/50">04</span><span class="h-px w-6 bg-line"></span><span data-i18n="ui.stack">TECH STACK</span></p>
-          <div id="modalStack" class="flex flex-wrap gap-2"></div>
-        </div>
-
-        <div id="modalFooter" class="flex items-center justify-between gap-6 pt-7 border-t border-line"></div>
+        <div id="modalFooter" class="mt-12 flex items-center justify-between gap-6 pt-8 border-t border-line"></div>
       </div>
     </div>
   </div>
 </div>
-
