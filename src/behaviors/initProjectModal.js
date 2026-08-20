@@ -26,6 +26,10 @@ const ORDER = ['ailabs', 'lentera', 'thesis', 'visual-inspection', 'rag-chatbot'
   const CONTAIN = new Set(['lentera']);
   // optional architecture/system diagram shown in the story column
   const ARCH = { thesis: './project-thesis-arch.jpg' };
+  // per-photo object-position when the shot is cropped to fill the slide
+  // (1-based photo number). thesis #6 is 4:3 and has important content in the
+  // top-right corner, so anchor the crop there instead of the center.
+  const FOCUS = { thesis: { '6': 'top right' } };
   // placeholder github links - replace with real repos before publish
   const LINKS = {
     ailabs: 'https://afinailabs.vercel.app/',
@@ -131,10 +135,11 @@ const ORDER = ['ailabs', 'lentera', 'thesis', 'visual-inspection', 'rag-chatbot'
       const num = String(r + 1).padStart(2, '0');
       const tot = String(count).padStart(2, '0');
       const contain = CONTAIN.has(id) ? ' pc-slide--contain' : '';
+      const focus = (FOCUS[id] || {})[String(r + 1)];
       return `<div class="pc-slide${contain}" role="group" aria-label="Slide ${r + 1}" data-real="${r}">
         <span class="pc-glyph" aria-hidden="true">${num} / ${tot}</span>
         <img class="pc-ph" alt="" aria-hidden="true" draggable="false" />
-        <img class="pc-img" alt="" decoding="async" draggable="false" />
+        <img class="pc-img" alt="" decoding="async" draggable="false"${focus ? ` style="object-position:${focus}"` : ''} />
       </div>`;
     }).join('');
     pcDots.innerHTML = srcs.map((_, i) => `<button type="button" class="pc-dot" data-i="${i}" aria-label="Slide ${i + 1}"></button>`).join('');
