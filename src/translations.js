@@ -76,6 +76,10 @@ const TRANSLATIONS = {
         heading: 'Deteksi dan klasifikasi sampah hierarkis dengan <span class="text-accent">YOLOv12 + HSCN</span>.',
         desc: 'Pipeline dua tahap, YOLOv12 mendeteksi objek lalu Hierarchical Sequential Classification Network mengklasifikasikan tiga level hierarki sampah.',
       },
+      r0: {
+        title: 'AI Labs · Studio AI',
+        sub: 'Studio pemasang AI untuk bisnis, UMKM, dan pribadi',
+      },
       r1: {
         title: 'CNN Visual Inspection System',
         sub: 'X-Camp, PT XLSmart Telecom Sejahtera',
@@ -162,6 +166,26 @@ const TRANSLATIONS = {
       altThesis: 'Preview proyek skripsi deteksi sampah',
     },
     projects: {
+      ailabs: {
+        eyebrow: 'STUDIO · LIVE WEBSITE',
+        title: 'AI Labs',
+        role: 'Founder · Developer',
+        year: '2026',
+        metrics: [['Layanan', '6'], ['Bahasa', 'ID / EN'], ['Deploy', 'Vercel']],
+        overview: 'Website resmi AI Labs, studio yang memasang AI untuk bisnis, UMKM, dan pribadi. Mengerjakan chatbot perusahaan dan UMKM, asisten pribadi berbasis AI, detektor computer vision untuk CCTV, jasa pengerjaan tugas machine learning, dan kelas pemasangan AI agent. Setiap sistem dikerjakan sampai benar-benar berjalan di tempat yang nyata.',
+        approach: [
+          'Hero reveal dengan lapisan gambar depan yang terkelupas mengikuti kursor',
+          'Enam layanan dalam tata letak bento asimetris dengan tipografi editorial',
+          'Daftar proyek interaktif dengan carousel foto yang bisa digeser dan diputar',
+          'Bagian kontak dengan email, WhatsApp, dan profil sosial',
+        ],
+        stack: ['React 19', 'Vite 8', 'Tailwind CSS 4', 'Framer Motion', 'Bricolage Grotesque', 'IBM Plex'],
+        results: [
+          'Live di afinailabs.vercel.app dengan deploy otomatis dari Vercel',
+          'Dibangun di atas React 19, Vite 8, Tailwind CSS 4, dan Framer Motion',
+          'Tipografi editorial: Bricolage Grotesque dan IBM Plex',
+        ],
+      },
       thesis: {
         eyebrow: 'SKRIPSI · AI ENGINEERING &amp; COMPUTER VISION',
         title: 'Multi-Stage Waste Detection · YOLOv12 + HSCN',
@@ -356,6 +380,10 @@ const TRANSLATIONS = {
         heading: 'Hierarchical waste detection &amp; classification with <span class="text-accent">YOLOv12 + HSCN</span>.',
         desc: 'A two-stage pipeline, YOLOv12 detects objects then a Hierarchical Sequential Classification Network classifies three levels of waste hierarchy.',
       },
+      r0: {
+        title: 'AI Labs · AI Studio',
+        sub: 'An AI setup studio for businesses, SMEs, and individuals',
+      },
       r1: {
         title: 'CNN Visual Inspection System',
         sub: 'X-Camp, PT XLSmart Telecom Sejahtera',
@@ -442,6 +470,26 @@ const TRANSLATIONS = {
       altThesis: 'Waste detection thesis project preview',
     },
     projects: {
+      ailabs: {
+        eyebrow: 'STUDIO · LIVE WEBSITE',
+        title: 'AI Labs',
+        role: 'Founder · Developer',
+        year: '2026',
+        metrics: [['Services', '6'], ['Language', 'ID / EN'], ['Deploy', 'Vercel']],
+        overview: 'The official AI Labs website — a studio that deploys AI for businesses, SMEs, and individuals. It covers company and SME chatbots, personal AI assistants, computer-vision CCTV detectors, machine-learning contract work, and AI-agent setup classes. Every system is built until it actually runs in a real environment.',
+        approach: [
+          'Hero reveal with a front image layer peeling away under the cursor',
+          'Six services in an asymmetric bento layout with editorial typography',
+          'Interactive project list with a draggable, rotating photo carousel',
+          'Contact section with email, WhatsApp, and social profiles',
+        ],
+        stack: ['React 19', 'Vite 8', 'Tailwind CSS 4', 'Framer Motion', 'Bricolage Grotesque', 'IBM Plex'],
+        results: [
+          'Live at afinailabs.vercel.app, auto-deployed by Vercel',
+          'Built on React 19, Vite 8, Tailwind CSS 4, and Framer Motion',
+          'Editorial typography with Bricolage Grotesque and IBM Plex',
+        ],
+      },
       thesis: {
         eyebrow: 'THESIS · AI ENGINEERING &amp; COMPUTER VISION',
         title: 'Multi-Stage Waste Detection · YOLOv12 + HSCN',
@@ -636,6 +684,10 @@ const TRANSLATIONS = {
         heading: '基于 <span class="text-accent">YOLOv12 + HSCN</span> 的分层垃圾检测与分类。',
         desc: '两阶段流水线，YOLOv12 负责物体检测，再由层级序列分类网络对三层垃圾层级进行分类。',
       },
+      r0: {
+        title: 'AI Labs · AI 工作室',
+        sub: '面向企业、中小微企业和个人的 AI 部署工作室',
+      },
       r1: {
         title: 'CNN 视觉检测系统',
         sub: 'X-Camp, PT XLSmart Telecom Sejahtera',
@@ -722,6 +774,26 @@ const TRANSLATIONS = {
       altThesis: '垃圾检测论文项目预览',
     },
     projects: {
+      ailabs: {
+        eyebrow: '工作室 · 线上网站',
+        title: 'AI Labs',
+        role: '创始人 · 开发者',
+        year: '2026',
+        metrics: [['服务', '6'], ['语言', 'ID / EN'], ['部署', 'Vercel']],
+        overview: 'AI Labs 官方网站——面向企业、中小微企业和个人的 AI 部署工作室。承接企业及中小微企业聊天机器人、AI 个人助手、CCTV 计算机视觉检测、机器学习代做与 AI 智能体搭建课程。每套系统都打磨到能在真实环境中真正运行。',
+        approach: [
+          'Hero 揭幕效果：前景图层随光标剥开',
+          '六项服务采用非对称 bento 栅格与编辑排版',
+          '可拖动、可旋转照片轮播的交互项目列表',
+          '包含邮箱、WhatsApp 和社交主页的联系板块',
+        ],
+        stack: ['React 19', 'Vite 8', 'Tailwind CSS 4', 'Framer Motion', 'Bricolage Grotesque', 'IBM Plex'],
+        results: [
+          '已在 afinailabs.vercel.app 上线，由 Vercel 自动部署',
+          '基于 React 19、Vite 8、Tailwind CSS 4 与 Framer Motion 构建',
+          '使用 Bricolage Grotesque 与 IBM Plex 编辑排版',
+        ],
+      },
       thesis: {
         eyebrow: '毕业论文 · AI 工程与计算机视觉',
         title: '多阶段垃圾检测 · YOLOv12 + HSCN',
@@ -916,6 +988,10 @@ const TRANSLATIONS = {
         heading: '<span class="text-accent">YOLOv12 + HSCN</span>による階層型ゴミ検出・分類。',
         desc: '2段階パイプライン。YOLOv12が物体を検出し、階層型系列分類ネットワークが3段階のゴミ階層を分類します。',
       },
+      r0: {
+        title: 'AI Labs · AIスタジオ',
+        sub: '企業・中小企業・個人向けAI導入スタジオ',
+      },
       r1: {
         title: 'CNNビジョン検査システム',
         sub: 'X-Camp, PT XLSmart Telecom Sejahtera',
@@ -1002,6 +1078,26 @@ const TRANSLATIONS = {
       altThesis: 'ゴミ検出論文プロジェクトのプレビュー',
     },
     projects: {
+      ailabs: {
+        eyebrow: 'スタジオ · 公開サイト',
+        title: 'AI Labs',
+        role: 'Founder · Developer',
+        year: '2026',
+        metrics: [['サービス', '6'], ['言語', 'ID / EN'], ['デプロイ', 'Vercel']],
+        overview: 'AI Labs 公式ウェブサイト——企業・中小企業・個人向けに AI を導入するスタジオ。企業・中小企業向けチャットボット、AI パーソナルアシスタント、CCTV 向けコンピュータビジョン検知、機械学習案件の受託、AI エージェント導入講座を手がけます。どのシステムも実際の現場で動くところまで仕上げます。',
+        approach: [
+          'カーソルに追従して前景レイヤーがめくれるヒーロー reveal',
+          '編集的なタイポグラフィによる非対称ベントーグリッドの 6 つのサービス',
+          'ドラッグ＆回転できる写真カルーセル付きのインタラクティブなプロジェクト一覧',
+          'メール、WhatsApp、SNS プロフィールを備えたお問い合わせセクション',
+        ],
+        stack: ['React 19', 'Vite 8', 'Tailwind CSS 4', 'Framer Motion', 'Bricolage Grotesque', 'IBM Plex'],
+        results: [
+          'afinailabs.vercel.app で公開中・Vercel が自動デプロイ',
+          'React 19、Vite 8、Tailwind CSS 4、Framer Motion で構築',
+          'Bricolage Grotesque と IBM Plex による編集タイポグラフィ',
+        ],
+      },
       thesis: {
         eyebrow: '卒業研究 · AIエンジニアリング &amp; コンピュータビジョン',
         title: '多段階ゴミ検出 · YOLOv12 + HSCN',
