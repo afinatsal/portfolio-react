@@ -190,6 +190,7 @@
     color:#6B7477; text-align:center; padding:0 6px;
   }
   .project-thumb img{ position:relative; width:100%; height:100%; object-fit:cover; z-index:1; }
+  .project-thumb img.thumb-zoom{ transform:scale(1.15); }
   .project-thumb.thumb-missing img{ display:none; }
 
   /* tech-stack tag pills under project titles */
