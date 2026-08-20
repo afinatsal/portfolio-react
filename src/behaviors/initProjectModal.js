@@ -69,7 +69,7 @@ const ORDER = ['ailabs', 'lentera', 'thesis', 'visual-inspection', 'rag-chatbot'
       const decimals = m[2].includes('.') ? m[2].split('.')[1].length : 0;
       const prefix = m[1] === '<' ? '&lt;' : '';
       const suffix = m[3] + m[4];
-      valueHtml = `<span class="font-display font-semibold text-2xl text-ink tabular-nums tracking-tight" data-count="${m[2]}" data-decimals="${decimals}"${prefix ? ` data-prefix="${prefix}"` : ''}${suffix ? ` data-suffix="${suffix}"` : ''}>${prefix}${m[2]}${suffix}</span>`;
+      valueHtml = `<span class="font-display font-semibold text-lg text-ink tabular-nums tracking-tight" data-count="${m[2]}" data-decimals="${decimals}"${prefix ? ` data-prefix="${prefix}"` : ''}${suffix ? ` data-suffix="${suffix}"` : ''}>${prefix}${m[2]}${suffix}</span>`;
     } else {
       valueHtml = `<span class="font-display font-semibold text-lg text-ink leading-tight">${val}</span>`;
     }
