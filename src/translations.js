@@ -144,6 +144,7 @@ const TRANSLATIONS = {
       map: 'MAPPING',
       link: 'LINKING',
       ready: 'READY',
+      music: 'Musik',
       hud: {
         home: '01 · HOME',
         about: '02 · TENTANG',
@@ -423,6 +424,7 @@ const TRANSLATIONS = {
       map: 'MAPPING',
       link: 'LINKING',
       ready: 'READY',
+      music: 'Music',
       hud: {
         home: '01 · HOME',
         about: '02 · ABOUT',
@@ -702,6 +704,7 @@ const TRANSLATIONS = {
       map: '映射中',
       link: '连接中',
       ready: '就绪',
+      music: '音乐',
       hud: {
         home: '01 · 首页',
         about: '02 · 关于我',
@@ -981,6 +984,7 @@ const TRANSLATIONS = {
       map: 'マッピング中',
       link: '接続中',
       ready: '準備完了',
+      music: '音楽',
       hud: {
         home: '01 · ホーム',
         about: '02 · プロフィール',

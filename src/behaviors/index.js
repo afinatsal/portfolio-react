@@ -7,6 +7,7 @@ import { initProjectModal } from './initProjectModal.js'
 import { initCopyEmail } from './initCopyEmail.js'
 import { initAnimatedCounters } from './initAnimatedCounters.js'
 import { initSkillsMarquee } from './initSkillsMarquee.js'
+import { initMusicPlayer } from './initMusicPlayer.js'
 
 export {
   initI18n,
@@ -18,4 +19,5 @@ export {
   initCopyEmail,
   initAnimatedCounters,
   initSkillsMarquee,
+  initMusicPlayer,
 }
