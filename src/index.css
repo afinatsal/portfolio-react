@@ -7,7 +7,7 @@
   body{background:#111315;}
   ::selection{background:#BFFAF5; color:#111315;}
 
-  /* custom scrollbar — thin, theme-matched */
+  /* custom scrollbar - thin, theme-matched */
   *{scrollbar-width:thin; scrollbar-color:#353C42 transparent;}
   ::-webkit-scrollbar{width:8px; height:8px;}
   ::-webkit-scrollbar-track{background:transparent;}
@@ -63,15 +63,76 @@
   }
   body.modal-open{ overflow:hidden; }
 
-  /* project modal hero: keep the fallback glyph legible on a tall strip */
-  #modalHero .project-thumb-glyph{
-    font-size:13px; letter-spacing:.3em; color:#6B7477;
+  /* project detail image carousel: clean, borderless, centered photo with peek */
+  .project-carousel{
+    --pc-peek: clamp(20px, 4vw, 48px);
+    position:relative;
   }
-  #modalHero img{
-    position:relative; z-index:1; width:100%; height:100%; object-fit:cover;
+  .pc-viewport{
+    overflow:hidden;
+  }
+  .pc-track{
+    display:flex;
+    will-change:transform;
+  }
+  .pc-slide{
+    flex:0 0 calc(100% - 2 * var(--pc-peek));
+    position:relative;
+    aspect-ratio:16/10;
+    overflow:hidden;
+    opacity:.3;
+    transform:scale(.94);
+    transition:transform .6s cubic-bezier(.22,1,.36,1), opacity .6s cubic-bezier(.22,1,.36,1);
+    user-select:none;
+  }
+  .pc-slide.is-active{
+    opacity:1;
+    transform:scale(1);
+  }
+  .pc-glyph{
+    position:absolute; inset:0; z-index:0;
+    display:flex; align-items:center; justify-content:center;
+    font:500 11px/1 "JetBrains Mono", monospace; letter-spacing:.18em;
+    color:#6B7477; text-align:center; padding:0 6px;
+  }
+  .pc-slide img{
+    position:relative; z-index:1;
+    width:100%; height:100%; object-fit:cover;
+  }
+  .pc-slide.pc-missing img{ display:none; }
+
+  .pc-arrow{
+    position:absolute; top:50%; transform:translateY(-50%); z-index:5;
+    width:44px; height:44px; border-radius:999px;
+    display:flex; align-items:center; justify-content:center;
+    border:none; background:none;
+    color:#9CA6AA; cursor:pointer;
+    transition:color .2s, background .2s;
+  }
+  .pc-arrow:hover{ color:#F1F4F2; background:rgba(255,255,255,.05); }
+  .pc-arrow--prev{ left:-14px; }
+  .pc-arrow--next{ right:-14px; }
+
+  .pc-meta{
+    display:flex; align-items:center; justify-content:center; gap:12px;
+    margin-top:14px;
+  }
+  .pc-dots{ display:flex; align-items:center; gap:7px; }
+  .pc-dot{
+    width:6px; height:6px; border-radius:999px;
+    background:#4A5256; border:none; padding:0; cursor:pointer;
+    transition:background .25s, width .25s;
+  }
+  .pc-dot.is-active{ width:18px; background:#F1F4F2; }
+  .pc-count{
+    font:400 10px/1 "JetBrains Mono", monospace;
+    letter-spacing:.18em; color:#6B7477;
+  }
+  @media (prefers-reduced-motion: reduce){
+    .pc-slide, .pc-arrow{ transition:none; }
   }
 
-  /* numbered approach rows — accent index, aligned text */
+  /* numbered approach rows - accent index, aligned text */
   #modalApproach li{ counter-increment:none; }
 
   /* Nama perusahaan adalah detail penting: cyan memberi penekanan tanpa
@@ -135,7 +196,7 @@
   .reveal-delay-1{transition-delay:.08s;}
   .reveal-delay-2{transition-delay:.16s;}
 
-  /* hero entrance — the page IS the intro, no fake loader */
+  /* hero entrance - the page IS the intro, no fake loader */
   .hero-in{opacity:0; animation:heroUp .9s cubic-bezier(.16,1,.3,1) forwards; animation-delay:var(--d, 0s);}
   @keyframes heroUp{from{opacity:0; transform:translateY(24px);} to{opacity:1; transform:translateY(0);}}
 
@@ -162,7 +223,7 @@
     .section-transition::after{transform:scaleX(1); transition:none;}
   }
 
-  /* language switcher — header pill */
+  /* language switcher - header pill */
   .lang-pill{
     display:flex; align-items:center; gap:2px;
     border:1px solid #353C42; border-radius:999px; padding:3px;
