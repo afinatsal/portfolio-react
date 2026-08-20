@@ -2,11 +2,12 @@
 export function initProjectModal() {
   let openId = null;
 
-const ORDER = ['ailabs', 'thesis', 'visual-inspection', 'rag-chatbot', 'pneumonia', 'cognitive', 'fluenti'];
+const ORDER = ['ailabs', 'lentera', 'thesis', 'visual-inspection', 'rag-chatbot', 'pneumonia', 'cognitive', 'fluenti'];
   // number of screenshots per project; files must be named project-<id>-1.jpg ... -N.jpg
   // set to 0 to fall back to a single project-<id>.jpg image
   const SHOTS = {
     ailabs: 3,
+    lentera: 4,
     thesis: 3,
     'visual-inspection': 3,
     'rag-chatbot': 4,
@@ -17,6 +18,7 @@ const ORDER = ['ailabs', 'thesis', 'visual-inspection', 'rag-chatbot', 'pneumoni
   // screenshots placed directly under /public, used as-is (no dummy prefix)
   const REAL_IMAGES = {
     ailabs: ['./project-ailabs-1.jpg', './project-ailabs-2.jpg', './project-ailabs-3.jpg'],
+    lentera: ['./project-lentera-1.jpeg', './project-lentera-2.jpeg', './project-lentera-3.jpeg', './project-lentera-4.jpeg'],
   };
   // placeholder github links - replace with real repos before publish
   const LINKS = {

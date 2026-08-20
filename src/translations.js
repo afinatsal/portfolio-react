@@ -81,22 +81,26 @@ const TRANSLATIONS = {
         sub: 'Studio pemasang AI untuk bisnis, UMKM, dan pribadi',
       },
       r1: {
+        title: 'Lentera · Asisten Visual iOS',
+        sub: 'Aplikasi iOS untuk pengguna tunanetra &amp; low vision',
+      },
+      r2: {
         title: 'CNN Visual Inspection System',
         sub: 'X-Camp, PT XLSmart Telecom Sejahtera',
       },
-      r2: {
+      r3: {
         title: 'RAG Chatbot untuk Booking Tiket Kapal',
         sub: 'PT Amman Mineral Internasional',
       },
-      r3: {
+      r4: {
         title: 'Pneumonia Detection dari Chest X-Ray',
         sub: 'Proyek pribadi',
       },
-      r4: {
+      r5: {
         title: 'Cognitive Performance Prediction',
         sub: 'Wearable biosignal · Empatica E4',
       },
-      r5: {
+      r6: {
         title: 'FLUENTI · AI Grammar Checker',
         sub: 'Fine-tuning LLaMA 3',
       },
@@ -184,6 +188,26 @@ const TRANSLATIONS = {
           'Live di afinailabs.vercel.app dengan deploy otomatis dari Vercel',
           'Dibangun di atas React 19, Vite 8, Tailwind CSS 4, dan Framer Motion',
           'Tipografi editorial: Bricolage Grotesque dan IBM Plex',
+        ],
+      },
+      lentera: {
+        eyebrow: 'IOS APP · ACCESSIBILITY',
+        title: 'Lentera',
+        role: 'iOS Developer · Swift &amp; SwiftUI',
+        year: '2026',
+        metrics: [['Mode', '3'], ['Bahasa', 'Swift 5'], ['Target', 'iOS 26']],
+        overview: 'Lentera adalah pendamping harian untuk pengguna tunanetra dan low vision. Membantu tiga hal yang paling sering menyulitkan: membaca teks di sekitar, mengenali objek di depan kamera, dan mendeteksi rintangan saat berjalan. Dibangun dengan Swift dan SwiftUI, berjalan sepenuhnya di perangkat dengan dukungan penuh VoiceOver: kamera untuk melihat, AI untuk memahami, dan suara untuk menyampaikan semuanya secara berurutan.',
+        approach: [
+          'Memakai satu camera pipeline AVFoundation yang dipakai bersama tiga mode: Baca Teks, Kenali Objek, dan Deteksi Rintangan',
+          'Mode Baca Teks memakai Google Gemini (gemini-3.5-flash-lite) untuk menyusun teks dalam urutan baca, dengan fallback OCR on-device (Vision) saat offline',
+          'Menghubungkan text to speech via AVSpeechSynthesizer dengan suara Indonesia terbaik yang tersedia di perangkat',
+          'Menjaga aksesibilitas sejak awal: VoiceOver, Dynamic Type, Reduce Motion, dan tipografi Atkinson Hyperlegible',
+        ],
+        stack: ['Swift 5', 'SwiftUI', 'AVFoundation', 'Vision', 'Google Gemini'],
+        results: [
+          'Versi 1.0 aktif dikembangkan dengan bundle identifier afin.Lentera',
+          'Baca Teks terintegrasi penuh dengan Gemini plus fallback OCR on-device',
+          'Kenali Objek dan Deteksi Rintangan berjalan melalui Gemini',
         ],
       },
       thesis: {
@@ -385,22 +409,26 @@ const TRANSLATIONS = {
         sub: 'An AI setup studio for businesses, SMEs, and individuals',
       },
       r1: {
+        title: 'Lentera · iOS Visual Assistant',
+        sub: 'iOS app for blind &amp; low-vision users',
+      },
+      r2: {
         title: 'CNN Visual Inspection System',
         sub: 'X-Camp, PT XLSmart Telecom Sejahtera',
       },
-      r2: {
+      r3: {
         title: 'RAG Chatbot for Boat Ticket Booking',
         sub: 'PT Amman Mineral Internasional',
       },
-      r3: {
+      r4: {
         title: 'Pneumonia Detection from Chest X-Ray',
         sub: 'Personal project',
       },
-      r4: {
+      r5: {
         title: 'Cognitive Performance Prediction',
         sub: 'Wearable biosignal · Empatica E4',
       },
-      r5: {
+      r6: {
         title: 'FLUENTI · AI Grammar Checker',
         sub: 'Fine-tuning LLaMA 3',
       },
@@ -488,6 +516,26 @@ const TRANSLATIONS = {
           'Live at afinailabs.vercel.app, auto-deployed by Vercel',
           'Built on React 19, Vite 8, Tailwind CSS 4, and Framer Motion',
           'Editorial typography with Bricolage Grotesque and IBM Plex',
+        ],
+      },
+      lentera: {
+        eyebrow: 'IOS APP · ACCESSIBILITY',
+        title: 'Lentera',
+        role: 'iOS Developer · Swift &amp; SwiftUI',
+        year: '2026',
+        metrics: [['Modes', '3'], ['Language', 'Swift 5'], ['Target', 'iOS 26']],
+        overview: 'Lentera is a daily companion for blind and low-vision users. It helps with three of the most common struggles: reading surrounding text, recognizing objects in front of the camera, and detecting obstacles while walking. Built with Swift and SwiftUI, fully on-device with complete VoiceOver support: a camera to see, AI to understand, and speech to convey everything in sequence.',
+        approach: [
+          'One shared AVFoundation camera pipeline powering three modes: Read Text, Recognize Object, and Obstacle Detection',
+          'Read Text uses Google Gemini (gemini-3.5-flash-lite) to arrange text in reading order, falling back to on-device Vision OCR when offline',
+          'Text to speech via AVSpeechSynthesizer, picking the best Indonesian voice available on the device',
+          'Accessibility built in from day one: VoiceOver, Dynamic Type, Reduce Motion, and Atkinson Hyperlegible type',
+        ],
+        stack: ['Swift 5', 'SwiftUI', 'AVFoundation', 'Vision', 'Google Gemini'],
+        results: [
+          'Version 1.0 under active development, bundle identifier afin.Lentera',
+          'Read Text fully integrated with Gemini plus on-device OCR fallback',
+          'Recognize Object and Obstacle Detection running through Gemini',
         ],
       },
       thesis: {
@@ -689,22 +737,26 @@ const TRANSLATIONS = {
         sub: '面向企业、中小微企业和个人的 AI 部署工作室',
       },
       r1: {
+        title: 'Lentera · iOS 视觉助手',
+        sub: '为盲人与低视力用户打造的 iOS 应用',
+      },
+      r2: {
         title: 'CNN 视觉检测系统',
         sub: 'X-Camp, PT XLSmart Telecom Sejahtera',
       },
-      r2: {
+      r3: {
         title: '船票预订 RAG 聊天机器人',
         sub: 'PT Amman Mineral Internasional',
       },
-      r3: {
+      r4: {
         title: '基于胸部 X 光的肺炎检测',
         sub: '个人项目',
       },
-      r4: {
+      r5: {
         title: '认知表现预测',
         sub: '可穿戴生物信号 · Empatica E4',
       },
-      r5: {
+      r6: {
         title: 'FLUENTI · AI 语法检查器',
         sub: '微调 LLaMA 3',
       },
@@ -792,6 +844,26 @@ const TRANSLATIONS = {
           '已在 afinailabs.vercel.app 上线，由 Vercel 自动部署',
           '基于 React 19、Vite 8、Tailwind CSS 4 与 Framer Motion 构建',
           '使用 Bricolage Grotesque 与 IBM Plex 编辑排版',
+        ],
+      },
+      lentera: {
+        eyebrow: 'IOS 应用 · 无障碍',
+        title: 'Lentera',
+        role: 'iOS 开发者 · Swift &amp; SwiftUI',
+        year: '2026',
+        metrics: [['模式', '3'], ['语言', 'Swift 5'], ['目标', 'iOS 26']],
+        overview: 'Lentera 是面向盲人与低视力用户的日常陪伴应用。帮助完成三件最常困扰的事情：阅读周围文字、识别镜头前的物体、行走时检测障碍物。基于 Swift 和 SwiftUI 构建，完全在设备端运行并完整支持 VoiceOver：用摄像头看、用 AI 理解、用语音按顺序传达。',
+        approach: [
+          '单一 AVFoundation 相机管线支撑三种模式：读文字、识物体、障碍检测',
+          '读文字模式用 Google Gemini（gemini-3.5-flash-lite）按阅读顺序整理文字，离线时降级到设备端 Vision OCR',
+          '用 AVSpeechSynthesizer 朗读，选择设备上最佳的印尼语语音',
+          '无障碍从第一天就内置：VoiceOver、Dynamic Type、Reduce Motion、Atkinson Hyperlegible 字体',
+        ],
+        stack: ['Swift 5', 'SwiftUI', 'AVFoundation', 'Vision', 'Google Gemini'],
+        results: [
+          '1.0 版本开发中，bundle identifier afin.Lentera',
+          '读文字已完整集成 Gemini，并有设备端 OCR 兜底',
+          '识物体与障碍检测通过 Gemini 运行',
         ],
       },
       thesis: {
@@ -993,22 +1065,26 @@ const TRANSLATIONS = {
         sub: '企業・中小企業・個人向けAI導入スタジオ',
       },
       r1: {
+        title: 'Lentera · iOS ビジュアルアシスタント',
+        sub: '視覚障がい者向け iOS アプリ',
+      },
+      r2: {
         title: 'CNNビジョン検査システム',
         sub: 'X-Camp, PT XLSmart Telecom Sejahtera',
       },
-      r2: {
+      r3: {
         title: '船のチケット予約RAGチャットボット',
         sub: 'PT Amman Mineral Internasional',
       },
-      r3: {
+      r4: {
         title: '胸部X線からの肺炎検出',
         sub: '個人プロジェクト',
       },
-      r4: {
+      r5: {
         title: '認知パフォーマンス予測',
         sub: 'ウェアラブル生体信号 · Empatica E4',
       },
-      r5: {
+      r6: {
         title: 'FLUENTI · AI文法チェッカー',
         sub: 'LLaMA 3 のファインチューニング',
       },
@@ -1096,6 +1172,26 @@ const TRANSLATIONS = {
           'afinailabs.vercel.app で公開中・Vercel が自動デプロイ',
           'React 19、Vite 8、Tailwind CSS 4、Framer Motion で構築',
           'Bricolage Grotesque と IBM Plex による編集タイポグラフィ',
+        ],
+      },
+      lentera: {
+        eyebrow: 'IOS アプリ · アクセシビリティ',
+        title: 'Lentera',
+        role: 'iOS 開発者 · Swift &amp; SwiftUI',
+        year: '2026',
+        metrics: [['モード', '3'], ['言語', 'Swift 5'], ['対象', 'iOS 26']],
+        overview: 'Lentera は視覚障がい者・ロービジョンのユーザー向けの日常アシスタント。周囲の文字を読む、カメラの前の物体を認識する、歩行中の障害物を検出するという三つの困りごとを支援します。Swift と SwiftUI で構築され、完全オンデバイス・VoiceOver フル対応。カメラで見て、AI で理解し、音声で順番に伝えます。',
+        approach: [
+          '一つの AVFoundation カメラパイプラインを三つのモード（文字読み上げ・物体認識・障害物検出）で共有',
+          '文字読み上げは Google Gemini（gemini-3.5-flash-lite）で読む順番を整理し、オフライン時は Vision OCR にフォールバック',
+          'AVSpeechSynthesizer で読み上げ、端末上で最良のインドネシア語音声を選択',
+          '初日からアクセシビリティを組み込み：VoiceOver、Dynamic Type、Reduce Motion、Atkinson Hyperlegible 書体',
+        ],
+        stack: ['Swift 5', 'SwiftUI', 'AVFoundation', 'Vision', 'Google Gemini'],
+        results: [
+          'バージョン 1.0 を開発中、bundle identifier afin.Lentera',
+          '文字読み上げは Gemini と統合、オンデバイス OCR のフォールバック付き',
+          '物体認識と障害物検出は Gemini 経由で稼働',
         ],
       },
       thesis: {
