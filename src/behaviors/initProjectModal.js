@@ -24,6 +24,8 @@ const ORDER = ['ailabs', 'lentera', 'thesis', 'visual-inspection', 'rag-chatbot'
   // projects whose screenshots are phone-portrait shots: keep them fully
   // visible (contain) on the wide stage instead of cropping to fill it.
   const CONTAIN = new Set(['lentera']);
+  // optional architecture/system diagram shown in the story column
+  const ARCH = { thesis: './project-thesis-arch.jpg' };
   // placeholder github links - replace with real repos before publish
   const LINKS = {
     ailabs: 'https://afinailabs.vercel.app/',
@@ -57,6 +59,9 @@ const ORDER = ['ailabs', 'lentera', 'thesis', 'visual-inspection', 'rag-chatbot'
   const elMeta = document.getElementById('modalMeta');
   const elMetrics = document.getElementById('modalMetrics');
   const elOverview = document.getElementById('modalOverview');
+  const elArch = document.getElementById('modalArch');
+  const elArchImg = document.getElementById('modalArchImg');
+  const elArchCaption = document.getElementById('modalArchCaption');
   const elApproach = document.getElementById('modalApproach');
   const elResults = document.getElementById('modalResults');
   const elStack = document.getElementById('modalStack');
@@ -390,6 +395,17 @@ const ORDER = ['ailabs', 'lentera', 'thesis', 'visual-inspection', 'rag-chatbot'
     elMetrics.querySelectorAll('[data-count]').forEach(el => { if(window.__runCount) window.__runCount(el); });
 
     elOverview.innerHTML = p.overview;
+
+    const archSrc = ARCH[id];
+    if(archSrc){
+      elArch.classList.remove('hidden');
+      elArchImg.src = archSrc;
+      elArchCaption.textContent = p.arch || '';
+    } else {
+      elArch.classList.add('hidden');
+      elArchImg.removeAttribute('src');
+      elArchCaption.textContent = '';
+    }
 
     elApproach.innerHTML = p.approach.map((item, i) =>
       `<li class="flex gap-4 font-display text-[15px] text-ink leading-relaxed"><span class="font-mono text-[11px] text-dim/70 shrink-0 pt-[2px]">${String(i + 1).padStart(2, '0')}</span><span>${item}</span></li>`

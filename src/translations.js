@@ -217,6 +217,7 @@ const TRANSLATIONS = {
         year: 'FEB 2026',
         metrics: [['F1-Score', '0.844'], ['mAP', '0.967'], ['Dataset', '2.116 gambar']],
         overview: 'Sampah perkotaan sulit dilihat dan diklasifikasikan sekaligus oleh satu model, jadi skripsi ini memecah masalahnya: YOLOv12 melokalisasi tiap objek, lalu jaringan HSCN memberi label tiga tingkat (status pengelolaan, jenis material, objek spesifik). Dilatih pada 2.116 gambar dengan 2.582 anotasi yang dikurasi dari TrashNet, Kaggle, TACO, dan RealWaste.',
+        arch: 'Arsitektur pipeline · YOLOv12 deteksi → HSCN klasifikasi hierarkis',
         approach: [
           'Membandingkan 3 varian YOLOv12 (S/M/L) untuk tahap deteksi',
           'Membenchmark 6 backbone HSCN: ResNet18/50/101, EfficientNet-B3, ConvNeXt-Small, MobileNetV3-Large',
@@ -545,6 +546,7 @@ const TRANSLATIONS = {
         year: 'FEB 2026',
         metrics: [['F1-Score', '0.844'], ['mAP', '0.967'], ['Dataset', '2,116 images']],
         overview: 'Municipal waste is hard for one model to see and classify at once, so the thesis splits the problem: YOLOv12 localizes each object, then an HSCN network assigns a three-level label (management status, material type, specific object). Trained on a curated set of 2,116 images with 2,582 boxes gathered from TrashNet, Kaggle, TACO, and RealWaste.',
+        arch: 'Pipeline architecture · YOLOv12 detection → HSCN hierarchical classification',
         approach: [
           'Compared 3 YOLOv12 variants (S/M/L) for the detection stage',
           'Benchmarked 6 HSCN backbones: ResNet18/50/101, EfficientNet-B3, ConvNeXt-Small, MobileNetV3-Large',
@@ -873,6 +875,7 @@ const TRANSLATIONS = {
         year: '2026年2月',
         metrics: [['F1 分数', '0.844'], ['mAP', '0.967'], ['数据集', '2,116 张图片']],
         overview: '用于垃圾检测与分类的两阶段流水线，YOLOv12 检测画面中的物体，再由层级序列分类网络（HSCN）对三个层级进行分类，即管理状态、材料类型与具体物体。自定义数据集整理自 TrashNet、Kaggle、TACO 与 RealWaste（2,116 张图片，2,582 个边界框标注）。',
+        arch: '流水线架构 · YOLOv12 检测 → HSCN 层级分类',
         approach: [
           '比较 3 种 YOLOv12 变体（S/M/L）用于物体检测阶段',
           '对 6 种 HSCN 骨干网络做基准测试：ResNet18/50/101、EfficientNet-B3、ConvNeXt-Small、MobileNetV3-Large',
@@ -1201,6 +1204,7 @@ const TRANSLATIONS = {
         year: '2026年2月',
         metrics: [['F1スコア', '0.844'], ['mAP', '0.967'], ['データセット', '2,116枚の画像']],
         overview: 'ゴミの検出と分類を行う2段階パイプライン。YOLOv12がフレーム内の物体を検出し、階層型系列分類ネットワーク（HSCN）が管理状態・素材種別・具体物の3つの階層レベルを分類します。カスタムデータセットはTrashNet、Kaggle、TACO、RealWasteから収集（画像2,116枚、バウンディングボックス2,582件）。',
+        arch: 'パイプライン構成 · YOLOv12検出 → HSCN階層分類',
         approach: [
           '物体検出段階で3つのYOLOv12バリアント（S/M/L）を比較',
           '6つのHSCNバックボーンをベンチマーク：ResNet18/50/101、EfficientNet-B3、ConvNeXt-Small、MobileNetV3-Large',
