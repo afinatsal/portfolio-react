@@ -43,7 +43,7 @@ export default async function handler(req, res) {
     .concat([{ role: 'user', parts: [{ text: `[lang: ${lang}]\n${question}` }] }])
     .filter(m => m.parts[0].text)
 
-  const model = process.env.GEMINI_MODEL || 'gemini-2.5-flash'
+  const model = process.env.GEMINI_MODEL || 'gemini-3.6-flash'
   const url = `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${encodeURIComponent(apiKey)}`
 
   try {
