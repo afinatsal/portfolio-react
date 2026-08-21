@@ -200,15 +200,27 @@ export function initChatbot() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ question: q, history: history.slice(0, -1), lang: lang() }),
       });
-      let text;
-      try {
-        const data = await res.json();
-        text = data && data.text;
-      } catch(e){}
-      if(!res.ok || !text) throw new Error(text || 'HTTP ' + res.status);
-      t.remove();
-      bubble('assistant', md(text));
-      history.push({ role: 'assistant', content: text });
+      if(!res.ok){
+        let msg = 'HTTP ' + res.status;
+        try { const d = await res.json(); msg = (d && d.error) || msg; } catch(e){}
+        throw new Error(msg);
+      }
+      // stream the reply in and render it progressively (typewriter effect)
+      const reader = res.body.getReader();
+      const decoder = new TextDecoder();
+      let acc = '';
+      let first = true;
+      let b = null, bodyEl = null;
+      for(;;){
+        const { done, value } = await reader.read();
+        if(done) break;
+        if(first){ t.remove(); first = false; b = bubble('assistant', ''); bodyEl = b.querySelector('.cb-body'); }
+        acc += decoder.decode(value, { stream: true });
+        bodyEl.innerHTML = md(acc);
+        msgs.scrollTop = msgs.scrollHeight;
+      }
+      if(first) throw new Error('empty');
+      history.push({ role: 'assistant', content: acc });
     } catch(err) {
       t.remove();
       bubble('assistant', md(labels().error));

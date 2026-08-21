@@ -341,7 +341,8 @@
     font-family:"JetBrains Mono", monospace; font-size:8.5px; letter-spacing:.18em; color:#6B7477;
   }
   .cb-body{
-    font-family:"Angie Sans", Georgia, sans-serif; font-size:13.5px; line-height:1.65; color:#F1F4F2;
+    font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-size:14px; line-height:1.65; color:#F1F4F2;
     padding:10px 13px; border-radius:12px;
   }
   .cb-body p{ margin:0 0 6px; }
@@ -373,7 +374,7 @@
   .cb-form{ display:flex; align-items:center; gap:8px; padding:12px 14px; border-top:1px solid #2E3438; }
   .cb-input{
     flex:1; min-width:0; background:#111315; border:1px solid #2E3438; border-radius:999px;
-    padding:10px 15px; color:#F1F4F2; font-family:"Angie Sans", Georgia, sans-serif; font-size:13.5px; outline:none;
+    padding:10px 15px; color:#F1F4F2; font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; font-size:14px; outline:none;
     transition:border-color .2s, box-shadow .2s;
   }
   .cb-input::placeholder{ color:#6B7477; font-family:"JetBrains Mono", monospace; font-size:12px; }

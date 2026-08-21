@@ -44,7 +44,7 @@ export default async function handler(req, res) {
     .filter(m => m.parts[0].text)
 
   const model = process.env.GEMINI_MODEL || 'gemini-3.5-flash-lite'
-  const url = `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${encodeURIComponent(apiKey)}`
+  const url = `https://generativelanguage.googleapis.com/v1beta/models/${model}:streamGenerateContent?alt=sse&key=${encodeURIComponent(apiKey)}`
 
   try {
     const r = await fetch(url, {
@@ -62,14 +62,41 @@ export default async function handler(req, res) {
       res.status(502).json({ error: `Gemini API error ${r.status}: ${err}` })
       return
     }
-
-    const data = await r.json()
-    const text = data?.candidates?.[0]?.content?.parts?.map(p => p.text || '').join('').trim() || ''
-    if (!text) {
-      res.status(502).json({ error: 'Empty response from Gemini' })
+    if (!r.body) {
+      res.status(502).json({ error: 'Gemini returned no stream' })
       return
     }
-    res.status(200).json({ text })
+
+    // Stream Gemini's SSE directly through as plain-text chunks so the
+    // frontend can render the answer word-by-word (typewriter effect).
+    res.writeHead(200, {
+      'Content-Type': 'text/plain; charset=utf-8',
+      'Cache-Control': 'no-cache',
+      'X-Accel-Buffering': 'no',
+    })
+    const reader = r.body.getReader()
+    const decoder = new TextDecoder()
+    let buf = ''
+    for (;;) {
+      const { done, value } = await reader.read()
+      if (done) break
+      buf += decoder.decode(value, { stream: true })
+      let nl
+      while ((nl = buf.indexOf('\n')) !== -1) {
+        const line = buf.slice(0, nl).trim()
+        buf = buf.slice(nl + 1)
+        if (!line.startsWith('data:')) continue
+        const json = line.slice(5).trim()
+        if (!json || json === '[DONE]') continue
+        try {
+          const d = JSON.parse(json)
+          const txt = ((d.candidates && d.candidates[0] && d.candidates[0].content && d.candidates[0].content.parts) || [])
+            .map(p => p.text || '').join('')
+          if (txt) res.write(txt)
+        } catch (e) {}
+      }
+    }
+    res.end()
   } catch (e) {
     res.status(502).json({ error: 'Failed to reach Gemini: ' + (e && e.message) })
   }
