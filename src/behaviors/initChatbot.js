@@ -13,7 +13,7 @@ export function initChatbot() {
   const toggle = doc.createElement('button');
   toggle.type = 'button';
   toggle.id = 'chatToggle';
-  toggle.className = 'dock-link fixed right-4 sm:right-6 z-20 flex items-center justify-center w-9 h-9 sm:w-10 sm:h-10 rounded-full border border-line bg-panel/60 backdrop-blur-xl text-dim shadow-[0_8px_40px_rgba(0,0,0,0.5)]';
+  toggle.className = 'dock-link fixed z-20 flex items-center justify-center w-9 h-9 sm:w-10 sm:h-10 rounded-full border border-line bg-panel/60 backdrop-blur-xl text-dim shadow-[0_8px_40px_rgba(0,0,0,0.5)]';
   toggle.style.transformOrigin = 'bottom center';
   toggle.setAttribute('aria-haspopup', 'dialog');
   toggle.setAttribute('aria-expanded', 'false');

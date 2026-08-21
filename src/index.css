@@ -280,12 +280,13 @@
   /* ============ MUSIC TOGGLE ============ */
 
   /* ============ CHATBOT ============ */
+  /* sits on the same row as the music toggle, just to its left */
   #chatToggle{
-    bottom: calc(env(safe-area-inset-bottom, 0px) + 72px);
+    right:60px; bottom: calc(env(safe-area-inset-bottom, 0px) + 28px);
   }
   @media (min-width: 768px){
     #chatToggle{
-      bottom: calc(env(safe-area-inset-bottom, 0px) + 84px);
+      right:72px; bottom: calc(env(safe-area-inset-bottom, 0px) + 36px);
     }
   }
   .cb-panel{
