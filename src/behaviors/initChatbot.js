@@ -194,6 +194,7 @@ export function initChatbot() {
     const t = typing();
     busy = true;
     send.disabled = true;
+    let timer = null;
     try {
       const res = await window.fetch('/api/chat', {
         method: 'POST',
@@ -205,23 +206,39 @@ export function initChatbot() {
         try { const d = await res.json(); msg = (d && d.error) || msg; } catch(e){}
         throw new Error(msg);
       }
-      // stream the reply in and render it progressively (typewriter effect)
+      // stream the reply in and reveal it word-by-word (typewriter effect)
       const reader = res.body.getReader();
       const decoder = new TextDecoder();
       let acc = '';
+      let shownLen = 0;
+      let streamDone = false;
       let first = true;
       let b = null, bodyEl = null;
-      for(;;){
-        const { done, value } = await reader.read();
-        if(done) break;
-        if(first){ t.remove(); first = false; b = bubble('assistant', ''); bodyEl = b.querySelector('.cb-body'); }
-        acc += decoder.decode(value, { stream: true });
-        bodyEl.innerHTML = md(acc);
-        msgs.scrollTop = msgs.scrollHeight;
+      const STEP = 45; // ms per revealed word -> a calm, typed pace
+      function renderStep(){
+        if(streamDone && shownLen >= acc.length){ clearInterval(timer); return; }
+        const next = acc.slice(shownLen);
+        if(!next) return;
+        const m = next.match(/^\s*\S+/);
+        const take = m ? m[0] : ' ';
+        shownLen += take.length;
+        if(bodyEl){ bodyEl.innerHTML = md(acc.slice(0, shownLen)); msgs.scrollTop = msgs.scrollHeight; }
+      }
+      timer = setInterval(renderStep, STEP);
+      try {
+        for(;;){
+          const { done, value } = await reader.read();
+          if(done) break;
+          if(first){ t.remove(); first = false; b = bubble('assistant', ''); bodyEl = b.querySelector('.cb-body'); }
+          acc += decoder.decode(value, { stream: true });
+        }
+      } finally {
+        streamDone = true;
       }
       if(first) throw new Error('empty');
       history.push({ role: 'assistant', content: acc });
     } catch(err) {
+      if(timer){ clearInterval(timer); timer = null; }
       t.remove();
       bubble('assistant', md(labels().error));
     } finally {
