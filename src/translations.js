@@ -167,6 +167,9 @@ const TRANSLATIONS = {
       chat: {
         title: 'Afin Assistant',
         sub: 'AI/ML Engineer · Computer Vision',
+        status: 'ONLINE · GEMINI',
+        you: 'KAMU',
+        ai: 'AFIN',
         placeholder: 'Tulis pertanyaan tentang saya...',
         welcome: 'Halo! Saya asisten dari Afin Atsal. Tanyakan apa saja tentang latar belakang, proyek, skill, atau cara menghubunginya.',
         suggestions: ['Ceritakan tentang kamu', 'Proyek apa saja yang pernah dikerjakan?', 'Bagaimana cara menghubungi?'],
@@ -507,6 +510,9 @@ const TRANSLATIONS = {
       chat: {
         title: 'Afin Assistant',
         sub: 'AI/ML Engineer · Computer Vision',
+        status: 'ONLINE · GEMINI',
+        you: 'YOU',
+        ai: 'AFIN',
         placeholder: 'Ask me anything about him...',
         welcome: 'Hi! I am Afin Atsal\'s assistant. Ask me anything about his background, projects, skills, or how to reach him.',
         suggestions: ['Tell me about Afin', 'What projects has he worked on?', 'How can I contact him?'],
@@ -847,6 +853,9 @@ const TRANSLATIONS = {
       chat: {
         title: 'Afin 助手',
         sub: 'AI/ML 工程师 · 计算机视觉',
+        status: '在线 · GEMINI',
+        you: '你',
+        ai: 'AFIN',
         placeholder: '向我提问关于他的一切...',
         welcome: '你好！我是 Afin Atsal 的助手。可以问我关于他的背景、项目、技能或联系方式。',
         suggestions: ['介绍一下 Afin', '他做过哪些项目？', '怎么联系他？'],
@@ -1187,6 +1196,9 @@ const TRANSLATIONS = {
       chat: {
         title: 'Afin アシスタント',
         sub: 'AI/ML エンジニア · コンピュータビジョン',
+        status: 'オンライン · GEMINI',
+        you: 'あなた',
+        ai: 'AFIN',
         placeholder: 'Afinについて何でも質問してください...',
         welcome: 'こんにちは！Afin Atsal のアシスタントです。経歴、プロジェクト、スキル、連絡方法について何でも聞いてください。',
         suggestions: ['Afinについて教えて', 'どんなプロジェクトを手がけた？', '連絡方法は？'],

@@ -30,15 +30,18 @@ export function initChatbot() {
   panel.innerHTML =
     '<div class="cb-head">' +
       '<div class="cb-head-t">' +
-        '<span class="cb-head-dot" aria-hidden="true"></span>' +
+        '<span class="cb-avatar" aria-hidden="true"><span class="cb-avatar-dot"></span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11.5 12 4l9 7.5"/><path d="M5.5 10v9a1 1 0 0 0 1 1H10v-6h4v6h3.5a1 1 0 0 0 1-1v-9"/></svg></span>' +
         '<div class="min-w-0">' +
           '<p class="cb-head-title">Afin Assistant</p>' +
           '<p class="cb-head-sub">AI/ML Engineer</p>' +
         '</div>' +
       '</div>' +
-      '<button type="button" id="chatClose" aria-label="Tutup" class="cb-close">' +
-        '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18M6 6l12 12"/></svg>' +
-      '</button>' +
+      '<div class="cb-head-right">' +
+        '<span class="cb-status"><i aria-hidden="true"></i><span data-chat-status>ONLINE · GEMINI</span></span>' +
+        '<button type="button" id="chatClose" aria-label="Tutup" class="cb-close">' +
+          '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18M6 6l12 12"/></svg>' +
+        '</button>' +
+      '</div>' +
     '</div>' +
     '<div id="chatMessages" class="cb-msgs"></div>' +
     '<form id="chatForm" class="cb-form">' +
@@ -69,6 +72,9 @@ export function initChatbot() {
     return {
       title: c.title || 'Afin Assistant',
       sub: c.sub || 'AI/ML Engineer',
+      status: c.status || 'ONLINE · GEMINI',
+      you: c.you || 'KAMU',
+      ai: c.ai || 'AFIN',
       placeholder: c.placeholder || 'Tulis pertanyaan...',
       welcome: c.welcome || '',
       suggestions: c.suggestions || [],
@@ -90,6 +96,8 @@ export function initChatbot() {
     send.setAttribute('aria-label', L.send);
     const sub = panel.querySelector('.cb-head-sub');
     if(sub) sub.textContent = L.sub;
+    const st = panel.querySelector('[data-chat-status]');
+    if(st) st.textContent = L.status;
   }
   doc.addEventListener('afin:lang', () => { paint(); if(open && greeted) renderWelcome(); });
 
@@ -131,7 +139,9 @@ export function initChatbot() {
   function bubble(role, html){
     const el = doc.createElement('div');
     el.className = 'cb-bubble cb-' + role;
-    el.innerHTML = html;
+    el.innerHTML =
+      '<div class="cb-meta">' + (role === 'user' ? labels().you : labels().ai) + '</div>' +
+      '<div class="cb-body">' + html + '</div>';
     msgs.appendChild(el);
     msgs.scrollTop = msgs.scrollHeight;
     return el;
@@ -139,7 +149,7 @@ export function initChatbot() {
   function typing(){
     const el = doc.createElement('div');
     el.className = 'cb-bubble cb-typing';
-    el.innerHTML = '<span class="cb-tdot"></span><span class="cb-tdot"></span><span class="cb-tdot"></span>';
+    el.innerHTML = '<i class="cb-bar"></i><i class="cb-bar"></i><i class="cb-bar"></i>';
     msgs.appendChild(el);
     msgs.scrollTop = msgs.scrollHeight;
     return el;
