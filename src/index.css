@@ -280,9 +280,10 @@
   /* ============ MUSIC TOGGLE ============ */
 
   /* ============ CHATBOT ============ */
-  /* sits on the same row as the music toggle, just to its left */
+  /* mobile: stacked above the music toggle so the centered dock never
+     overlaps; desktop: on the same row as the music toggle, to its left */
   #chatToggle{
-    right:60px; bottom: calc(env(safe-area-inset-bottom, 0px) + 28px);
+    right:16px; bottom: calc(env(safe-area-inset-bottom, 0px) + 72px);
   }
   @media (min-width: 768px){
     #chatToggle{
@@ -294,7 +295,7 @@
   @keyframes cbPop{ 0%{ transform:scale(.85); } 55%{ transform:scale(1.1); } 100%{ transform:scale(1); } }
   .cb-panel{
     position:fixed; right:1rem; z-index:30;
-    bottom:calc(env(safe-area-inset-bottom, 0px) + 80px);
+    bottom:calc(env(safe-area-inset-bottom, 0px) + 120px);
     width:min(calc(100vw - 2rem), 22rem);
     height:min(64vh, 30rem);
     display:flex; flex-direction:column;
