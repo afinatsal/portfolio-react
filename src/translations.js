@@ -167,7 +167,6 @@ const TRANSLATIONS = {
       chat: {
         title: 'Afin Assistant',
         sub: 'AI/ML Engineer · Computer Vision',
-        status: 'ONLINE · GEMINI',
         you: 'KAMU',
         ai: 'AFIN',
         placeholder: 'Tulis pertanyaan tentang saya...',
@@ -510,7 +509,6 @@ const TRANSLATIONS = {
       chat: {
         title: 'Afin Assistant',
         sub: 'AI/ML Engineer · Computer Vision',
-        status: 'ONLINE · GEMINI',
         you: 'YOU',
         ai: 'AFIN',
         placeholder: 'Ask me anything about him...',
@@ -853,7 +851,6 @@ const TRANSLATIONS = {
       chat: {
         title: 'Afin 助手',
         sub: 'AI/ML 工程师 · 计算机视觉',
-        status: '在线 · GEMINI',
         you: '你',
         ai: 'AFIN',
         placeholder: '向我提问关于他的一切...',
@@ -1196,7 +1193,6 @@ const TRANSLATIONS = {
       chat: {
         title: 'Afin アシスタント',
         sub: 'AI/ML エンジニア · コンピュータビジョン',
-        status: 'オンライン · GEMINI',
         you: 'あなた',
         ai: 'AFIN',
         placeholder: 'Afinについて何でも質問してください...',

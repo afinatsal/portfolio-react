@@ -289,9 +289,12 @@
       right:72px; bottom: calc(env(safe-area-inset-bottom, 0px) + 36px);
     }
   }
+  #chatToggle.cb-active{ background:rgba(191,250,245,.14); color:#BFFAF5; }
+  #chatToggle.cb-pop{ animation:cbPop .4s cubic-bezier(.16,1,.3,1); }
+  @keyframes cbPop{ 0%{ transform:scale(.85); } 55%{ transform:scale(1.1); } 100%{ transform:scale(1); } }
   .cb-panel{
     position:fixed; right:1rem; z-index:30;
-    bottom:calc(env(safe-area-inset-bottom, 0px) + 122px);
+    bottom:calc(env(safe-area-inset-bottom, 0px) + 80px);
     width:min(calc(100vw - 2rem), 22rem);
     height:min(64vh, 30rem);
     display:flex; flex-direction:column;
@@ -302,7 +305,7 @@
   }
   .cb-panel.cb-open{ opacity:1; transform:none; pointer-events:auto; }
   @media (min-width: 768px){
-    .cb-panel{ right:1.5rem; bottom:calc(env(safe-area-inset-bottom, 0px) + 134px); }
+    .cb-panel{ right:1.5rem; bottom:calc(env(safe-area-inset-bottom, 0px) + 92px); }
   }
   .cb-head{
     display:flex; align-items:center; justify-content:space-between; gap:12px;
@@ -315,21 +318,8 @@
     background:rgba(191,250,245,.12); color:#BFFAF5;
     border:1px solid rgba(191,250,245,.22);
   }
-  .cb-avatar-dot{
-    position:absolute; top:-2px; right:-2px; width:8px; height:8px; border-radius:999px;
-    background:#74E6D5; border:2px solid #1B2023;
-  }
   .cb-head-title{ font-family:"Angie Sans", Georgia, sans-serif; font-weight:600; font-size:14.5px; color:#F1F4F2; line-height:1.2; letter-spacing:.01em; }
   .cb-head-sub{ font-family:"JetBrains Mono", monospace; font-size:9px; letter-spacing:.14em; color:#9CA6AA; margin-top:3px; }
-  .cb-head-right{ display:flex; align-items:center; gap:10px; flex:none; }
-  .cb-status{
-    display:inline-flex; align-items:center; gap:6px;
-    font-family:"JetBrains Mono", monospace; font-size:8.5px; letter-spacing:.14em;
-    color:#74E6D5; border:1px solid rgba(116,230,213,.22); border-radius:999px;
-    background:rgba(116,230,213,.06); padding:4px 9px; white-space:nowrap;
-  }
-  .cb-status i{ width:6px; height:6px; border-radius:999px; background:#74E6D5; animation:cbPulse 2.2s ease-in-out infinite; }
-  @keyframes cbPulse{ 0%,100%{ opacity:.3; } 50%{ opacity:1; } }
   .cb-close{
     flex:none; width:30px; height:30px; border-radius:999px; display:flex; align-items:center; justify-content:center;
     color:#9CA6AA; border:1px solid #353C42; transition:color .2s, border-color .2s, transform .15s;
@@ -367,11 +357,11 @@
   .cb-user .cb-ul{ padding-left:16px; }
   .cb-assistant{ align-self:flex-start; }
   .cb-assistant .cb-body{ background:#252A2E; border:1px solid #353C42; border-bottom-left-radius:4px; }
-  .cb-typing{ display:flex; flex-direction:row; align-items:center; gap:3px; align-self:flex-start; padding:14px 15px; background:#252A2E; border:1px solid #353C42; border-radius:12px; border-bottom-left-radius:4px; }
-  .cb-bar{ width:3px; height:12px; border-radius:1px; background:#74E6D5; animation:cbBar 1.1s ease-in-out infinite; }
-  .cb-bar:nth-child(2){ animation-delay:.14s; }
-  .cb-bar:nth-child(3){ animation-delay:.28s; }
-  @keyframes cbBar{ 0%,100%{ height:4px; } 50%{ height:14px; } }
+  .cb-typing{ display:flex; flex-direction:row; align-items:center; gap:5px; align-self:flex-start; padding:14px 15px; background:#252A2E; border:1px solid #353C42; border-radius:12px; border-bottom-left-radius:4px; }
+  .cb-dot{ width:6px; height:6px; border-radius:999px; background:#74E6D5; opacity:.3; animation:cbDot 1.2s ease-in-out infinite; }
+  .cb-dot:nth-child(2){ animation-delay:.18s; }
+  .cb-dot:nth-child(3){ animation-delay:.36s; }
+  @keyframes cbDot{ 0%,60%,100%{ opacity:.25; transform:translateY(0); } 30%{ opacity:1; transform:translateY(-2px); } }
   .cb-chips{ display:flex; flex-wrap:wrap; gap:7px; padding-bottom:2px; }
   .cb-chip{
     font-family:"JetBrains Mono", monospace; font-size:10.5px; letter-spacing:.02em; color:#9CA6AA;
@@ -398,8 +388,8 @@
   .cb-send:disabled{ opacity:.45; }
   @media (prefers-reduced-motion: reduce){
     .cb-bubble{ animation:none; }
-    .cb-bar{ animation:none; height:8px; opacity:.5; }
-    .cb-status i{ animation:none; opacity:.5; }
+    .cb-dot{ animation:none; opacity:.5; }
+    #chatToggle.cb-pop{ animation:none; }
   }
   /* match the dock's vertical rhythm: same padding, icon hit-area, and
      bottom offset (see #dock media queries below) */
