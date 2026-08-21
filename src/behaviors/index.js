@@ -8,6 +8,7 @@ import { initCopyEmail } from './initCopyEmail.js'
 import { initAnimatedCounters } from './initAnimatedCounters.js'
 import { initSkillsMarquee } from './initSkillsMarquee.js'
 import { initMusicPlayer } from './initMusicPlayer.js'
+import { initChatbot } from './initChatbot.js'
 
 export {
   initI18n,
@@ -20,4 +21,5 @@ export {
   initAnimatedCounters,
   initSkillsMarquee,
   initMusicPlayer,
+  initChatbot,
 }

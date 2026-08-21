@@ -30,6 +30,7 @@ import {
   initAnimatedCounters,
   initSkillsMarquee,
   initMusicPlayer,
+  initChatbot,
 } from './behaviors/index.js'
 
 const MARKUP = [
@@ -65,6 +66,7 @@ export default function App() {
     initAnimatedCounters()
     initSkillsMarquee()
     initMusicPlayer()
+    initChatbot()
 
     return () => {
       document.body.classList.remove('modal-open')
