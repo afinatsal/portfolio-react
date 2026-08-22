@@ -20,6 +20,7 @@ export default {
       },
       fontFamily: {
         display: ['"Angie Sans"', 'Georgia', 'sans-serif'],
+        body: ['"Inter"', 'system-ui', '-apple-system', '"Segoe UI"', 'Roboto', 'sans-serif'],
         mono: ['"JetBrains Mono"', 'monospace'],
       },
     },

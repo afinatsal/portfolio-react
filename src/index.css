@@ -7,6 +7,11 @@
   body{background:#111315;}
   ::selection{background:#BFFAF5; color:#111315;}
 
+  /* Font experiment (bouayaben.com style): Archivo for display, Inter for
+     body — scoped to the landing and about sections only. */
+  #home, #about{ font-family:"Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+  #home .font-display, #about .font-display{ font-family:"Archivo", "Helvetica Neue", Arial, sans-serif; }
+
   /* custom scrollbar - thin, theme-matched */
   *{scrollbar-width:thin; scrollbar-color:#353C42 transparent;}
   ::-webkit-scrollbar{width:8px; height:8px;}
