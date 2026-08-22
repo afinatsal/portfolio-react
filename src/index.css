@@ -3,7 +3,6 @@
 @tailwind utilities;
 
 
-  html{scroll-behavior:smooth;}
   body{background:#111315;}
   ::selection{background:#BFFAF5; color:#111315;}
 
