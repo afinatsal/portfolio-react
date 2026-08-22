@@ -233,9 +233,9 @@ const TRANSLATIONS = {
         role: 'Founder · System Architect',
         year: '2026',
         metrics: [['Bot', '3'], ['Channel', 'WA / Telegram'], ['Versi', 'v1.0']],
-        overview: 'Kumpulan AI agent / chatbot yang dibangun oleh AfinLabs AI Solutions — versi pertama yang masih dalam tahap pengembangan dan source code-nya belum dipublikasikan. Semua bot memakai satu mesin RAG (shared/) dengan pola satu mesin–banyak project: sales agent AfinLabs, chatbot website kampus, dan chatbot katalog toko bunga. WhatsApp &amp; Telegram adalah channel yang memakai mesin yang sama, lengkap dengan dashboard admin untuk mengelola project, data, percakapan, dan analytics.',
+        overview: 'Kumpulan AI agent / chatbot yang dibangun oleh AfinLabs AI Solutions, versi pertama yang masih dalam tahap pengembangan dan source code-nya belum dipublikasikan. Semua bot memakai satu mesin RAG (shared/) dengan pola satu mesin–banyak project: sales agent AfinLabs, chatbot website kampus, dan chatbot katalog toko bunga. WhatsApp &amp; Telegram adalah channel yang memakai mesin yang sama, lengkap dengan dashboard admin untuk mengelola project, data, percakapan, dan analytics.',
         approach: [
-          'Satu mesin RAG di shared/ dipakai semua bot; setiap bot hanyalah sebuah project (projects/&lt;slug&gt;/) — tambah bot baru cukup buat satu folder, tanpa mengubah core',
+          'Satu mesin RAG di shared/ dipakai semua bot; setiap bot hanyalah sebuah project (projects/&lt;slug&gt;/), tambah bot baru cukup buat satu folder, tanpa mengubah core',
           'Retrieval hybrid: Supabase + pgvector (embedding multilingual-e5-base) lewat RPC match_chunks, dengan fallback kata kunci pada judul',
           'Model bahasa Google Gemini; WhatsApp (webhook) dan Telegram (polling) berbagi mesin yang sama',
           'Dashboard admin untuk ingest data, kelola percakapan dengan takeover, analytics, dan kontrol server',
@@ -243,7 +243,7 @@ const TRANSLATIONS = {
         stack: ['Python', 'FastAPI', 'Supabase + pgvector', 'Google Gemini', 'WhatsApp API', 'Telegram Bot API'],
         results: [
           'Versi pertama, masih dalam tahap pengembangan',
-          'Satu mesin untuk banyak bot — bot baru cukup menambah satu folder project, registry otomatis terdiscover',
+          'Satu mesin untuk banyak bot: bot baru cukup menambah satu folder project, registry otomatis terdiscover',
           'Source code belum dipublikasikan',
         ],
       },
@@ -559,7 +559,7 @@ const TRANSLATIONS = {
         role: 'Founder · Developer',
         year: '2026',
         metrics: [['Services', '6'], ['Language', 'ID / EN'], ['Deploy', 'Vercel']],
-        overview: 'The official AI Labs website — a studio that deploys AI for businesses, SMEs, and individuals. It covers company and SME chatbots, personal AI assistants, computer-vision CCTV detectors, machine-learning contract work, and AI-agent setup classes. Every system is built until it actually runs in a real environment.',
+        overview: 'The official AI Labs website: a studio that deploys AI for businesses, SMEs, and individuals. It covers company and SME chatbots, personal AI assistants, computer-vision CCTV detectors, machine-learning contract work, and AI-agent setup classes. Every system is built until it actually runs in a real environment.',
         approach: [
           'Hero reveal with a front image layer peeling away under the cursor',
           'Six services in an asymmetric bento layout with editorial typography',
@@ -599,9 +599,9 @@ const TRANSLATIONS = {
         role: 'Founder · System Architect',
         year: '2026',
         metrics: [['Bots', '3'], ['Channels', 'WA / Telegram'], ['Version', 'v1.0']],
-        overview: 'A collection of AI agents / chatbots built by AfinLabs AI Solutions — the first version, still under active development and not yet open-sourced. All bots share a single RAG engine (shared/) following a one-engine–many-projects pattern: an AfinLabs sales agent, a campus website chatbot, and a florist catalog chatbot. WhatsApp &amp; Telegram act as channels on top of the same engine, complete with an admin dashboard for managing projects, data, conversations, and analytics.',
+        overview: 'A collection of AI agents / chatbots built by AfinLabs AI Solutions, the first version, still under active development and not yet open-sourced. All bots share a single RAG engine (shared/) following a one-engine–many-projects pattern: an AfinLabs sales agent, a campus website chatbot, and a florist catalog chatbot. WhatsApp &amp; Telegram act as channels on top of the same engine, complete with an admin dashboard for managing projects, data, conversations, and analytics.',
         approach: [
-          'One shared RAG engine in shared/ powers every bot; each bot is just a project (projects/&lt;slug&gt;/) — adding a bot is a single folder, no core changes',
+          'One shared RAG engine in shared/ powers every bot; each bot is just a project (projects/&lt;slug&gt;/): adding a bot is a single folder, no core changes',
           'Hybrid retrieval: Supabase + pgvector (multilingual-e5-base embeddings) via the match_chunks RPC, with a keyword fallback on titles',
           'Google Gemini as the language model; WhatsApp (webhook) and Telegram (polling) share the same engine',
           'Admin dashboard for data ingestion, conversation takeover, analytics, and server control',
@@ -609,7 +609,7 @@ const TRANSLATIONS = {
         stack: ['Python', 'FastAPI', 'Supabase + pgvector', 'Google Gemini', 'WhatsApp API', 'Telegram Bot API'],
         results: [
           'First version, still under active development',
-          'One engine for many bots — a new bot is just another project folder, auto-discovered by the registry',
+          'One engine for many bots: a new bot is just another project folder, auto-discovered by the registry',
           'Source code not published yet',
         ],
       },
@@ -925,7 +925,7 @@ const TRANSLATIONS = {
         role: '创始人 · 开发者',
         year: '2026',
         metrics: [['服务', '6'], ['语言', 'ID / EN'], ['部署', 'Vercel']],
-        overview: 'AI Labs 官方网站——面向企业、中小微企业和个人的 AI 部署工作室。承接企业及中小微企业聊天机器人、AI 个人助手、CCTV 计算机视觉检测、机器学习代做与 AI 智能体搭建课程。每套系统都打磨到能在真实环境中真正运行。',
+        overview: 'AI Labs 官方网站，面向企业、中小微企业和个人的 AI 部署工作室。承接企业及中小微企业聊天机器人、AI 个人助手、CCTV 计算机视觉检测、机器学习代做与 AI 智能体搭建课程。每套系统都打磨到能在真实环境中真正运行。',
         approach: [
           'Hero 揭幕效果：前景图层随光标剥开',
           '六项服务采用非对称 bento 栅格与编辑排版',
@@ -965,9 +965,9 @@ const TRANSLATIONS = {
         role: '创始人 · 系统架构师',
         year: '2026',
         metrics: [['机器人', '3'], ['渠道', 'WA / Telegram'], ['版本', 'v1.0']],
-        overview: '由 AfinLabs AI Solutions 构建的 AI 智能体/聊天机器人合集——第一版，仍处于积极开发阶段，源代码尚未开源。所有机器人共享同一个 RAG 引擎（shared/），遵循一个引擎–多项目模式：AfinLabs 销售智能体、校园网站聊天机器人、花店目录聊天机器人。WhatsApp 与 Telegram 作为同一引擎之上的渠道，并配有管理项目、数据、对话与分析的管理后台。',
+        overview: '由 AfinLabs AI Solutions 构建的 AI 智能体/聊天机器人合集，第一版，仍处于积极开发阶段，源代码尚未开源。所有机器人共享同一个 RAG 引擎（shared/），遵循一个引擎–多项目模式：AfinLabs 销售智能体、校园网站聊天机器人、花店目录聊天机器人。WhatsApp 与 Telegram 作为同一引擎之上的渠道，并配有管理项目、数据、对话与分析的管理后台。',
         approach: [
-          'shared/ 中的一个 RAG 引擎驱动所有机器人；每个机器人只是一个项目（projects/&lt;slug&gt;/）——新增机器人只需新建一个文件夹，无需改动核心',
+          'shared/ 中的一个 RAG 引擎驱动所有机器人；每个机器人只是一个项目（projects/&lt;slug&gt;/），新增机器人只需新建一个文件夹，无需改动核心',
           '混合检索：Supabase + pgvector（multilingual-e5-base 嵌入）通过 match_chunks RPC，标题带关键词兜底',
           '语言模型用 Google Gemini；WhatsApp（webhook）与 Telegram（轮询）共享同一引擎',
           '管理后台：数据摄取、对话接管（takeover）、分析与服务器控制',
@@ -975,7 +975,7 @@ const TRANSLATIONS = {
         stack: ['Python', 'FastAPI', 'Supabase + pgvector', 'Google Gemini', 'WhatsApp API', 'Telegram Bot API'],
         results: [
           '第一版，仍在积极开发中',
-          '一个引擎驱动多个机器人——新机器人只需新增项目文件夹，注册表自动发现',
+          '一个引擎驱动多个机器人，新机器人只需新增项目文件夹，注册表自动发现',
           '源代码尚未开源',
         ],
       },
@@ -1291,7 +1291,7 @@ const TRANSLATIONS = {
         role: 'Founder · Developer',
         year: '2026',
         metrics: [['サービス', '6'], ['言語', 'ID / EN'], ['デプロイ', 'Vercel']],
-        overview: 'AI Labs 公式ウェブサイト——企業・中小企業・個人向けに AI を導入するスタジオ。企業・中小企業向けチャットボット、AI パーソナルアシスタント、CCTV 向けコンピュータビジョン検知、機械学習案件の受託、AI エージェント導入講座を手がけます。どのシステムも実際の現場で動くところまで仕上げます。',
+        overview: 'AI Labs 公式ウェブサイト。企業・中小企業・個人向けに AI を導入するスタジオ。企業・中小企業向けチャットボット、AI パーソナルアシスタント、CCTV 向けコンピュータビジョン検知、機械学習案件の受託、AI エージェント導入講座を手がけます。どのシステムも実際の現場で動くところまで仕上げます。',
         approach: [
           'カーソルに追従して前景レイヤーがめくれるヒーロー reveal',
           '編集的なタイポグラフィによる非対称ベントーグリッドの 6 つのサービス',
@@ -1331,9 +1331,9 @@ const TRANSLATIONS = {
         role: 'Founder · システムアーキテクト',
         year: '2026',
         metrics: [['ボット', '3'], ['チャンネル', 'WA / Telegram'], ['バージョン', 'v1.0']],
-        overview: 'AfinLabs AI Solutions が構築した AIエージェント／チャットボット集——第一版で、現在も開発を続けており、ソースコードは未公開です。すべてのボットは単一のRAGエンジン（shared/）を共有する「1エンジン・多数プロジェクト」方式。AfinLabs営業エージェント、大学サイトのチャットボット、花屋カタログのチャットボットを備えます。WhatsApp と Telegram は同じエンジンの上で動くチャンネルで、プロジェクト・データ・会話・分析を管理する管理ダッシュボード付きです。',
+        overview: 'AfinLabs AI Solutions が構築した AIエージェント／チャットボット集。第一版で、現在も開発を続けており、ソースコードは未公開です。すべてのボットは単一のRAGエンジン（shared/）を共有する「1エンジン・多数プロジェクト」方式。AfinLabs営業エージェント、大学サイトのチャットボット、花屋カタログのチャットボットを備えます。WhatsApp と Telegram は同じエンジンの上で動くチャンネルで、プロジェクト・データ・会話・分析を管理する管理ダッシュボード付きです。',
         approach: [
-          'shared/ の単一RAGエンジンを全ボットで共有。各ボットはプロジェクト（projects/&lt;slug&gt;/）として追加——コアを変えずにフォルダを1つ足すだけ',
+          'shared/ の単一RAGエンジンを全ボットで共有。各ボットはプロジェクト（projects/&lt;slug&gt;/）として追加。コアを変えずにフォルダを1つ足すだけ',
           'ハイブリッド検索：Supabase + pgvector（multilingual-e5-base埋め込み）をmatch_chunks RPC経由で利用、タイトルのキーワードフォールバック付き',
           '言語モデルは Google Gemini。WhatsApp（webhook）と Telegram（ポーリング）が同じエンジンを共有',
           'データ取り込み、会話のテイクオーバー、分析、サーバー管理ができる管理ダッシュボード',
@@ -1341,7 +1341,7 @@ const TRANSLATIONS = {
         stack: ['Python', 'FastAPI', 'Supabase + pgvector', 'Google Gemini', 'WhatsApp API', 'Telegram Bot API'],
         results: [
           '第一版、開発継続中',
-          '1エンジンで多数のボット——新ボットはプロジェクトフォルダを追加するだけでレジストリが自動検出',
+          '1エンジンで多数のボット。新ボットはプロジェクトフォルダを追加するだけでレジストリが自動検出',
           'ソースコードは未公開',
         ],
       },

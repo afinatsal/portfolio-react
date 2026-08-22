@@ -50,7 +50,7 @@ export function initDitherBackground() {
   let t=0;
   function renderFrame(){
     // The project modal is opaque and covers the dither canvas, and its
-    // carousel needs the CPU cycles — skip the draw loop entirely while open.
+    // carousel needs the CPU cycles: skip the draw loop entirely while open.
     if(document.body && document.body.classList.contains('modal-open')){
       rafId = requestAnimationFrame(renderFrame);
       return;

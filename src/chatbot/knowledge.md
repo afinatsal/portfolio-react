@@ -1,4 +1,4 @@
-# Afin Atsal — Knowledge Base
+# Afin Atsal · Knowledge Base
 
 Dokumen ini adalah satu-satunya sumber fakta untuk chatbot portofolio. Jawab HANYA berdasarkan informasi di dokumen ini. Jangan menambah atau menebak fakta yang tidak tertulis di sini.
 
@@ -27,13 +27,13 @@ Dokumen ini adalah satu-satunya sumber fakta untuk chatbot portofolio. Jawab HAN
 - Mengampu praktikum pemrograman Python lintas fakultas selama satu semester.
 - Tugas: menyusun kurikulum materi dan mengevaluasi hasil belajar mahasiswa.
 
-### 2. AI/ML Engineer (MBKM) — X-Camp / PT XLSmart Telecom Sejahtera (AGU · DES 2025)
+### 2. AI/ML Engineer (MBKM) · X-Camp / PT XLSmart Telecom Sejahtera (AGU · DES 2025)
 - Membangun sistem visual inspection berbasis CNN dengan akurasi 99.6%.
 - Membangun deteksi objek hilang (Object Removal Detection) dengan OpenCV template matching.
 - Membangun chatbot RAG internal.
 - Metodologi Agile-Scrum, sprint mingguan.
 
-### 3. Back-End & AI System Developer — PT Amman Mineral Internasional (JUL · AGU 2025)
+### 3. Back-End & AI System Developer · PT Amman Mineral Internasional (JUL · AGU 2025)
 - Merancang microservices FastAPI dengan PostgreSQL / PGVector.
 - Membangun chatbot RAG untuk pemesanan tiket kapal (rute Kayangan–Benete).
 - Latensi API rata-rata di bawah 2 detik.
@@ -44,22 +44,22 @@ Dokumen ini adalah satu-satunya sumber fakta untuk chatbot portofolio. Jawab HAN
 
 ## Organisasi & Kepemimpinan
 
-### Wakil Ketua Departemen Kewirausahaan — KBMDSI FILKOM UB (FEB · DES 2024)
+### Wakil Ketua Departemen Kewirausahaan · KBMDSI FILKOM UB (FEB · DES 2024)
 - Menjalankan 4 program utama.
 - Menginisiasi DSI Store (merchandise) untuk pendanaan organisasi.
 - Memimpin produksi PDH dan mengelola konten media sosial kewirausahaan.
 
-### Ketua Sponsorship & Fundraising — FILAFEST 2023 (APR · DES 2023)
+### Ketua Sponsorship & Fundraising · FILAFEST 2023 (APR · DES 2023)
 - Memimpin strategi akuisisi sponsor.
 - Mengelola proposal dan negosiasi end-to-end.
 - Mengumpulkan dana melebihi target anggaran festival.
 
 ## Sertifikasi
 
-1. Machine Learning Specialization — DeepLearning.AI & Stanford Online (2025)
-2. Google AI Professional Certificate — Google (2026, 8 kursus)
-3. Google AI Essentials Specialization — Google (2025)
-4. Building AI Agents & Agentic Workflows — IBM Specialization (2026)
+1. Machine Learning Specialization · DeepLearning.AI & Stanford Online (2025)
+2. Google AI Professional Certificate · Google (2026, 8 kursus)
+3. Google AI Essentials Specialization · Google (2025)
+4. Building AI Agents & Agentic Workflows · IBM Specialization (2026)
 
 ## Skills & Tools
 
@@ -68,7 +68,7 @@ Dokumen ini adalah satu-satunya sumber fakta untuk chatbot portofolio. Jawab HAN
 
 ## Proyek
 
-### AI Labs — Studio AI (live website, 2026)
+### AI Labs · Studio AI (live website, 2026)
 - Link: https://afinailabs.vercel.app/
 - Studio yang memasang AI untuk bisnis, UMKM, dan pribadi.
 - Layanan: chatbot perusahaan & UMKM, asisten pribadi berbasis AI, detektor computer vision untuk CCTV, jasa pengerjaan tugas machine learning, kelas pemasangan AI agent.
@@ -76,7 +76,7 @@ Dokumen ini adalah satu-satunya sumber fakta untuk chatbot portofolio. Jawab HAN
 - Teknologi: React 19, Vite, Tailwind CSS 4, Framer Motion, font Bricolage Grotesque & IBM Plex.
 - Fitur unggulan situs: hero reveal dengan lapisan gambar depan terkelupas mengikuti kursor, bento asimetris, carousel foto proyek.
 
-### Lentera — Asisten Visual iOS untuk Tunanetra & Low Vision (2026)
+### Lentera · Asisten Visual iOS untuk Tunanetra & Low Vision (2026)
 - Aplikasi iOS pendamping harian untuk pengguna tunanetra dan low vision.
 - Tiga mode: Baca Teks, Kenali Objek, Deteksi Rintangan.
 - Baca Teks: arahkan kamera ke teks fisik (label, resep obat, papan nama, menu, dokumen); teks disusun ulang dalam urutan baca lalu dibacakan dengan suara bahasa Indonesia.
@@ -138,7 +138,7 @@ Dokumen ini adalah satu-satunya sumber fakta untuk chatbot portofolio. Jawab HAN
 
 ## Publikasi
 
-- "Deteksi dan Klasifikasi Sampah Bertingkat Menggunakan YOLOv12 dan Hierarchical Sibling Classification Network" — SENTRIN 2026, Seminar Nasional Teknologi dan Rekayasa Informasi (dalam persiapan).
+- "Deteksi dan Klasifikasi Sampah Bertingkat Menggunakan YOLOv12 dan Hierarchical Sibling Classification Network" · SENTRIN 2026, Seminar Nasional Teknologi dan Rekayasa Informasi (dalam persiapan).
 
 ## Kontak
 

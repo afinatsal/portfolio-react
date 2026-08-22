@@ -153,7 +153,7 @@ const ORDER = ['ailabs', 'lentera', 'chatbots', 'thesis', 'visual-inspection', '
     const slide0 = pcTrack.firstElementChild;
 
     let idx = count;   // active slide index inside the ×3 window
-    let x = 0;         // track offset — the ONLY thing being animated
+    let x = 0;         // track offset: the ONLY thing being animated
     let base = 0;      // offset that centers slide 0
     let unit = 0;      // slide width
 
@@ -171,7 +171,7 @@ const ORDER = ['ailabs', 'lentera', 'chatbots', 'thesis', 'visual-inspection', '
 
     function applyX(){ pcTrack.style.transform = `translate3d(${x}px, 0, 0)`; }
 
-    // exact cubic-bezier(0.16, 1, 0.3, 1) — the same ease-out the afinlabs
+    // exact cubic-bezier(0.16, 1, 0.3, 1): the same ease-out the afinlabs
     // carousel uses: fast start, long soft settle, no dead tail at the end.
     function easeOut(px){
       if(px <= 0) return 0;
