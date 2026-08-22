@@ -398,7 +398,7 @@
     border:1px solid rgba(191,250,245,.22);
   }
   .cb-head-title{ font-family:"Archivo", "Helvetica Neue", Arial, sans-serif; font-weight:600; font-size:14.5px; color:#F1F4F2; line-height:1.2; letter-spacing:.01em; }
-  .cb-head-sub{ font-family:"JetBrains Mono", monospace; font-size:9px; letter-spacing:.14em; color:#9CA6AA; margin-top:3px; }
+  .cb-head-sub{ font-family:"Inter Variable", Inter, system-ui, -apple-system, sans-serif; font-size:9px; letter-spacing:.14em; color:#9CA6AA; margin-top:3px; }
   .cb-close{
     flex:none; width:30px; height:30px; border-radius:999px; display:flex; align-items:center; justify-content:center;
     color:#9CA6AA; border:1px solid #353C42; transition:color .2s, border-color .2s, transform .15s; cursor:pointer;
@@ -417,7 +417,7 @@
   }
   @keyframes cbIn{ from{ opacity:0; transform:translateY(8px);} to{ opacity:1; transform:none;} }
   .cb-meta{
-    font-family:"JetBrains Mono", monospace; font-size:8.5px; letter-spacing:.18em; color:#6B7477;
+    font-family:"Inter Variable", Inter, system-ui, -apple-system, sans-serif; font-size:8.5px; letter-spacing:.18em; color:#6B7477;
   }
   .cb-body{
     font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
@@ -444,7 +444,7 @@
   @keyframes cbDot{ 0%,60%,100%{ opacity:.25; transform:translateY(0); } 30%{ opacity:1; transform:translateY(-2px); } }
   .cb-chips{ display:flex; flex-wrap:wrap; gap:7px; padding-bottom:2px; }
   .cb-chip{
-    font-family:"JetBrains Mono", monospace; font-size:10.5px; letter-spacing:.02em; color:#9CA6AA;
+    font-family:"Inter Variable", Inter, system-ui, -apple-system, sans-serif; font-size:10.5px; letter-spacing:.02em; color:#9CA6AA;
     border:1px solid #2E3438; border-radius:999px; padding:7px 12px;
     transition:color .2s, border-color .2s, background .2s, transform .15s cubic-bezier(.16,1,.3,1);
   }
@@ -456,7 +456,7 @@
     padding:10px 15px; color:#F1F4F2; font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; font-size:14px; outline:none;
     transition:border-color .2s, box-shadow .2s;
   }
-  .cb-input::placeholder{ color:#6B7477; font-family:"JetBrains Mono", monospace; font-size:12px; }
+  .cb-input::placeholder{ color:#6B7477; font-family:"Inter Variable", Inter, system-ui, -apple-system, sans-serif; font-size:12px; }
   .cb-input:focus{ border-color:rgba(191,250,245,.6); box-shadow:0 0 0 3px rgba(191,250,245,.08); }
   .cb-send{
     flex:none; width:38px; height:38px; border-radius:999px; display:flex; align-items:center; justify-content:center;
