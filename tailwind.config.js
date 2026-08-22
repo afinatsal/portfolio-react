@@ -19,7 +19,7 @@ export default {
         line: '#353C42',
       },
       fontFamily: {
-        display: ['"Angie Sans"', 'Georgia', 'sans-serif'],
+        display: ['"Archivo"', '"Helvetica Neue"', 'Arial', 'sans-serif'],
         body: ['"Inter"', 'system-ui', '-apple-system', '"Segoe UI"', 'Roboto', 'sans-serif'],
         mono: ['"JetBrains Mono"', 'monospace'],
       },

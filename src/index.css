@@ -7,11 +7,6 @@
   body{background:#111315;}
   ::selection{background:#BFFAF5; color:#111315;}
 
-  /* Font experiment (bouayaben.com style): Archivo for display, Inter for
-     body — scoped to the landing and about sections only. */
-  #home, #about{ font-family:"Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
-  #home .font-display, #about .font-display{ font-family:"Archivo", "Helvetica Neue", Arial, sans-serif; }
-
   /* custom scrollbar - thin, theme-matched */
   *{scrollbar-width:thin; scrollbar-color:#353C42 transparent;}
   ::-webkit-scrollbar{width:8px; height:8px;}
@@ -264,10 +259,16 @@
 
   /* CJK font fallbacks so localized copy renders cleanly */
   html[lang="zh-CN"] .font-display{
-    font-family:"Angie Sans","PingFang SC","Hiragino Sans GB","Noto Sans SC","Microsoft YaHei",sans-serif;
+    font-family:"Archivo","PingFang SC","Hiragino Sans GB","Noto Sans SC","Microsoft YaHei",sans-serif;
+  }
+  html[lang="zh-CN"] .font-body{
+    font-family:"Inter","PingFang SC","Hiragino Sans GB","Noto Sans SC","Microsoft YaHei",sans-serif;
   }
   html[lang="ja"] .font-display{
-    font-family:"Angie Sans","Hiragino Kaku Gothic ProN","Yu Gothic","Meiryo","Noto Sans JP",sans-serif;
+    font-family:"Archivo","Hiragino Kaku Gothic ProN","Yu Gothic","Meiryo","Noto Sans JP",sans-serif;
+  }
+  html[lang="ja"] .font-body{
+    font-family:"Inter","Hiragino Kaku Gothic ProN","Yu Gothic","Meiryo","Noto Sans JP",sans-serif;
   }
 
   /* ============ MOBILE ============ */
@@ -342,7 +343,7 @@
     background:rgba(191,250,245,.12); color:#BFFAF5;
     border:1px solid rgba(191,250,245,.22);
   }
-  .cb-head-title{ font-family:"Angie Sans", Georgia, sans-serif; font-weight:600; font-size:14.5px; color:#F1F4F2; line-height:1.2; letter-spacing:.01em; }
+  .cb-head-title{ font-family:"Archivo", "Helvetica Neue", Arial, sans-serif; font-weight:600; font-size:14.5px; color:#F1F4F2; line-height:1.2; letter-spacing:.01em; }
   .cb-head-sub{ font-family:"JetBrains Mono", monospace; font-size:9px; letter-spacing:.14em; color:#9CA6AA; margin-top:3px; }
   .cb-close{
     flex:none; width:30px; height:30px; border-radius:999px; display:flex; align-items:center; justify-content:center;

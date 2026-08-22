@@ -418,11 +418,11 @@ const ORDER = ['ailabs', 'lentera', 'chatbots', 'thesis', 'visual-inspection', '
     }
 
     elApproach.innerHTML = p.approach.map((item, i) =>
-      `<li class="flex gap-4 font-display text-[15px] text-ink leading-relaxed"><span class="font-mono text-[11px] text-dim/70 shrink-0 pt-[2px]">${String(i + 1).padStart(2, '0')}</span><span>${item}</span></li>`
+      `<li class="flex gap-4 font-body text-[15px] text-ink leading-relaxed"><span class="font-mono text-[11px] text-dim/70 shrink-0 pt-[2px]">${String(i + 1).padStart(2, '0')}</span><span>${item}</span></li>`
     ).join('');
 
     elResults.innerHTML = (p.results || []).map(item =>
-      `<li class="flex gap-3.5 font-display text-[15px] text-ink leading-relaxed"><span class="h-1.5 w-1.5 rounded-full bg-dim/60 shrink-0 mt-[10px]" aria-hidden="true"></span><span>${item}</span></li>`
+      `<li class="flex gap-3.5 font-body text-[15px] text-ink leading-relaxed"><span class="h-1.5 w-1.5 rounded-full bg-dim/60 shrink-0 mt-[10px]" aria-hidden="true"></span><span>${item}</span></li>`
     ).join('');
 
     elStack.innerHTML = p.stack.map(s =>
