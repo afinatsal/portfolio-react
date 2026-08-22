@@ -20,7 +20,7 @@ export default {
       },
       fontFamily: {
         display: ['"Archivo"', '"Helvetica Neue"', 'Arial', 'sans-serif'],
-        body: ['"Inter"', 'system-ui', '-apple-system', '"Segoe UI"', 'Roboto', 'sans-serif'],
+        body: ['"Inter Variable"', '"Inter"', 'system-ui', '-apple-system', 'sans-serif'],
         mono: ['"JetBrains Mono"', 'monospace'],
       },
     },
