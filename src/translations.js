@@ -11,8 +11,8 @@ const TRANSLATIONS = {
     },
     about: {
       label: '02 · TENTANG',
-      heading: 'Mengubah riset computer vision menjadi sistem produksi nyata, bukan sekadar notebook eksperimen.',
-      body: 'Lulusan Teknologi Informasi Universitas Brawijaya (IPK 3.64/4.00) dengan fokus di computer vision dan applied deep learning. Saya membawa model dari eksperimen ke sistem yang terintegrasi produksi lewat dua program magang industri, serta memimpin riset skripsi pipeline deteksi sampah hierarkis dari nol, mulai dari kurasi dataset, benchmarking arsitektur, hingga aplikasi inferensi siap demo.',
+      heading: 'Saya AI/ML engineer yang membangun sistem computer vision: deteksi sampah, visual inspection industri, dan chatbot RAG.',
+      body: 'Perjalanan saya dari riset skripsi deteksi sampah, dua program magang industri, hingga studio AI sendiri. Berbasis di Malang, Indonesia, dan terbuka untuk magang atau full-time.',
       educationLabel: 'PENDIDIKAN',
       educationVal: 'Universitas<br>Brawijaya',
       gpaLabel: 'IPK',
@@ -377,8 +377,8 @@ const TRANSLATIONS = {
     },
     about: {
       label: '02 · ABOUT',
-      heading: 'Turning computer vision research into real production systems, not just experiment notebooks.',
-      body: 'Information Technology graduate from Universitas Brawijaya (GPA 3.64/4.00), focused on computer vision and applied deep learning. I take models from experiment to production-integrated systems through two industry internships, and led my thesis research on a hierarchical waste detection pipeline from scratch, from dataset curation and architecture benchmarking to a demo-ready inference application.',
+      heading: 'I\'m an AI/ML engineer who builds computer vision systems: waste detection, industrial visual inspection, and RAG chatbots.',
+      body: 'My path runs from thesis research on waste detection through two industry internships to running my own AI studio. Based in Malang, Indonesia, and open to internships or full-time.',
       educationLabel: 'EDUCATION',
       educationVal: 'Universitas<br>Brawijaya',
       gpaLabel: 'GPA',
@@ -743,8 +743,8 @@ const TRANSLATIONS = {
     },
     about: {
       label: '02 · 关于我',
-      heading: '将计算机视觉研究转化为真正的生产系统，而不只是实验用的笔记本。',
-      body: '毕业于布拉维加亚大学信息技术专业（绩点 3.64/4.00），专注于计算机视觉与应用深度学习。通过两次行业实习，我将模型从实验带入与生产集成的系统，并主导了毕业论文中从零构建的分层垃圾检测流水线，涵盖数据集整理、架构基准测试，以及可交付演示的推理应用。',
+      heading: '我是一名 AI/ML 工程师，致力于构建计算机视觉系统：垃圾检测、工业视觉检测和 RAG 聊天机器人。',
+      body: '我的经历从毕业论文的垃圾检测研究，到两次行业实习，再到运营自己的 AI 工作室。常驻印度尼西亚玛琅，欢迎实习或全职机会。',
       educationLabel: '教育',
       educationVal: '布拉维加亚<br>大学',
       gpaLabel: '绩点',
@@ -1109,8 +1109,8 @@ const TRANSLATIONS = {
     },
     about: {
       label: '02 · プロフィール',
-      heading: 'コンピュータビジョンの研究を、単なる実験ノートではなく実際の本番システムへと変えます。',
-      body: 'ブラウィジャヤ大学情報工学卒業（GPA 3.64/4.00）。コンピュータビジョンと応用ディープラーニングを専門とし、2つの企業インターンシップを通じてモデルを本番統合システムに昇華。卒業研究では階層型ゴミ検出パイプラインをゼロから構築し、データセット整備・アーキテクチャベンチマーク・デモ可能な推論アプリケーションまでを牽引しました。',
+      heading: 'コンピュータビジョンシステムを構築する AI/ML エンジニアです。ゴミ検出、産業用ビジョン検査、RAG チャットボットなど。',
+      body: '卒業研究のゴミ検出から 2 つの企業インターンシップ、そして自身の AI スタジオ運営まで。インドネシア・マランを拠点に、インターンや正社員の機会を募集中です。',
       educationLabel: '学歴',
       educationVal: 'ブラウィジャヤ<br>大学',
       gpaLabel: 'GPA',
