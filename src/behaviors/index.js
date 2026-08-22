@@ -9,6 +9,7 @@ import { initAnimatedCounters } from './initAnimatedCounters.js'
 import { initSkillsMarquee } from './initSkillsMarquee.js'
 import { initMusicPlayer } from './initMusicPlayer.js'
 import { initChatbot } from './initChatbot.js'
+import { initProjectLinks } from './initProjectLinks.js'
 
 export {
   initI18n,
@@ -22,4 +23,5 @@ export {
   initSkillsMarquee,
   initMusicPlayer,
   initChatbot,
+  initProjectLinks,
 }

@@ -33,13 +33,13 @@ const TRANSLATIONS = {
         period: 'AGU · DES 2025',
         title: 'AI/ML Engineer (MBKM)',
         org: 'X-Camp / MBKM · <span class="company-highlight">PT XLSmart Telecom Sejahtera</span>',
-        desc: 'Membangun sistem visual inspection berbasis CNN (akurasi 99.6%), deteksi objek hilang dengan OpenCV, dan chatbot RAG internal dalam metodologi Agile-Scrum.',
+        desc: 'Membangun sistem <a href="#work" class="exp-link" data-project="visual-inspection">visual inspection</a> berbasis CNN (akurasi 99.6%), deteksi objek hilang dengan OpenCV, dan <a href="#work" class="exp-link" data-project="rag-chatbot">chatbot RAG</a> internal dalam metodologi Agile-Scrum.',
       },
       e3: {
         period: 'JUL · AGU 2025',
         title: 'Back-End &amp; AI System Developer',
         org: '<span class="company-highlight">PT Amman Mineral Internasional</span>',
-        desc: 'Merancang microservices FastAPI dengan PostgreSQL/PGVector untuk chatbot RAG pemesanan tiket kapal; latensi API rata-rata di bawah 2 detik.',
+        desc: 'Merancang microservices FastAPI dengan PostgreSQL/PGVector untuk <a href="#work" class="exp-link" data-project="rag-chatbot">chatbot RAG</a> pemesanan tiket kapal; latensi API rata-rata di bawah 2 detik.',
       },
       e4: {
         period: 'FREELANCE · BERJALAN',
@@ -399,13 +399,13 @@ const TRANSLATIONS = {
         period: 'AUG · DEC 2025',
         title: 'AI/ML Engineer (MBKM)',
         org: 'X-Camp / MBKM · <span class="company-highlight">PT XLSmart Telecom Sejahtera</span>',
-        desc: 'Built a CNN visual inspection system (99.6% accuracy), object removal detection with OpenCV, and an internal RAG chatbot within an Agile-Scrum workflow.',
+        desc: 'Built a CNN <a href="#work" class="exp-link" data-project="visual-inspection">visual inspection</a> system (99.6% accuracy), object removal detection with OpenCV, and an internal <a href="#work" class="exp-link" data-project="rag-chatbot">RAG chatbot</a> within an Agile-Scrum workflow.',
       },
       e3: {
         period: 'JUL · AUG 2025',
         title: 'Back-End &amp; AI System Developer',
         org: '<span class="company-highlight">PT Amman Mineral Internasional</span>',
-        desc: 'Designed FastAPI microservices with PostgreSQL/PGVector for a RAG chatbot handling boat ticket bookings; average API latency under 2 seconds.',
+        desc: 'Designed FastAPI microservices with PostgreSQL/PGVector for a <a href="#work" class="exp-link" data-project="rag-chatbot">RAG chatbot</a> handling boat ticket bookings; average API latency under 2 seconds.',
       },
       e4: {
         period: 'FREELANCE · ONGOING',
@@ -765,13 +765,13 @@ const TRANSLATIONS = {
         period: '2025年8月 · 12月',
         title: 'AI/ML 工程师（MBKM 项目）',
         org: 'X-Camp / MBKM · <span class="company-highlight">PT XLSmart Telecom Sejahtera</span>',
-        desc: '构建了 CNN 视觉检测系统（准确率 99.6%）、基于 OpenCV 的物体缺失检测及内部 RAG 聊天机器人，采用敏捷 Scrum 方法论。',
+        desc: '构建了 CNN <a href="#work" class="exp-link" data-project="visual-inspection">视觉检测</a>系统（准确率 99.6%）、基于 OpenCV 的物体缺失检测及内部 <a href="#work" class="exp-link" data-project="rag-chatbot">RAG 聊天机器人</a>，采用敏捷 Scrum 方法论。',
       },
       e3: {
         period: '2025年7月 · 8月',
         title: '后端与 AI 系统开发工程师',
         org: '<span class="company-highlight">PT Amman Mineral Internasional</span>',
-        desc: '使用 FastAPI 微服务与 PostgreSQL/PGVector 为船票预订 RAG 聊天机器人设计架构，API 平均延迟低于 2 秒。',
+        desc: '使用 FastAPI 微服务与 PostgreSQL/PGVector 为船票预订 <a href="#work" class="exp-link" data-project="rag-chatbot">RAG 聊天机器人</a>设计架构，API 平均延迟低于 2 秒。',
       },
       e4: {
         period: '自由职业 · 进行中',
@@ -1131,13 +1131,13 @@ const TRANSLATIONS = {
         period: '2025年8月 · 12月',
         title: 'AI/MLエンジニア（MBKM）',
         org: 'X-Camp / MBKM · <span class="company-highlight">PT XLSmart Telecom Sejahtera</span>',
-        desc: 'CNNビジョン検査システム（精度99.6%）、OpenCVによる物体欠落検出、社内RAGチャットボットをアジャイル・スクラムで開発。',
+        desc: '<a href="#work" class="exp-link" data-project="visual-inspection">CNNビジョン検査システム</a>（精度99.6%）、OpenCVによる物体欠落検出、社内<a href="#work" class="exp-link" data-project="rag-chatbot">RAGチャットボット</a>をアジャイル・スクラムで開発。',
       },
       e3: {
         period: '2025年7月 · 8月',
         title: 'バックエンド・AIシステム開発者',
         org: '<span class="company-highlight">PT Amman Mineral Internasional</span>',
-        desc: '船のチケット予約用RAGチャットボットをFastAPIマイクロサービス＋PostgreSQL/PGVectorで設計し、API平均レイテンシを2秒未満に。',
+        desc: '船のチケット予約用<a href="#work" class="exp-link" data-project="rag-chatbot">RAGチャットボット</a>をFastAPIマイクロサービス＋PostgreSQL/PGVectorで設計し、API平均レイテンシを2秒未満に。',
       },
       e4: {
         period: 'フリーランス · 継続中',
