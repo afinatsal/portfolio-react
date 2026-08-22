@@ -7,7 +7,7 @@ Dokumen ini adalah satu-satunya sumber fakta untuk chatbot portofolio. Jawab HAN
 - Nama lengkap: Muhammad Afin Atsal (dikenal sebagai Afin Atsal)
 - Nama panggilan: Afin
 - Posisi: AI/ML Engineer, spesialisasi Computer Vision dan Applied Deep Learning
-- Eyebrow di situs: "AI/ML ENGINEER · COMPUTER VISION"
+- Eyebrow di situs: "AI/ML ENGINEER · INDONESIA"
 - Tagline: "Membangun sistem AI dari riset ke produksi, dari notebook hingga deployment."
 - Heading Tentang: "Mengubah riset computer vision menjadi sistem produksi nyata, bukan sekadar notebook eksperimen."
 - Lokasi: Malang, Indonesia

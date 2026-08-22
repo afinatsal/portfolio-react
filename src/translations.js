@@ -6,7 +6,7 @@ const TRANSLATIONS = {
     doc: 'id',
     meta: { title: 'Muhammad Afin Atsal · AI/ML Engineer' },
     hero: {
-      eyebrow: 'AI/ML ENGINEER · COMPUTER VISION',
+      eyebrow: 'AI/ML ENGINEER · INDONESIA',
       tagline: 'Membangun sistem AI dari riset ke produksi, dari notebook hingga deployment.',
     },
     about: {
@@ -372,7 +372,7 @@ const TRANSLATIONS = {
     doc: 'en',
     meta: { title: 'Muhammad Afin Atsal · AI/ML Engineer' },
     hero: {
-      eyebrow: 'AI/ML ENGINEER · COMPUTER VISION',
+      eyebrow: 'AI/ML ENGINEER · INDONESIA',
       tagline: 'Building AI systems that go from research to production, from notebook to deployment.',
     },
     about: {
@@ -738,7 +738,7 @@ const TRANSLATIONS = {
     doc: 'zh-CN',
     meta: { title: '穆罕默德·阿芬·阿特萨尔 · AI/ML 工程师' },
     hero: {
-      eyebrow: 'AI/ML 工程师 · 计算机视觉',
+      eyebrow: 'AI/ML 工程师 · 印度尼西亚',
       tagline: '打造从研究走向生产、从笔记本到部署的 AI 系统。',
     },
     about: {
@@ -1104,7 +1104,7 @@ const TRANSLATIONS = {
     doc: 'ja',
     meta: { title: 'ムハンマド・アフィン・アサール · AI/MLエンジニア' },
     hero: {
-      eyebrow: 'AI/MLエンジニア · コンピュータビジョン',
+      eyebrow: 'AI/MLエンジニア · インドネシア',
       tagline: '研究から本番運用まで、ノートブックからデプロイメントまで、AIシステムを構築します。',
     },
     about: {
