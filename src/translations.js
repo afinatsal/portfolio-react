@@ -85,22 +85,26 @@ const TRANSLATIONS = {
         sub: 'Aplikasi iOS untuk pengguna tunanetra &amp; low vision',
       },
       r2: {
+        title: 'Chatbots · Platform AI Chatbot',
+        sub: 'AfinLabs AI Solutions · satu mesin, banyak bot (v1)',
+      },
+      r3: {
         title: 'CNN Visual Inspection System',
         sub: 'X-Camp, PT XLSmart Telecom Sejahtera',
       },
-      r3: {
+      r4: {
         title: 'RAG Chatbot untuk Booking Tiket Kapal',
         sub: 'PT Amman Mineral Internasional',
       },
-      r4: {
+      r5: {
         title: 'Pneumonia Detection dari Chest X-Ray',
         sub: 'Proyek pribadi',
       },
-      r5: {
+      r6: {
         title: 'Cognitive Performance Prediction',
         sub: 'Wearable biosignal · Empatica E4',
       },
-      r6: {
+      r7: {
         title: 'FLUENTI · AI Grammar Checker',
         sub: 'Fine-tuning LLaMA 3',
       },
@@ -221,6 +225,26 @@ const TRANSLATIONS = {
           'Versi 1.0 aktif dikembangkan dengan bundle identifier afin.Lentera',
           'Baca Teks terintegrasi penuh dengan Gemini plus fallback OCR on-device',
           'Kenali Objek dan Deteksi Rintangan berjalan melalui Gemini',
+        ],
+      },
+      chatbots: {
+        eyebrow: 'PRODUK INTERNAL · MASIH BERKEMBANG',
+        title: 'Chatbots',
+        role: 'Founder · System Architect',
+        year: '2026',
+        metrics: [['Bot', '3'], ['Channel', 'WA / Telegram'], ['Versi', 'v1.0']],
+        overview: 'Kumpulan AI agent / chatbot yang dibangun oleh AfinLabs AI Solutions — versi pertama yang masih dalam tahap pengembangan dan source code-nya belum dipublikasikan. Semua bot memakai satu mesin RAG (shared/) dengan pola satu mesin–banyak project: sales agent AfinLabs, chatbot website kampus, dan chatbot katalog toko bunga. WhatsApp &amp; Telegram adalah channel yang memakai mesin yang sama, lengkap dengan dashboard admin untuk mengelola project, data, percakapan, dan analytics.',
+        approach: [
+          'Satu mesin RAG di shared/ dipakai semua bot; setiap bot hanyalah sebuah project (projects/&lt;slug&gt;/) — tambah bot baru cukup buat satu folder, tanpa mengubah core',
+          'Retrieval hybrid: Supabase + pgvector (embedding multilingual-e5-base) lewat RPC match_chunks, dengan fallback kata kunci pada judul',
+          'Model bahasa Google Gemini; WhatsApp (webhook) dan Telegram (polling) berbagi mesin yang sama',
+          'Dashboard admin untuk ingest data, kelola percakapan dengan takeover, analytics, dan kontrol server',
+        ],
+        stack: ['Python', 'FastAPI', 'Supabase + pgvector', 'Google Gemini', 'WhatsApp API', 'Telegram Bot API'],
+        results: [
+          'Versi pertama, masih dalam tahap pengembangan',
+          'Satu mesin untuk banyak bot — bot baru cukup menambah satu folder project, registry otomatis terdiscover',
+          'Source code belum dipublikasikan',
         ],
       },
       thesis: {
@@ -427,22 +451,26 @@ const TRANSLATIONS = {
         sub: 'iOS app for blind &amp; low-vision users',
       },
       r2: {
+        title: 'Chatbots · AI Chatbot Platform',
+        sub: 'AfinLabs AI Solutions · one engine, many bots (v1)',
+      },
+      r3: {
         title: 'CNN Visual Inspection System',
         sub: 'X-Camp, PT XLSmart Telecom Sejahtera',
       },
-      r3: {
+      r4: {
         title: 'RAG Chatbot for Boat Ticket Booking',
         sub: 'PT Amman Mineral Internasional',
       },
-      r4: {
+      r5: {
         title: 'Pneumonia Detection from Chest X-Ray',
         sub: 'Personal project',
       },
-      r5: {
+      r6: {
         title: 'Cognitive Performance Prediction',
         sub: 'Wearable biosignal · Empatica E4',
       },
-      r6: {
+      r7: {
         title: 'FLUENTI · AI Grammar Checker',
         sub: 'Fine-tuning LLaMA 3',
       },
@@ -563,6 +591,26 @@ const TRANSLATIONS = {
           'Version 1.0 under active development, bundle identifier afin.Lentera',
           'Read Text fully integrated with Gemini plus on-device OCR fallback',
           'Recognize Object and Obstacle Detection running through Gemini',
+        ],
+      },
+      chatbots: {
+        eyebrow: 'INTERNAL PRODUCT · WORK IN PROGRESS',
+        title: 'Chatbots',
+        role: 'Founder · System Architect',
+        year: '2026',
+        metrics: [['Bots', '3'], ['Channels', 'WA / Telegram'], ['Version', 'v1.0']],
+        overview: 'A collection of AI agents / chatbots built by AfinLabs AI Solutions — the first version, still under active development and not yet open-sourced. All bots share a single RAG engine (shared/) following a one-engine–many-projects pattern: an AfinLabs sales agent, a campus website chatbot, and a florist catalog chatbot. WhatsApp &amp; Telegram act as channels on top of the same engine, complete with an admin dashboard for managing projects, data, conversations, and analytics.',
+        approach: [
+          'One shared RAG engine in shared/ powers every bot; each bot is just a project (projects/&lt;slug&gt;/) — adding a bot is a single folder, no core changes',
+          'Hybrid retrieval: Supabase + pgvector (multilingual-e5-base embeddings) via the match_chunks RPC, with a keyword fallback on titles',
+          'Google Gemini as the language model; WhatsApp (webhook) and Telegram (polling) share the same engine',
+          'Admin dashboard for data ingestion, conversation takeover, analytics, and server control',
+        ],
+        stack: ['Python', 'FastAPI', 'Supabase + pgvector', 'Google Gemini', 'WhatsApp API', 'Telegram Bot API'],
+        results: [
+          'First version, still under active development',
+          'One engine for many bots — a new bot is just another project folder, auto-discovered by the registry',
+          'Source code not published yet',
         ],
       },
       thesis: {
@@ -769,22 +817,26 @@ const TRANSLATIONS = {
         sub: '为盲人与低视力用户打造的 iOS 应用',
       },
       r2: {
+        title: 'Chatbots · AI 聊天机器人平台',
+        sub: 'AfinLabs AI Solutions · 一个引擎，多个机器人（v1）',
+      },
+      r3: {
         title: 'CNN 视觉检测系统',
         sub: 'X-Camp, PT XLSmart Telecom Sejahtera',
       },
-      r3: {
+      r4: {
         title: '船票预订 RAG 聊天机器人',
         sub: 'PT Amman Mineral Internasional',
       },
-      r4: {
+      r5: {
         title: '基于胸部 X 光的肺炎检测',
         sub: '个人项目',
       },
-      r5: {
+      r6: {
         title: '认知表现预测',
         sub: '可穿戴生物信号 · Empatica E4',
       },
-      r6: {
+      r7: {
         title: 'FLUENTI · AI 语法检查器',
         sub: '微调 LLaMA 3',
       },
@@ -905,6 +957,26 @@ const TRANSLATIONS = {
           '1.0 版本开发中，bundle identifier afin.Lentera',
           '读文字已完整集成 Gemini，并有设备端 OCR 兜底',
           '识物体与障碍检测通过 Gemini 运行',
+        ],
+      },
+      chatbots: {
+        eyebrow: '内部产品 · 开发中',
+        title: 'Chatbots',
+        role: '创始人 · 系统架构师',
+        year: '2026',
+        metrics: [['机器人', '3'], ['渠道', 'WA / Telegram'], ['版本', 'v1.0']],
+        overview: '由 AfinLabs AI Solutions 构建的 AI 智能体/聊天机器人合集——第一版，仍处于积极开发阶段，源代码尚未开源。所有机器人共享同一个 RAG 引擎（shared/），遵循一个引擎–多项目模式：AfinLabs 销售智能体、校园网站聊天机器人、花店目录聊天机器人。WhatsApp 与 Telegram 作为同一引擎之上的渠道，并配有管理项目、数据、对话与分析的管理后台。',
+        approach: [
+          'shared/ 中的一个 RAG 引擎驱动所有机器人；每个机器人只是一个项目（projects/&lt;slug&gt;/）——新增机器人只需新建一个文件夹，无需改动核心',
+          '混合检索：Supabase + pgvector（multilingual-e5-base 嵌入）通过 match_chunks RPC，标题带关键词兜底',
+          '语言模型用 Google Gemini；WhatsApp（webhook）与 Telegram（轮询）共享同一引擎',
+          '管理后台：数据摄取、对话接管（takeover）、分析与服务器控制',
+        ],
+        stack: ['Python', 'FastAPI', 'Supabase + pgvector', 'Google Gemini', 'WhatsApp API', 'Telegram Bot API'],
+        results: [
+          '第一版，仍在积极开发中',
+          '一个引擎驱动多个机器人——新机器人只需新增项目文件夹，注册表自动发现',
+          '源代码尚未开源',
         ],
       },
       thesis: {
@@ -1111,22 +1183,26 @@ const TRANSLATIONS = {
         sub: '視覚障がい者向け iOS アプリ',
       },
       r2: {
+        title: 'Chatbots · AIチャットボット基盤',
+        sub: 'AfinLabs AI Solutions · 1つのエンジンで多数のボット（v1）',
+      },
+      r3: {
         title: 'CNNビジョン検査システム',
         sub: 'X-Camp, PT XLSmart Telecom Sejahtera',
       },
-      r3: {
+      r4: {
         title: '船のチケット予約RAGチャットボット',
         sub: 'PT Amman Mineral Internasional',
       },
-      r4: {
+      r5: {
         title: '胸部X線からの肺炎検出',
         sub: '個人プロジェクト',
       },
-      r5: {
+      r6: {
         title: '認知パフォーマンス予測',
         sub: 'ウェアラブル生体信号 · Empatica E4',
       },
-      r6: {
+      r7: {
         title: 'FLUENTI · AI文法チェッカー',
         sub: 'LLaMA 3 のファインチューニング',
       },
@@ -1247,6 +1323,26 @@ const TRANSLATIONS = {
           'バージョン 1.0 を開発中、bundle identifier afin.Lentera',
           '文字読み上げは Gemini と統合、オンデバイス OCR のフォールバック付き',
           '物体認識と障害物検出は Gemini 経由で稼働',
+        ],
+      },
+      chatbots: {
+        eyebrow: '社内プロダクト · 開発中',
+        title: 'Chatbots',
+        role: 'Founder · システムアーキテクト',
+        year: '2026',
+        metrics: [['ボット', '3'], ['チャンネル', 'WA / Telegram'], ['バージョン', 'v1.0']],
+        overview: 'AfinLabs AI Solutions が構築した AIエージェント／チャットボット集——第一版で、現在も開発を続けており、ソースコードは未公開です。すべてのボットは単一のRAGエンジン（shared/）を共有する「1エンジン・多数プロジェクト」方式。AfinLabs営業エージェント、大学サイトのチャットボット、花屋カタログのチャットボットを備えます。WhatsApp と Telegram は同じエンジンの上で動くチャンネルで、プロジェクト・データ・会話・分析を管理する管理ダッシュボード付きです。',
+        approach: [
+          'shared/ の単一RAGエンジンを全ボットで共有。各ボットはプロジェクト（projects/&lt;slug&gt;/）として追加——コアを変えずにフォルダを1つ足すだけ',
+          'ハイブリッド検索：Supabase + pgvector（multilingual-e5-base埋め込み）をmatch_chunks RPC経由で利用、タイトルのキーワードフォールバック付き',
+          '言語モデルは Google Gemini。WhatsApp（webhook）と Telegram（ポーリング）が同じエンジンを共有',
+          'データ取り込み、会話のテイクオーバー、分析、サーバー管理ができる管理ダッシュボード',
+        ],
+        stack: ['Python', 'FastAPI', 'Supabase + pgvector', 'Google Gemini', 'WhatsApp API', 'Telegram Bot API'],
+        results: [
+          '第一版、開発継続中',
+          '1エンジンで多数のボット——新ボットはプロジェクトフォルダを追加するだけでレジストリが自動検出',
+          'ソースコードは未公開',
         ],
       },
       thesis: {

@@ -2,12 +2,13 @@
 export function initProjectModal() {
   let openId = null;
 
-const ORDER = ['ailabs', 'lentera', 'thesis', 'visual-inspection', 'rag-chatbot', 'pneumonia', 'cognitive', 'fluenti'];
+const ORDER = ['ailabs', 'lentera', 'chatbots', 'thesis', 'visual-inspection', 'rag-chatbot', 'pneumonia', 'cognitive', 'fluenti'];
   // number of screenshots per project; files must be named project-<id>-1.jpg ... -N.jpg
   // set to 0 to fall back to a single project-<id>.jpg image
   const SHOTS = {
     ailabs: 3,
     lentera: 4,
+    chatbots: 6,
     thesis: 6,
     'visual-inspection': 3,
     'rag-chatbot': 4,
@@ -19,6 +20,7 @@ const ORDER = ['ailabs', 'lentera', 'thesis', 'visual-inspection', 'rag-chatbot'
   const REAL_IMAGES = {
     ailabs: ['./project-ailabs-1.jpg', './project-ailabs-2.jpg', './project-ailabs-3.jpg'],
     lentera: ['./project-lentera-1.jpeg', './project-lentera-2.jpeg', './project-lentera-3.jpeg', './project-lentera-4.jpeg'],
+    chatbots: ['./project-chatbots-1.png', './project-chatbots-2.png', './project-chatbots-3.png', './project-chatbots-4.png', './project-chatbots-5.png', './project-chatbots-6.png'],
     thesis: ['./project-thesis-1.png', './project-thesis-2.png', './project-thesis-3.png', './project-thesis-4.jpg', './project-thesis-5.jpg', './project-thesis-6.jpg'],
   };
   // projects whose screenshots are phone-portrait shots: keep them fully
