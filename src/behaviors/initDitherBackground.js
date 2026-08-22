@@ -47,17 +47,12 @@ export function initDitherBackground() {
     return true;
   }
 
-  let t=0;
-  function renderFrame(){
-    // The project modal is opaque and covers the dither canvas, and its
-    // carousel needs the CPU cycles: skip the draw loop entirely while open.
-    if(document.body && document.body.classList.contains('modal-open')){
-      rafId = requestAnimationFrame(renderFrame);
-      return;
-    }
+  // Static dither: draw once, no animation loop. The rAF loop is gone so
+  // smooth scrolling keeps the full frame budget (this is the whole point —
+  // the texture stays fixed and costs ~zero after the first paint).
+  function renderOnce(){
     const cw = canvas.width, ch = canvas.height;
-    if(!sourceData || cw===0 || ch===0){ rafId = requestAnimationFrame(renderFrame); return; }
-    t += 0.012;
+    if(!sourceData || cw===0 || ch===0) return;
 
     ctx.clearRect(0,0,cw,ch);
     ctx.fillStyle = '#111315';
@@ -69,8 +64,7 @@ export function initDitherBackground() {
         const r=sourceData[idx], g=sourceData[idx+1], b=sourceData[idx+2];
         const lum = (0.299*r+0.587*g+0.114*b)/255;
 
-        const drift = Math.sin(x*0.18+t*1.3)*Math.cos(y*0.16-t)*0.05;
-        const baseLum = Math.min(1, Math.max(0, lum+drift));
+        const baseLum = Math.min(1, Math.max(0, lum));
 
         const threshold = (BAYER_4X4[y%4][x%4]+0.5)/16;
         const on = baseLum > threshold*0.92;
@@ -85,12 +79,11 @@ export function initDitherBackground() {
         }
       }
     }
-    rafId = requestAnimationFrame(renderFrame);
   }
 
-  img.onload = () => { prepareSource(); rafId = requestAnimationFrame(renderFrame); };
+  img.onload = () => { prepareSource(); renderOnce(); };
   window.addEventListener('resize', () => {
     clearTimeout(resizeTimer);
-    resizeTimer = setTimeout(prepareSource, 120);
+    resizeTimer = setTimeout(() => { prepareSource(); renderOnce(); }, 120);
   });
 }
