@@ -50,6 +50,9 @@
   .letter{display:inline-block; transition:color .08s ease;}
 
   .project-trigger{ background:none; border:none; font:inherit; color:inherit; cursor:pointer; padding-left:0; padding-right:0; }
+  /* divider line under each project row — defined after .project-trigger so
+     its border:none reset cannot strip it (same specificity, later wins). */
+  .project-divider{ border-bottom:1px solid #353C42; }
   /* modal: the panel scrolls internally; cap its height to a fraction of the
      viewport so margins + max-height never exceed the screen on any device. */
   #modalPanel{ max-height:100vh; overflow-y:auto; overscroll-behavior:contain; }
