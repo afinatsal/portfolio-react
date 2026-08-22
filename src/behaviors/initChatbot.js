@@ -36,6 +36,7 @@ export function initChatbot() {
           '<p class="cb-head-sub">AI/ML Engineer</p>' +
         '</div>' +
       '</div>' +
+      '<span class="cb-grip" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><circle cx="9" cy="9" r="2.2"/><circle cx="15" cy="9" r="2.2"/><circle cx="9" cy="15" r="2.2"/><circle cx="15" cy="15" r="2.2"/></svg></span>' +
       '<button type="button" id="chatClose" aria-label="Tutup" class="cb-close">' +
         '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18M6 6l12 12"/></svg>' +
       '</button>' +
@@ -260,6 +261,44 @@ export function initChatbot() {
   input.addEventListener('keydown', e => {
     if(e.key === 'Escape') closePanel();
   });
+
+  // ---- drag the panel by its header (like a movable tab)
+  // The CSS keeps it anchored to the bottom-right corner by default; once the
+  // user drags it, we switch to explicit left/top so it can live anywhere.
+  let drag = null;
+  const head = panel.querySelector('.cb-head');
+  function dragClamp(v, min, max){ return v < min ? min : v > max ? max : v; }
+  function dragStart(e){
+    if(e.button !== 0) return;
+    if(e.target.closest('#chatClose')) return;
+    const r = panel.getBoundingClientRect();
+    drag = { x: e.clientX, y: e.clientY, left: r.left, top: r.top };
+    panel.style.left = r.left + 'px';
+    panel.style.top = r.top + 'px';
+    panel.style.right = 'auto';
+    panel.style.bottom = 'auto';
+    panel.classList.add('cb-dragging');
+    head.setPointerCapture(e.pointerId);
+    e.preventDefault();
+  }
+  function dragMove(e){
+    if(!drag) return;
+    const pad = 12;
+    const w = panel.offsetWidth, h = panel.offsetHeight;
+    const left = dragClamp(drag.left + (e.clientX - drag.x), pad, window.innerWidth - w - pad);
+    const top = dragClamp(drag.top + (e.clientY - drag.y), pad, window.innerHeight - h - pad);
+    panel.style.left = left + 'px';
+    panel.style.top = top + 'px';
+  }
+  function dragEnd(){
+    if(!drag) return;
+    drag = null;
+    panel.classList.remove('cb-dragging');
+  }
+  head.addEventListener('pointerdown', dragStart);
+  head.addEventListener('pointermove', dragMove);
+  head.addEventListener('pointerup', dragEnd);
+  head.addEventListener('pointercancel', dragEnd);
 
   paint();
 }
