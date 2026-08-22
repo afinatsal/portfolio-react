@@ -39,13 +39,24 @@ export function initScrambleName() {
   }
 
   let hx = -9999, hy = -9999;
+  let hovering = false;
+  let rafId = 0;
+  heading.addEventListener('mouseenter', () => {
+    hovering = true;
+    if(!rafId) rafId = requestAnimationFrame(checkProximity);
+  });
   heading.addEventListener('mousemove', e => {
     const rect = heading.getBoundingClientRect();
     hx = e.clientX - rect.left; hy = e.clientY - rect.top;
   });
-  heading.addEventListener('mouseleave', () => { hx=-9999; hy=-9999; });
+  heading.addEventListener('mouseleave', () => {
+    hovering = false; hx = -9999; hy = -9999;
+  });
 
+  // The loop only runs while the cursor is over the name (the effect is
+  // hover-based), so it never consumes frames during normal scrolling.
   function checkProximity(){
+    if(!hovering){ rafId = 0; return; }
     const headingRect = heading.getBoundingClientRect();
     const radius = 70;
     letterEls.forEach(item => {
@@ -55,7 +66,6 @@ export function initScrambleName() {
       const dist = Math.sqrt((cx-hx)**2 + (cy-hy)**2);
       if(dist < radius) scrambleLetter(item);
     });
-    requestAnimationFrame(checkProximity);
+    rafId = requestAnimationFrame(checkProximity);
   }
-  requestAnimationFrame(checkProximity);
 }
