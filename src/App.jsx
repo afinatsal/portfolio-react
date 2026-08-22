@@ -21,7 +21,6 @@ import inlineStylesHtml from './sections/inlineStyles.html?raw'
 
 import {
   initI18n,
-  initDitherBackground,
   initSmoothScroll,
   initScrambleName,
   initDockActive,
@@ -58,7 +57,6 @@ export default function App() {
     // Run the original behaviors once the markup is in the DOM, in the same
     // order they were defined in the original single script.
     initI18n()
-    initDitherBackground()
     const cleanupSmoothScroll = initSmoothScroll()
     initScrambleName()
     initDockActive()
