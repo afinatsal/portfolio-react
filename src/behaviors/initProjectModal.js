@@ -88,7 +88,7 @@ const ORDER = ['ailabs', 'lentera', 'chatbots', 'thesis', 'visual-inspection', '
     } else {
       valueHtml = `<span class="font-display font-semibold text-xl text-ink leading-tight">${val}</span>`;
     }
-    return `<div class="border-t border-line pt-4"><p class="font-mono text-[9px] text-dim tracking-[0.18em] mb-2">${label}</p>${valueHtml}</div>`;
+    return `<div class="border-t border-line pt-4"><p class="font-body text-[9px] text-dim tracking-[0.18em] mb-2">${label}</p>${valueHtml}</div>`;
   }
 
   let carouselApi = null;
@@ -389,7 +389,7 @@ const ORDER = ['ailabs', 'lentera', 'chatbots', 'thesis', 'visual-inspection', '
     const hostname = link ? link.replace(/^https?:\/\//, '').split('/')[0] : '';
     const metaRow = (label, valueHtml) =>
       `<div class="flex items-baseline justify-between gap-6 py-3.5 border-b border-line last:border-b-0">
-        <p class="font-mono text-[9px] tracking-[0.18em] text-dim shrink-0">${label}</p>
+        <p class="font-body text-[9px] tracking-[0.18em] text-dim shrink-0">${label}</p>
         <p class="font-display font-medium text-[15px] text-ink text-right leading-snug min-w-0">${valueHtml}</p>
       </div>`;
     const srcLink = link
@@ -418,7 +418,7 @@ const ORDER = ['ailabs', 'lentera', 'chatbots', 'thesis', 'visual-inspection', '
     }
 
     elApproach.innerHTML = p.approach.map((item, i) =>
-      `<li class="flex gap-4 font-body text-[15px] text-ink leading-relaxed"><span class="font-mono text-[11px] text-dim/70 shrink-0 pt-[2px]">${String(i + 1).padStart(2, '0')}</span><span>${item}</span></li>`
+      `<li class="flex gap-4 font-body text-[15px] text-ink leading-relaxed"><span class="font-body text-[11px] text-dim/70 shrink-0 pt-[2px]">${String(i + 1).padStart(2, '0')}</span><span>${item}</span></li>`
     ).join('');
 
     elResults.innerHTML = (p.results || []).map(item =>
@@ -426,7 +426,7 @@ const ORDER = ['ailabs', 'lentera', 'chatbots', 'thesis', 'visual-inspection', '
     ).join('');
 
     elStack.innerHTML = p.stack.map(s =>
-      `<span class="font-mono text-[11px] text-ink border border-line rounded-full px-3 py-1.5">${s}</span>`
+      `<span class="font-body text-[11px] text-ink border border-line rounded-full px-3 py-1.5">${s}</span>`
     ).join('');
 
     renderFooter(id);
@@ -444,7 +444,7 @@ const ORDER = ['ailabs', 'lentera', 'chatbots', 'thesis', 'visual-inspection', '
     return `<button type="button" data-nav="${id}" class="project-trigger group flex items-center gap-3 text-left py-1.5 transition-colors">
       ${dir === 'prev' ? arrow : ''}
       <span class="min-w-0">
-        <span class="block font-mono text-[9px] tracking-[0.15em] text-dim mb-1">${label}</span>
+        <span class="block font-body text-[9px] tracking-[0.15em] text-dim mb-1">${label}</span>
         <span class="block font-display font-medium text-[15px] text-dim group-hover:text-ink leading-snug line-clamp-2 transition-colors">${p.title}</span>
       </span>
       ${dir === 'next' ? arrow : ''}
