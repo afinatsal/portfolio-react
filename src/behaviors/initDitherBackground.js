@@ -8,8 +8,16 @@ export function initDitherBackground() {
   ];
   const canvas = document.getElementById('ditherCanvas');
   const ctx = canvas.getContext('2d');
+  ctx.imageSmoothingEnabled = false;
   const sourceCanvas = document.createElement('canvas');
   const sourceCtx = sourceCanvas.getContext('2d', { willReadFrequently:true });
+  // Offscreen dither at grid resolution; drawn once, then blitted to the
+  // full-size canvas each frame (one drawImage instead of thousands of
+  // fillRect calls per frame).
+  const grid = document.createElement('canvas');
+  const gctx = grid.getContext('2d');
+  gctx.imageSmoothingEnabled = false;
+  let gridStale = true;
 
   let sourceData=null, bw=0, bh=0, cell=8, rafId=0, resizeTimer;
   const img = new Image();
@@ -26,11 +34,14 @@ export function initDitherBackground() {
     const cw = canvas.width, ch = canvas.height;
     if(cw===0||ch===0) return false;
 
-    cell = Math.max(3, Math.round(Math.min(cw,ch)/220));
+    cell = Math.max(4, Math.round(Math.min(cw,ch)/120));
     bw = Math.ceil(cw/cell);
     bh = Math.ceil(ch/cell);
     sourceCanvas.width = bw;
     sourceCanvas.height = bh;
+    grid.width = bw;
+    grid.height = bh;
+    gridStale = true;
 
     const ir = img.naturalWidth/img.naturalHeight;
     const cr = bw/bh;
@@ -49,24 +60,14 @@ export function initDitherBackground() {
 
   let t=0;
   let visible = true;
-  function renderFrame(){
-    // The project modal is opaque and covers the dither canvas, and its
-    // carousel needs the CPU cycles: skip the draw loop entirely while open.
-    if(document.body && document.body.classList.contains('modal-open')){
-      rafId = requestAnimationFrame(renderFrame);
-      return;
-    }
-    // The landing section is off-screen: stop consuming frames so Lenis
-    // smooth scrolling keeps the full frame budget to itself.
-    if(!visible) return;
-    const cw = canvas.width, ch = canvas.height;
-    if(!sourceData || cw===0 || ch===0){ rafId = requestAnimationFrame(renderFrame); return; }
-    t += 0.012;
-
-    ctx.clearRect(0,0,cw,ch);
-    ctx.fillStyle = '#111315';
-    ctx.fillRect(0,0,cw,ch);
-
+  let lastGrid = 0;
+  // Rebuild the dither grid on the small offscreen canvas. Runs at a slow
+  // cadence (~150ms) so the ambient drift stays alive without re-loopsing
+  // the whole grid every frame.
+  function drawGrid(){
+    gctx.clearRect(0,0,bw,bh);
+    gctx.fillStyle = '#111315';
+    gctx.fillRect(0,0,bw,bh);
     for(let y=0;y<bh;y++){
       for(let x=0;x<bw;x++){
         const idx = (y*bw+x)*4;
@@ -80,15 +81,35 @@ export function initDitherBackground() {
         const on = baseLum > threshold*0.92;
 
         if(on){
-          const size = cell*(0.35+baseLum*0.55);
+          const size = 0.35+baseLum*0.55;
           const shade = Math.min(241, Math.max(70, 100 + baseLum*130));
-          ctx.fillStyle = `rgb(${shade},${shade*1.005},${shade*0.99})`;
-          const dpx = x*cell + (cell-size)/2;
-          const dpy = y*cell + (cell-size)/2;
-          ctx.fillRect(dpx, dpy, size, size);
+          gctx.fillStyle = `rgb(${shade},${shade*1.005},${shade*0.99})`;
+          const off = (1-size)/2;
+          gctx.fillRect(x+off, y+off, size, size);
         }
       }
     }
+    gridStale = false;
+  }
+  function renderFrame(now){
+    // The project modal is opaque and covers the dither canvas, and its
+    // carousel needs the CPU cycles: skip the draw loop entirely while open.
+    if(document.body && document.body.classList.contains('modal-open')){
+      rafId = requestAnimationFrame(renderFrame);
+      return;
+    }
+    // The landing section is off-screen: stop consuming frames so Lenis
+    // smooth scrolling keeps the full frame budget to itself.
+    if(!visible) return;
+    const cw = canvas.width, ch = canvas.height;
+    if(!sourceData || cw===0 || ch===0){ rafId = requestAnimationFrame(renderFrame); return; }
+    t += 0.012;
+
+    if(gridStale || now - lastGrid > 150){
+      drawGrid();
+      lastGrid = now;
+    }
+    ctx.drawImage(grid, 0, 0, bw, bh, 0, 0, cw, ch);
     rafId = requestAnimationFrame(renderFrame);
   }
 
