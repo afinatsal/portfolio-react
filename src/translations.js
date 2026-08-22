@@ -11,7 +11,7 @@ const TRANSLATIONS = {
     },
     about: {
       label: '02 · TENTANG',
-      heading: 'Saya AI/ML engineer yang membangun sistem computer vision, dari riset hingga sistem yang benar-benar berjalan di produksi.',
+      heading: 'Saya AI/ML engineer yang membangun AI agent, computer vision, dan aplikasi yang menghubungkannya untuk kebutuhan kerja nyata, dari riset hingga produksi.',
       body: 'Perjalanan saya dari riset skripsi deteksi sampah, dua program magang industri, hingga studio AI sendiri. Berbasis di Malang, Indonesia, dan terbuka untuk magang atau full-time.',
       educationLabel: 'PENDIDIKAN',
       educationVal: 'Universitas<br>Brawijaya',
@@ -377,7 +377,7 @@ const TRANSLATIONS = {
     },
     about: {
       label: '02 · ABOUT',
-      heading: 'I\'m an AI/ML engineer who builds computer vision systems, from research to systems that actually run in production.',
+      heading: 'I\'m an AI/ML engineer who builds AI agents, computer vision, and the apps that connect them to real work, from research to production.',
       body: 'My path runs from thesis research on waste detection through two industry internships to running my own AI studio. Based in Malang, Indonesia, and open to internships or full-time.',
       educationLabel: 'EDUCATION',
       educationVal: 'Universitas<br>Brawijaya',
@@ -743,7 +743,7 @@ const TRANSLATIONS = {
     },
     about: {
       label: '02 · 关于我',
-      heading: '我是一名 AI/ML 工程师，构建从研究到真正投入生产的计算机视觉系统。',
+      heading: '我是一名 AI/ML 工程师，构建 AI 智能体、计算机视觉，以及把它们应用到实际工作的应用，从研究到生产。',
       body: '我的经历从毕业论文的垃圾检测研究，到两次行业实习，再到运营自己的 AI 工作室。常驻印度尼西亚玛琅，欢迎实习或全职机会。',
       educationLabel: '教育',
       educationVal: '布拉维加亚<br>大学',
@@ -1109,7 +1109,7 @@ const TRANSLATIONS = {
     },
     about: {
       label: '02 · プロフィール',
-      heading: 'コンピュータビジョンシステムを、研究から実際に本番で動くところまで構築する AI/ML エンジニアです。',
+      heading: 'AIエージェントやコンピュータビジョン、そしてそれらを実際の仕事につなぐアプリを、研究から本番まで構築する AI/ML エンジニアです。',
       body: '卒業研究のゴミ検出から 2 つの企業インターンシップ、そして自身の AI スタジオ運営まで。インドネシア・マランを拠点に、インターンや正社員の機会を募集中です。',
       educationLabel: '学歴',
       educationVal: 'ブラウィジャヤ<br>大学',

@@ -9,7 +9,7 @@ Dokumen ini adalah satu-satunya sumber fakta untuk chatbot portofolio. Jawab HAN
 - Posisi: AI/ML Engineer, spesialisasi Computer Vision dan Applied Deep Learning
 - Eyebrow di situs: "AI/ML ENGINEER · INDONESIA"
 - Tagline: "Membangun sistem AI dari riset ke produksi, dari notebook hingga deployment."
-- Heading Tentang: "Saya AI/ML engineer yang membangun sistem computer vision, dari riset hingga sistem yang benar-benar berjalan di produksi."
+- Heading Tentang: "Saya AI/ML engineer yang membangun AI agent, computer vision, dan aplikasi yang menghubungkannya untuk kebutuhan kerja nyata, dari riset hingga produksi."
 - Lokasi: Malang, Indonesia
 - Status: Terbuka untuk magang atau full-time
 - Umur / detail pribadi lain: tidak dicantumkan di situs, jangan mengarang.
