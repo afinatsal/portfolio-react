@@ -230,6 +230,11 @@
     @keyframes progressGrow{ to{ transform:scaleX(1); } }
   }
 
+  /* section eyebrow labels: Inter instead of mono */
+  .sec-label{
+    font-family:"Inter Variable", Inter, system-ui, -apple-system, sans-serif;
+  }
+
   /* tactile press feedback */
   .project-trigger, #copyEmailBtn, #dock a.dock-link, .contact-link{ -webkit-tap-highlight-color:transparent; }
   .project-trigger:active{ transform:scale(.985); }
