@@ -25,7 +25,10 @@ const ORDER = ['ailabs', 'lentera', 'chatbots', 'thesis', 'visual-inspection', '
   };
   // projects whose screenshots are phone-portrait shots: keep them fully
   // visible (contain) on the wide stage instead of cropping to fill it.
-  const CONTAIN = new Set(['lentera']);
+  const CONTAIN = new Set(['lentera', 'chatbots']);
+  // projects whose screenshots are wide landscape shots: keep the whole image
+  // visible edge-to-edge (contain) and let any leftover stay as soft bars.
+  const WIDE_CONTAIN = new Set(['chatbots']);
   // optional architecture/system diagram shown in the story column
   const ARCH = { thesis: './project-thesis-arch.jpg' };
   // per-photo object-position when the shot is cropped to fill the slide
@@ -136,7 +139,7 @@ const ORDER = ['ailabs', 'lentera', 'chatbots', 'thesis', 'visual-inspection', '
       const r = k % count;
       const num = String(r + 1).padStart(2, '0');
       const tot = String(count).padStart(2, '0');
-      const contain = CONTAIN.has(id) ? ' pc-slide--contain' : '';
+      const contain = CONTAIN.has(id) ? ` pc-slide--contain${WIDE_CONTAIN.has(id) ? ' pc-slide--contain-wide' : ''}` : '';
       const focus = (FOCUS[id] || {})[String(r + 1)];
       return `<div class="pc-slide${contain}" role="group" aria-label="Slide ${r + 1}" data-real="${r}">
         <span class="pc-glyph" aria-hidden="true">${num} / ${tot}</span>
