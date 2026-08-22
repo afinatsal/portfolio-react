@@ -47,12 +47,21 @@ export function initDitherBackground() {
     return true;
   }
 
-  // Static dither: draw once, no animation loop. The rAF loop is gone so
-  // smooth scrolling keeps the full frame budget (this is the whole point —
-  // the texture stays fixed and costs ~zero after the first paint).
-  function renderOnce(){
+  // Animated dither with visibility gating: it shimmers while the landing
+  // section is on screen, and the rAF loop stops entirely the moment it
+  // scrolls out of view, leaving the full frame budget to Lenis.
+  let t = 0;
+  let visible = true;
+  let running = false;
+  function renderFrame(){
+    if(!visible){ running = false; return; }
+    if(document.body && document.body.classList.contains('modal-open')){
+      rafId = requestAnimationFrame(renderFrame);
+      return;
+    }
     const cw = canvas.width, ch = canvas.height;
-    if(!sourceData || cw===0 || ch===0) return;
+    if(!sourceData || cw===0 || ch===0){ rafId = requestAnimationFrame(renderFrame); return; }
+    t += 0.012;
 
     ctx.clearRect(0,0,cw,ch);
     ctx.fillStyle = '#111315';
@@ -64,7 +73,8 @@ export function initDitherBackground() {
         const r=sourceData[idx], g=sourceData[idx+1], b=sourceData[idx+2];
         const lum = (0.299*r+0.587*g+0.114*b)/255;
 
-        const baseLum = Math.min(1, Math.max(0, lum));
+        const drift = Math.sin(x*0.18+t*1.3)*Math.cos(y*0.16-t)*0.05;
+        const baseLum = Math.min(1, Math.max(0, lum+drift));
 
         const threshold = (BAYER_4X4[y%4][x%4]+0.5)/16;
         const on = baseLum > threshold*0.92;
@@ -79,11 +89,26 @@ export function initDitherBackground() {
         }
       }
     }
+    rafId = requestAnimationFrame(renderFrame);
+  }
+  function startLoop(){
+    if(running) return;
+    running = true;
+    rafId = requestAnimationFrame(renderFrame);
   }
 
-  img.onload = () => { prepareSource(); renderOnce(); };
+  // Restart the animation whenever the landing section comes back on screen.
+  if('IntersectionObserver' in window){
+    const io = new IntersectionObserver((entries) => {
+      visible = entries[0].isIntersecting;
+      if(visible) startLoop();
+    }, { threshold: 0 });
+    io.observe(canvas);
+  }
+
+  img.onload = () => { prepareSource(); startLoop(); };
   window.addEventListener('resize', () => {
     clearTimeout(resizeTimer);
-    resizeTimer = setTimeout(() => { prepareSource(); renderOnce(); }, 120);
+    resizeTimer = setTimeout(() => { prepareSource(); startLoop(); }, 120);
   });
 }
