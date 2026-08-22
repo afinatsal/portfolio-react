@@ -48,6 +48,7 @@ export function initDitherBackground() {
   }
 
   let t=0;
+  let visible = true;
   function renderFrame(){
     // The project modal is opaque and covers the dither canvas, and its
     // carousel needs the CPU cycles: skip the draw loop entirely while open.
@@ -55,6 +56,9 @@ export function initDitherBackground() {
       rafId = requestAnimationFrame(renderFrame);
       return;
     }
+    // The landing section is off-screen: stop consuming frames so Lenis
+    // smooth scrolling keeps the full frame budget to itself.
+    if(!visible) return;
     const cw = canvas.width, ch = canvas.height;
     if(!sourceData || cw===0 || ch===0){ rafId = requestAnimationFrame(renderFrame); return; }
     t += 0.012;
@@ -86,6 +90,16 @@ export function initDitherBackground() {
       }
     }
     rafId = requestAnimationFrame(renderFrame);
+  }
+
+  // Only animate while the landing section is on screen; restart when it
+  // comes back into view.
+  if('IntersectionObserver' in window){
+    const io = new IntersectionObserver((entries) => {
+      visible = entries[0].isIntersecting;
+      if(visible && sourceData) rafId = requestAnimationFrame(renderFrame);
+    }, { threshold: 0 });
+    io.observe(canvas);
   }
 
   img.onload = () => { prepareSource(); rafId = requestAnimationFrame(renderFrame); };
