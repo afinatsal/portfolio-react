@@ -1,6 +1,5 @@
 import { initI18n } from './initI18n.js'
 import { initDitherBackground } from './initDitherBackground.js'
-import { initSmoothScroll } from './initSmoothScroll.js'
 import { initScrambleName } from './initScrambleName.js'
 import { initDockActive } from './initDockActive.js'
 import { initScrollReveal } from './initScrollReveal.js'
@@ -14,7 +13,6 @@ import { initChatbot } from './initChatbot.js'
 export {
   initI18n,
   initDitherBackground,
-  initSmoothScroll,
   initScrambleName,
   initDockActive,
   initScrollReveal,
