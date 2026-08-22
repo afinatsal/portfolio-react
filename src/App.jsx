@@ -22,6 +22,7 @@ import inlineStylesHtml from './sections/inlineStyles.html?raw'
 import {
   initI18n,
   initDitherBackground,
+  initHeavyScroll,
   initScrambleName,
   initDockActive,
   initScrollReveal,
@@ -58,6 +59,7 @@ export default function App() {
     // order they were defined in the original single script.
     initI18n()
     initDitherBackground()
+    initHeavyScroll()
     initScrambleName()
     initDockActive()
     initScrollReveal()
