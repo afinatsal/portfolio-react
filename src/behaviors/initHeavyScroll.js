@@ -26,12 +26,14 @@ export function initHeavyScroll() {
     const diff = target - current;
     if(Math.abs(diff) < 0.5){
       current = target;
-      window.scrollTo(0, current);
+      window.scrollTo({ top: current, behavior: 'instant' });
       running = false;
       return;
     }
     current += diff * LERP;
-    window.scrollTo(0, current);
+    // behavior:'instant' is essential: the page uses scroll-behavior:smooth,
+    // and a smooth scrollTo every frame would fight itself (net movement ~0).
+    window.scrollTo({ top: current, behavior: 'instant' });
     requestAnimationFrame(step);
   }
   function onWheel(e){
