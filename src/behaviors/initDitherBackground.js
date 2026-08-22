@@ -64,7 +64,7 @@ export function initDitherBackground() {
     t += 0.012;
 
     ctx.clearRect(0,0,cw,ch);
-    ctx.fillStyle = '#111315';
+    ctx.fillStyle = '#000000';
     ctx.fillRect(0,0,cw,ch);
 
     for(let y=0;y<bh;y++){

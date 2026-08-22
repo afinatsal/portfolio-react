@@ -4,7 +4,7 @@
 
 
   html{scroll-behavior:smooth;}
-  body{background:#111315;}
+  body{background:#000000;}
   ::selection{background:#BFFAF5; color:#111315;}
 
   /* custom scrollbar - thin, theme-matched */
@@ -13,7 +13,7 @@
   ::-webkit-scrollbar-track{background:transparent;}
   ::-webkit-scrollbar-thumb{
     background:#353C42; border-radius:999px;
-    border:2px solid #111315;
+    border:2px solid #000;
   }
   ::-webkit-scrollbar-thumb:hover{background:#4A545B;}
 
@@ -21,21 +21,21 @@
   .vignette{
     position:absolute; inset:0; z-index:1; pointer-events:none;
     background:
-      radial-gradient(ellipse at 68% 45%, transparent 25%, #111315 88%),
-      linear-gradient(180deg, rgba(17,19,21,0.55) 0%, transparent 18%, transparent 60%, #191C1F 100%);
+      radial-gradient(ellipse at 68% 45%, transparent 25%, #000 88%),
+      linear-gradient(180deg, rgba(0,0,0,0.55) 0%, transparent 18%, transparent 60%, #000 100%);
   }
 
   /* Transition landing → About: warna hero dilebur ke warna section berikutnya,
      lalu garis dan konten About masuk secara bertahap saat discroll. */
   #home::after{
     content:""; position:absolute; inset:auto 0 0; z-index:2; height:28%; pointer-events:none;
-    background:linear-gradient(180deg, transparent 0%, #191C1F 100%);
+    background:linear-gradient(180deg, transparent 0%, #000 100%);
   }
 
   .section-transition{isolation:isolate; overflow:hidden;}
   .section-transition::before{
     content:""; position:absolute; z-index:-1; inset:0 0 auto; height:150px; pointer-events:none;
-    background:linear-gradient(180deg, #191C1F 0%, rgba(25,28,31,0) 100%);
+    background:linear-gradient(180deg, #000 0%, rgba(0,0,0,0) 100%);
   }
 
   /* film-grain texture, subtle, across whole page */
@@ -377,7 +377,7 @@
   .cb-body .cb-ul{ margin:2px 0 6px; padding-left:18px; display:flex; flex-direction:column; gap:3px; }
   .cb-body a.cb-link{ color:#BFFAF5; text-decoration:underline; text-underline-offset:3px; }
   .cb-body code.cb-ic{ font-family:"JetBrains Mono", monospace; font-size:12px; background:rgba(255,255,255,.07); border:1px solid #353C42; border-radius:5px; padding:1px 5px; }
-  .cb-body pre.cb-code{ background:#111315; border:1px solid #353C42; border-radius:8px; padding:10px 12px; overflow-x:auto; margin:4px 0 8px; }
+  .cb-body pre.cb-code{ background:#000; border:1px solid #353C42; border-radius:8px; padding:10px 12px; overflow-x:auto; margin:4px 0 8px; }
   .cb-body pre.cb-code code{ font-family:"JetBrains Mono", monospace; font-size:12px; color:#BFFAF5; }
   .cb-user{ align-self:flex-end; }
   .cb-user .cb-meta{ text-align:right; color:#74E6D5; }
@@ -400,7 +400,7 @@
   .cb-chip:active{ transform:translateY(0) scale(.97); }
   .cb-form{ display:flex; align-items:center; gap:8px; padding:12px 14px; border-top:1px solid #2E3438; }
   .cb-input{
-    flex:1; min-width:0; background:#111315; border:1px solid #2E3438; border-radius:999px;
+    flex:1; min-width:0; background:#000; border:1px solid #2E3438; border-radius:999px;
     padding:10px 15px; color:#F1F4F2; font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; font-size:14px; outline:none;
     transition:border-color .2s, box-shadow .2s;
   }
