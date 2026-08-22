@@ -109,6 +109,9 @@ export function initDitherBackground() {
       drawGrid();
       lastGrid = now;
     }
+    // Resizing the canvas resets context state, so re-assert crisp upscaling
+    // right before the blit (imageSmoothingEnabled defaults back to true).
+    ctx.imageSmoothingEnabled = false;
     ctx.drawImage(grid, 0, 0, bw, bh, 0, 0, cw, ch);
     rafId = requestAnimationFrame(renderFrame);
   }
