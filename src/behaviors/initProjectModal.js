@@ -84,9 +84,9 @@ const ORDER = ['ailabs', 'lentera', 'chatbots', 'thesis', 'visual-inspection', '
       const decimals = m[2].includes('.') ? m[2].split('.')[1].length : 0;
       const prefix = m[1] === '<' ? '&lt;' : '';
       const suffix = m[3] + m[4];
-      valueHtml = `<span class="font-display font-semibold text-lg text-ink tabular-nums tracking-tight" data-count="${m[2]}" data-decimals="${decimals}"${prefix ? ` data-prefix="${prefix}"` : ''}${suffix ? ` data-suffix="${suffix}"` : ''}>${prefix}${m[2]}${suffix}</span>`;
+      valueHtml = `<span class="font-display font-semibold text-xl text-ink tabular-nums tracking-tight" data-count="${m[2]}" data-decimals="${decimals}"${prefix ? ` data-prefix="${prefix}"` : ''}${suffix ? ` data-suffix="${suffix}"` : ''}>${prefix}${m[2]}${suffix}</span>`;
     } else {
-      valueHtml = `<span class="font-display font-semibold text-lg text-ink leading-tight">${val}</span>`;
+      valueHtml = `<span class="font-display font-semibold text-xl text-ink leading-tight">${val}</span>`;
     }
     return `<div class="border-t border-line pt-4"><p class="font-mono text-[9px] text-dim tracking-[0.18em] mb-2">${label}</p>${valueHtml}</div>`;
   }
@@ -390,7 +390,7 @@ const ORDER = ['ailabs', 'lentera', 'chatbots', 'thesis', 'visual-inspection', '
     const metaRow = (label, valueHtml) =>
       `<div class="flex items-baseline justify-between gap-6 py-3.5 border-b border-line last:border-b-0">
         <p class="font-mono text-[9px] tracking-[0.18em] text-dim shrink-0">${label}</p>
-        <p class="font-display font-medium text-[14px] text-ink text-right leading-snug min-w-0">${valueHtml}</p>
+        <p class="font-display font-medium text-[15px] text-ink text-right leading-snug min-w-0">${valueHtml}</p>
       </div>`;
     const srcLink = link
       ? metaRow(UI.source || 'SUMBER', `<a href="${link}" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 text-dim hover:text-ink transition-colors">${isGitHub ? githubSvg : globeSvg}<span class="underline decoration-dim/40 underline-offset-4 hover:decoration-ink">${isGitHub ? 'GitHub' : hostname}</span></a>`)
@@ -418,11 +418,11 @@ const ORDER = ['ailabs', 'lentera', 'chatbots', 'thesis', 'visual-inspection', '
     }
 
     elApproach.innerHTML = p.approach.map((item, i) =>
-      `<li class="flex gap-4 font-body text-[15px] text-ink leading-relaxed"><span class="font-mono text-[11px] text-dim/70 shrink-0 pt-[2px]">${String(i + 1).padStart(2, '0')}</span><span>${item}</span></li>`
+      `<li class="flex gap-4 font-body text-base text-ink leading-relaxed"><span class="font-mono text-[11px] text-dim/70 shrink-0 pt-[2px]">${String(i + 1).padStart(2, '0')}</span><span>${item}</span></li>`
     ).join('');
 
     elResults.innerHTML = (p.results || []).map(item =>
-      `<li class="flex gap-3.5 font-body text-[15px] text-ink leading-relaxed"><span class="h-1.5 w-1.5 rounded-full bg-dim/60 shrink-0 mt-[10px]" aria-hidden="true"></span><span>${item}</span></li>`
+      `<li class="flex gap-3.5 font-body text-base text-ink leading-relaxed"><span class="h-1.5 w-1.5 rounded-full bg-dim/60 shrink-0 mt-[10px]" aria-hidden="true"></span><span>${item}</span></li>`
     ).join('');
 
     elStack.innerHTML = p.stack.map(s =>
@@ -445,7 +445,7 @@ const ORDER = ['ailabs', 'lentera', 'chatbots', 'thesis', 'visual-inspection', '
       ${dir === 'prev' ? arrow : ''}
       <span class="min-w-0">
         <span class="block font-mono text-[9px] tracking-[0.15em] text-dim mb-1">${label}</span>
-        <span class="block font-display font-medium text-[14px] text-dim group-hover:text-ink leading-snug line-clamp-2 transition-colors">${p.title}</span>
+        <span class="block font-display font-medium text-[15px] text-dim group-hover:text-ink leading-snug line-clamp-2 transition-colors">${p.title}</span>
       </span>
       ${dir === 'next' ? arrow : ''}
     </button>`;
