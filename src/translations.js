@@ -380,7 +380,7 @@ const TRANSLATIONS = {
       heading: 'I\'m an AI/ML engineer who builds AI agents, computer vision, and the apps that connect them to real work, from research to production.',
       body: 'My path runs from thesis research on waste detection through two industry internships to running my own AI studio. Based in Malang, Indonesia, and open to internships or full-time.',
       educationLabel: 'EDUCATION',
-      educationVal: 'Universitas<br>Brawijaya',
+      educationVal: 'Brawijaya<br>University',
       gpaLabel: 'GPA',
       locationLabel: 'LOCATION',
       locationVal: 'Malang,<br>Indonesia',
