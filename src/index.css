@@ -161,10 +161,9 @@
   /* numbered approach rows - accent index, aligned text */
   #modalApproach li{ counter-increment:none; }
 
-  /* Nama perusahaan adalah detail penting: cyan memberi penekanan tanpa
-     memakai warna lime yang sudah dipakai khusus untuk status/availability. */
+  /* Nama perusahaan adalah detail penting: merah memberi penekanan. */
   .company-highlight{
-    color:#BFFAF5;
+    color:#FF4D4D;
     display:inline;
     padding-bottom:2px;
     border-bottom:1px solid rgba(191,250,245,.5);
@@ -259,11 +258,11 @@
 
   /* experience keywords that jump to a project row */
   .exp-link{
-    color:#74E6D5; text-decoration:underline; text-underline-offset:3px;
-    text-decoration-color:rgba(116,230,213,.5); cursor:pointer;
+    color:#FF4D4D; text-decoration:underline; text-underline-offset:3px;
+    text-decoration-color:rgba(255,77,77,.5); cursor:pointer;
     transition:color .2s, text-decoration-color .2s;
   }
-  .exp-link:hover{ color:#FF4D4D; text-decoration-color:#FF4D4D; }
+  .exp-link:hover{ color:#FF8080; text-decoration-color:#FF8080; }
 
   /* flash highlight on the project row after jumping to it */
   .project-highlight{ animation:rowFlash 1.6s cubic-bezier(.16,1,.3,1); }
