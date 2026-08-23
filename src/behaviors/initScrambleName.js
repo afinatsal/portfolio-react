@@ -27,21 +27,21 @@ export function initScrambleName() {
     });
   });
 
-  // Entrance: after a 1s pause, each character slides up out of its mask,
-  // staggered left to right (skipped for reduced-motion users).
+  // Entrance: after a 1s pause, each LINE slides up out of its mask as a unit
+  // (all characters together), name lines first, then eyebrow + tagline via
+  // their own delays. Skipped for reduced-motion users.
   const reduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  if(!reduced && letterEls.length){
-    const letters = letterEls.map(item => item.el);
-    letters.forEach(el => {
-      el.style.opacity = '0';
-      el.style.transform = 'translateY(110%)';
+  if(!reduced && lines.length){
+    lines.forEach(line => {
+      line.style.opacity = '0';
+      line.style.transform = 'translateY(110%)';
     });
     setTimeout(() => {
-      letters.forEach((el, i) => {
-        el.style.transition = 'transform .8s cubic-bezier(.16,1,.3,1), opacity .8s cubic-bezier(.16,1,.3,1)';
-        el.style.transitionDelay = `${i * 45}ms`;
-        el.style.opacity = '1';
-        el.style.transform = 'translateY(0)';
+      lines.forEach((line, i) => {
+        line.style.transition = 'transform .9s cubic-bezier(.16,1,.3,1), opacity .9s cubic-bezier(.16,1,.3,1)';
+        line.style.transitionDelay = `${i * 140}ms`;
+        line.style.opacity = '1';
+        line.style.transform = 'translateY(0)';
       });
     }, 1000);
   }
