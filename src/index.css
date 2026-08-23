@@ -178,10 +178,10 @@
      IBM, DeepLearning.AI, Stanford) stands out without needing logos */
   .cert-org{ font-weight:500; }
   .cert-org img{ display:none; }
-  .cert-org-google{ color:#8AB4F8; }
-  .cert-org-ibm{ color:#8BB0FF; }
-  .cert-org-dlai{ color:#B79BF8; }
-  .cert-org-stanford{ color:#F08A8A; }
+  .cert-org-google{ color:#F5F0EB; }
+  .cert-org-ibm{ color:#F5F0EB; }
+  .cert-org-dlai{ color:#F5F0EB; }
+  .cert-org-stanford{ color:#F5F0EB; }
 
   /* project thumbnails: flat surface + thin border; the pale JPEG fills the
      tile, nothing gradient behind the photo */
