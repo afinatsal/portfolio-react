@@ -1,15 +1,15 @@
 <style>
-  .active-dock{ background:#F1F4F2 !important; color:#111315 !important; }
+  .active-dock{ background:#F5F0EB !important; color:#111315 !important; }
   .dock-link{ will-change:transform; }
   .dock-tooltip{
     position:absolute; bottom:calc(100% + 14px); left:50%; transform:translateX(-50%) translateY(4px);
     font-family:"Archivo", "Helvetica Neue", Arial, sans-serif; font-size:12px; letter-spacing:0.02em;
-    color:#F1F4F2; background:#252A2E; border:1px solid #353C42;
+    color:#F5F0EB; background:#252A2E; border:1px solid #353C42;
     padding:5px 10px; border-radius:8px; white-space:nowrap;
     opacity:0; pointer-events:none; transition:opacity .18s ease, transform .18s ease;
   }
   .dock-link:hover .dock-tooltip{ opacity:1; transform:translateX(-50%) translateY(0); }
-  .dock-link:hover:not(.active-dock){ background:rgba(241,244,242,0.1); color:#F1F4F2; }
+  .dock-link:hover:not(.active-dock){ background:rgba(245,240,235,0.1); color:#F5F0EB; }
   .dock-link{ transition: transform 150ms ease-out, background-color .25s ease, color .25s ease; }
   .dock-link:hover{ transform: translateY(-4px) scale(1.12); }
   .dock-link:active{ transform: translateY(-2px) scale(0.96); }
