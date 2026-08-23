@@ -10,7 +10,6 @@ import { initSkillsMarquee } from './initSkillsMarquee.js'
 import { initMusicPlayer } from './initMusicPlayer.js'
 import { initChatbot } from './initChatbot.js'
 import { initProjectLinks } from './initProjectLinks.js'
-import { initThumbMotion } from './initThumbMotion.js'
 
 export {
   initI18n,
@@ -25,5 +24,4 @@ export {
   initMusicPlayer,
   initChatbot,
   initProjectLinks,
-  initThumbMotion,
 }

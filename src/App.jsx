@@ -32,7 +32,6 @@ import {
   initMusicPlayer,
   initChatbot,
   initProjectLinks,
-  initThumbMotion,
 } from './behaviors/index.js'
 
 const MARKUP = [
@@ -70,7 +69,6 @@ export default function App() {
     initMusicPlayer()
     initChatbot()
     initProjectLinks()
-    initThumbMotion()
 
     return () => {
       document.body.classList.remove('modal-open')
