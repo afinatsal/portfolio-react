@@ -34,7 +34,7 @@ export function initScrambleName() {
         return;
       }
       item.el.textContent = CHARS[Math.floor(Math.random()*CHARS.length)];
-      item.el.style.color = '#BFFAF5';
+      item.el.style.color = '#FF5C28';
     }, stepTime);
   }
 

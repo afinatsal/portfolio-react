@@ -5,7 +5,7 @@
 
   html{scroll-behavior:smooth;}
   body{background:#000000;}
-  ::selection{background:#BFFAF5; color:#111315;}
+  ::selection{background:#FF5C28; color:#111315;}
 
   /* custom scrollbar - thin, theme-matched */
   *{scrollbar-width:thin; scrollbar-color:#353C42 transparent;}
