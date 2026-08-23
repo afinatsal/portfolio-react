@@ -287,7 +287,7 @@
   /* rows animate as the cursor passes them during scroll — JS adds .is-hot
      (mirrors the :hover / group-hover effects without waiting for scroll end) */
   .project-trigger.is-hot > span:nth-child(2),
-  #certifications .group.is-hot > span:nth-child(2){ transform:translateX(0.75rem); }
+  #certifications .group.is-hot > span:nth-child(2){ transform:translateX(1.25rem); }
   .project-trigger.is-hot > svg,
   #certifications .group.is-hot > svg{ opacity:1; transform:translateX(0); color:#FF5C28; }
   .project-trigger.is-hot > span:first-child,
