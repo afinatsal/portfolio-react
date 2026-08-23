@@ -29,8 +29,12 @@ export function initExpTimeline() {
     p = Math.min(1, Math.max(0, p));
     el.style.transform = `${isDesktop() ? 'translateX(-50%) ' : ''}scaleY(${p.toFixed(4)})`;
 
+    // Each dot's position is measured relative to the line (viewport coords),
+    // so a dot lights up only when the drawn line actually reaches it.
     dots.forEach(dot => {
-      const q = height > 0 ? dot.offsetTop / height : 0;
+      const dr = dot.getBoundingClientRect();
+      const dotCenter = dr.top + dr.height / 2;
+      const q = height > 0 ? (dotCenter - lr.top) / height : 0;
       dot.classList.toggle('tl-dot-on', p >= q);
     });
   }
