@@ -427,15 +427,16 @@
     padding:16px 14px; display:flex; flex-direction:column; gap:12px;
     scrollbar-width:thin; scrollbar-color:#2E3438 transparent;
   }
-  .cb-msgs::-webkit-scrollbar{ width:6px; }
+  .cb-msgs::-webkit-scrollbar{ width:3px; }
   .cb-msgs::-webkit-scrollbar-thumb{ background:#2E3438; border-radius:999px; }
+  .cb-msgs::-webkit-scrollbar-track{ background:transparent; }
   .cb-bubble{
     display:flex; flex-direction:column; gap:5px;
     max-width:90%; animation:cbIn .3s cubic-bezier(.16,1,.3,1);
   }
   @keyframes cbIn{ from{ opacity:0; transform:translateY(8px);} to{ opacity:1; transform:none;} }
   .cb-meta{
-    font-family:"Inter Variable", Inter, system-ui, -apple-system, sans-serif; font-size:8.5px; letter-spacing:.18em; color:#6B7477;
+    font-family:"Inter Variable", Inter, system-ui, -apple-system, sans-serif; font-size:8.5px; letter-spacing:.18em; color:#F5F0EB;
   }
   .cb-body{
     font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
