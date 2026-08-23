@@ -1,5 +1,6 @@
-// EXPERIENCE TIMELINE — the vertical center line in the experience section
-// draws downward as you scroll through it (0% at entry → 100% when it leaves).
+// EXPERIENCE TIMELINE — the vertical center line in the experience section.
+// It starts drawing when the section reaches the middle of the screen and
+// follows you down, finishing when the section's bottom passes mid-screen.
 export function initExpTimeline() {
   const line = document.getElementById('expTimeline');
   if(!line) return;
@@ -12,8 +13,8 @@ export function initExpTimeline() {
     ticking = false;
     const r = section.getBoundingClientRect();
     const vh = window.innerHeight;
-    const denom = vh + r.height;
-    let p = denom > 0 ? (vh - r.top) / denom : 0;
+    const mid = vh / 2;
+    let p = r.height > 0 ? (mid - r.top) / r.height : 0;
     p = Math.min(1, Math.max(0, p));
     line.style.transform = `translateX(-50%) scaleY(${p.toFixed(4)})`;
   }

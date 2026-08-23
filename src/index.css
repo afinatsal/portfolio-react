@@ -223,10 +223,10 @@
   @keyframes heroUp{from{opacity:0; transform:translateY(24px);} to{opacity:1; transform:translateY(0);}}
 
   /* scroll progress indicator */
-  /* experience timeline line: draws from top to bottom as the section
-     scrolls through the viewport (scaleY driven by initExpTimeline.js). */
+  /* experience timeline line: draws from top to bottom tracking the middle
+     of the screen as you scroll (scaleY driven by initExpTimeline.js). */
   .exp-timeline{
-    background:#353C42;
+    background:#4A545B;
     transform:translateX(-50%) scaleY(0);
     transform-origin:top center;
     will-change:transform;
