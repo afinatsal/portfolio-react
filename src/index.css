@@ -161,9 +161,9 @@
   /* numbered approach rows - accent index, aligned text */
   #modalApproach li{ counter-increment:none; }
 
-  /* Nama perusahaan adalah detail penting: merah memberi penekanan. */
+  /* Nama perusahaan adalah detail penting: lime memberi penekanan. */
   .company-highlight{
-    color:#FF4D4D;
+    color:#B7F36B;
     display:inline;
     padding-bottom:2px;
     border-bottom:1px solid rgba(191,250,245,.5);
