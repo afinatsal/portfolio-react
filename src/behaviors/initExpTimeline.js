@@ -16,7 +16,10 @@ export function initExpTimeline() {
     const mid = window.innerHeight / 2;
     lines.forEach(({ el, center }) => {
       const lr = el.getBoundingClientRect();
-      let p = lr.height > 0 ? (mid - lr.top) / lr.height : 0;
+      // offsetHeight is the untransformed layout height — getBoundingClientRect
+      // height collapses to 0 while scaleY is 0 (which would deadlock the draw).
+      const height = el.offsetHeight;
+      let p = height > 0 ? (mid - lr.top) / height : 0;
       p = Math.min(1, Math.max(0, p));
       el.style.transform = `${center ? 'translateX(-50%) ' : ''}scaleY(${p.toFixed(4)})`;
     });
