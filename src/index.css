@@ -256,13 +256,14 @@
   }
   .brand-cta:hover::after{ transform:scaleX(1); transform-origin:left center; }
 
-  /* experience keywords that jump to a project row */
+  /* experience keywords that jump to a project row: bright white with an
+     underline — no red, the line is the affordance. */
   .exp-link{
-    color:#FF4D4D; text-decoration:underline; text-underline-offset:3px;
-    text-decoration-color:rgba(255,77,77,.5); cursor:pointer;
+    color:#F1F4F2; text-decoration:underline; text-underline-offset:3px;
+    text-decoration-color:rgba(241,244,242,.6); cursor:pointer;
     transition:color .2s, text-decoration-color .2s;
   }
-  .exp-link:hover{ color:#FF8080; text-decoration-color:#FF8080; }
+  .exp-link:hover{ color:#FFFFFF; text-decoration-color:#FFFFFF; }
 
   /* flash highlight on the project row after jumping to it */
   .project-highlight{ animation:rowFlash 1.6s cubic-bezier(.16,1,.3,1); }
