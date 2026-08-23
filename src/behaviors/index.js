@@ -1,6 +1,5 @@
 import { initI18n } from './initI18n.js'
 import { initDitherBackground } from './initDitherBackground.js'
-import { initHeavyScroll } from './initHeavyScroll.js'
 import { initScrambleName } from './initScrambleName.js'
 import { initDockActive } from './initDockActive.js'
 import { initScrollReveal } from './initScrollReveal.js'
@@ -16,7 +15,6 @@ import { initExpTimeline } from './initExpTimeline.js'
 export {
   initI18n,
   initDitherBackground,
-  initHeavyScroll,
   initScrambleName,
   initDockActive,
   initScrollReveal,
