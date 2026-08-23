@@ -33,6 +33,7 @@ import {
   initChatbot,
   initProjectLinks,
   initExpTimeline,
+  initRowHover,
 } from './behaviors/index.js'
 
 const MARKUP = [
@@ -71,6 +72,7 @@ export default function App() {
     initChatbot()
     initProjectLinks()
     initExpTimeline()
+    initRowHover()
 
     return () => {
       document.body.classList.remove('modal-open')

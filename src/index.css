@@ -284,6 +284,15 @@
     100%{ box-shadow:0 0 0 0 rgba(255,77,77,0), 0 0 0 rgba(255,77,77,0); background:transparent; }
   }
 
+  /* rows animate as the cursor passes them during scroll — JS adds .is-hot
+     (mirrors the :hover / group-hover effects without waiting for scroll end) */
+  .project-trigger.is-hot > span:nth-child(2),
+  #certifications .group.is-hot > span:nth-child(2){ transform:translateX(0.5rem); }
+  .project-trigger.is-hot > svg,
+  #certifications .group.is-hot > svg{ opacity:1; transform:translateX(0); color:#FF5C28; }
+  .project-trigger.is-hot > span:first-child,
+  #certifications .group.is-hot > span:first-child{ color:#F5F0EB; }
+
   /* tactile press feedback */
   .project-trigger, #copyEmailBtn, #dock a.dock-link, .contact-link{ -webkit-tap-highlight-color:transparent; }
   .project-trigger:active{ transform:scale(.985); }
