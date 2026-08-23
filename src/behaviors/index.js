@@ -11,7 +11,6 @@ import { initMusicPlayer } from './initMusicPlayer.js'
 import { initChatbot } from './initChatbot.js'
 import { initProjectLinks } from './initProjectLinks.js'
 import { initExpTimeline } from './initExpTimeline.js'
-import { initAboutAlign } from './initAboutAlign.js'
 
 export {
   initI18n,
@@ -27,5 +26,4 @@ export {
   initChatbot,
   initProjectLinks,
   initExpTimeline,
-  initAboutAlign,
 }
