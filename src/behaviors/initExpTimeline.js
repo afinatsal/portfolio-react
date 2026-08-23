@@ -4,7 +4,6 @@
 export function initExpTimeline() {
   const line = document.getElementById('expTimeline');
   if(!line) return;
-  if(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
   let ticking = false;
   function update(){
@@ -15,8 +14,14 @@ export function initExpTimeline() {
     p = Math.min(1, Math.max(0, p));
     line.style.transform = `translateX(-50%) scaleY(${p.toFixed(4)})`;
   }
+  // Reduced motion: show the full static line instead of the draw animation.
+  if(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+    line.style.transform = 'translateX(-50%) scaleY(1)';
+    return;
+  }
   function onScroll(){ if(!ticking){ ticking = true; requestAnimationFrame(update); } }
   window.addEventListener('scroll', onScroll, { passive:true });
   window.addEventListener('resize', onScroll, { passive:true });
+  window.addEventListener('load', update);
   update();
 }

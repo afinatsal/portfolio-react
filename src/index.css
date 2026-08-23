@@ -226,7 +226,8 @@
   /* experience timeline line: draws from top to bottom tracking the middle
      of the screen as you scroll (scaleY driven by initExpTimeline.js). */
   .exp-timeline{
-    background:#4A545B;
+    background:linear-gradient(180deg, rgba(191,250,245,.85), rgba(116,230,213,.6));
+    box-shadow:0 0 12px rgba(116,230,213,.35);
     transform:translateX(-50%) scaleY(0);
     transform-origin:top center;
     will-change:transform;
