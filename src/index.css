@@ -235,7 +235,6 @@
     #scrollLine{ animation: scrollLineGrow linear; animation-timeline: scroll(block root); }
     @keyframes scrollLineGrow{ to{ transform:translateX(-50%) scaleY(1); } }
   }
-  }
 
   /* section eyebrow labels: Inter instead of mono */
   .sec-label{
