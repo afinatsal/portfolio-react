@@ -42,7 +42,7 @@ export function initSkillsMarquee() {
     const iconHtml = tool.slug
       ? `<img src="https://cdn.simpleicons.org/${tool.slug}" alt="" class="w-4 h-4 shrink-0" loading="lazy" onerror="this.style.display='none'" />`
       : `<span class="w-4 h-4 shrink-0 rounded-full border border-line" aria-hidden="true"></span>`;
-    return `<span class="flex items-center gap-3 font-mono text-[13px] sm:text-sm text-ink border border-line bg-panel rounded-full pl-4 pr-5 py-2.5 whitespace-nowrap transition-colors hover:border-accent/60"${hidden ? ' aria-hidden="true"' : ''}>${iconHtml}${tool.name}</span>`;
+    return `<span class="flex items-center gap-3 font-body text-[13px] sm:text-sm text-ink border border-line bg-panel rounded-full pl-4 pr-5 py-2.5 whitespace-nowrap transition-colors hover:border-accent/60"${hidden ? ' aria-hidden="true"' : ''}>${iconHtml}${tool.name}</span>`;
   }
 
   // render twice back-to-back for a seamless infinite-loop marquee

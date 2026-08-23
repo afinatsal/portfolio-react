@@ -26,7 +26,7 @@ export function initDitherBackground() {
     const cw = canvas.width, ch = canvas.height;
     if(cw===0||ch===0) return false;
 
-    cell = Math.max(3, Math.round(Math.min(cw,ch)/220));
+    cell = Math.max(3, Math.round(Math.min(cw,ch)/300));
     bw = Math.ceil(cw/cell);
     bh = Math.ceil(ch/cell);
     sourceCanvas.width = bw;
