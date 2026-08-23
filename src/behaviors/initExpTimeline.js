@@ -1,22 +1,31 @@
-// EXPERIENCE TIMELINE — the vertical center line in the experience section.
-// Animation starts when the TOP of the line hits the middle of the screen and
-// finishes when the BOTTOM of the line reaches the middle.
+// EXPERIENCE TIMELINE — vertical lines in the experience section draw from
+// top to bottom tracking the middle of the screen as you scroll.
+// Animation starts when the TOP of the line hits mid-screen and finishes when
+// the BOTTOM of the line reaches mid-screen. Desktop = center line, mobile =
+// left line.
 export function initExpTimeline() {
-  const line = document.getElementById('expTimeline');
-  if(!line) return;
+  const lines = [
+    { el: document.getElementById('expTimeline'), center: true },
+    { el: document.getElementById('expTimelineMobile'), center: false },
+  ].filter(l => l.el);
+  if(!lines.length) return;
 
   let ticking = false;
   function update(){
     ticking = false;
-    const lr = line.getBoundingClientRect();
     const mid = window.innerHeight / 2;
-    let p = lr.height > 0 ? (mid - lr.top) / lr.height : 0;
-    p = Math.min(1, Math.max(0, p));
-    line.style.transform = `translateX(-50%) scaleY(${p.toFixed(4)})`;
+    lines.forEach(({ el, center }) => {
+      const lr = el.getBoundingClientRect();
+      let p = lr.height > 0 ? (mid - lr.top) / lr.height : 0;
+      p = Math.min(1, Math.max(0, p));
+      el.style.transform = `${center ? 'translateX(-50%) ' : ''}scaleY(${p.toFixed(4)})`;
+    });
   }
-  // Reduced motion: show the full static line instead of the draw animation.
+  // Reduced motion: show the full static lines instead of the draw animation.
   if(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches){
-    line.style.transform = 'translateX(-50%) scaleY(1)';
+    lines.forEach(({ el, center }) => {
+      el.style.transform = `${center ? 'translateX(-50%) ' : ''}scaleY(1)`;
+    });
     return;
   }
   function onScroll(){ if(!ticking){ ticking = true; requestAnimationFrame(update); } }

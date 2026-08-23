@@ -232,6 +232,13 @@
     transform-origin:top center;
     will-change:transform;
   }
+  .exp-timeline--left{
+    background:linear-gradient(180deg, rgba(191,250,245,.85), rgba(116,230,213,.6));
+    box-shadow:0 0 12px rgba(116,230,213,.35);
+    transform:scaleY(0);
+    transform-origin:top center;
+    will-change:transform;
+  }
 
   /* section eyebrow labels: Inter instead of mono */
   .sec-label{
