@@ -10,7 +10,7 @@ const TRANSLATIONS = {
       tagline: 'Membangun sistem AI dari riset ke produksi, dari notebook hingga deployment.',
     },
     about: {
-      label: '02 · TENTANG',
+      label: 'TENTANG',
       heading: 'Saya AI/ML engineer yang membangun AI agent, computer vision, dan aplikasi yang menghubungkannya untuk kebutuhan kerja nyata, dari riset hingga produksi.',
       body: 'Perjalanan saya dari riset skripsi deteksi sampah, dua program magang industri, hingga studio AI sendiri. Berbasis di Malang, Indonesia, dan terbuka untuk magang atau full-time.',
       educationLabel: 'PENDIDIKAN',
@@ -22,7 +22,7 @@ const TRANSLATIONS = {
       statusVal: 'Terbuka untuk magang atau full-time',
     },
     exp: {
-      label: '03 · PENGALAMAN',
+      label: 'PENGALAMAN',
       e1: {
         period: 'FEB · JUL 2026',
         title: 'Instruktur Praktikum Python',
@@ -64,12 +64,12 @@ const TRANSLATIONS = {
       },
     },
     cert: {
-      label: '04 · SERTIFIKASI',
+      label: 'SERTIFIKASI',
       intro: 'Klik untuk memverifikasi kredensial.',
       c2Detail: '8 kursus',
     },
     work: {
-      label: '05 · PROYEK',
+      label: 'PROYEK',
       intro: 'Klik untuk melihat detail proyek.',
       thesis: {
         eyebrow: 'SKRIPSI · FEB 2026',
@@ -110,16 +110,16 @@ const TRANSLATIONS = {
       },
     },
     pub: {
-      label: '06 · PUBLIKASI',
+      label: 'PUBLIKASI',
       title: 'Deteksi dan Klasifikasi Sampah Bertingkat Menggunakan YOLOv12 dan Hierarchical Sibling Classification Network',
       venue: 'SENTRIN 2026 · Seminar Nasional Teknologi dan Rekayasa Informasi · <span class="text-ink">Dalam persiapan</span>',
     },
     skills: {
-      label: '07 · SKILLS &amp; TOOLS',
+      label: 'SKILLS &amp; TOOLS',
       intro: 'Toolkit yang saya gunakan di riset, produksi, dan eksperimen.',
     },
     contact: {
-      label: '08 · KONTAK',
+      label: 'KONTAK',
       heading: 'Mari membangun sesuatu yang berdampak bersama.',
       email: 'Email',
       cv: 'CV',
@@ -159,13 +159,13 @@ const TRANSLATIONS = {
       music: 'Musik',
       hud: {
         home: '01 · HOME',
-        about: '02 · TENTANG',
-        experience: '03 · PENGALAMAN',
-        certifications: '04 · SERTIFIKASI',
-        work: '05 · PROYEK',
-        publications: '06 · PUBLIKASI',
+        about: 'TENTANG',
+        experience: 'PENGALAMAN',
+        certifications: 'SERTIFIKASI',
+        work: 'PROYEK',
+        publications: 'PUBLIKASI',
         skills: '07 · SKILLS',
-        contact: '08 · KONTAK',
+        contact: 'KONTAK',
       },
       altExp1: 'Foto Instruktur Praktikum Python',
       chat: {
@@ -376,7 +376,7 @@ const TRANSLATIONS = {
       tagline: 'Building AI systems that go from research to production, from notebook to deployment.',
     },
     about: {
-      label: '02 · ABOUT',
+      label: 'ABOUT',
       heading: 'I\'m an AI/ML engineer who builds AI agents, computer vision, and the apps that connect them to real work, from research to production.',
       body: 'My path runs from thesis research on waste detection through two industry internships to running my own AI studio. Based in Malang, Indonesia, and open to internships or full-time.',
       educationLabel: 'EDUCATION',
@@ -388,7 +388,7 @@ const TRANSLATIONS = {
       statusVal: 'Open to internship or full-time',
     },
     exp: {
-      label: '03 · EXPERIENCE',
+      label: 'EXPERIENCE',
       e1: {
         period: 'FEB · JUL 2026',
         title: 'Python Lab Instructor',
@@ -430,12 +430,12 @@ const TRANSLATIONS = {
       },
     },
     cert: {
-      label: '04 · CERTIFICATIONS',
+      label: 'CERTIFICATIONS',
       intro: 'Click to verify credentials.',
       c2Detail: '8 courses',
     },
     work: {
-      label: '05 · PROJECTS',
+      label: 'PROJECTS',
       intro: 'Click to view project details.',
       thesis: {
         eyebrow: 'THESIS · FEB 2026',
@@ -476,16 +476,16 @@ const TRANSLATIONS = {
       },
     },
     pub: {
-      label: '06 · PUBLICATIONS',
+      label: 'PUBLICATIONS',
       title: 'Hierarchical Waste Detection and Classification Using YOLOv12 and Hierarchical Sibling Classification Network',
       venue: 'SENTRIN 2026 · National Seminar on Information Technology and Engineering · <span class="text-ink">In preparation</span>',
     },
     skills: {
-      label: '07 · SKILLS &amp; TOOLS',
+      label: 'SKILLS &amp; TOOLS',
       intro: 'The toolkit I use across research, production, and experimentation.',
     },
     contact: {
-      label: '08 · CONTACT',
+      label: 'CONTACT',
       heading: 'Let\'s build something impactful together.',
       email: 'Email',
       cv: 'CV',
@@ -525,13 +525,13 @@ const TRANSLATIONS = {
       music: 'Music',
       hud: {
         home: '01 · HOME',
-        about: '02 · ABOUT',
-        experience: '03 · EXPERIENCE',
-        certifications: '04 · CERTIFICATIONS',
-        work: '05 · PROJECTS',
-        publications: '06 · PUBLICATIONS',
+        about: 'ABOUT',
+        experience: 'EXPERIENCE',
+        certifications: 'CERTIFICATIONS',
+        work: 'PROJECTS',
+        publications: 'PUBLICATIONS',
         skills: '07 · SKILLS',
-        contact: '08 · CONTACT',
+        contact: 'CONTACT',
       },
       altExp1: 'Python Practicum Instructor photo',
       chat: {
@@ -742,7 +742,7 @@ const TRANSLATIONS = {
       tagline: '打造从研究走向生产、从笔记本到部署的 AI 系统。',
     },
     about: {
-      label: '02 · 关于我',
+      label: '关于我',
       heading: '我是一名 AI/ML 工程师，构建 AI 智能体、计算机视觉，以及把它们应用到实际工作的应用，从研究到生产。',
       body: '我的经历从毕业论文的垃圾检测研究，到两次行业实习，再到运营自己的 AI 工作室。常驻印度尼西亚玛琅，欢迎实习或全职机会。',
       educationLabel: '教育',
@@ -754,7 +754,7 @@ const TRANSLATIONS = {
       statusVal: '可应聘实习或全职',
     },
     exp: {
-      label: '03 · 经历',
+      label: '经历',
       e1: {
         period: '2026年2月 · 7月',
         title: 'Python 实验课讲师',
@@ -796,12 +796,12 @@ const TRANSLATIONS = {
       },
     },
     cert: {
-      label: '04 · 证书',
+      label: '证书',
       intro: '点击即可验证证书。',
       c2Detail: '8门课程',
     },
     work: {
-      label: '05 · 项目',
+      label: '项目',
       intro: '点击查看项目详情。',
       thesis: {
         eyebrow: '毕业论文 · 2026年2月',
@@ -842,16 +842,16 @@ const TRANSLATIONS = {
       },
     },
     pub: {
-      label: '06 · 出版物',
+      label: '出版物',
       title: '基于 YOLOv12 与层级兄弟分类网络的垃圾检测与分类',
       venue: 'SENTRIN 2026 · 全国信息技术与工程研讨会 · <span class="text-ink">筹备中</span>',
     },
     skills: {
-      label: '07 · 技能与工具',
+      label: '技能与工具',
       intro: '我在研究、生产与实验中使用的工具集。',
     },
     contact: {
-      label: '08 · 联系方式',
+      label: '联系方式',
       heading: '一起打造有影响力的事物。',
       email: '邮箱',
       cv: '简历',
@@ -891,13 +891,13 @@ const TRANSLATIONS = {
       music: '音乐',
       hud: {
         home: '01 · 首页',
-        about: '02 · 关于我',
+        about: '关于我',
         experience: '03 · 经验',
-        certifications: '04 · 证书',
-        work: '05 · 项目',
-        publications: '06 · 出版物',
+        certifications: '证书',
+        work: '项目',
+        publications: '出版物',
         skills: '07 · 技能',
-        contact: '08 · 联系方式',
+        contact: '联系方式',
       },
       altExp1: 'Python 实验讲师照片',
       chat: {
@@ -1108,7 +1108,7 @@ const TRANSLATIONS = {
       tagline: '研究から本番運用まで、ノートブックからデプロイメントまで、AIシステムを構築します。',
     },
     about: {
-      label: '02 · プロフィール',
+      label: 'プロフィール',
       heading: 'AIエージェントやコンピュータビジョン、そしてそれらを実際の仕事につなぐアプリを、研究から本番まで構築する AI/ML エンジニアです。',
       body: '卒業研究のゴミ検出から 2 つの企業インターンシップ、そして自身の AI スタジオ運営まで。インドネシア・マランを拠点に、インターンや正社員の機会を募集中です。',
       educationLabel: '学歴',
@@ -1120,7 +1120,7 @@ const TRANSLATIONS = {
       statusVal: 'インターン・正社員募集中',
     },
     exp: {
-      label: '03 · 経験',
+      label: '経験',
       e1: {
         period: '2026年2月 · 7月',
         title: 'Python実習講師',
@@ -1162,12 +1162,12 @@ const TRANSLATIONS = {
       },
     },
     cert: {
-      label: '04 · 認定資格',
+      label: '認定資格',
       intro: 'クリックして証明書を検証できます。',
       c2Detail: '8コース',
     },
     work: {
-      label: '05 · プロジェクト',
+      label: 'プロジェクト',
       intro: 'クリックで詳細を見る。',
       thesis: {
         eyebrow: '卒業研究 · 2026年2月',
@@ -1208,16 +1208,16 @@ const TRANSLATIONS = {
       },
     },
     pub: {
-      label: '06 · 発表',
+      label: '発表',
       title: 'YOLOv12と階層型兄弟分類ネットワークによるごみの検出と分類',
       venue: 'SENTRIN 2026 · 全国情報技術・エンジニアリングセミナー · <span class="text-ink">準備中</span>',
     },
     skills: {
-      label: '07 · スキルとツール',
+      label: 'スキルとツール',
       intro: '研究・本番・実験で使っているツールキットです。',
     },
     contact: {
-      label: '08 · お問い合わせ',
+      label: 'お問い合わせ',
       heading: '一緒にインパクトのあるものを作りましょう。',
       email: 'メール',
       cv: '履歴書',
@@ -1257,13 +1257,13 @@ const TRANSLATIONS = {
       music: '音楽',
       hud: {
         home: '01 · ホーム',
-        about: '02 · プロフィール',
-        experience: '03 · 経験',
-        certifications: '04 · 認定資格',
-        work: '05 · プロジェクト',
-        publications: '06 · 発表',
+        about: 'プロフィール',
+        experience: '経験',
+        certifications: '認定資格',
+        work: 'プロジェクト',
+        publications: '発表',
         skills: '07 · スキル',
-        contact: '08 · お問い合わせ',
+        contact: 'お問い合わせ',
       },
       altExp1: 'Python実習講師の写真',
       chat: {
