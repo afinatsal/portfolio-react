@@ -13,7 +13,6 @@ export default {
         dot: '#F5F0EB',
         accent: '#F5F0EB',
         mint: '#F5F0EB',
-        lime: '#B7F36B',
         ink: '#F5F0EB',
         dim: 'rgba(245,240,235,0.54)',
         line: '#353C42',
