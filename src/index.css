@@ -297,7 +297,7 @@
   .contact-cta em{
     font-style:italic; transition:color .25s ease;
   }
-  .contact-cta:hover em{ color:#FF4D4D; }
+  .contact-cta:hover em{ color:#FF5C28; }
 
 
   @media (prefers-reduced-motion: reduce){
