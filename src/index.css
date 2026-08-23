@@ -223,14 +223,13 @@
   @keyframes heroUp{from{opacity:0; transform:translateY(24px);} to{opacity:1; transform:translateY(0);}}
 
   /* scroll progress indicator */
-  /* scroll progress line: a thin vertical line in the center of the page
-     that grows downward as you scroll — like walking down the page.
-     Transform is driven by initScrollLine.js (works in every browser). */
-  #scrollLine{
-    position:fixed; top:0; left:50%; width:1px; height:100vh; z-index:60;
-    transform:translateX(-50%) scaleY(0); transform-origin:top center;
-    background:linear-gradient(180deg, #BFFAF5, #74E6D5);
-    opacity:.5; pointer-events:none;
+  /* experience timeline line: draws from top to bottom as the section
+     scrolls through the viewport (scaleY driven by initExpTimeline.js). */
+  .exp-timeline{
+    background:#353C42;
+    transform:translateX(-50%) scaleY(0);
+    transform-origin:top center;
+    will-change:transform;
   }
 
   /* section eyebrow labels: Inter instead of mono */
