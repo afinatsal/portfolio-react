@@ -241,9 +241,9 @@
     transform-origin:top center;
     will-change:transform;
   }
-  /* timeline dots light up as the drawn line reaches them */
-  .tl-dot{ opacity:0; transition:opacity .35s ease, background-color .35s ease, box-shadow .35s ease; }
-  .tl-dot-on{ opacity:1; background:#FF5C28; box-shadow:0 0 0 4px rgba(255,92,40,.22), 0 0 14px rgba(255,92,40,.6); }
+  /* timeline dots appear (white) one by one as the drawn line reaches them */
+  .tl-dot{ opacity:0; transition:opacity .35s ease; }
+  .tl-dot-on{ opacity:1; }
 
   /* section eyebrow labels: Inter instead of mono */
   .sec-label{
