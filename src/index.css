@@ -33,6 +33,9 @@
   }
 
   .section-transition{isolation:isolate; overflow:hidden;}
+  /* the about label is sticky while scrolling through the section — overflow
+     hidden would trap the sticky inside the section, so let it be visible. */
+  #about.section-transition{ overflow:visible; }
   .section-transition::before{
     content:""; position:absolute; z-index:-1; inset:0 0 auto; height:150px; pointer-events:none;
     background:linear-gradient(180deg, #000 0%, rgba(0,0,0,0) 100%);
