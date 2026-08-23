@@ -73,7 +73,7 @@ const TRANSLATIONS = {
       intro: 'Klik untuk melihat detail proyek.',
       thesis: {
         eyebrow: 'SKRIPSI · FEB 2026',
-        heading: 'Deteksi dan klasifikasi sampah hierarkis dengan <span class="text-accent">YOLOv12 + HSCN</span>.',
+        heading: 'Deteksi dan klasifikasi sampah hierarkis dengan <span class="text-ink">YOLOv12 + HSCN</span>.',
         desc: 'Pipeline dua tahap, YOLOv12 mendeteksi objek lalu Hierarchical Sequential Classification Network mengklasifikasikan tiga level hierarki sampah.',
       },
       r0: {
@@ -112,7 +112,7 @@ const TRANSLATIONS = {
     pub: {
       label: '06 · PUBLIKASI',
       title: 'Deteksi dan Klasifikasi Sampah Bertingkat Menggunakan YOLOv12 dan Hierarchical Sibling Classification Network',
-      venue: 'SENTRIN 2026 · Seminar Nasional Teknologi dan Rekayasa Informasi · <span class="text-accent">Dalam persiapan</span>',
+      venue: 'SENTRIN 2026 · Seminar Nasional Teknologi dan Rekayasa Informasi · <span class="text-ink">Dalam persiapan</span>',
     },
     skills: {
       label: '07 · SKILLS &amp; TOOLS',
@@ -439,7 +439,7 @@ const TRANSLATIONS = {
       intro: 'Click to view project details.',
       thesis: {
         eyebrow: 'THESIS · FEB 2026',
-        heading: 'Hierarchical waste detection &amp; classification with <span class="text-accent">YOLOv12 + HSCN</span>.',
+        heading: 'Hierarchical waste detection &amp; classification with <span class="text-ink">YOLOv12 + HSCN</span>.',
         desc: 'A two-stage pipeline, YOLOv12 detects objects then a Hierarchical Sequential Classification Network classifies three levels of waste hierarchy.',
       },
       r0: {
@@ -478,7 +478,7 @@ const TRANSLATIONS = {
     pub: {
       label: '06 · PUBLICATIONS',
       title: 'Hierarchical Waste Detection and Classification Using YOLOv12 and Hierarchical Sibling Classification Network',
-      venue: 'SENTRIN 2026 · National Seminar on Information Technology and Engineering · <span class="text-accent">In preparation</span>',
+      venue: 'SENTRIN 2026 · National Seminar on Information Technology and Engineering · <span class="text-ink">In preparation</span>',
     },
     skills: {
       label: '07 · SKILLS &amp; TOOLS',
@@ -805,7 +805,7 @@ const TRANSLATIONS = {
       intro: '点击查看项目详情。',
       thesis: {
         eyebrow: '毕业论文 · 2026年2月',
-        heading: '基于 <span class="text-accent">YOLOv12 + HSCN</span> 的分层垃圾检测与分类。',
+        heading: '基于 <span class="text-ink">YOLOv12 + HSCN</span> 的分层垃圾检测与分类。',
         desc: '两阶段流水线，YOLOv12 负责物体检测，再由层级序列分类网络对三层垃圾层级进行分类。',
       },
       r0: {
@@ -844,7 +844,7 @@ const TRANSLATIONS = {
     pub: {
       label: '06 · 出版物',
       title: '基于 YOLOv12 与层级兄弟分类网络的垃圾检测与分类',
-      venue: 'SENTRIN 2026 · 全国信息技术与工程研讨会 · <span class="text-accent">筹备中</span>',
+      venue: 'SENTRIN 2026 · 全国信息技术与工程研讨会 · <span class="text-ink">筹备中</span>',
     },
     skills: {
       label: '07 · 技能与工具',
@@ -1171,7 +1171,7 @@ const TRANSLATIONS = {
       intro: 'クリックで詳細を見る。',
       thesis: {
         eyebrow: '卒業研究 · 2026年2月',
-        heading: '<span class="text-accent">YOLOv12 + HSCN</span>による階層型ゴミ検出・分類。',
+        heading: '<span class="text-ink">YOLOv12 + HSCN</span>による階層型ゴミ検出・分類。',
         desc: '2段階パイプライン。YOLOv12が物体を検出し、階層型系列分類ネットワークが3段階のゴミ階層を分類します。',
       },
       r0: {
@@ -1210,7 +1210,7 @@ const TRANSLATIONS = {
     pub: {
       label: '06 · 発表',
       title: 'YOLOv12と階層型兄弟分類ネットワークによるごみの検出と分類',
-      venue: 'SENTRIN 2026 · 全国情報技術・エンジニアリングセミナー · <span class="text-accent">準備中</span>',
+      venue: 'SENTRIN 2026 · 全国情報技術・エンジニアリングセミナー · <span class="text-ink">準備中</span>',
     },
     skills: {
       label: '07 · スキルとツール',
