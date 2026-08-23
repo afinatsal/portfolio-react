@@ -224,16 +224,13 @@
 
   /* scroll progress indicator */
   /* scroll progress line: a thin vertical line in the center of the page
-     that grows downward as you scroll — like walking down the page. */
+     that grows downward as you scroll — like walking down the page.
+     Transform is driven by initScrollLine.js (works in every browser). */
   #scrollLine{
     position:fixed; top:0; left:50%; width:1px; height:100vh; z-index:60;
     transform:translateX(-50%) scaleY(0); transform-origin:top center;
     background:linear-gradient(180deg, #BFFAF5, #74E6D5);
     opacity:.5; pointer-events:none;
-  }
-  @supports (animation-timeline: scroll()){
-    #scrollLine{ animation: scrollLineGrow linear; animation-timeline: scroll(block root); }
-    @keyframes scrollLineGrow{ to{ transform:translateX(-50%) scaleY(1); } }
   }
 
   /* section eyebrow labels: Inter instead of mono */
