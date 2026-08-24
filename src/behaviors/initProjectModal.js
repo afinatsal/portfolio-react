@@ -475,6 +475,11 @@ const ORDER = ['ailabs', 'lentera', 'chatbots', 'thesis', 'visual-inspection', '
   });
   closeBtn.addEventListener('click', closeModal);
   backdrop.addEventListener('click', closeModal);
+  // clicking anywhere outside the panel (the empty area around it, not just the
+  // backdrop) closes the detail immediately.
+  modal.addEventListener('click', e => {
+    if(!e.target.closest('#modalPanel')) closeModal();
+  });
   document.addEventListener('keydown', e => { if(e.key === 'Escape' && !modal.classList.contains('hidden')) closeModal(); });
   document.addEventListener('afin:lang', () => { if(openId) openModal(openId); });
 }
